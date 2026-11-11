@@ -1,0 +1,30 @@
+name: Nightly export
+
+# Exports all reviews and administrators to CSV every night.
+# The files are attached to the workflow run (Actions tab), visible only to
+# people with access to this repository. They are NOT committed to the repo,
+# so a removed review doesn't live on forever in public git history.
+
+on:
+  schedule:
+    - cron: "17 10 * * *"   # 10:17 UTC = 3:17 am Pacific
+  workflow_dispatch: {}      # lets you run it by hand from the Actions tab
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Export
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: python scripts/export_reviews.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rma-export-${{ github.run_number }}
+          path: export/
+          retention-days: 90

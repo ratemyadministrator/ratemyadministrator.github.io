@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rate My Administrator</title>
+<meta name="description" content="Anonymous reviews of college deans, vice presidents, presidents and chancellors.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+/* Layout: single centered column (max 760px), sticky top bar, fixed bottom tab bar; dark-first, user's own palette from the mockups */
+:root{
+  --bg:#0b1326; --surface:#131b2e; --card:#171f33; --card-hi:#222a3d; --card-top:#2d3449; --well:#060e20;
+  --fg:#dae2fd; --muted:#b3a3a8; --faint:#7d7f95; --line:#2a3249;
+  --red:#dc2626; --red-soft:#ffb4ab; --red-ink:#fff6f5; --red-bg:#3a1219;
+  --amber:#ffb95f; --amber-bg:#3a2a10; --blue:#7bd0ff; --blue-bg:#0f3550; --green:#7ad9a3; --green-bg:#11372a;
+  --display:"Space Grotesk",ui-sans-serif,system-ui,sans-serif;
+  --body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+html,body{background:var(--bg);color:var(--fg)}
+body{font:14px/1.55 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:760px;margin:0 auto}
+.icon{width:18px;height:18px;flex:none;display:inline-block;vertical-align:middle;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon.sm{width:14px;height:14px}.icon.lg{width:24px;height:24px}
+.mono{font-family:var(--mono)}
+.num{font-variant-numeric:tabular-nums}
+
+/* top bar */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:60px}
+.brandmark{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;letter-spacing:-.01em;font-size:15px;text-transform:uppercase;background:none;border:0;padding:0}
+.brandmark s{color:var(--faint);text-decoration-color:var(--red);text-decoration-thickness:2px;font-weight:600}
+.stamp{background:var(--red);color:var(--red-ink);padding:2px 7px;border-radius:3px;font-size:12px;letter-spacing:.04em}
+.vchip{display:inline-flex;align-items:center;gap:5px;font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:6px 8px;border-radius:4px;border:0;background:var(--card-hi);color:var(--muted)}
+.vchip.on{color:var(--green);background:var(--green-bg)}
+
+main{padding-block:16px 110px;display:flex;flex-direction:column;gap:16px}
+.view[hidden]{display:none!important}
+.view{display:flex;flex-direction:column;gap:16px}
+
+/* manifesto */
+.manifesto{background:var(--card);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.manifesto h1{margin:0;font:700 clamp(22px,5.5vw,30px)/1.1 var(--display);letter-spacing:-.02em;text-transform:uppercase;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;text-wrap:balance}
+.manifesto h1 s{color:color-mix(in srgb,var(--fg) 35%,transparent);text-decoration-color:var(--red);text-decoration-thickness:4px}
+.manifesto h1 .stamp{font-size:.62em;padding:4px 10px;transform:rotate(-2deg);box-shadow:0 0 18px color-mix(in srgb,var(--red) 40%,transparent)}
+.manifesto p{margin:0;color:var(--muted);max-width:60ch}
+.statline{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 11px/1.4 var(--mono);color:var(--faint);text-transform:uppercase;letter-spacing:.05em}
+.statline b{color:var(--fg);font-weight:600}
+
+/* generic */
+.card{background:var(--card);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.sec-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-inline:2px}
+.sec-h h2{margin:0;font:600 18px/1.3 var(--display);letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.sec-h h2 .icon{color:var(--red)}
+.sub{color:var(--muted);font-size:12px}
+.label{font:500 10px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--faint)}
+.search{display:flex;align-items:center;gap:8px;background:var(--card-hi);border-radius:10px;padding:0 12px;height:46px}
+.search .icon{color:var(--blue)}
+.search input{flex:1;min-width:0;background:none;border:0;outline:0;height:100%}
+.search input::placeholder{color:var(--faint)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:0;border-radius:4px;padding:6px 10px;background:var(--card);color:var(--muted);font:500 11px/1 var(--mono);letter-spacing:.03em;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--blue);color:#00354a;font-weight:600}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+select.sel,input.txt,textarea.txt{background:var(--card-hi);border:1px solid transparent;border-radius:6px;padding:0 10px;height:42px;width:100%;outline:0}
+textarea.txt{height:auto;padding:10px;resize:vertical;line-height:1.55}
+select.sel:focus,input.txt:focus,textarea.txt:focus{border-color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:6px;height:42px;padding:0 16px;background:var(--card-hi);color:var(--fg);font:600 13px/1 var(--mono);letter-spacing:.02em}
+.btn:hover{background:var(--card-top)}
+.btn.primary{background:var(--red);color:var(--red-ink);box-shadow:0 0 16px color-mix(in srgb,var(--red) 35%,transparent)}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.ghost{background:none;color:var(--blue);padding:0 4px;height:auto}
+.btn.block{width:100%;height:52px;text-transform:uppercase}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:none}
+.note{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border-radius:8px;padding:12px;color:var(--muted);font-size:12.5px}
+.note .icon{color:var(--blue);margin-top:1px}
+.note.warn .icon{color:var(--amber)}
+.note b{color:var(--fg)}
+
+/* admin cards */
+.alist{display:flex;flex-direction:column;gap:12px}
+.acard{background:var(--card);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px;text-align:left;border:0;width:100%}
+.acard:hover{background:var(--card-hi)}
+.ahead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.aid{display:flex;gap:12px;min-width:0}
+.avatar{width:46px;height:46px;border-radius:8px;background:var(--card-hi);display:grid;place-items:center;font:700 16px/1 var(--display);color:var(--fg);flex:none;position:relative;overflow:hidden}
+.avatar i{position:absolute;inset:auto 0 0;font:700 7.5px/1.6 var(--mono);font-style:normal;text-align:center;letter-spacing:.03em}
+.aname{font:600 17px/1.25 var(--display);margin:0;overflow-wrap:anywhere}
+.ameta{color:var(--muted);font-size:12px;overflow-wrap:anywhere}
+.ainst{font:500 10.5px/1.4 var(--mono);color:var(--blue)}
+.score{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex:none}
+.score b{display:inline-flex;align-items:center;gap:4px;font:700 18px/1 var(--display);padding:6px 9px;border-radius:5px}
+.score span{font:500 10px/1 var(--mono);color:var(--faint)}
+.t-crit{background:var(--red-bg);color:var(--red-soft)} .t-crit-ink{color:var(--red-soft)}
+.t-warn{background:var(--amber-bg);color:var(--amber)} .t-warn-ink{color:var(--amber)}
+.t-ok{background:var(--blue-bg);color:var(--blue)} .t-ok-ink{color:var(--blue)}
+.t-good{background:var(--green-bg);color:var(--green)} .t-good-ink{color:var(--green)}
+.t-none{background:var(--card-hi);color:var(--muted)}
+.indices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;background:var(--surface);border-radius:6px;padding:8px}
+.indices div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.indices span{font:500 9.5px/1.2 var(--mono);color:var(--faint);text-transform:uppercase;letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.indices b{font:600 12px/1.2 var(--mono)}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font:500 10.5px/1 var(--mono);padding:5px 7px;border-radius:4px;background:var(--card-hi);color:var(--muted);display:inline-flex;align-items:center;gap:4px}
+.tag.neg{background:var(--red-bg);color:var(--red-soft)}
+.tag.pos{background:var(--blue-bg);color:var(--blue)}
+.quote{margin:0;background:var(--well);border-radius:6px;padding:10px 12px;color:var(--muted);font-size:12.5px;font-style:italic;overflow-wrap:anywhere}
+
+.empty{background:var(--card);border-radius:10px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.empty .icon{width:30px;height:30px;color:var(--red-soft)}
+.empty h3{margin:0;font:600 17px/1.3 var(--display)}
+.empty p{margin:0;color:var(--muted);max-width:46ch}
+
+/* institutions */
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:4px;border-radius:10px;background:var(--well)}
+.tab{border:0;border-radius:7px;background:none;color:var(--muted);padding:9px 4px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.tab b{font:600 14px/1.1 var(--mono);display:flex;gap:5px;align-items:baseline}
+.tab b small{font-size:10px;font-weight:500;opacity:.75}
+.tab span{font:500 9px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.tab[aria-selected="true"]{background:var(--card);color:var(--fg)}
+.tab[aria-selected="true"] b{color:var(--blue)}
+.ilist{display:flex;flex-direction:column;gap:8px}
+.irow{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--card);border:0;border-radius:8px;padding:12px 14px;text-align:left;width:100%}
+.irow:hover{background:var(--card-hi)}
+.irow .nm{font:600 15px/1.3 var(--display);overflow-wrap:anywhere}
+.irow .mt{font-size:12px;color:var(--muted)}
+.irow .sys{font:500 10px/1.4 var(--mono);color:var(--blue)}
+.irow .rt{flex:none;text-align:right;font:500 10.5px/1.4 var(--mono);color:var(--faint)}
+.irow .rt b{display:block;font:700 15px/1.2 var(--display)}
+.typebadge{font:600 9px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 6px;border-radius:3px;display:inline-block}
+.ty-community{background:var(--blue-bg);color:var(--blue)}
+.ty-state{background:var(--amber-bg);color:var(--amber)}
+.ty-private{background:var(--card-top);color:var(--fg)}
+.back{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--blue);font:500 12px/1 var(--mono);padding:4px 0}
+.dhead{background:var(--card);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.dhead h2{margin:0;font:700 24px/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance;overflow-wrap:anywhere}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.kv div{background:var(--surface);border-radius:6px;padding:8px 10px;min-width:0}
+.kv b{display:block;font:600 15px/1.3 var(--display);overflow-wrap:anywhere}
+.bars{display:flex;flex-direction:column;gap:10px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:4px 10px;align-items:center}
+.bar .track{grid-column:1/-1;height:6px;border-radius:3px;background:var(--well);overflow:hidden}
+.bar .fill{height:100%;border-radius:3px}
+.bar .v{text-align:right;font:600 12px/1 var(--mono)}
+.rv{background:var(--card);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.rvh{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font:500 10.5px/1.4 var(--mono);color:var(--faint)}
+.rv p{margin:0;overflow-wrap:anywhere;white-space:pre-wrap}
+
+/* submit */
+.step{background:var(--card);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.step[aria-disabled="true"]{opacity:.5;pointer-events:none}
+.stephd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.stephd h3{margin:0;font:600 17px/1.3 var(--display);display:flex;gap:8px;align-items:center}
+.stephd h3 i{font:700 11px/1 var(--mono);font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:var(--red-ink)}
+.stephd h3 i.done{background:var(--green-bg);color:var(--green)}
+.field{display:flex;flex-direction:column;gap:6px}
+.picklist{display:flex;flex-direction:column;gap:4px;max-height:260px;overflow:auto;background:var(--surface);border-radius:8px;padding:4px}
+.pick{border:0;background:none;text-align:left;padding:9px 10px;border-radius:6px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.pick:hover,.pick[aria-selected="true"]{background:var(--card-hi)}
+.pick small{color:var(--faint);font:500 10.5px/1.3 var(--mono)}
+.chosen{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--surface);border-radius:8px;padding:10px 12px}
+.chosen b{font:600 15px/1.3 var(--display);overflow-wrap:anywhere}
+.metric{background:var(--surface);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.metric .top{display:flex;justify-content:space-between;gap:10px}
+.metric .top b{font-weight:600}
+.metric .top small{display:block;color:var(--muted);font-size:12px}
+.metric .val{font:600 12px/1 var(--mono);padding:5px 7px;border-radius:4px;align-self:flex-start;background:var(--card-hi);color:var(--muted);flex:none}
+.stars{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.star{width:40px;height:40px;border-radius:6px;border:0;background:var(--card-hi);display:grid;place-items:center;color:var(--faint)}
+.star.on{color:var(--amber)}
+.star.on svg{fill:currentColor}
+.stars .lbl{margin-left:auto;font:500 10.5px/1 var(--mono);text-transform:uppercase;color:var(--faint)}
+.exp{background:var(--surface);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.exp p{margin:0;font-size:13px}
+.exp.sub-q{margin-left:16px;border-left:2px solid var(--line)}
+.yn{display:flex;gap:6px;flex-wrap:wrap}
+.yn button{border:0;border-radius:4px;padding:7px 12px;background:var(--card-hi);color:var(--muted);font:500 11px/1 var(--mono)}
+.yn button[aria-pressed="true"]{background:var(--blue-bg);color:var(--blue)}
+.verdicts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.verdict{border:0;border-radius:8px;background:var(--card-hi);padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font:600 12px/1 var(--mono)}
+.verdict[aria-pressed="true"][data-v="yes"]{background:var(--green-bg);color:var(--green)}
+.verdict[aria-pressed="true"][data-v="no"]{background:var(--red-bg);color:var(--red-soft)}
+.verdict[aria-pressed="true"][data-v="abstain"]{background:var(--amber-bg);color:var(--amber)}
+.tagpick{border:0;border-radius:4px;padding:7px 9px;background:var(--card-hi);color:var(--muted);font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.03em}
+.tagpick[aria-pressed="true"]{background:var(--red-bg);color:var(--red-soft)}
+.tagpick.p[aria-pressed="true"]{background:var(--blue-bg);color:var(--blue)}
+.radio{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border-radius:8px;padding:12px;cursor:pointer}
+.radio input{margin-top:3px;accent-color:var(--red)}
+.radio b{display:block;font:600 14px/1.3 var(--display)}
+.radio small{color:var(--muted);font-size:12px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.err{color:var(--red-soft);font-size:12.5px;min-height:1em}
+.codebox{font:600 22px/1 var(--mono);letter-spacing:.3em;color:var(--amber);background:var(--well);padding:12px;border-radius:6px;text-align:center}
+.vstate{display:flex;gap:12px;align-items:center;background:var(--green-bg);color:var(--green);border-radius:8px;padding:12px}
+.vstate div{min-width:0;color:var(--fg)}
+.vstate small{display:block;color:var(--muted);font-family:var(--mono);font-size:10.5px;overflow-wrap:anywhere}
+
+/* how it works */
+.flow{display:flex;flex-direction:column;gap:0;counter-reset:f}
+.flow li{list-style:none;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding-bottom:16px;position:relative}
+.flow li::before{counter-increment:f;content:counter(f);width:28px;height:28px;border-radius:50%;background:var(--card-hi);display:grid;place-items:center;font:600 12px/1 var(--mono);color:var(--blue)}
+.flow li:not(:last-child)::after{content:"";position:absolute;left:13.5px;top:30px;bottom:2px;width:1px;background:var(--line)}
+.flow b{font:600 14px/1.4 var(--display)}
+.flow p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.flow ul{margin:0;padding:0}
+.lim{margin:0;padding-left:18px;color:var(--muted);display:flex;flex-direction:column;gap:6px;font-size:13px}
+.lim b{color:var(--fg)}
+
+/* bottom nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))}
+.nav .wrap{display:flex;justify-content:space-around;height:62px;align-items:center}
+.nav a{display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--faint);text-decoration:none;font:500 10px/1 var(--mono);min-width:56px;padding:6px 0}
+.nav a[aria-current="page"]{color:var(--blue);font-weight:600}
+.nav a.cta .pill{width:38px;height:26px;border-radius:5px;background:var(--red);color:var(--red-ink);display:grid;place-items:center;box-shadow:0 0 10px color-mix(in srgb,var(--red) 40%,transparent)}
+.toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--card-top);color:var(--fg);padding:10px 14px;border-radius:8px;font-size:13px;z-index:40;max-width:calc(100% - 32px)}
+@media (prefers-reduced-motion:no-preference){.acard,.irow,.btn,.chip{transition:background .15s}}
+@media (max-width:480px){.indices{grid-template-columns:repeat(2,minmax(0,1fr))}.brandmark .full{display:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+ <symbol id="i-board" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+ <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10 12 4l9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></symbol>
+ <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m14 6 4 4"/></symbol>
+ <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+ <symbol id="i-gavel" viewBox="0 0 24 24"><path d="m14 4 6 6M11 7l6 6M8.5 9.5l6 6M12.5 5.5l-6 6M3 21l6-6"/></symbol>
+ <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+ <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+ <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM7 11l4-8c1.7 0 2.5 1 2.5 2.5V9H19a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.8 20H7"/></symbol>
+ <symbol id="i-down" viewBox="0 0 24 24"><path d="M17 13V4h3v9zM17 13l-4 8c-1.7 0-2.5-1-2.5-2.5V15H5a2 2 0 0 1-2-2.3l1.2-7A2 2 0 0 1 6.2 4H17"/></symbol>
+ <symbol id="i-minus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></symbol>
+ <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+ <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+ <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+ <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brandmark" href="#leaderboard" style="color:inherit;text-decoration:none"><span>Rate my</span> <s class="full">Professor</s> <span class="stamp">Administrator</span></a>
+    <span class="vchip"><svg class="icon sm"><use href="#i-lock"/></svg><span>Anonymous</span></span>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- LEADERBOARD -->
+<section class="view" id="v-leaderboard">
+  <div class="manifesto">
+    <h1><span>Rate my</span><s>Professor</s><span class="stamp">Administrator</span></h1>
+    <p>Faculty and staff review the deans, vice presidents, presidents, and chancellors who run their institutions. Post anonymously: no account, no email, no name.</p>
+    <div class="statline"><span><b class="num" id="st-inst">0</b> institutions</span><span><b class="num" id="st-admins">0</b> administrators</span><span><b class="num" id="st-reviews">0</b> reviews</span></div>
+  </div>
+  <label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="lb-q" type="search" placeholder="Search administrator, title, or institution" autocomplete="off"></label>
+  <div class="chips" id="lb-type" role="group" aria-label="Institution type">
+    <button class="chip" data-t="" aria-pressed="true">All</button>
+    <button class="chip" data-t="community" aria-pressed="false">Community colleges</button>
+    <button class="chip" data-t="state" aria-pressed="false">State universities</button>
+    <button class="chip" data-t="private" aria-pressed="false">Private</button>
+  </div>
+  <div class="row" style="gap:8px">
+    <select class="sel" id="lb-state" style="flex:1;min-width:140px" aria-label="State"></select>
+    <select class="sel" id="lb-sort" style="flex:1;min-width:140px" aria-label="Sort">
+      <option value="count">Most reviewed</option>
+      <option value="low">Lowest rated</option>
+      <option value="high">Highest rated</option>
+      <option value="recent">Most recent</option>
+    </select>
+  </div>
+  <div class="sec-h"><h2><svg class="icon"><use href="#i-gavel"/></svg>Evaluations</h2><span class="sub num" id="lb-count"></span></div>
+  <div class="alist" id="lb-list"></div>
+</section>
+
+<!-- INSTITUTIONS -->
+<section class="view" id="v-institutions" hidden>
+  <div id="inst-browse" class="view">
+    <div class="sec-h"><h2><svg class="icon"><use href="#i-bank"/></svg>Institutions</h2><span class="sub num" id="in-count"></span></div>
+    <div class="tabs" role="tablist" id="in-tabs">
+      <button class="tab" role="tab" data-t="community" aria-selected="true"><b>CC <small id="c-community">0</small></b><span>Community</span></button>
+      <button class="tab" role="tab" data-t="state" aria-selected="false"><b>State <small id="c-state">0</small></b><span>Public univ.</span></button>
+      <button class="tab" role="tab" data-t="private" aria-selected="false"><b>Private <small id="c-private">0</small></b><span>Nonprofit</span></button>
+    </div>
+    <label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="in-q" type="search" placeholder="Search college, city, or system" autocomplete="off"></label>
+    <div class="row"><select class="sel" id="in-state" aria-label="State" style="flex:1"></select>
+      <label class="row" style="flex:none;gap:6px;color:var(--muted);font-size:12px;cursor:pointer"><input type="checkbox" id="in-rated" style="accent-color:var(--red)"> Has reviews</label></div>
+    <div class="ilist" id="in-list"></div>
+    <button class="btn" id="in-more" hidden>Show more</button>
+  </div>
+  <div id="inst-detail" class="view" hidden></div>
+</section>
+
+<!-- ADMIN DETAIL (overlay view) -->
+<section class="view" id="v-admin" hidden></section>
+
+<!-- SUBMIT -->
+<section class="view" id="v-submit" hidden>
+  <div class="sec-h"><h2><svg class="icon"><use href="#i-pen"/></svg>Submit a review</h2><span class="sub">Four steps, all anonymous</span></div>
+
+  <div class="step" id="s2">
+    <div class="stephd"><h3><i id="s2n">1</i>Institution</h3><span class="label">Required</span></div>
+    <div id="s2-body"></div>
+  </div>
+
+  <div class="step" id="s3" aria-disabled="true">
+    <div class="stephd"><h3><i id="s3n">2</i>Administrator</h3><span class="label">Search or add</span></div>
+    <div id="s3-body"></div>
+  </div>
+
+  <div class="step" id="s4" aria-disabled="true">
+    <div class="stephd"><h3><i id="s4n">3</i>Ratings</h3><span class="label">1 to 5 stars</span></div>
+    <div id="metrics" style="display:flex;flex-direction:column;gap:10px"></div>
+    <div class="field"><span class="label">Your experience (optional; shown only as group percentages)</span><div id="exps" style="display:flex;flex-direction:column;gap:8px"></div></div>
+    <div class="field"><span class="label">Recommend contract renewal?</span>
+      <div class="verdicts" id="verdicts">
+        <button type="button" class="verdict" data-v="yes" aria-pressed="false"><svg class="icon lg"><use href="#i-up"/></svg>Yes</button>
+        <button type="button" class="verdict" data-v="no" aria-pressed="false"><svg class="icon lg"><use href="#i-down"/></svg>No</button>
+        <button type="button" class="verdict" data-v="abstain" aria-pressed="false"><svg class="icon lg"><use href="#i-minus"/></svg>Abstain</button>
+      </div></div>
+    <div class="field"><span class="label">Governance tags (up to 4)</span><div class="tags" id="tagpicks"></div></div>
+  </div>
+
+  <div class="step" id="s5" aria-disabled="true">
+    <div class="stephd"><h3><i id="s5n">4</i>Written review</h3><span class="label num" id="chars">0 / 2000</span></div>
+    <textarea class="txt" id="rv-text" rows="6" maxlength="2000" placeholder="Describe patterns and their effect on teaching and students: how questions about pay were answered, whether changes came with notice, how concerns and discipline were handled."></textarea>
+    <div class="note warn"><svg class="icon"><use href="#i-flag"/></svg><span>Stick to conduct in the role. No student names, no medical or family details, no claims you can't support. Details only you would know, like a specific meeting date, a policy number cited against you, or a program you alone teach, can identify you at a small college. Reviews that read as personal attacks are removed.</span></div>
+    <div class="grid2">
+      <div class="field"><label class="label" for="rv-status">Your status (shown)</label>
+        <select class="sel" id="rv-status"><option>Current employee</option><option>Former employee</option><option>Retired</option><option>Prefer not to say</option></select></div>
+      <div class="field"><label class="label" for="rv-last">Last worked under them (shown)</label>
+        <select class="sel" id="rv-last"></select></div>
+      <div class="field"><label class="label" for="rv-role">Your role (shown)</label>
+        <select class="sel" id="rv-role"><option>Full-time faculty</option><option>Part-time / adjunct faculty</option><option>Classified staff</option><option>Counselor / librarian</option><option>Department chair</option><option>Prefer not to say</option></select></div>
+      <div class="field"><label class="label" for="rv-yrs">Years at institution (shown)</label>
+        <select class="sel" id="rv-yrs"><option>Under 3 years</option><option>3 to 10 years</option><option>Over 10 years</option><option>Prefer not to say</option></select></div>
+    </div>
+    <button class="btn primary block" id="rv-submit" type="button"><svg class="icon"><use href="#i-lock"/></svg>Submit review</button>
+    <div class="err" id="rv-err" role="alert"></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="view" id="v-how" hidden>
+  <div class="sec-h"><h2><svg class="icon"><use href="#i-shield"/></svg>How it works</h2></div>
+  <div class="card">
+    <ol class="flow" style="margin:0;padding:0">
+      <li><div><b>Find your institution</b><p>Search 3,239 US community colleges, state universities, and private nonprofit colleges.</p></div></li>
+      <li><div><b>Find or add the administrator</b><p>Search people already listed there. If they're missing, add their name and title. Matching names at the same college are merged, so each person is listed once.</p></div></li>
+      <li><div><b>Rate and write</b><p>Ten 1-to-5 ratings, optional yes/no questions about your experience, a renewal vote, and a written review.</p></div></li>
+      <li><div><b>Post anonymously</b><p>No email, no name, no verification. The review shows only what you choose: your status, role, years, and the last year you worked under this person.</p></div></li>
+    </ol>
+  </div>
+  <div class="card">
+    <div class="sec-h" style="padding:0"><h2 style="font-size:16px">Protecting yourself</h2></div>
+    <ul class="lim">
+      <li><b>Details can identify you.</b> At a small college, a meeting date, a policy number cited against you, or a program you alone teach points to you. Describe patterns instead.</li>
+      <li><b>Experience answers stay grouped.</b> Each yes/no figure appears only after at least 3 people answer it, so no single answer stands out.</li>
+      <li><b>Editing your review.</b> This browser remembers your reviews, so reviewing the same person again replaces your earlier review. Another device posts a new one.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="sec-h" style="padding:0"><h2 style="font-size:16px">Limits to know</h2></div>
+    <ul class="lim">
+      <li><b>Nothing confirms reviewers work there.</b> Anyone can post, including about colleges they never worked at. Read scores alongside the number of reviews and the written detail.</li>
+      <li><b>No accounts, no IP addresses saved.</b> The site stores only what you type and select. Like any web service, the database host keeps short-lived request logs that can include IP addresses; using a VPN or public network adds a layer of protection.</li>
+      <li><b>Moderation.</b> Readers can report a review; three reports hide it until the site owner checks it. The owner can also hide any review or administrator listing.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="sec-h" style="padding:0"><h2 style="font-size:16px">The directory</h2></div>
+    <p class="sub" style="margin:0" id="dir-meta"></p>
+    <div class="kv" id="dir-kv"></div>
+  </div>
+</section>
+</main>
+
+<nav class="nav" aria-label="Sections"><div class="wrap">
+  <a href="#leaderboard" data-v="leaderboard"><svg class="icon"><use href="#i-board"/></svg>Leaderboard</a>
+  <a href="#institutions" data-v="institutions"><svg class="icon"><use href="#i-bank"/></svg>Institutions</a>
+  <a href="#submit" data-v="submit" class="cta"><span class="pill"><svg class="icon"><use href="#i-pen"/></svg></span>Submit</a>
+  <a href="#how" data-v="how"><svg class="icon"><use href="#i-shield"/></svg>How it works</a>
+</div></nav>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script>
+(() => {
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ic = (n, cls="") => `<svg class="icon ${cls}"><use href="#i-${n}"/></svg>`;
+const TYPES = {community:"Community college", state:"State university", private:"Private nonprofit"};
+const STATES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming",PR:"Puerto Rico",GU:"Guam",VI:"U.S. Virgin Islands",AS:"American Samoa",MP:"Northern Mariana Islands",FM:"Micronesia",MH:"Marshall Islands",PW:"Palau"};
+const GROUPS = {people:"How they treat you", process:"How they run things"};
+const METRICS = [
+  {k:"respect", g:"people", s:"Respect", t:"Treats you with respect", d:"Courteous and professional in meetings, email, and in front of others, whether or not you agree with them", lo:"Demeaning", hi:"Respectful"},
+  {k:"communication", g:"people", s:"Communication", t:"Clear communication", d:"Expectations, decisions, and deadlines are stated plainly, in writing, and in time to act on them", lo:"Unclear", hi:"Crystal clear"},
+  {k:"openness", g:"people", s:"Open talk", t:"Open conversation", d:"Listens, welcomes questions and disagreement, and changes course when given good reasons", lo:"Closed door", hi:"Open door"},
+  {k:"asktask", g:"people", s:"Asks, not tasks", t:"Asks rather than tasks", d:"Extra duties are requested, not ordered, and saying no is an acceptable answer", lo:"Tasks you", hi:"Asks you"},
+  {k:"retaliation", g:"people", s:"No reprisal", t:"Non-retaliation", d:"Asking questions or raising concerns doesn't lead to reassignment, warnings, or lost work", lo:"Retaliatory", hi:"Safe to speak"},
+  {k:"compensation", g:"process", s:"Pays for work", t:"Compensates extra work", d:"Extra duties are paid or credited, and questions about pay, stipends, and hours get clear written answers", lo:"Unpaid", hi:"Fairly paid"},
+  {k:"assign", g:"process", s:"Assignments", t:"Fair assignments and notice", d:"Changes to your classes, programs, or schedule come with advance notice and a stated reason", lo:"Without notice", hi:"Fair and explained"},
+  {k:"discipline", g:"process", s:"Due process", t:"Fair and proportionate discipline", d:"Discipline cites the actual policy, follows the contract, and lets you respond before it is issued", lo:"Arbitrary", hi:"Fair process"},
+  {k:"gov", g:"process", s:"Governance", t:"Shared governance", d:"Consults the Academic Senate and honors faculty's role in academic and professional matters", lo:"Ignores Senate", hi:"Genuine partner"},
+  {k:"contract", g:"process", s:"Contract", t:"Respects the contract and union", d:"Follows the collective bargaining agreement and responds to grievances promptly and in good faith", lo:"Works around it", hi:"Honors it"}
+];
+const EXP = [
+  {k:"raised", q:"Did you raise a concern with this administrator, such as pay, workload, policy, or safety?"},
+  {k:"adverse", q:"Afterward, did you face an adverse action, such as a reassignment, a warning, or lost work?", parent:"raised"},
+  {k:"notice", q:"Was one of your classes, programs, or assignments changed without notice or a stated reason?"},
+  {k:"disciplined", q:"Did this administrator discipline you, including a written or verbal warning?"},
+  {k:"process", q:"Before it was issued, were you told the policy basis and given a chance to respond?", parent:"disciplined"},
+  {k:"unpaid", q:"Were you given extra work, beyond your load or contract, without pay or release time?"},
+  {k:"payanswer", q:"When you asked about pay, stipends, or paid hours, did you get a clear answer in writing?"},
+  {k:"union", q:"Did you need your union's help to resolve an issue with this administrator?"}
+];
+const EXP_STATS = [
+  {k:"adverse", f:(p,n)=>`${p}% of the ${n} who raised a concern reported an adverse action afterward`, bad:true},
+  {k:"notice", f:(p,n)=>`${p}% of ${n} respondents had an assignment changed without notice`, bad:true},
+  {k:"process", f:(p,n)=>`${p}% of the ${n} who were disciplined got the policy basis and a chance to respond first`, bad:false},
+  {k:"unpaid", f:(p,n)=>`${p}% of ${n} respondents were given extra work without pay or release time`, bad:true},
+  {k:"payanswer", f:(p,n)=>`${p}% of ${n} who asked about pay got a clear written answer`, bad:false},
+  {k:"union", f:(p,n)=>`${p}% of ${n} respondents needed the union to resolve an issue`, bad:true}
+];
+const MIN_N = 3;
+const LEVELS = {exec:"President / Chancellor", vp:"VP / Provost", dean:"Dean / Assoc. dean", director:"Director / Manager"};
+const TAGS = [["Assigns, doesn't ask",0],["Expects unpaid extra work",0],["Dismissive",0],["Unclear expectations",0],["Changes assignments without notice",0],["Evasive about pay",0],["Discipline without due process",0],["Retaliates against concerns",0],["Works around the contract",0],["Top-down decisions",0],["Respectful",1],["Communicates clearly",1],["Open to disagreement",1],["Asks before assigning",1],["Pays for extra work",1],["Gives notice before changes",1],["Works with the union",1],["Supports special programs",1],["Senate-respectful",1]];
+
+/* ---------- state ---------- */
+const S = {dir:[], byId:new Map(), counts:{community:0,state:0,private:0}, admins:new Map(), reviews:[], summary:new Map(), loadedAdmins:new Set(), loadedInst:new Set(), totals:{admins:0,reviews:0}, db:null,
+  dbReady:false, dbError:"", verify:null, form:{inst:null, admin:null, newAdmin:null, scores:{}, exp:{}, verdict:null, tags:new Set()},
+  ui:{lbType:"", inTab:"community", inLimit:60, instDetail:null, adminDetail:null}};
+
+const store = {
+  get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+  set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+  del(k){ try { localStorage.removeItem(k); } catch {} }
+};
+S.verify = null;
+
+async function sha256(s){ const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join(""); }
+function randHex(n){ const a = new Uint8Array(n); crypto.getRandomValues(a); return [...a].map(x=>x.toString(16).padStart(2,"0")).join(""); }
+function toast(msg){ const t = document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.append(t); setTimeout(()=>t.remove(), 3200); }
+const norm = s => String(s||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();
+const initials = n => norm(n).split(" ").filter(w=>!["dr","mr","ms","mrs","phd","edd"].includes(w)).slice(0,2).map(w=>w[0]).join("").toUpperCase() || "?";
+function tone(v){ if(v==null) return "none"; if(v<2.3) return "crit"; if(v<3.2) return "warn"; if(v<4) return "ok"; return "good"; }
+const toneLabel = {crit:"Red alert", warn:"Caution", ok:"Fair", good:"Trusted", none:"Unrated"};
+const fmt = v => v==null ? "--" : v.toFixed(1);
+const dateStr = ms => ms ? new Date(ms).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"}) : "";
+
+/* ---------- directory ---------- */
+const NICK = {"Los Angeles":"ucla","San Diego":"ucsd","Santa Barbara":"ucsb","Santa Cruz":"ucsc","Davis":"ucd","Irvine":"uci","Riverside":"ucr","Merced":"ucm","San Francisco":"ucsf","Berkeley":"cal ucb"};
+const CSU_NICK = {"Fresno":"fresno state","Long Beach":"csulb long beach state","Los Angeles":"csula cal state la","Northridge":"csun","Fullerton":"csuf","Sacramento":"sac state csus","San Bernardino":"csusb","San Marcos":"csusm","Stanislaus":"stan state","Bakersfield":"csub","Channel Islands":"csuci","Dominguez Hills":"csudh","Monterey Bay":"csumb","East Bay":"csueb","Chico":"chico state"};
+function aliases(name){
+  let m = name.match(/^University of California-(.+)$/); if(m) return `uc ${m[1]} ${NICK[m[1]]||""}`;
+  m = name.match(/^California State University-(.+)$/); if(m) return `csu ${m[1]} cal state ${m[1]} ${m[1]} state ${CSU_NICK[m[1]]||""}`;
+  m = name.match(/^California Polytechnic State University-(.+)$/); if(m) return "cal poly slo";
+  if(/^San Diego State/.test(name)) return "sdsu"; if(/^San Jose State/.test(name)) return "sjsu"; if(/^San Francisco State/.test(name)) return "sfsu sf state";
+  if(/Polytechnic University-Pomona/.test(name)) return "cal poly pomona cpp"; if(/Polytechnic University, Humboldt/.test(name)) return "cal poly humboldt humboldt state";
+  return "";
+}
+async function loadDirectory(){
+  try{
+    const r = await fetch("data/directory.json"); if(!r.ok) throw new Error(r.status); const j = await r.json();
+    S.dirMeta = j.meta || {};
+    S.dir = j.inst.map(a => ({id:a[0], name:a[1], city:a[2], state:a[3], system:a[4], domain:a[5], type:a[6], _n:norm(a[1]+" "+a[2]+" "+(a[4]||"")+" "+(STATES[a[3]]||"")+" "+aliases(a[1]))}));
+    S.dir.forEach(i => { S.byId.set(i.id, i); S.counts[i.type]++; });
+  }catch(e){ S.dirError = "The college directory didn't load. Reload the page to try again."; }
+  fillStates(); renderAll();
+}
+function fillStates(){
+  const present = [...new Set(S.dir.map(i=>i.state))].sort((a,b)=>(STATES[a]||a).localeCompare(STATES[b]||b));
+  const opts = `<option value="">All states</option>` + present.map(s=>`<option value="${s}">${esc(STATES[s]||s)}</option>`).join("");
+  $("#lb-state").innerHTML = opts; $("#in-state").innerHTML = opts;
+}
+
+/* ---------- aggregates ---------- */
+function finish(a){ let t=0; METRICS.forEach(m=>t+=a.avg[m.k]); a.overall=t/METRICS.length; a.grp={}; Object.keys(GROUPS).forEach(gk=>{ const ms=METRICS.filter(m=>m.g===gk); a.grp[gk]=ms.reduce((s,m)=>s+a.avg[m.k],0)/ms.length; }); a.weak=METRICS.reduce((w,m)=>a.avg[m.k]<a.avg[w.k]?m:w, METRICS[0]); return a; }
+function aggregates(){
+  const by = new Map();
+  for(const [id,r] of S.summary){ const a={n:r.n, avg:{}, exp:{}, yes:r.yes, votes:r.votes, tags:new Map(), last:Date.parse(r.last_at)||0, latest:null}; METRICS.forEach(m=>a.avg[m.k]=+r["avg_"+m.k]); by.set(id, finish(a)); }
+  const full = new Map();
+  for(const r of S.reviews){
+    let a = full.get(r.adminId); if(!a){ a = {n:0, sums:Object.fromEntries(METRICS.map(m=>[m.k,0])), exp:{}, yes:0, votes:0, tags:new Map(), last:0, latest:null}; full.set(r.adminId,a); }
+    a.n++; METRICS.forEach(m => a.sums[m.k] += +r.scores?.[m.k] || 0);
+    if(r.verdict==="yes"||r.verdict==="no"){ a.votes++; if(r.verdict==="yes") a.yes++; }
+    EXP.forEach(x => { const v = r.exp?.[x.k]; if(v==='yes'||v==='no'){ const e = a.exp[x.k] ||= {y:0,n:0}; e.n++; if(v==='yes') e.y++; } });
+    (r.tags||[]).forEach(t => a.tags.set(t,(a.tags.get(t)||0)+1));
+    if((r.createdAt||0) > a.last){ a.last = r.createdAt||0; a.latest = r; }
+  }
+  for(const [id,a] of full){ a.avg={}; METRICS.forEach(m=>a.avg[m.k]=a.sums[m.k]/a.n); by.set(id, finish(a)); }
+  return by;
+}
+let AGG = new Map();
+function instStats(instId){
+  let n=0, sum=0, admins=0;
+  for(const [id,ad] of S.admins){ if(ad.instId!==instId) continue; admins++; const g=AGG.get(id); if(g){ n+=g.n; sum+=g.overall*g.n; } }
+  return {admins, reviews:n, avg: n? sum/n : null};
+}
+
+/* ---------- rendering: shared bits ---------- */
+function adminCard(id){
+  const ad = S.admins.get(id); const g = AGG.get(id); const inst = S.byId.get(ad.instId);
+  const tn = tone(g?.overall);
+  const topTags = g ? [...g.tags.entries()].sort((a,b)=>b[1]-a[1]).slice(0,3) : [];
+  const posSet = new Set(TAGS.filter(t=>t[1]).map(t=>t[0]));
+  return `<button class="acard" data-admin="${esc(id)}">
+    <div class="ahead"><div class="aid"><div class="avatar">${esc(initials(ad.name))}<i class="t-${tn}">${toneLabel[tn].toUpperCase()}</i></div>
+      <div style="min-width:0"><p class="aname">${esc(ad.name)}</p><div class="ameta">${esc(ad.title||LEVELS[ad.level]||"")}</div>
+      <div class="ainst">${esc(inst?inst.name:ad.instName||"")}${inst?` · ${esc(inst.state)}`:""}</div></div></div>
+      <div class="score"><b class="t-${tn} num">${fmt(g?.overall)}</b><span class="num">${g?g.n:0} review${g&&g.n===1?"":"s"}</span></div></div>
+    ${g?`<div class="indices"><div><span>Treatment</span><b class="t-${tone(g.grp.people)}-ink num">${fmt(g.grp.people)}</b></div><div><span>Process</span><b class="t-${tone(g.grp.process)}-ink num">${fmt(g.grp.process)}</b></div><div><span>Weakest</span><b class="t-${tone(g.avg[g.weak.k])}-ink num">${esc(g.weak.s)} ${fmt(g.avg[g.weak.k])}</b></div></div>`:""}
+    ${topTags.length?`<div class="tags">${topTags.map(([t,c])=>`<span class="tag ${posSet.has(t)?"pos":"neg"}">${esc(t)} <span class="num" style="opacity:.7">${c}</span></span>`).join("")}</div>`:""}
+    ${g?.latest?.text?`<p class="quote">"${esc(g.latest.text.length>220?g.latest.text.slice(0,217)+"...":g.latest.text)}"</p>`:""}
+  </button>`;
+}
+
+/* ---------- leaderboard ---------- */
+function renderLeaderboard(){
+  $("#st-inst").textContent = S.dir.length.toLocaleString();
+  $("#st-admins").textContent = S.totals.admins.toLocaleString();
+  $("#st-reviews").textContent = S.totals.reviews.toLocaleString();
+  const q = norm($("#lb-q").value), st = $("#lb-state").value, sort = $("#lb-sort").value, ty = S.ui.lbType;
+  let ids = [...S.summary.keys()].filter(id => {
+    const ad = S.admins.get(id), inst = S.byId.get(ad.instId);
+    if(ty && inst?.type!==ty) return false;
+    if(st && inst?.state!==st) return false;
+    if(q && !norm(ad.name+" "+(ad.title||"")+" "+(inst?.name||"")+" "+(inst?.city||"")).includes(q)) return false;
+    return true;
+  });
+  const g = id => AGG.get(id);
+  const cmp = {count:(a,b)=>(g(b)?.n||0)-(g(a)?.n||0), low:(a,b)=>(g(a)?.overall??9)-(g(b)?.overall??9), high:(a,b)=>(g(b)?.overall??-1)-(g(a)?.overall??-1), recent:(a,b)=>(g(b)?.last||0)-(g(a)?.last||0)}[sort];
+  ids.sort(cmp);
+  $("#lb-count").textContent = ids.length ? `${ids.length} shown` : "";
+  const list = $("#lb-list");
+  if(!S.dbReady && !S.dbError){ list.innerHTML = `<div class="empty"><h3>Loading reviews</h3><p>Connecting to the review database.</p></div>`; return; }
+  if(S.dbError && !S.summary.size){ list.innerHTML = `<div class="empty">${ic("info")}<h3>Reviews unavailable here</h3><p>${esc(S.dbError)}</p></div>`; return; }
+  if(!ids.length){
+    list.innerHTML = S.summary.size
+      ? `<div class="empty">${ic("search")}<h3>No administrators match</h3><p>Try a different search, type, or state.</p></div>`
+      : `<div class="empty">${ic("gavel")}<h3>No reviews yet</h3><p>Every institution in the directory is open for reviews. Find your administrator by name or add them, and post the first evaluation anonymously.</p><a class="btn primary" href="#submit">${ic("pen")}Write the first review</a></div>`;
+    return;
+  }
+  list.innerHTML = ids.slice(0,100).map(adminCard).join("");
+}
+
+/* ---------- institutions ---------- */
+function renderInstitutions(){
+  ["community","state","private"].forEach(t => $("#c-"+t).textContent = S.counts[t].toLocaleString());
+  document.querySelectorAll("#in-tabs .tab").forEach(b => b.setAttribute("aria-selected", b.dataset.t===S.ui.inTab));
+  if(S.ui.instDetail){ $("#inst-browse").hidden = true; $("#inst-detail").hidden = false; renderInstDetail(); return; }
+  $("#inst-browse").hidden = false; $("#inst-detail").hidden = true;
+  if(S.dirError){ $("#in-list").innerHTML = `<div class="empty"><h3>Directory unavailable</h3><p>${esc(S.dirError)}</p></div>`; return; }
+  const q = norm($("#in-q").value), st = $("#in-state").value, rated = $("#in-rated").checked;
+  const ratedSet = new Set([...S.admins.values()].map(a=>a.instId));
+  const qs = q ? q.split(" ") : [];
+  const rows = S.dir.filter(i => i.type===S.ui.inTab && (!st || i.state===st) && (!rated || ratedSet.has(i.id)) && qs.every(w => i._n.includes(w)));
+  $("#in-count").textContent = `${rows.length.toLocaleString()} ${rows.length===1?"match":"matches"}`;
+  $("#in-list").innerHTML = rows.slice(0,S.ui.inLimit).map(i => {
+    const s = instStats(i.id);
+    return `<button class="irow" data-inst="${esc(i.id)}"><div style="min-width:0"><div class="nm">${esc(i.name)}</div>
+      <div class="mt">${esc(i.city)}${i.city?", ":""}${esc(i.state)}${i.domain?` · <span class="mono" style="font-size:11px">${esc(i.domain)}</span>`:""}</div>
+      ${i.system?`<div class="sys">${esc(i.system)}</div>`:""}</div>
+      <div class="rt">${s.reviews?`<b class="t-${tone(s.avg)}-ink num">${fmt(s.avg)}</b>${s.admins} rated`:`${s.admins?s.admins+" listed":"No reviews"}`}</div></button>`;
+  }).join("") || `<div class="empty">${ic("search")}<h3>No matching institution</h3><p>Check the spelling, switch the type tab, or clear the state filter.</p></div>`;
+  $("#in-more").hidden = rows.length <= S.ui.inLimit;
+}
+function renderInstDetail(){
+  if(S.db && !S.loadedInst.has(S.ui.instDetail)){ loadInstAdmins(S.ui.instDetail).then(()=>{ if(S.view==="institutions") renderInstitutions(); }); }
+  const i = S.byId.get(S.ui.instDetail); if(!i){ S.ui.instDetail=null; return renderInstitutions(); }
+  const s = instStats(i.id);
+  const ids = [...S.admins.keys()].filter(id => S.admins.get(id).instId===i.id).sort((a,b)=>(AGG.get(b)?.n||0)-(AGG.get(a)?.n||0));
+  $("#inst-detail").innerHTML = `<button class="back" data-act="inst-back">${ic("back","sm")}All institutions</button>
+   <div class="dhead"><span class="typebadge ty-${i.type}" style="align-self:flex-start">${TYPES[i.type]}</span><h2>${esc(i.name)}</h2>
+    <div class="sub">${esc(i.city)}, ${esc(STATES[i.state]||i.state)}${i.system?` · ${esc(i.system)}`:""}</div>
+    <div class="kv"><div><span class="label">Leadership score</span><b class="t-${tone(s.avg)}-ink num">${fmt(s.avg)}</b></div><div><span class="label">Administrators</span><b class="num">${s.admins}</b></div><div><span class="label">Reviews</span><b class="num">${s.reviews}</b></div><div><span class="label">Email domain</span><b class="mono" style="font-size:13px">${esc(i.domain||"Not on file")}</b></div></div>
+   </div>
+   <button class="btn primary" data-act="rate-here" data-inst="${esc(i.id)}">${ic("pen")}Rate an administrator here</button>
+   <div class="alist">${ids.map(adminCard).join("") || `<div class="empty">${ic("gavel")}<h3>No administrators listed yet</h3><p>Add the first one when you submit a review. Search finds existing names so the same person isn't listed twice.</p></div>`}</div>`;
+}
+
+/* ---------- admin detail ---------- */
+function renderAdminDetail(){
+  if(S.db && S.ui.adminDetail && !S.loadedAdmins.has(S.ui.adminDetail)){ loadAdminReviews(S.ui.adminDetail).then(()=>{ if(S.view==="admin"){ AGG = aggregates(); renderAdminDetail(); } }); }
+  const id = S.ui.adminDetail, ad = S.admins.get(id); const box = $("#v-admin");
+  if(!ad){ box.innerHTML = `<button class="back" data-act="admin-back">${ic("back","sm")}Back</button><div class="empty"><h3>Administrator not found</h3><p>This entry may have been removed.</p></div>`; return; }
+  const inst = S.byId.get(ad.instId), g = AGG.get(id), tn = tone(g?.overall);
+  const revs = S.reviews.filter(r=>r.adminId===id).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+  const posSet = new Set(TAGS.filter(t=>t[1]).map(t=>t[0]));
+  box.innerHTML = `<button class="back" data-act="admin-back">${ic("back","sm")}Back</button>
+  <div class="dhead"><div class="ahead"><div class="aid"><div class="avatar" style="width:56px;height:56px;font-size:19px">${esc(initials(ad.name))}<i class="t-${tn}">${toneLabel[tn].toUpperCase()}</i></div>
+    <div style="min-width:0"><h2>${esc(ad.name)}</h2><div class="sub">${esc(ad.title||"")}${ad.title?" · ":""}${esc(LEVELS[ad.level]||"")}</div>
+    ${inst?`<button class="btn ghost" data-inst="${esc(inst.id)}" style="font:500 11px/1.4 var(--mono)">${esc(inst.name)} · ${esc(inst.state)}</button>`:""}</div></div>
+    <div class="score"><b class="t-${tn} num">${fmt(g?.overall)}</b><span class="num">${g?g.n:0} reviews</span></div></div>
+    ${g?`<div class="kv"><div><span class="label">Renewal endorsed</span><b class="num">${g.votes?Math.round(100*g.yes/g.votes)+"%":"--"}</b></div><div><span class="label">Current staff reviews</span><b class="num">${S.reviews.filter(r=>r.adminId===id && r.status==="Current employee").length} of ${g.n}</b></div></div>`:""}
+  </div>
+  ${g?`<div class="card">${Object.entries(GROUPS).map(([gk,gl])=>`<span class="label">${gl} · <span class="num">${fmt(g.grp[gk])}</span></span><div class="bars">${METRICS.filter(m=>m.g===gk).map(m=>{const v=g.avg[m.k];return `<div class="bar"><span>${esc(m.t)}</span><span class="v t-${tone(v)}-ink num">${fmt(v)}</span><div class="track"><div class="fill" style="width:${(v/5*100).toFixed(0)}%;background:var(--${{crit:"red-soft",warn:"amber",ok:"blue",good:"green",none:"faint"}[tone(v)]})"></div></div></div>`}).join("")}</div>`).join("")}
+   ${g.tags.size?`<div class="tags">${[...g.tags.entries()].sort((a,b)=>b[1]-a[1]).map(([t,c])=>`<span class="tag ${posSet.has(t)?"pos":"neg"}">${esc(t)} <span class="num" style="opacity:.7">${c}</span></span>`).join("")}</div>`:""}</div>`:""}
+  ${g?expCard(g):""}
+  <button class="btn primary" data-act="rate-admin" data-admin="${esc(id)}">${ic("pen")}Review ${esc(ad.name.split(" ")[0]||"this administrator")}</button>
+  <div class="sec-h"><h2 style="font-size:16px">Reviews</h2></div>
+  ${revs.map(r=>`<article class="rv"><div class="rvh"><span>${esc(r.status||"Anonymous")}${r.lastYear?` through ${esc(r.lastYear)}`:""} · ${esc(r.role||"")} · ${esc(r.years||"")}</span><span class="num">${dateStr(r.createdAt)}</span></div>
+    <div class="indices">${METRICS.map(m=>`<div><span>${esc(m.s)}</span><b class="t-${tone(r.scores?.[m.k])}-ink num">${r.scores?.[m.k]??"--"}</b></div>`).join("")}</div>
+    ${r.text?`<p>${esc(r.text)}</p>`:""}
+    <div class="row" style="justify-content:space-between">${(r.tags||[]).length?`<div class="tags">${r.tags.map(t=>`<span class="tag ${posSet.has(t)?"pos":"neg"}">${esc(t)}</span>`).join("")}</div>`:"<span></span>"}
+    <span class="label">Renewal: ${esc(r.verdict||"--")}</span></div>
+    <button class="btn ghost" data-act="report" data-id="${esc(r._id)}" style="align-self:flex-start;font:500 11px/1 var(--mono);color:var(--faint)">${ic("flag","sm")}Report this review</button>
+  </article>`).join("") || `<div class="empty"><p>No reviews yet.</p></div>`}`;
+}
+
+function expCard(g){
+  const rows = EXP_STATS.map(s => { const e = g.exp[s.k]; if(!e || e.n < MIN_N) return null; const p = Math.round(100*e.y/e.n);
+    const tn = s.bad ? (p>=50?"crit":p>=25?"warn":"good") : (p>=75?"good":p>=50?"ok":p>=25?"warn":"crit");
+    return `<div class="bar"><span>${esc(s.f(p,e.n))}</span><span class="v t-${tn}-ink num">${p}%</span><div class="track"><div class="fill" style="width:${p}%;background:var(--${{crit:"red-soft",warn:"amber",ok:"blue",good:"green"}[tn]})"></div></div></div>`; }).filter(Boolean);
+  return `<div class="card"><span class="label">Reported experiences</span>${rows.length?`<div class="bars">${rows.join("")}</div>`:`<p class="sub" style="margin:0">Each figure appears once at least ${MIN_N} people have answered that question, so no single reviewer can be picked out.</p>`}</div>`;
+}
+
+/* ---------- submit flow ---------- */
+let pending = null; // {email, matches, code}
+function matchDomain(email){
+  const d = (email.split("@")[1]||"").toLowerCase().trim(); if(!d) return [];
+  return S.dir.filter(i => i.domain && (d===i.domain || d.endsWith("."+i.domain)));
+}
+function renderS2(){
+  const b = $("#s2-body"); const f = S.form; const v = S.verify;
+  $("#s2n").className = f.inst ? "done" : ""; $("#s2n").innerHTML = f.inst ? ic("check","sm") : "1";
+  if(f.inst){
+    const i = S.byId.get(f.inst);
+    b.innerHTML = `<div class="chosen"><div style="min-width:0"><span class="typebadge ty-${i.type}">${TYPES[i.type]}</span><br><b>${esc(i.name)}</b><div class="sub">${esc(i.city)}, ${esc(i.state)}</div></div>
+      <button class="btn" data-act="change-inst">Change</button></div>`;
+    return;
+  }
+  b.innerHTML = `<label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="s2-q" type="search" placeholder="Type your college's name" autocomplete="off"></label><div class="picklist" id="s2-list" hidden></div>`;
+}
+function renderS2List(){
+  const el = $("#s2-list"); if(!el) return; const q = norm($("#s2-q").value);
+  if(q.length<2){ el.hidden = true; return; }
+  const qs = q.split(" "); const rows = S.dir.filter(i => qs.every(w=>i._n.includes(w))).slice(0,30);
+  el.hidden = false;
+  el.innerHTML = rows.map(i=>`<button class="pick" data-pick-inst="${esc(i.id)}"><span>${esc(i.name)}</span><small>${esc(i.city)}, ${esc(i.state)}</small></button>`).join("") || `<div class="sub" style="padding:10px">No match. Check the spelling.</div>`;
+}
+function renderS3(){
+  const f = S.form, b = $("#s3-body");
+  $("#s3").setAttribute("aria-disabled", !f.inst);
+  const done = f.admin || f.newAdmin;
+  $("#s3n").className = done ? "done" : ""; $("#s3n").innerHTML = done ? ic("check","sm") : "2";
+  if(!f.inst){ b.innerHTML = `<p class="sub" style="margin:0">Choose an institution first.</p>`; return; }
+  if(f.admin){ const a = S.admins.get(f.admin); b.innerHTML = `<div class="chosen"><div style="min-width:0"><b>${esc(a.name)}</b><div class="sub">${esc(a.title||LEVELS[a.level]||"")}</div></div><button class="btn" data-act="change-admin">Change</button></div>`; return; }
+  if(f.newAdmin){ const a=f.newAdmin; b.innerHTML = `<div class="chosen"><div style="min-width:0"><span class="label">New listing</span><br><b>${esc(a.name)}</b><div class="sub">${esc(a.title)} · ${esc(LEVELS[a.level])}</div></div><button class="btn" data-act="change-admin">Change</button></div>`; return; }
+  if(S.db && !S.loadedInst.has(f.inst)){ b.innerHTML = `<p class="sub" style="margin:0">Loading administrators at this institution.</p>`; loadInstAdmins(f.inst).then(renderS3); return; }
+  const here = [...S.admins.entries()].filter(([,a])=>a.instId===f.inst);
+  b.innerHTML = `<label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="s3-q" type="search" placeholder="Search by name or title" autocomplete="off"></label>
+    <div class="picklist" id="s3-list">${adminPicks(here,"")}</div>
+    <details id="s3-add" ${here.length?"":"open"}><summary class="btn ghost" style="list-style:none;display:inline-flex">${ic("plus","sm")}Add someone not listed</summary>
+     <div style="display:flex;flex-direction:column;gap:10px;margin-top:10px">
+      <div class="grid2"><div class="field"><label class="label" for="na-name">Full name</label><input class="txt" id="na-name" maxlength="80" placeholder="As it appears on the college website"></div>
+      <div class="field"><label class="label" for="na-title">Title</label><input class="txt" id="na-title" maxlength="100" placeholder="e.g. Dean of Agriculture and Industrial Technology"></div></div>
+      <div class="field"><label class="label" for="na-level">Leadership level</label><select class="sel" id="na-level">${Object.entries(LEVELS).map(([k,v])=>`<option value="${k}" ${k==="dean"?"selected":""}>${v}</option>`).join("")}</select></div>
+      <button class="btn" data-act="add-admin">${ic("plus")}Use this person</button><div class="err" id="na-err" role="alert"></div></div></details>`;
+}
+function adminPicks(list, q){
+  const qs = norm(q).split(" ").filter(Boolean);
+  const rows = list.filter(([,a])=>qs.every(w=>norm(a.name+" "+(a.title||"")).includes(w)));
+  if(!list.length) return `<div class="sub" style="padding:10px">Nobody is listed at this institution yet. Add them below.</div>`;
+  return rows.map(([id,a])=>`<button class="pick" data-pick-admin="${esc(id)}"><span>${esc(a.name)}</span><small>${esc(a.title||LEVELS[a.level]||"")}</small></button>`).join("") || `<div class="sub" style="padding:10px">No match. Add them below.</div>`;
+}
+function renderS4(){
+  const ready = !!(S.form.admin||S.form.newAdmin);
+  $("#s4").setAttribute("aria-disabled", !ready); $("#s5").setAttribute("aria-disabled", !ready);
+  const allScored = METRICS.every(m=>S.form.scores[m.k]);
+  $("#s4n").className = allScored && S.form.verdict ? "done":""; $("#s4n").innerHTML = allScored && S.form.verdict ? ic("check","sm") : "3";
+  $("#metrics").innerHTML = Object.entries(GROUPS).map(([gk,gl])=>`<span class="label" style="margin-top:4px">${gl}</span>`+METRICS.filter(m=>m.g===gk).map(m=>{ const v = S.form.scores[m.k]||0; return `<div class="metric"><div class="top"><div><b>${esc(m.t)}</b><small>${esc(m.d)}</small></div><span class="val num">${v?v.toFixed(1):"--"}</span></div>
+    <div class="stars" role="radiogroup" aria-label="${esc(m.t)}">${[1,2,3,4,5].map(n=>`<button type="button" class="star ${n<=v?"on":""}" data-m="${m.k}" data-n="${n}" role="radio" aria-checked="${n===v}" aria-label="${n} star${n>1?"s":""}">${ic("star")}</button>`).join("")}
+    <span class="lbl">${v? (v<=2?m.lo:v>=4?m.hi:"Mixed") : "Not rated"}</span></div></div>`; }).join("")).join("");
+  const ex = S.form.exp;
+  $("#exps").innerHTML = EXP.filter(x => !x.parent || ex[x.parent]==="yes").map(x => `<div class="exp ${x.parent?"sub-q":""}"><p>${esc(x.q)}</p><div class="yn">${[["yes","Yes"],["no","No"],["na","Doesn't apply"]].map(([v,l])=>`<button type="button" data-exp="${x.k}" data-val="${v}" aria-pressed="${ex[x.k]===v}">${l}</button>`).join("")}</div></div>`).join("");
+  document.querySelectorAll(".verdict").forEach(b=>b.setAttribute("aria-pressed", b.dataset.v===S.form.verdict));
+  $("#tagpicks").innerHTML = TAGS.map(([t,p])=>`<button type="button" class="tagpick ${p?"p":""}" data-tag="${esc(t)}" aria-pressed="${S.form.tags.has(t)}">${p?"+":"-"} ${esc(t)}</button>`).join("");
+}
+function renderSubmit(){ const ly=$("#rv-last"); if(!ly.options.length){ const y=new Date().getFullYear(); ly.innerHTML=`<option value="${y}">${y} (still there)</option>`+Array.from({length:25},(_,k)=>y-1-k).map(v=>`<option value="${v}">${v}</option>`).join("")+`<option value="earlier">Earlier</option>`; } renderS2(); renderS3(); renderS4(); }
+
+async function submitReview(){
+  const err = $("#rv-err"); err.textContent = "";
+  const f = S.form, text = $("#rv-text").value.trim();
+  if(!S.db){ err.textContent = S.dbError || "The review database isn't connected. Reload the page and try again."; return; }
+  if(!f.inst || !(f.admin||f.newAdmin)){ err.textContent = "Choose an institution and an administrator."; return; }
+  const miss = METRICS.filter(m=>!f.scores[m.k]).map(m=>m.t.toLowerCase());
+  if(miss.length){ err.textContent = "Rate every index before submitting: " + miss.join(", ") + "."; return; }
+  if(!f.verdict){ err.textContent = "Choose Yes, No, or Abstain on contract renewal."; return; }
+  if(text.length < 40){ err.textContent = "Write at least 40 characters so the review explains the scores."; return; }
+  const btn = $("#rv-submit"); btn.disabled = true; btn.innerHTML = `${ic("lock")}Saving`;
+  try{
+    let adminId = f.admin;
+    if(!adminId){
+      const key = norm(f.newAdmin.name);
+      const dup = [...S.admins.entries()].find(([,a])=>a.instId===f.inst && norm(a.name)===key);
+      if(dup) adminId = dup[0];
+      else {
+        const ins = await SB.from("admins").insert({name:f.newAdmin.name, title:f.newAdmin.title, level:f.newAdmin.level, inst_id:f.inst, inst_name:S.byId.get(f.inst).name}).select("id").single();
+        if(ins.error && ins.error.code==="23505"){ const ex = await SB.from("admins").select("id").eq("inst_id",f.inst).ilike("name",f.newAdmin.name).limit(1).single(); if(ex.error) throw ex.error; adminId = ex.data.id; }
+        else if(ins.error) throw ins.error; else adminId = ins.data.id;
+        S.admins.set(adminId, {name:f.newAdmin.name, title:f.newAdmin.title, level:f.newAdmin.level, instId:f.inst});
+      }
+    }
+    const body = {scores:{...f.scores}, exp:Object.fromEntries(Object.entries(f.exp).filter(([,v])=>v)), verdict:f.verdict, tags:[...f.tags], body:text, role:$("#rv-role").value, years:$("#rv-yrs").value, emp_status:$("#rv-status").value, last_year:$("#rv-last").value};
+    const mine = store.get("rma-mine") || {}; const prior = mine[adminId];
+    let updated = false;
+    if(prior?.id && prior?.key){ const up = await SB.rpc("update_review",{p_id:prior.id, p_key:prior.key, p_review:body}); updated = !up.error; }
+    if(updated) toast("Your earlier review of this person was updated.");
+    else {
+      const key = randHex(16);
+      const ins = await SB.from("reviews").insert({...body, admin_id:adminId, inst_id:f.inst, edit_key_hash: await sha256(key)}).select("id").single();
+      if(ins.error) throw ins.error;
+      mine[adminId] = {id:ins.data.id, key}; store.set("rma-mine", mine); toast("Review posted anonymously.");
+    }
+    S.loadedAdmins.delete(adminId); refreshSummary();
+    S.form = {inst:null, admin:null, newAdmin:null, scores:{}, exp:{}, verdict:null, tags:new Set()};
+    $("#rv-text").value = ""; $("#chars").textContent = "0 / 2000";
+    S.ui.adminDetail = adminId; go("admin");
+  }catch(e){
+    err.textContent = "The review didn't save: " + (e?.message||"unknown error") + (/fetch|network/i.test(e?.message||"") ? ". Check your connection and try again." : "");
+  }finally{ btn.disabled = false; btn.innerHTML = `${ic("lock")}Submit review`; }
+}
+
+/* ---------- how ---------- */
+function renderHow(){
+  const m = S.dirMeta||{};
+  $("#dir-meta").textContent = m.source ? `Source: ${m.source}. Compiled ${m.compiled||""}.` : "";
+  $("#dir-kv").innerHTML = Object.entries(TYPES).map(([k,v])=>`<div><span class="label">${{community:"Community colleges",state:"State universities",private:"Private nonprofits"}[k]}</span><b class="num">${S.counts[k].toLocaleString()}</b></div>`).join("") + ``;
+}
+
+/* ---------- routing ---------- */
+const VIEWS = ["leaderboard","institutions","submit","how","admin"];
+function route(force){
+  let v = (typeof force==="string" && force) || location.hash.replace("#","") || "leaderboard"; if(!VIEWS.includes(v)) v = "leaderboard";
+  if(v==="admin" && !S.ui.adminDetail) v = "leaderboard";
+  VIEWS.forEach(x => $("#v-"+x).hidden = x!==v);
+  document.querySelectorAll(".nav a").forEach(a => a.setAttribute("aria-current", a.dataset.v===v || (v==="admin"&&a.dataset.v==="leaderboard") ? "page" : "false"));
+  if(v!=="admin" && S.view && S.view!=="admin") S.prevView = S.view; else if(v==="admin" && S.view!=="admin") S.prevView = S.view;
+  S.view = v; renderView(); window.scrollTo(0,0);
+}
+function renderView(){
+  AGG = aggregates();
+  ({leaderboard:renderLeaderboard, institutions:renderInstitutions, submit:renderSubmit, how:renderHow, admin:renderAdminDetail})[S.view]?.();
+}
+const renderAll = () => renderView();
+
+/* ---------- events ---------- */
+document.addEventListener("click", async e => {
+  const t = e.target.closest("[data-act],[data-admin],[data-inst],[data-pick-inst],[data-pick-admin],[data-exp],.star,.verdict,.tagpick,#lb-type .chip,#in-tabs .tab,#in-more");
+  if(!t) return;
+  if(t.matches("#lb-type .chip")){ S.ui.lbType = t.dataset.t; document.querySelectorAll("#lb-type .chip").forEach(c=>c.setAttribute("aria-pressed", c===t)); return renderLeaderboard(); }
+  if(t.matches("#in-tabs .tab")){ S.ui.inTab = t.dataset.t; S.ui.inLimit = 60; return renderInstitutions(); }
+  if(t.id==="in-more"){ S.ui.inLimit += 120; return renderInstitutions(); }
+  if(t.dataset.exp){ const ex = S.form.exp; ex[t.dataset.exp] = ex[t.dataset.exp]===t.dataset.val ? undefined : t.dataset.val; EXP.forEach(x=>{ if(x.parent && ex[x.parent]!=="yes") delete ex[x.k]; }); return renderS4(); }
+  if(t.classList.contains("star")){ S.form.scores[t.dataset.m] = +t.dataset.n; return renderS4(); }
+  if(t.classList.contains("verdict")){ S.form.verdict = t.dataset.v; return renderS4(); }
+  if(t.classList.contains("tagpick")){ const g = t.dataset.tag; if(S.form.tags.has(g)) S.form.tags.delete(g); else if(S.form.tags.size<4) S.form.tags.add(g); else toast("Pick up to 4 tags."); return renderS4(); }
+  if(t.dataset.pickInst){ S.form.inst = t.dataset.pickInst; S.form.admin = null; S.form.newAdmin = null; renderS2(); renderS3(); return renderS4(); }
+  if(t.dataset.pickAdmin){ S.form.admin = t.dataset.pickAdmin; S.form.newAdmin = null; renderS3(); return renderS4(); }
+  const act = t.dataset.act;
+  if(!act && t.dataset.admin){ S.ui.adminDetail = t.dataset.admin; go("admin"); return; }
+  if(!act && t.dataset.inst){ S.ui.instDetail = t.dataset.inst; if(S.view!=="institutions") go("institutions"); else renderInstitutions(); return; }
+  switch(act){
+    case "inst-back": S.ui.instDetail = null; return renderInstitutions();
+    case "admin-back": go(S.prevView||"leaderboard"); return;
+    case "rate-here": S.form.inst = t.dataset.inst; S.form.admin=null; S.form.newAdmin=null; go("submit"); return;
+    case "rate-admin": { const a = S.admins.get(t.dataset.admin); S.form.inst = a.instId; S.form.admin = t.dataset.admin; S.form.newAdmin=null; go("submit"); return; }
+    case "change-inst": S.form.inst = null; S.form.admin = null; S.form.newAdmin = null; return renderSubmit();
+    case "change-admin": S.form.admin = null; S.form.newAdmin = null; renderS3(); return renderS4();
+    case "add-admin": {
+      const name = $("#na-name").value.trim().replace(/\s+/g," "), title = $("#na-title").value.trim(), level = $("#na-level").value, er = $("#na-err");
+      if(name.split(" ").length < 2 || name.length < 5){ er.textContent = "Enter the administrator's first and last name."; return; }
+      if(title.length < 3){ er.textContent = "Enter their job title so others can find the right person."; return; }
+      const dup = [...S.admins.entries()].find(([,a])=>a.instId===S.form.inst && norm(a.name)===norm(name));
+      if(dup){ S.form.admin = dup[0]; toast("Already listed. Selected the existing entry."); }
+      else S.form.newAdmin = {name, title, level};
+      renderS3(); return renderS4();
+    }
+    case "report": {
+      if(t.dataset.armed!=="1"){ t.dataset.armed="1"; t.lastChild.textContent="Tap again to report it as abusive or false"; t.style.color="var(--red-soft)"; return; }
+      t.disabled=true; const {error} = await SB.rpc("report_review",{p_id:t.dataset.id, p_reason:"reader report"});
+      t.lastChild.textContent = error ? "Report didn't send. Try again later." : "Reported. Three reports hide a review until the owner checks it."; return; }
+  }
+});
+document.addEventListener("input", e => {
+  if(e.target.id==="lb-q") renderLeaderboard();
+  if(e.target.id==="in-q"){ S.ui.inLimit = 60; renderInstitutions(); }
+  if(e.target.id==="s2-q") renderS2List();
+  if(e.target.id==="s3-q"){ const here=[...S.admins.entries()].filter(([,a])=>a.instId===S.form.inst); $("#s3-list").innerHTML = adminPicks(here, e.target.value); }
+  if(e.target.id==="rv-text") $("#chars").textContent = `${e.target.value.length} / 2000`;
+});
+document.addEventListener("change", e => {
+  if(["lb-state","lb-sort"].includes(e.target.id)) renderLeaderboard();
+  if(["in-state","in-rated"].includes(e.target.id)){ S.ui.inLimit = 60; renderInstitutions(); }
+});
+$("#rv-submit").addEventListener("click", submitReview);
+window.addEventListener("hashchange", route);
+function go(v){ try{ if(location.hash!=="#"+v) history.replaceState(null,"","#"+v); }catch{} route(v); }
+document.addEventListener("click", e => { const a = e.target.closest('a[href^="#"]'); if(!a) return; e.preventDefault(); go(a.getAttribute("href").slice(1)); }, true);
+
+/* ---------- database ---------- */
+let SB = null;
+const toReview = r => ({_id:r.id, adminId:r.admin_id, instId:r.inst_id, scores:r.scores, exp:r.exp||{}, verdict:r.verdict, tags:r.tags||[], text:r.body, role:r.role, years:r.years, status:r.emp_status, lastYear:r.last_year, createdAt:Date.parse(r.updated_at||r.created_at)});
+async function loadInstAdmins(instId){
+  const {data, error} = await SB.from("admins").select("id,name,title,level,inst_id").eq("inst_id", instId).order("name").limit(1000);
+  if(error){ toast("Administrators didn't load: " + error.message); return; }
+  data.forEach(a => S.admins.set(a.id, {name:a.name, title:a.title, level:a.level, instId:a.inst_id})); S.loadedInst.add(instId); AGG = aggregates();
+}
+async function loadAdminReviews(adminId){
+  S.loadedAdmins.add(adminId);
+  if(!S.admins.has(adminId)){ const a = await SB.from("admins").select("id,name,title,level,inst_id").eq("id",adminId).maybeSingle(); if(a.data) S.admins.set(a.data.id,{name:a.data.name,title:a.data.title,level:a.data.level,instId:a.data.inst_id}); }
+  const {data, error} = await SB.from("reviews").select("id,admin_id,inst_id,scores,exp,verdict,tags,body,role,years,emp_status,last_year,created_at,updated_at").eq("admin_id", adminId).order("created_at",{ascending:false}).limit(1000);
+  if(error){ S.loadedAdmins.delete(adminId); toast("Reviews didn't load: " + error.message); return; }
+  S.reviews = S.reviews.filter(r => r.adminId !== adminId).concat(data.map(toReview));
+}
+async function refreshSummary(){
+  const [sum, na, nr] = await Promise.all([
+    SB.from("admin_summary").select("*").order("n",{ascending:false}).limit(2000),
+    SB.from("admins").select("id",{count:"exact", head:true}),
+    SB.from("reviews").select("id",{count:"exact", head:true})
+  ]);
+  if(sum.error){ S.dbError = "Reviews couldn't load: " + sum.error.message; S.dbReady = true; return renderView(); }
+  S.summary = new Map(sum.data.map(r => [r.id, r]));
+  sum.data.forEach(r => S.admins.set(r.id, {name:r.name, title:r.title, level:r.level, instId:r.inst_id}));
+  S.totals = {admins: na.count||0, reviews: nr.count||0};
+  S.dbError = ""; S.dbReady = true; renderView();
+}
+async function connect(){
+  const cfg = window.RMA_CONFIG || {};
+  if(!window.supabase || !cfg.supabaseUrl || !cfg.supabasePublishableKey || cfg.supabaseUrl.includes("YOUR-PROJECT")){
+    S.dbError = "The review database isn't set up yet. Add your Supabase project URL and publishable key to config.js (see README)."; S.dbReady = true; renderView(); return;
+  }
+  SB = window.supabase.createClient(cfg.supabaseUrl, cfg.supabasePublishableKey, {auth:{persistSession:false, autoRefreshToken:false}});
+  S.db = SB;
+  await refreshSummary();
+  setInterval(() => { if(document.visibilityState==="visible") refreshSummary(); }, 60000);
+}
+
+route();
+loadDirectory();
+connect();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,4874 @@
+[
+ {
+  "instId": "c-ca-allan-hancock-college",
+  "name": "Kevin G. Walthers",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://www.hancockcollege.edu/president/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-allan-hancock-college",
+  "name": "Bob Curry",
+  "title": "Associate Superintendent/Vice President, Academic Affairs",
+  "level": "vp",
+  "sourceUrl": "https://www.hancockcollege.edu/president/cabinet.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-allan-hancock-college",
+  "name": "Genevieve Siwabessy",
+  "title": "Associate Superintendent/Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.hancockcollege.edu/president/cabinet.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-allan-hancock-college",
+  "name": "Laura Becker",
+  "title": "Interim Associate Superintendent/Vice President, Finance and Administration",
+  "level": "vp",
+  "sourceUrl": "https://www.hancockcollege.edu/president/cabinet.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-allan-hancock-college",
+  "name": "Jon Hooten",
+  "title": "Executive Director, College Advancement",
+  "level": "director",
+  "sourceUrl": "https://www.hancockcollege.edu/president/cabinet.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-allan-hancock-college",
+  "name": "Ruben Ramirez",
+  "title": "Executive Director, Human Resources and Labor Relations",
+  "level": "director",
+  "sourceUrl": "https://www.hancockcollege.edu/president/cabinet.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-allan-hancock-college",
+  "name": "Craig Bach",
+  "title": "Executive Director, Institutional Effectiveness",
+  "level": "director",
+  "sourceUrl": "https://www.hancockcollege.edu/president/cabinet.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-allan-hancock-college",
+  "name": "Andy Specht",
+  "title": "Executive Director, Information Technology Services",
+  "level": "director",
+  "sourceUrl": "https://www.hancockcollege.edu/president/cabinet.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-allan-hancock-college",
+  "name": "Alicia U. Paniagua",
+  "title": "Dean, Academic Affairs",
+  "level": "dean",
+  "sourceUrl": "https://www.hancockcollege.edu/communityed/staff.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Torence Powell",
+  "title": "Chancellor",
+  "level": "exec",
+  "sourceUrl": "https://losrios.edu/about-los-rios/chancellor-torence-powell",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Lisa Cardoza",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Angela Daroy",
+  "title": "Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Koue Vang",
+  "title": "Vice President of Administration",
+  "level": "vp",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "David Miramontes-Quiñones",
+  "title": "Vice President, Student Services and Equity",
+  "level": "vp",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Derrick Booth",
+  "title": "Associate Vice President, Instruction, Workforce Development",
+  "level": "vp",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Doug Herndon",
+  "title": "Associate Vice President, Instruction, Curriculum",
+  "level": "vp",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Margaret Lednicky",
+  "title": "Associate Vice President, Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Steven Roberson",
+  "title": "Associate Vice President, Student Services and Equity",
+  "level": "vp",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Adam Windham",
+  "title": "Associate Vice President, Instruction and Enrollment Management",
+  "level": "vp",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Gary Aguilar",
+  "title": "Dean, Manufacturing, Construction & Transportation",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Raquel Arata",
+  "title": "Dean, Career Education and Workforce Development",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Corinne Arrieta",
+  "title": "Dean, Arts",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Nisha Beckhorn",
+  "title": "Dean, Student Services, Counseling and Transfer Services",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Hannah Blodgett",
+  "title": "Dean of Outreach, First Year Experience and Pathway Communities",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Michelle Brock",
+  "title": "Dean, STEM, Math, and Computer Science",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Pamela Chao",
+  "title": "Dean, Language and Communication",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Kirsten Corbin",
+  "title": "Dean, Business",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Melissa Fish",
+  "title": "Dean, Natomas Center and Dual Enrollment",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Diana Garcia",
+  "title": "Dean, Student Support Programs",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Marwa Harps",
+  "title": "Dean, Student Engagement and Completion",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Carina Hoffpauir",
+  "title": "Dean, English",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Joel Keebler",
+  "title": "Dean, STEM, Science",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Kevin Kramer",
+  "title": "Interim Dean, Kinesiology and Athletics",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Narine Madramootoo",
+  "title": "Dean, Health and Education",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "John McCormack",
+  "title": "Dean, Public Service and Apprenticeship",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Mikenna Modesto",
+  "title": "Dean, Library, Learning Resources, and Distance Education",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Brenda Valles",
+  "title": "Dean, Equity, Institutional Effectiveness and Innovation",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-american-river-college",
+  "name": "Matt Wright",
+  "title": "Dean, People, Culture and Society",
+  "level": "dean",
+  "sourceUrl": "https://arc.losrios.edu/2026-2027-official-catalog/administrators-faculty-and-staff/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Jennifer Zellet",
+  "title": "Superintendent/ President",
+  "level": "exec",
+  "sourceUrl": "https://www.avc.edu/sites/default/files/administration/hr/new%20hire/New%20Hire%20Orientation%20-%20Spring%202026-Final.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Kathryn Mitchell",
+  "title": "Interim Asst. Superintendent/ Vice President, Academic Affairs",
+  "level": "vp",
+  "sourceUrl": "https://www.avc.edu/sites/default/files/administration/hr/new%20hire/New%20Hire%20Orientation%20-%20Spring%202026-Final.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Shami Brar",
+  "title": "Asst. Superintendent/ Vice President, Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.avc.edu/sites/default/files/administration/hr/new%20hire/New%20Hire%20Orientation%20-%20Spring%202026-Final.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Idania Padron",
+  "title": "Asst. Superintendent/ Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.avc.edu/sites/default/files/administration/hr/new%20hire/New%20Hire%20Orientation%20-%20Spring%202026-Final.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Lauren Elan Helsper",
+  "title": "Asst. Superintendent/ Vice President, People, Culture, and Talent (HR)",
+  "level": "vp",
+  "sourceUrl": "https://www.avc.edu/sites/default/files/administration/hr/new%20hire/New%20Hire%20Orientation%20-%20Spring%202026-Final.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Rebecca Farley",
+  "title": "Asst. Superintendent/ Vice President, Equity and Student Achievement",
+  "level": "vp",
+  "sourceUrl": "https://www.avc.edu/sites/default/files/administration/hr/new%20hire/New%20Hire%20Orientation%20-%20Spring%202026-Final.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Dianne Knippel",
+  "title": "Executive Director, Foundation; Interim Executive Director, Marketing and Public Information",
+  "level": "director",
+  "sourceUrl": "https://www.avc.edu/sites/default/files/administration/hr/new%20hire/New%20Hire%20Orientation%20-%20Spring%202026-Final.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Michele Schottelkorb",
+  "title": "Director of Board and Executive Services, Strategic Initiatives, & Government Relations",
+  "level": "director",
+  "sourceUrl": "https://www.avc.edu/sites/default/files/administration/hr/new%20hire/New%20Hire%20Orientation%20-%20Spring%202026-Final.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Jonathan Compton",
+  "title": "Vice President, Academic Affairs",
+  "level": "vp",
+  "sourceUrl": "https://www.avc.edu/administration/organizations/app/representatives",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Octavio Cruz",
+  "title": "Student Services Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.avc.edu/administration/organizations/app/representatives",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Nate Dillon",
+  "title": "Academic Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.avc.edu/administration/organizations/app/representatives",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-antelope-valley-community-college-district",
+  "name": "Ashley Hawkins",
+  "title": "Career/Technical Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.avc.edu/administration/organizations/app/representatives",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Stacy Pfluger",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Jessica Wojtysiak",
+  "title": "Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Cesar Jimenez",
+  "title": "Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Queen King",
+  "title": "Vice President, Finance and Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Karis Clarke",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Nicky Damania",
+  "title": "Dean of Students",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Carla Gard",
+  "title": "Executive Dean of Nursing & Allied Health",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Rozanne Hernandez",
+  "title": "Dean of Instruction, CTE",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Christie Howell",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Jennifer Jett",
+  "title": "Dean of Instruction, English",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Lynn Kennedy",
+  "title": "Athletic Director and Dean of Instruction, Kinesiology & Athletics",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Marisa Marquez",
+  "title": "Dean of Student Success & Counseling",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Richard McCrow",
+  "title": "Executive Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Anna Melby",
+  "title": "Associate Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Emmanuel Mourtzanos",
+  "title": "Executive Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Angelica Perez",
+  "title": "Associate Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Ben Perlado",
+  "title": "Dean, Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Andrea Thorson",
+  "title": "Dean of Instruction, World Language & Philosophy",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Shaun Tobiasen",
+  "title": "Associate Dean, Nursing & Allied Health",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Stephen Waller",
+  "title": "Dean of Instruction, Math, Science, and Engineering",
+  "level": "dean",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/administrative-council",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "LaNina Andrews",
+  "title": "Executive Director, Communication and Marketing",
+  "level": "director",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/team/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Sooyeon Kim",
+  "title": "Executive Director of Institutional Research, Planning and Effectiveness",
+  "level": "director",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/team/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Cheryl Scott",
+  "title": "Executive Director, Foundation",
+  "level": "director",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/team/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Ebony Williams",
+  "title": "Director of Information Technology Services",
+  "level": "director",
+  "sourceUrl": "https://www.bakersfieldcollege.edu/about/administration/president/team/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-bakersfield-college",
+  "name": "Sean Hancock",
+  "title": "Interim Chancellor",
+  "level": "exec",
+  "sourceUrl": "https://kccd.edu/chancellors-office/chancellors-cabinet.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-barstow-community-college",
+  "name": "Eva Bagg",
+  "title": "Superintendent-President",
+  "level": "exec",
+  "sourceUrl": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-barstow-community-college",
+  "name": "Michael Wangler",
+  "title": "Vice President, Academic Affairs",
+  "level": "vp",
+  "sourceUrl": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-barstow-community-college",
+  "name": "Edward Alvarez",
+  "title": "Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-barstow-community-college",
+  "name": "DeeDee Garcia",
+  "title": "Vice President, Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-barstow-community-college",
+  "name": "Rocio Chavez",
+  "title": "Vice President, Human Resources",
+  "level": "vp",
+  "sourceUrl": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-barstow-community-college",
+  "name": "Amanda Simpson",
+  "title": "Director, Public Relations, Communications & Marketing",
+  "level": "director",
+  "sourceUrl": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-barstow-community-college",
+  "name": "Lisa Holmes",
+  "title": "Executive Director of Research, Development & Planning; Accreditation Liaison Officer",
+  "level": "director",
+  "sourceUrl": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-barstow-community-college",
+  "name": "Laura Alvarado",
+  "title": "Executive Dean, Strategic Partnerships & Workforce Development",
+  "level": "dean",
+  "sourceUrl": "https://www.barstow.edu/sites/default/files/media/pdf_document/2025/Presidents_Office.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-berkeley-city-college",
+  "name": "Denise Richardson",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://www.berkeleycitycollege.edu/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-berkeley-city-college",
+  "name": "Lisa Cooper Wilkins",
+  "title": "Executive Vice President of Student Learning and Success",
+  "level": "vp",
+  "sourceUrl": "https://www.berkeleycitycollege.edu/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-berkeley-city-college",
+  "name": "Amari McGee",
+  "title": "Associate Dean of Student Activities, Leadership & Engagement",
+  "level": "dean",
+  "sourceUrl": "https://www.berkeleycitycollege.edu/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-berkeley-city-college",
+  "name": "Kyla Oh",
+  "title": "Dean of Math, Science, and Career Education",
+  "level": "dean",
+  "sourceUrl": "https://www.berkeleycitycollege.edu/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-berkeley-city-college",
+  "name": "Lissette Flores",
+  "title": "Acting Dean of Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://www.berkeleycitycollege.edu/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-berkeley-city-college",
+  "name": "Raniyah Johnson",
+  "title": "Dean of Counseling and Student Equity",
+  "level": "dean",
+  "sourceUrl": "https://www.berkeleycitycollege.edu/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-berkeley-city-college",
+  "name": "Zaira Sanchez",
+  "title": "Acting Director, Hispanic Serving Institution Grant",
+  "level": "director",
+  "sourceUrl": "https://www.berkeleycitycollege.edu/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-berkeley-city-college",
+  "name": "Armando Franco",
+  "title": "Director, Math, Engineering, Science and Achievement (MESA) Grant",
+  "level": "director",
+  "sourceUrl": "https://www.berkeleycitycollege.edu/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-berkeley-city-college",
+  "name": "Ilona McGriff",
+  "title": "Director of Workforce Development",
+  "level": "director",
+  "sourceUrl": "https://www.berkeleycitycollege.edu/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Virginia L. Guleff",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://www.butte.edu/about/leadership/office-of-the-president/pres-org.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Tray Robinson",
+  "title": "Interim Vice President for Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.butte.edu/about/leadership/office-of-the-president/pres-org.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Jessica Snelling",
+  "title": "Vice President for Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.butte.edu/about/leadership/office-of-the-president/pres-org.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Denise Adams",
+  "title": "Interim Vice President for Human Resources",
+  "level": "vp",
+  "sourceUrl": "https://www.butte.edu/about/leadership/office-of-the-president/pres-org.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Suzanne Watroba",
+  "title": "Executive Director, Foundation",
+  "level": "director",
+  "sourceUrl": "https://www.butte.edu/about/leadership/office-of-the-president/pres-org.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Jess Vickery",
+  "title": "Interim Executive Director, Institutional Effectiveness & Planning",
+  "level": "director",
+  "sourceUrl": "https://www.butte.edu/about/leadership/office-of-the-president/pres-org.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Erik Shearer",
+  "title": "Assistant Superintendent/Vice President for Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Donald Robinson",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Teresa Ward",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Laurie Meyer",
+  "title": "Associate Dean, Nursing Programs",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Kam Bull",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Jacob Vazquez",
+  "title": "Associate Dean, Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Teresa Doyle",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Robert Bishop",
+  "title": "Dean of Kinesiology & Athletics",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Robert White",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Linda Zorn",
+  "title": "Executive Director Economic & Workforce Development",
+  "level": "director",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Anne Rafferty",
+  "title": "Dean, Workforce Development & Training Programs",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-instruction/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Rebecca Berner",
+  "title": "Dean, Student Success",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-student-services/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Tammera Shinar",
+  "title": "Dean, Student Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-student-services/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-butte-college",
+  "name": "Brad Zuniga",
+  "title": "Dean of Students",
+  "level": "dean",
+  "sourceUrl": "https://www.butte.edu/about/leadership/vp-student-services/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Jenn Capps",
+  "title": "Superintendent / President",
+  "level": "exec",
+  "sourceUrl": "https://www.cabrillo.edu/leadership/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Robin McFarland",
+  "title": "Interim Assistant Superintendent, Vice President of Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.cabrillo.edu/leadership/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Blanca Baltazar-Sabbah",
+  "title": "Assistant Superintendent, Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.cabrillo.edu/leadership/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Roy Vasquez",
+  "title": "Interim Assistant Superintendent, Vice President of Finance and Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.cabrillo.edu/leadership/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Angela Hoyt",
+  "title": "Vice President of Human Resources and Labor Relations",
+  "level": "vp",
+  "sourceUrl": "https://www.cabrillo.edu/leadership/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Dave Reynolds",
+  "title": "Associate Vice President, Strategic Enrollment",
+  "level": "vp",
+  "sourceUrl": "https://www.cabrillo.edu/leadership/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Janine Riopel",
+  "title": "Interim Dean, Office of Research, Planning, and Institutional Effectiveness",
+  "level": "dean",
+  "sourceUrl": "https://www.cabrillo.edu/leadership/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Regina Ip",
+  "title": "Director of Marketing and Public Information Officer (PIO)",
+  "level": "director",
+  "sourceUrl": "https://www.cabrillo.edu/leadership/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Eileen Hill",
+  "title": "Executive Director, Cabrillo Foundation",
+  "level": "director",
+  "sourceUrl": "https://www.cabrillo.edu/leadership/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Paul Allen",
+  "title": "School Instructional Dean/Associate Dean, ELLA Division",
+  "level": "dean",
+  "sourceUrl": "https://www.cabrillo.edu/curriculum/committeemembers/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "John Graulty",
+  "title": "School Instructional Dean/Associate Dean, VAPA Division",
+  "level": "dean",
+  "sourceUrl": "https://www.cabrillo.edu/curriculum/committeemembers/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Serina Eichelberger",
+  "title": "School Instructional Dean/Associate Dean, STEM Division (Interim)",
+  "level": "dean",
+  "sourceUrl": "https://www.cabrillo.edu/curriculum/committeemembers/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Paul Harvell",
+  "title": "School Instructional Dean/Associate Dean, BSS Division",
+  "level": "dean",
+  "sourceUrl": "https://www.cabrillo.edu/curriculum/committeemembers/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Jennifer Holm",
+  "title": "School Instructional Dean/Associate Dean, HPS Division (Interim)",
+  "level": "dean",
+  "sourceUrl": "https://www.cabrillo.edu/curriculum/committeemembers/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cabrillo-college",
+  "name": "Annabelle Rodriguez",
+  "title": "CEWD Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.cabrillo.edu/curriculum/committeemembers/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Ajita Talwalker Menon",
+  "title": "President and Chief Executive Officer",
+  "level": "exec",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Binh Thuy Do",
+  "title": "VP of Research and Development",
+  "level": "vp",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Brendan Volheim",
+  "title": "VP of Engineering",
+  "level": "vp",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Jenny Johnson",
+  "title": "VP of Government Relations",
+  "level": "vp",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Marisa Bold",
+  "title": "VP of Sustainable Growth and District Development",
+  "level": "vp",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Shannon McCarty",
+  "title": "VP of Learning and Instruction",
+  "level": "vp",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Tamika Connor",
+  "title": "SVP for Strategic Initiatives",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Ted Lai",
+  "title": "Interim VP of Student Services and Success",
+  "level": "vp",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Carmen Drummond",
+  "title": "Chief of Staff",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Edward Lee",
+  "title": "Chief Financial Officer",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Vivek Vyas",
+  "title": "Chief Product Officer",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Kara Kuvakas",
+  "title": "Interim Dean of Learning and instruction",
+  "level": "dean",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Katrieva Jones Munroe",
+  "title": "Dean of Learning innovation",
+  "level": "dean",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Leena Her",
+  "title": "Dean of Learning Services",
+  "level": "dean",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Shannon Reynolds",
+  "title": "Associate Dean, Learning Experience",
+  "level": "dean",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Amandeep Kandola",
+  "title": "Dean of Student Success",
+  "level": "dean",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Ava Burns",
+  "title": "Dean of Student Journey",
+  "level": "dean",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Matthew Medeiros",
+  "title": "Director of Accreditation",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Jessica Howard",
+  "title": "Director of Policy and Strategic Initiatives",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Sarah Jimenez",
+  "title": "Director of Communications",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Vance Hickin",
+  "title": "Director, Digital Strategy",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Francisco Tamayo",
+  "title": "Director of Information Technology and Security",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-calbright-college",
+  "name": "Shelly Gupta",
+  "title": "Director of Product Management",
+  "level": "director",
+  "sourceUrl": "https://calbright.edu/about/team",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-california-indian-nations-college",
+  "name": "Celeste R. Townsend",
+  "title": "President & CEO",
+  "level": "exec",
+  "sourceUrl": "https://cincollege.org/administration/ootp/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-california-indian-nations-college",
+  "name": "Zoila Covarrubias",
+  "title": "Chief Financial Officer",
+  "level": "director",
+  "sourceUrl": "https://cincollege.org/administration/ootp/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-california-indian-nations-college",
+  "name": "Marsha Uutela",
+  "title": "Director of Tribal Relations & Resource Development",
+  "level": "director",
+  "sourceUrl": "https://cincollege.org/administration/ootp/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-california-indian-nations-college",
+  "name": "Roseanne Rosenthal",
+  "title": "Dean, Academic & Student Affairs and Services",
+  "level": "dean",
+  "sourceUrl": "https://cincollege.org/administration/academicsstudentaffairsstaff/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Kim Lopez",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration/administration.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Lizette Bricker",
+  "title": "Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration/administration.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Chialin Hsieh",
+  "title": "Vice President of Instruction",
+  "level": "vp",
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration/administration.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Ludmila Prisecar",
+  "title": "Vice President of Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration/administration.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Karen Engel",
+  "title": "Dean, Planning, Research, Innovation, and Effectiveness (PRIE)",
+  "level": "dean",
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration/administration.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Anniqua Rana",
+  "title": "Division Dean, Academic Support & Learning Technologies Division",
+  "level": "dean",
+  "sourceUrl": "https://www.canadacollege.edu/academics/office-of-instruction.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Alex Kramer",
+  "title": "Division Dean, Business, Design & Workforce Division",
+  "level": "dean",
+  "sourceUrl": "https://www.canadacollege.edu/academics/office-of-instruction.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "David Eck",
+  "title": "Division Dean, Humanities & Social Sciences Division",
+  "level": "dean",
+  "sourceUrl": "https://www.canadacollege.edu/academics/office-of-instruction.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Kathleen Sullivan-Torrez",
+  "title": "Division Dean, Kinesiology, Athletics & Dance",
+  "level": "dean",
+  "sourceUrl": "https://www.canadacollege.edu/academics/office-of-instruction.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Ameer Thompson",
+  "title": "Division Dean, Science & Technology Division",
+  "level": "dean",
+  "sourceUrl": "https://www.canadacollege.edu/academics/office-of-instruction.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-canada-college",
+  "name": "Max Hartman",
+  "title": "Dean, Counseling Division",
+  "level": "dean",
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration/counseling-division.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Jose Fierro",
+  "title": "President/Superintendent",
+  "level": "exec",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Felipe R. Lopez",
+  "title": "Executive Vice President of Business Services/Assistant Superintendent",
+  "level": "vp",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Mercedes Gutierrez",
+  "title": "Vice President of Human Resources/Assistant Superintendent",
+  "level": "vp",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Robyn Brammer",
+  "title": "Vice President of Student Services/Assistant Superintendent",
+  "level": "vp",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Shawna Baskette",
+  "title": "Dean of Academic Success",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Christopher Whiteside",
+  "title": "Instructional Dean, Business Education",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Gary Pritchard",
+  "title": "Instructional Dean, Fine Arts & Communications",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Elizabeth Riley",
+  "title": "Instructional Dean, Health Occupations",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Sunny Lynn Rothstein",
+  "title": "Instructional Dean, Liberal Arts",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Narges Rabii-Rakin",
+  "title": "Interim Instructional Dean, Humanities/Social Sciences",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Rory Natividad",
+  "title": "Instructional Dean, Kinesiology",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Michael Page",
+  "title": "Instructional Dean, Science, Engineering, & Mathematics",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Nick Real",
+  "title": "Instructional Dean, Technology",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Graciela Vasquez",
+  "title": "Instructional Dean, Continuing Education",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Eliza Hoyos Vences",
+  "title": "Dean, Counseling Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Yvette Tafoya",
+  "title": "Dean, Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Christopher Elquizabal",
+  "title": "Dean, Student Accessibility & Wellness Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Hillary Mennella",
+  "title": "Associate Dean of Student Health & Wellness",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Lui Amador",
+  "title": "Dean, Student Equity & Success",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Elizabeth Miller",
+  "title": "Dean, Student Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Amber Hroch",
+  "title": "Dean, Institutional Effectiveness, Research & Planning, & Grants",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Elisa Coburn",
+  "title": "Director of Child Development",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Jeffrey Miera",
+  "title": "Athletic Director",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Sasha Leonardo",
+  "title": "Acting Director of Educational Partnerships & Programs",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Ali Delawalla",
+  "title": "Director of Fiscal Services",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Mark Logan",
+  "title": "Director of Procurement and Contract Services",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Patrick O'Donnell",
+  "title": "Director of Information Technology",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Elmer Gomez",
+  "title": "Director of Physical Plant & Construction Services",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Michael Meadors",
+  "title": "Acting Director, Human Resources & Risk Management",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Kelly Rios",
+  "title": "Acting Director, Diversity, Compliance, & Title IX",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Nelly Alvarado",
+  "title": "Director of Career and Transfer Services",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Patricia Robbins Smith",
+  "title": "Director of Special Support Programs",
+  "level": "director",
+  "sourceUrl": "https://www.cerritos.edu/hr/_includes/docs/District_Org_Chart_06-11-26_ua.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Julie Mun",
+  "title": "Vice President of Academic Affairs",
+  "level": "vp",
+  "sourceUrl": "https://www.cerritos.edu/academics/academic-affairs/contact-us.htm",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerritos-college",
+  "name": "Nora Laredo",
+  "title": "Dean of Academic Affairs & Strategic Initiatives",
+  "level": "dean",
+  "sourceUrl": "https://www.cerritos.edu/academics/academic-affairs/contact-us.htm",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerro-coso-community-college",
+  "name": "Corey Marvin",
+  "title": "Interim President, Cerro Coso Community College",
+  "level": "exec",
+  "sourceUrl": "https://kccd.edu/chancellors-office/chancellors-cabinet.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerro-coso-community-college",
+  "name": "Michael Chiang",
+  "title": "Interim Vice President, Instruction, Cerro Coso Community College",
+  "level": "vp",
+  "sourceUrl": "https://kccd.edu/chancellors-office/chancellors-cabinet.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerro-coso-community-college",
+  "name": "Andree Thomas",
+  "title": "Vice President, Student Services, Cerro Coso Community College",
+  "level": "vp",
+  "sourceUrl": "https://kccd.edu/chancellors-office/chancellors-cabinet.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cerro-coso-community-college",
+  "name": "Chad Houck",
+  "title": "Vice President, Finance & Administrative Services, Cerro Coso Community College",
+  "level": "vp",
+  "sourceUrl": "https://kccd.edu/chancellors-office/chancellors-cabinet.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Jamal Cooks",
+  "title": "College President",
+  "level": "exec",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Tracey Coleman",
+  "title": "Interim Vice President, Academic Services",
+  "level": "vp",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Marie Amboy",
+  "title": "Vice President, Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Luis Escobar",
+  "title": "Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Amal Amanda Issa",
+  "title": "Dean of Academic Pathways and Student Success",
+  "level": "dean",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Heather Oshiro",
+  "title": "Dean of Applied Technology & Business",
+  "level": "dean",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Karen Danielson",
+  "title": "Dean of Arts, Media & Communication",
+  "level": "dean",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Sadie Ashraf",
+  "title": "Dean of Counseling",
+  "level": "dean",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Matthew Lee",
+  "title": "Dean of Health, Kinesiology & Athletics",
+  "level": "dean",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Paul Pinza",
+  "title": "Dean of Language Arts",
+  "level": "dean",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Sonya Lopez",
+  "title": "Dean of Science & Mathematics",
+  "level": "dean",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Robert Nakamoto",
+  "title": "Dean of Social Sciences",
+  "level": "dean",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chabot-college",
+  "name": "Patricia Molina",
+  "title": "Dean of Special Programs and Services",
+  "level": "dean",
+  "sourceUrl": "https://chabotcollege.edu/about/leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Henry D. Shannon",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Lisa Bailey",
+  "title": "Associate Superintendent, Business and Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Michael McClellan",
+  "title": "Associate Superintendent, Instruction & Institutional Effectiveness",
+  "level": "vp",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Alisha Rosas",
+  "title": "Associate Superintendent, Student Services & Strategic Communications",
+  "level": "vp",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Jason Chevalier",
+  "title": "Dean, Arts, Comm., & Design",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Leona Fisher",
+  "title": "Dean, Arts, Comm., & Design",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Yolanda Friday",
+  "title": "Dean, Business, Technology, and Hospitality; Dean, Manufacturing, Industrial Design & Transportation",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Margaret Fernandez",
+  "title": "Dean, Chino Campus",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Amy Nevarez",
+  "title": "Dean, Fontana Campus",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Eric Sorenson",
+  "title": "Dean, Health & Wellness",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Gary Plunkett",
+  "title": "Dean, Health & Wellness",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Robert Rundquist",
+  "title": "Dean, Public Svc., Culture, & Society",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Jeffrey Laguna",
+  "title": "Interim Dean, Science Technology, Engineering, and Math",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Andrew Long",
+  "title": "Dean, Institutional Effectiveness",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Ramon Abrego",
+  "title": "Dean, Instructional Support",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Elnora Tayag",
+  "title": "Dean, Instructional Support",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-chaffey-college",
+  "name": "Kirk Collins",
+  "title": "Interim Dean, Academic & Career Counseling",
+  "level": "dean",
+  "sourceUrl": "https://www.chaffey.edu/leadership/docs/management-org-chart.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Greg Schulz",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://catalog.citruscollege.edu/welcome-citrus-college/citrus-college-directory/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Dana Hester",
+  "title": "Vice President of Academic Affairs",
+  "level": "vp",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Kimberly Mathews",
+  "title": "Dean of Career and Technical Education",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Junior Domingo",
+  "title": "Dean of Kinesiology, Health and Athletics",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Kim Orlijan",
+  "title": "Dean of Language Arts and Library",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Jeremy Clark",
+  "title": "Dean of Mathematics, Sciences and Business",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Marivel Ortiz-Sanchez",
+  "title": "Associate Dean of Natural and Physical Sciences (Interim)",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Jack Beckham",
+  "title": "Dean of Social and Behavioral Sciences and Online Education",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Amberly Chamberlain",
+  "title": "Dean of Visual and Performing Arts",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Linda Ju-Ong",
+  "title": "Director of Continuing Education",
+  "level": "director",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "My Chau",
+  "title": "Director of Grants",
+  "level": "director",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Claudette Dain",
+  "title": "Vice President of Finance and Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Shawn Jones",
+  "title": "Director of Business Services",
+  "level": "director",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Fred Diamond",
+  "title": "Director of Facilities and Construction",
+  "level": "director",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Wade Ellis",
+  "title": "Director of Fiscal Services",
+  "level": "director",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "John Albert",
+  "title": "Executive Director of Human Resources",
+  "level": "director",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Lan Hao",
+  "title": "Director of Institutional Research, Planning and Effectiveness",
+  "level": "director",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Lisa McPheron",
+  "title": "Executive Director of Strategic Communications, Marketing and Public Affairs",
+  "level": "director",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Richard F. Rams",
+  "title": "Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "AnnMarie Ruelas",
+  "title": "Dean of Counseling Programs and Services",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Gerald Sequeria",
+  "title": "Dean of Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Maryann Tolano-Leveque",
+  "title": "Dean of Student Affairs",
+  "level": "dean",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-citrus-college",
+  "name": "Eric Calderon",
+  "title": "Chief Technology Officer",
+  "level": "director",
+  "sourceUrl": "https://www.citruscollege.edu/admin",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Kimberlee Messina",
+  "title": "Chancellor",
+  "level": "exec",
+  "sourceUrl": "https://www.ccsf.edu/about-ccsf/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "David Yee",
+  "title": "Vice Chancellor",
+  "level": "vp",
+  "sourceUrl": "https://www.ccsf.edu/about-ccsf/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Shannon Carter",
+  "title": "Vice Chancellor",
+  "level": "vp",
+  "sourceUrl": "https://www.ccsf.edu/about-ccsf/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Christine Coleman",
+  "title": "Interim Vice Chancellor",
+  "level": "vp",
+  "sourceUrl": "https://www.ccsf.edu/about-ccsf/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Lisa Cooper-Wilkins",
+  "title": "Vice Chancellor",
+  "level": "vp",
+  "sourceUrl": "https://www.ccsf.edu/about-ccsf/administration",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Andrew King",
+  "title": "Interim Dean, Social Sciences, Behavioral Sciences, Ethnic Studies, & Social Justice",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Erin Denney",
+  "title": "Dean, Arts, Communication & Languages",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Fred Teti",
+  "title": "Dean, Evans Center, Science, Technology, Engineering, Mathematics, Auto & Aircraft",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Kit Dai",
+  "title": "Dean, Chinatown/North Beach Center & Older Adults",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Cynthia Dewar",
+  "title": "Dean, Library, Academic Resources, Educational Technology & Online Programs",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Geisce Ly",
+  "title": "Dean, Downtown Center & Business, Child Development, Culinary, Fashion & Horticulture",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Gregoria Cahill",
+  "title": "Dean, Mission Center, ESL & Transitional Studies",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Noah Lystrup",
+  "title": "Dean, Student Success",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Amy Coffey",
+  "title": "Dean, Student Engagement & Wellness",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Jennifer Kienzle",
+  "title": "Associate Dean, Online Learning",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Joyce Coffey",
+  "title": "Associate Dean, Nursing Pathways",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Pam Mery",
+  "title": "Dean, Institutional Effectiveness",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Tessa Henderson Brown",
+  "title": "Associate Dean, Equity",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Guillermo Villanueva",
+  "title": "Dean, Financial Aid & Special Programs",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Monika Liu",
+  "title": "Dean, Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Meg Hudson",
+  "title": "Dean, Outreach & Community Partnerships",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Lisa Romano",
+  "title": "Associate Dean, Student Completion Assessment Center",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Patrick Ekoue-Totou",
+  "title": "Associate Vice Chancellor, Information Technology Services",
+  "level": "vp",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Adil Ahmed",
+  "title": "Associate Vice Chancellor, Finance",
+  "level": "vp",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Alberto Vasquez",
+  "title": "Associate Vice Chancellor, Facilities",
+  "level": "vp",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Kristin Charles",
+  "title": "Associate Vice Chancellor, Institutional Advancement & Effectiveness",
+  "level": "vp",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "Tom Boegel",
+  "title": "Associate Vice Chancellor, Instructional Support Services",
+  "level": "vp",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2025/document/2025-complete-org-chart-updated.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-city-college-of-san-francisco",
+  "name": "William Sugiyama",
+  "title": "Supervising Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.ccsf.edu/sites/default/files/2026/document/list-of-department-chairs-and-deans-spring-2026.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Kim E. Armstrong",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://cloviscollege.edu/about/leadership/index.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Kimberly Duong",
+  "title": "Vice President of Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://cloviscollege.edu/about/leadership/index.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Kira Tippins",
+  "title": "Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://cloviscollege.edu/about/leadership/index.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Bala S. Raja",
+  "title": "Vice President of Instruction",
+  "level": "vp",
+  "sourceUrl": "https://cloviscollege.edu/about/leadership/index.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Kristen Mattox",
+  "title": "Interim Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Laura Hill",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Whitney Menefee",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Ruben Diaz",
+  "title": "Dean of Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Tanis Elder",
+  "title": "Dean of Students",
+  "level": "dean",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Gurdeep Hébert",
+  "title": "Dean of Student Services, Student Success, Equity & Outreach",
+  "level": "dean",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Ryan Feyk-Miney",
+  "title": "Director of Institutional Research",
+  "level": "director",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Stephanie Babb",
+  "title": "Director of Marketing and Communications",
+  "level": "director",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Reynani Chappel",
+  "title": "Director of Admissions & Records",
+  "level": "director",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Rebecca Kinlow",
+  "title": "Director of Financial Aid",
+  "level": "director",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Gurpreet Bhogal",
+  "title": "Director, Student Success Programs",
+  "level": "director",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Kellie Greiner",
+  "title": "Director, DSP&S",
+  "level": "director",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-clovis-community-college",
+  "name": "Teng Her",
+  "title": "Director of Technology",
+  "level": "director",
+  "sourceUrl": "https://www.cloviscollege.edu/_uploaded-files/_documents/about/phone-directory-fall2025.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Robert Pimentel",
+  "title": "Chancellor",
+  "level": "exec",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Carla Tweed",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Sam Aunai",
+  "title": "Vice President of Educational Services",
+  "level": "vp",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Angela Tos",
+  "title": "Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Bobbi Mahfood",
+  "title": "Dean of Educational Services",
+  "level": "dean",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Sarah Maokosy",
+  "title": "Associate Dean of Educational Services",
+  "level": "dean",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Jon Endicott",
+  "title": "Dean of Student Services",
+  "level": "dean",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Bethany Azevedo-Matos",
+  "title": "Dean of Firebaugh Center",
+  "level": "dean",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Joe Hash",
+  "title": "Associate Dean of Athletics",
+  "level": "dean",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Rosalind (Roz) Toliver",
+  "title": "Director of Admissions & Records/Registrar",
+  "level": "director",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Sarah Carmicheal",
+  "title": "Director Financial Aid",
+  "level": "director",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Shaun Bailey",
+  "title": "Director of Maintenance & Operations and Auxiliary Services",
+  "level": "director",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Seth Yocum",
+  "title": "Director of Farm of the Future",
+  "level": "director",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Lissett Padilla",
+  "title": "Director of Special Grants – Dual Enrollment / TRIO SSS/ TRiO UB / CalWORKs",
+  "level": "director",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coalinga-college",
+  "name": "Zach Soto",
+  "title": "Director of MESA",
+  "level": "director",
+  "sourceUrl": "https://westhillscollege.com/district/administration/administrators.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Vince Rodriguez",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Kathryn Mueller",
+  "title": "Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Isela Ocegueda",
+  "title": "Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Christine Nguyen",
+  "title": "Vice President, Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Nathaniel Harrison",
+  "title": "Dean, Innovative Learning",
+  "level": "dean",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Natalie V. Nagthall",
+  "title": "Dean of Career Education, Garden Grove Campus",
+  "level": "dean",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Stephanie Bridges",
+  "title": "Dean of Instruction, Westminster - Le-Jao Campus",
+  "level": "dean",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Leighia Fleming",
+  "title": "Dean of Students",
+  "level": "dean",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Tom Neal",
+  "title": "Dean, Newport Beach Campus",
+  "level": "dean",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Natalie Schonfeld",
+  "title": "Dean of Counseling",
+  "level": "dean",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-coastline-community-college",
+  "name": "Aeron Zentner",
+  "title": "Dean, Institutional Effectiveness",
+  "level": "dean",
+  "sourceUrl": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-alameda",
+  "name": "Melanie Dixon",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://alameda.edu/our-college/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-alameda",
+  "name": "Nicole Porter",
+  "title": "Vice President of Instruction",
+  "level": "vp",
+  "sourceUrl": "https://alameda.edu/our-college/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-alameda",
+  "name": "Eva Jennings",
+  "title": "Dean of Career and Workforce Education",
+  "level": "dean",
+  "sourceUrl": "https://alameda.edu/our-college/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-alameda",
+  "name": "Mildred Lewis",
+  "title": "Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://alameda.edu/our-college/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-alameda",
+  "name": "John Nguyen",
+  "title": "Dean of Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://alameda.edu/our-college/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-alameda",
+  "name": "Natalie Rodriguez",
+  "title": "Student Life and Activities Director",
+  "level": "director",
+  "sourceUrl": "https://alameda.edu/our-college/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Jonathan Eldridge",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Dana Emerson",
+  "title": "Assistant Superintendent/Vice President of Student Learning and Success",
+  "level": "vp",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Nekoda Harris",
+  "title": "Vice President of Human Resources",
+  "level": "vp",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Eresa Puch",
+  "title": "Vice President of Finance and Operations",
+  "level": "vp",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Stormy Miller Sabia",
+  "title": "Associate Vice President of Counseling & Support Services",
+  "level": "vp",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Jon Horinek",
+  "title": "Dean of Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Andy Zink",
+  "title": "Dean of Math & Science",
+  "level": "dean",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Grace Yuan",
+  "title": "Interim Dean of Arts & Humanities",
+  "level": "dean",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Cari Torres",
+  "title": "Dean of Instructional Management",
+  "level": "dean",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Alina Varona",
+  "title": "Dean of Workforce Development & Career Technical Education",
+  "level": "dean",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Ryan Byrne",
+  "title": "Associate Dean of Student Services Kinesiology & Athletics",
+  "level": "dean",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-marin",
+  "name": "Sadika Sulaiman-Hara",
+  "title": "Associate Dean of Student Services Student Activities & Advocacy",
+  "level": "dean",
+  "sourceUrl": "https://www1.marin.edu/sites/default/files/org-chart-MCCD.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Manuel Alejandro Pérez",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Danni Redding Lapuz",
+  "title": "VP, Instruction (Acting)",
+  "level": "vp",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Alex Guiriba",
+  "title": "VP, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Gerardo Ramirez",
+  "title": "VP, Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Tarana Chapple",
+  "title": "Dean, Academic Support & Learning Technologies",
+  "level": "dean",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Francisco Gamez",
+  "title": "Dean, Business & Technology",
+  "level": "dean",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Jeanne Marie Velickovic",
+  "title": "Dean, Creative Arts & Social Science",
+  "level": "dean",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Andreas Wolf",
+  "title": "Dean, Kinesiology, Athletics, & Dance",
+  "level": "dean",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "David Lau",
+  "title": "Dean, Language Arts (Interim)",
+  "level": "dean",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Christopher Walker",
+  "title": "Dean, Mathematics & Science (Interim)",
+  "level": "dean",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Krystal Duncan",
+  "title": "Dean, Counseling, Advising & Matriculation",
+  "level": "dean",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "David Crafts",
+  "title": "Dean, Enrollment Services & Student Support",
+  "level": "dean",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Monique Nakagawa",
+  "title": "Dean, PRIE (Interim)",
+  "level": "dean",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Allie Fasth",
+  "title": "Director, Pathways & Promise",
+  "level": "director",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Eddie Flores",
+  "title": "Director, Community Relations & Marketing (Acting)",
+  "level": "director",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "David Galvez",
+  "title": "Director, Equity",
+  "level": "director",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-san-mateo",
+  "name": "Andrea Vizenor",
+  "title": "ED, Strategic Initiatives & Economic Development",
+  "level": "director",
+  "sourceUrl": "https://collegeofsanmateo.edu/president/org-chart-embed.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Jasmine Ruys",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Erin Tague",
+  "title": "Assistant Superintendent/Vice President, Facilities Planning, Operations and Construction, University Center and Campus Safety",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Miranda Zamudio",
+  "title": "Interim Assistant Superintendent/Vice President, Human Resources and Professional Development",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Jason Hinkle",
+  "title": "Interim Assistant Superintendent/Vice President, Business Services",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Eric Harnish",
+  "title": "Assistant Superintendent/Vice President, Public Information, Advocacy and External Relations",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Jeff Gregor",
+  "title": "Assistant Superintendent/Vice President, Workforce and Economic Advancement",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Clinton Slaughter",
+  "title": "Acting Assistant Superintendent/Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "David Vakil",
+  "title": "Interim Assistant Superintendent/Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Daylene Meuschke",
+  "title": "Vice President, Institutional Research, Planning, and Institutional Effectiveness and CCC Initiatives",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Jason Munoz",
+  "title": "Associate Vice President, Maintenance and Grounds",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "John Green",
+  "title": "Associate Vice President, District Communications",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Jennifer Brezina",
+  "title": "Associate Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Paul Wickline",
+  "title": "Associate Vice President, Canyon Country Campus",
+  "level": "vp",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Monica Shukla-Belmontes",
+  "title": "Dean of Instruction, School of Business and Applied Technologies",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Nadia Cotti",
+  "title": "Dean of Instruction, School of Health Professions and Public Safety",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Chad Peters",
+  "title": "Dean of Instruction, School of Kinesiology, Health & Wellness, Fitness and Athletics",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Andy McCutcheon",
+  "title": "Dean of Instruction, School of Humanities and VAPA",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Dianne Avery",
+  "title": "Dean of Instruction, School of Academic Innovation and Continuing Education",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "James Glapa-Grossklag",
+  "title": "Dean of Instruction, School of Education Technology, Learning Resources and Online Education",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Harriet Happel",
+  "title": "Dean of Instruction, School of Career Education, Integrative Learning, and Employment Center",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Paloma Vargas",
+  "title": "Acting Dean of Instruction, School of Mathematics, Sciences and Engineering",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Preeta Saxena",
+  "title": "Dean, Institutional Research, Planning and Institutional Effectiveness",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Jia-Yi Cheng-Levine",
+  "title": "Dean, International Affairs and Global Engagement",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Anthony Michaelides",
+  "title": "Dean, Campus Services and Operations (Canyon Country Campus)",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Erika Torgeson",
+  "title": "Acting Dean of Counseling",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Steve Erwin",
+  "title": "Associate Dean, Admissions, Records and Veteran Services",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-canyons",
+  "name": "Tom Bilbruck",
+  "title": "Associate Dean, Student Financial Services",
+  "level": "dean",
+  "sourceUrl": "https://www.canyons.edu/administration/humanresources/Org-Chart-6.24.26.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Val Martinez Garcia",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://www.collegeofthedesert.edu/community/pro/2026-05-18-vice-president-of-administrative-services.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Raymond \"Chip\" West III",
+  "title": "Vice President of Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.collegeofthedesert.edu/community/pro/2026-05-18-vice-president-of-administrative-services.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Terri Wilson",
+  "title": "Vice President of Human Resources and Employee Relations",
+  "level": "vp",
+  "sourceUrl": "https://www.collegeofthedesert.edu/community/pro/2026-05-21-vice-president-of-human-resources.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Amanda Phillips",
+  "title": "Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Katie Chartier",
+  "title": "Interim Dean of Counseling Services",
+  "level": "dean",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Maria Ayon",
+  "title": "Dean of Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Leslie Quinones",
+  "title": "Acting Dean of Student Support Services",
+  "level": "dean",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Joy Cowden",
+  "title": "Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Michael Silveira",
+  "title": "Interim Dean, Educational Services & Planning",
+  "level": "dean",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Jessica Enders",
+  "title": "Acting Dean of Applied Sciences and Business",
+  "level": "dean",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Kimberly Dozier",
+  "title": "Acting Dean of Communication and Humanities",
+  "level": "dean",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Sarah Fry",
+  "title": "Acting Dean of Mathematics and Sciences; Acting Dean of Health Sciences and Education (shared)",
+  "level": "dean",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-desert",
+  "name": "Vanessa Fountain",
+  "title": "Dean of Social Sciences and Arts",
+  "level": "dean",
+  "sourceUrl": "https://collegeofthedesert.edu/students/staff-info.php",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Keith Flamer",
+  "title": "President/Superintendent",
+  "level": "exec",
+  "sourceUrl": "https://www.redwoods.edu/about/hr/documents/organizational-chart/RCCD%20-%20President%202025.03.13.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Crystal Morse",
+  "title": "Vice President, Instructional and Student Development",
+  "level": "vp",
+  "sourceUrl": "https://www.redwoods.edu/about/hr/documents/organizational-chart/RCCD%20-%20President%202025.03.13.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Julia Morrison",
+  "title": "Vice President, Administrative Services; Chief Business Officer",
+  "level": "vp",
+  "sourceUrl": "https://www.redwoods.edu/about/hr/documents/organizational-chart/RCCD%20-%20President%202025.03.13.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Alia Dunphy",
+  "title": "Associate Vice President, Human Resources; Chief Negotiation Officer",
+  "level": "vp",
+  "sourceUrl": "https://www.redwoods.edu/about/hr/documents/organizational-chart/RCCD%20-%20President%202025.03.13.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Kristin Lima",
+  "title": "Dean, Del Norte and Pelican Bay Prison",
+  "level": "dean",
+  "sourceUrl": "https://www.redwoods.edu/about/hr/documents/organizational-chart/RCCD%20-%20President%202025.03.13.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Amy Moffat",
+  "title": "Chief Information Officer",
+  "level": "director",
+  "sourceUrl": "https://www.redwoods.edu/about/hr/documents/organizational-chart/RCCD%20-%20President%202025.03.13.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Molly Blakemore",
+  "title": "Director of Marketing, Communications, and Public Affairs",
+  "level": "director",
+  "sourceUrl": "https://www.redwoods.edu/about/hr/documents/organizational-chart/RCCD%20-%20President%202025.03.13.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Marty Coelho",
+  "title": "Executive Director, College Advancement",
+  "level": "director",
+  "sourceUrl": "https://www.redwoods.edu/about/hr/documents/organizational-chart/RCCD%20-%20President%202025.03.13.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Peter Blakemore",
+  "title": "Executive Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.redwoods.edu/fs/forms-resources/_instruction/Spring%2025%20Instruction%20and%20Student%20Services%20Info%20Sheet.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Jessica Howard",
+  "title": "Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.redwoods.edu/fs/forms-resources/_instruction/Spring%2025%20Instruction%20and%20Student%20Services%20Info%20Sheet.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Rory Johnson",
+  "title": "Executive Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.redwoods.edu/fs/forms-resources/_instruction/Spring%2025%20Instruction%20and%20Student%20Services%20Info%20Sheet.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Amber Buntin",
+  "title": "Assoc. Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.redwoods.edu/fs/forms-resources/_instruction/Spring%2025%20Instruction%20and%20Student%20Services%20Info%20Sheet.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Ruthe Rhodes",
+  "title": "Assoc. Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.redwoods.edu/fs/forms-resources/_instruction/Spring%2025%20Instruction%20and%20Student%20Services%20Info%20Sheet.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-redwoods",
+  "name": "Mike Haley",
+  "title": "Assoc. Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.redwoods.edu/fs/forms-resources/_instruction/Spring%2025%20Instruction%20and%20Student%20Services%20Info%20Sheet.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Brent Calvin",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Ron Perez",
+  "title": "Assistant Superintendent/Vice President, Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Jesse Wilcoxson",
+  "title": "Assistant Superintendent/Vice President, Academic Services",
+  "level": "vp",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Jessica Morrison",
+  "title": "Assistant Superintendent/Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Francisco Castillo",
+  "title": "Academic Dean, Educational Support Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Richard Lubben",
+  "title": "Academic Dean, Arts & Letters",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Milli Owens",
+  "title": "Academic Dean, Business, Social Science, & Consumer Family Studies",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Jonna Schengel",
+  "title": "Academic Dean, CTE & Workforce Development",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Brent Davis",
+  "title": "Academic Dean, Athletics & P.E.",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Francisco Banuelos",
+  "title": "Academic Dean, Science, Math & Engineering",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Byron Woods",
+  "title": "Dean, Facilities",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Dave Richert",
+  "title": "Interim Dean, Technology Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Elise Garcia",
+  "title": "Dean, Student Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Juan Vazquez",
+  "title": "Dean, Student Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Courtney Sallam",
+  "title": "Dean, Student Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Mehmet \"Dali\" Öztürk",
+  "title": "Dean, Research, Planning & Institutional Effectiveness",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "John Bratsch",
+  "title": "Dean, Human Resources/Legal Affairs",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Kristin Robinson",
+  "title": "Dean, Enrollment Management & Special Projects",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Michele Brock",
+  "title": "Provost, Hanford Educational Center",
+  "level": "dean",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-sequoias",
+  "name": "Tim Foster",
+  "title": "Executive Director, Foundation",
+  "level": "director",
+  "sourceUrl": "https://www.cos.edu/en-us/Documents/Org%20Chart%20-%20Admin.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Char Perlas",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Mark Fields",
+  "title": "Vice President of Academic Affairs",
+  "level": "vp",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Melissa Ericsson",
+  "title": "Vice President of Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Patrick Walton",
+  "title": "Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Jeremiah Sims",
+  "title": "Dean of Career and Technical Education",
+  "level": "dean",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Hallie Coppi",
+  "title": "Dean of Health Sciences and Director of Nursing",
+  "level": "dean",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Val Roberts",
+  "title": "Dean of Liberal Arts and Sciences",
+  "level": "dean",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Matt Donaldson",
+  "title": "Director of IT",
+  "level": "director",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Veronica Rivera",
+  "title": "Director of Facilities and Maintenance",
+  "level": "director",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Charlie Roche",
+  "title": "Director of Athletics",
+  "level": "director",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Dawnie Slabaugh",
+  "title": "Director of Public Relations and Foundation",
+  "level": "director",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "John Tarantino",
+  "title": "Director of Planning, Assessment, and Research",
+  "level": "director",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-college-of-the-siskiyous",
+  "name": "Kristi Wilson",
+  "title": "Director of Human Resources",
+  "level": "director",
+  "sourceUrl": "https://siskiyous.edu/committees/presidentscabinet",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Chad Redwing",
+  "title": "Interim President",
+  "level": "exec",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Donna Cooper",
+  "title": "Vice President of Instruction",
+  "level": "vp",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Joseph Carranza",
+  "title": "Dean of Arts, Sciences, & Human Performance",
+  "level": "dean",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Brandon Price",
+  "title": "Dean of Career Technical Education (CTE)",
+  "level": "dean",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Michael Baldwin",
+  "title": "Director of Dual Enrollment",
+  "level": "director",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Michelle Walker",
+  "title": "Director of Rising Scholars",
+  "level": "director",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Emily Graham",
+  "title": "Director of K16 Initiative",
+  "level": "director",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Melissa Raby",
+  "title": "Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Michael Igoe",
+  "title": "Dean of Student Services",
+  "level": "dean",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Courtney Sutton",
+  "title": "Director of Student Access, Retention & Support",
+  "level": "director",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Anneka Rogers-Whitmer",
+  "title": "Director of Special Programs",
+  "level": "director",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Lesley Brunner",
+  "title": "Director of Admissions and Records",
+  "level": "director",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Marnie Shively",
+  "title": "Director of Student Financial Aid",
+  "level": "director",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Kristina Godinez",
+  "title": "Senior Director of College & Administrative Services",
+  "level": "director",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-columbia-college",
+  "name": "Amanda Stephens",
+  "title": "Director of Development",
+  "level": "director",
+  "sourceUrl": "https://gocolumbia.edu/administration/organizational_chart.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-compton-college",
+  "name": "Keith Curry",
+  "title": "President/CEO",
+  "level": "exec",
+  "sourceUrl": "https://www.compton.edu/about/presidentceo/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Kimberly R. Rogers",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Jason Berner",
+  "title": "Vice President, Equity + Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Kenyetta Tribble",
+  "title": "Vice President, Equity + Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Mayra Padilla",
+  "title": "Dean, Student Success + Institutional Effectiveness",
+  "level": "dean",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "George Mills",
+  "title": "Dean of Students",
+  "level": "dean",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Elvia Ornelas-Garcia",
+  "title": "Dean, Arts, Languages + Communication",
+  "level": "dean",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Ashley Phillips",
+  "title": "Dean, Health + Wellness; People, Culture + Social Sciences",
+  "level": "dean",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Evan Decker",
+  "title": "Dean, Business + Applied Technology, Workforce Development",
+  "level": "dean",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Larry Womack",
+  "title": "Director, Marketing + Media Relations",
+  "level": "director",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Monique Hernandez",
+  "title": "Interim Director, HSI Social Justice",
+  "level": "director",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Cole Moyer",
+  "title": "Director, Admissions + Records",
+  "level": "director",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Monica Rodriguez",
+  "title": "Director, Financial Aid",
+  "level": "director",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Litzia Martin",
+  "title": "Director, MESA",
+  "level": "director",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Kyle Alvarado",
+  "title": "Athletic Director",
+  "level": "director",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-contra-costa-college",
+  "name": "Mylene Ignacio",
+  "title": "Director, Early Learning Center",
+  "level": "director",
+  "sourceUrl": "https://www.contracosta.edu/office-of-the-president/organizational-chart-2/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Daren Otten",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/office-of-the-president/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Alma Correa",
+  "title": "Dean of Planning, Research and Institutional Effectiveness",
+  "level": "dean",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/office-of-the-president/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Michael Reese",
+  "title": "Vice President of Academic Services",
+  "level": "vp",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/academic-affairs/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Eva Hedger",
+  "title": "Dean of Instruction, Distance Education, and Learning Resources",
+  "level": "dean",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/academic-affairs/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Evelyn Sheffield",
+  "title": "Dean of Instruction, Career Technical Education, and Career Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/academic-affairs/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "JJ Santa Cruz",
+  "title": "Director of Athletics and Kinesiology",
+  "level": "director",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/academic-affairs/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Jane Kwon",
+  "title": "Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/student-services/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Jenn O'Donnell",
+  "title": "Dean of Student Services",
+  "level": "dean",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/student-services/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Brittney Blakeley",
+  "title": "Director of Financial Aid",
+  "level": "director",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/student-services/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Meredith Plummer",
+  "title": "Chief Business Officer",
+  "level": "director",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/business-services/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-copper-mountain-community-college",
+  "name": "Jared Zwicker",
+  "title": "Director of Fiscal Services",
+  "level": "director",
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/business-services/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Edward Bush",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Tadael Emiru",
+  "title": "Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Robert Montañez",
+  "title": "Vice President, Instruction and Student Learning",
+  "level": "vp",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Theresa Tena",
+  "title": "Vice President, Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Michael Lawlor",
+  "title": "Associate Vice President, Instruction and Student Learning",
+  "level": "vp",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Hong Pham",
+  "title": "Associate Vice President, Counseling and Student Services",
+  "level": "vp",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Dana Wassmer",
+  "title": "Associate Vice President, Economic and Workforce Development",
+  "level": "vp",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Banafsheh Amini",
+  "title": "Dean, Science and Engineering",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Brianna Ellis",
+  "title": "Dean of Student Success and Equity",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Kris Hubbard",
+  "title": "Dean, Agriculture, Food, and Natural Resources; Health and Human Services",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Emilie Mitchell",
+  "title": "Dean, Social and Behavioral Sciences",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Ashu Mishra",
+  "title": "Dean, Auto, Construction, and Design Technology and Elk Grove Center",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Camille Moreno",
+  "title": "Dean, Mathematics and Statistics",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Collin Pregliasco",
+  "title": "Dean, Health and Human Services, Kinesiology and Athletics",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Joann Ramirez",
+  "title": "Dean, Student Services and Enrollment Management",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Brian Rickel",
+  "title": "Dean, Arts, Media and Entertainment",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Tyler Rollins",
+  "title": "Dean, Business and Computer Science",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Sabrina Sencil",
+  "title": "Dean, Institutional Effectiveness, Research and Planning",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Emmanuel Sigauke",
+  "title": "Dean, English and Language Studies, Guided Pathways and Grants",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Gladis Troncoso",
+  "title": "Dean, Library, Learning Resources and Student Services",
+  "level": "dean",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cosumnes-river-college",
+  "name": "Chris Raines",
+  "title": "Director, Administrative Services",
+  "level": "director",
+  "sourceUrl": "https://crc.losrios.edu/college-administrators/college-administrators/college-administrators",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Kevin Horan",
+  "title": "College President",
+  "level": "exec",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Mike Strong",
+  "title": "Vice President Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Keith Wurtz",
+  "title": "Vice President Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Delmy Spencer",
+  "title": "Vice President Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Michelle Riggs",
+  "title": "Executive Director Institutional Advancement & Foundation",
+  "level": "director",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Demian Brunty",
+  "title": "Director Facilities, Maintenance & Operations",
+  "level": "director",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Heather Chittenden",
+  "title": "Director Athletics",
+  "level": "director",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Mauro \"Ivan\" Peña",
+  "title": "Dean Equity & Student Success",
+  "level": "dean",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Willie Blackmon",
+  "title": "Dean Student Services & Development",
+  "level": "dean",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Jeffrey Smith",
+  "title": "Dean Social, Information & Natural Sciences",
+  "level": "dean",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Sara Butler",
+  "title": "Dean Language, Arts & Academic Support",
+  "level": "dean",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Dan Word",
+  "title": "Dean Career Education & Human Development",
+  "level": "dean",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-crafton-hills-college",
+  "name": "Giovanni Sosa",
+  "title": "Dean Institutional Effectiveness, Research & Planning",
+  "level": "dean",
+  "sourceUrl": "https://www.craftonhills.edu/about-chc/documents/chc-presidents-office-org-chart-2026-03-31.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Jill Stearns",
+  "title": "Superintendent/President",
+  "level": "exec",
+  "sourceUrl": "https://www.cuesta.edu/about/president/contact-office-president.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Jason Curtis",
+  "title": "Assistant Superintendent, Vice President, Office of Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Erin Naegle",
+  "title": "Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Aubrey Kuan Roderick",
+  "title": "Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Cynthia Wilshusen",
+  "title": "Interim-Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Monica Millard",
+  "title": "Interim-Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Mia Ruiz",
+  "title": "Dean NCC",
+  "level": "dean",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Araceli Espinoza-Wade",
+  "title": "Associate Dean",
+  "level": "dean",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Beth Johnson",
+  "title": "Associate Dean of Nursing",
+  "level": "dean",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Ryan Cartnal",
+  "title": "Exec. Director",
+  "level": "director",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuesta-college",
+  "name": "Robert Mariucci",
+  "title": "Director of Athletics",
+  "level": "director",
+  "sourceUrl": "https://www.cuesta.edu/about/documents/vp-instruction-docs/Office_of_Academic_Affairs_Directory.pdf",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Jessica Robinson",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Erica Balakian",
+  "title": "Vice President, Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Jeanie Machado Tyler",
+  "title": "Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Victoria Marrón",
+  "title": "Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Brianna Hays",
+  "title": "Senior Dean, Institutional Effectiveness, Success & Equity",
+  "level": "dean",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Michael Navarre",
+  "title": "Director, College & Community Relations",
+  "level": "director",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Jane Gazale",
+  "title": "Dean, Arts, Humanities & Social Sciences",
+  "level": "dean",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Anthony Campbell",
+  "title": "Dean, Athletics, Kinesiology & Health Education",
+  "level": "dean",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Miguel Alvarez",
+  "title": "Interim Dean, Career Education",
+  "level": "dean",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Brieanna Cuellar",
+  "title": "Dean, Counseling Services",
+  "level": "dean",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Jessica Hurtado Soto",
+  "title": "Dean, Learning & Technology Resources",
+  "level": "dean",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Tammi Marshall",
+  "title": "Dean, Math, Science & Engineering",
+  "level": "dean",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Lauren Vaknin",
+  "title": "Dean, Student Engagement and Belonging",
+  "level": "dean",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Sade Burrell",
+  "title": "Associate Dean, Student Services & Special Programs",
+  "level": "dean",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Tashaurie Rogers",
+  "title": "Director, Admissions & Records",
+  "level": "director",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cuyamaca-college",
+  "name": "Rachel Andersen",
+  "title": "Director, Financial Aid",
+  "level": "director",
+  "sourceUrl": "https://catalog.gcccd.edu/cuyamaca/college-district-administration/",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cypress-college",
+  "name": "Scott W. Thayer",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://www.cypresscollege.edu/about/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cypress-college",
+  "name": "Luis Gonzalez",
+  "title": "Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.cypresscollege.edu/about/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cypress-college",
+  "name": "Paul de Dios",
+  "title": "Vice President of Student Services",
+  "level": "vp",
+  "sourceUrl": "https://www.cypresscollege.edu/about/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cypress-college",
+  "name": "Tony Jake",
+  "title": "Vice President of Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.cypresscollege.edu/about/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cypress-college",
+  "name": "Howard Kummerman",
+  "title": "Executive Director, Foundation",
+  "level": "director",
+  "sourceUrl": "https://www.cypresscollege.edu/about/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cypress-college",
+  "name": "Marc Posner",
+  "title": "Chief Campus Communications Officer",
+  "level": "director",
+  "sourceUrl": "https://www.cypresscollege.edu/about/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-cypress-college",
+  "name": "Bryan C. Ventura",
+  "title": "Director, Institutional Research & Planning",
+  "level": "director",
+  "sourceUrl": "https://www.cypresscollege.edu/about/college-leadership",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Christopher Dela Rosa",
+  "title": "Interim President",
+  "level": "exec",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Aaron Korngiebel",
+  "title": "Vice President, Workforce Innovation and Economic Advancement",
+  "level": "vp",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Michele Lebleu-Burns",
+  "title": "Vice President, Student Services",
+  "level": "vp",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Farhad Sabit",
+  "title": "Vice President, Finance and Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Ram Subramaniam",
+  "title": "Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Sam Bliss",
+  "title": "Associate Vice President, Instruction",
+  "level": "vp",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Elizabeth Smith",
+  "title": "Associate Vice President, Communications and External Relations",
+  "level": "vp",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Mari Acob-Nash",
+  "title": "Dean, Student Development and EOPS",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Laureen Balducci",
+  "title": "Dean, Counseling and Disability Support Programs and Services",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Nazy Galoyan",
+  "title": "Dean, Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Michael Hegglund",
+  "title": "Dean, Community Education",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Michelle Hernandez",
+  "title": "Dean, Equity and Engagement",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Adrienne Hypolite",
+  "title": "Associate Dean, Learning Communities",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Manisha Karia",
+  "title": "Dean, Business, Computer Science and Applied Technologies",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Mehrdad Khosravi",
+  "title": "Dean, Physical Sciences, Mathematics and Engineering",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Debbie Lee",
+  "title": "Dean, Intercultural and International Studies",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Eric Mendoza",
+  "title": "Dean, Physical Education and Athletics",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Anita Muthyala-Kandula",
+  "title": "Dean, Biological, Health and Environmental Sciences",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Gabriela Nocito",
+  "title": "Dean, Online Education and Learning Resources",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Elvin Ramos",
+  "title": "Dean, Social Sciences and Humanities",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Thomas Ray",
+  "title": "Dean, Language Arts",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Kristin Skager",
+  "title": "Dean, Creative Arts",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Hyon Chu Yi-Baker",
+  "title": "Associate Dean, Student Affairs",
+  "level": "dean",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Yvette Campbell",
+  "title": "Director, STEM Success Program",
+  "level": "director",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Henry Cervantes",
+  "title": "Director, College Operations",
+  "level": "director",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Ron Hannon",
+  "title": "Director, Athletics",
+  "level": "director",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Tim Harper",
+  "title": "Director, Child Development Center",
+  "level": "director",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Lisa Mandy",
+  "title": "Director, Financial Aid and Scholarships",
+  "level": "director",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Rana Marinas",
+  "title": "Director, Nursing",
+  "level": "director",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Rosafel A. Nogra",
+  "title": "Director, Student Health Services",
+  "level": "director",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-de-anza-college",
+  "name": "Alisa Omeragic",
+  "title": "Director, College Fiscal Services",
+  "level": "director",
+  "sourceUrl": "https://deanza.edu/president/administrators.html",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Monica Chahal",
+  "title": "President",
+  "level": "exec",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Vicki Ferguson",
+  "title": "Vice President, Equity and Student Services/Title IX Coordinator",
+  "level": "vp",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Joseph Gorga",
+  "title": "Vice President, Equity and Instruction",
+  "level": "vp",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Sara Parker",
+  "title": "Vice President, Business and Administrative Services",
+  "level": "vp",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Amy Lehman-Sexton",
+  "title": "Senior Dean, San Ramon",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Nikki Moultrie",
+  "title": "Senior Dean, Curriculum and Instruction",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Yvonne Canada-Clarke",
+  "title": "Dean, Counseling and Student Success Programs",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Dennis Franco",
+  "title": "Dean, Math & Engineering",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Catherine Franco",
+  "title": "Dean, San Ramon",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Janette Funaro",
+  "title": "Dean, Arts and Communication",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=0",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Anne Kingsley",
+  "title": "Dean, Library, Educational Technology and Learning Resources",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=1",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Lindsay Kong",
+  "title": "Dean, Accreditation Liaison Officer and Institutional Effectiveness",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=1",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Carla Molina-Campos",
+  "title": "Dean, Enrollment Services",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=1",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "James Noel",
+  "title": "Dean, English and Equity Pedagogy",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=1",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Charles Ramos",
+  "title": "Dean, Biological and Physical Sciences",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=1",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Lisa Ratchford",
+  "title": "Dean, Social Sciences",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=1",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Cassondra Reinsel",
+  "title": "Dean - Student Equity and Engagement",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=1",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Charlie Shi",
+  "title": "Dean, Business, Computer Science, Culinary Arts",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=1",
+  "checked": "2026-10-28"
+ },
+ {
+  "instId": "c-ca-diablo-valley-college",
+  "name": "Christine Worsley",
+  "title": "Dean, Kinesiology and Public Health; Athletic Director",
+  "level": "dean",
+  "sourceUrl": "https://www.dvc.edu/directory?page=1",
+  "checked": "2026-10-28"
+ }
+]
