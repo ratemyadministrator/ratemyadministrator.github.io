@@ -228,6 +228,7 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 .vstate small{display:block;color:var(--muted);font-family:var(--mono);font-size:10.5px;overflow-wrap:anywhere}
 
 /* how it works */
+.videocard video{display:block;width:100%;aspect-ratio:16/9;border-radius:8px;background:var(--well)}
 .flow{display:flex;flex-direction:column;gap:0;counter-reset:f}
 .flow li{list-style:none;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding-bottom:16px;position:relative}
 .flow li::before{counter-increment:f;content:counter(f);width:28px;height:28px;border-radius:50%;background:var(--card-hi);display:grid;place-items:center;font:600 12px/1 var(--mono);color:var(--blue)}
@@ -387,6 +388,12 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 <!-- HOW IT WORKS -->
 <section class="view" id="v-how" hidden>
   <div class="sec-h"><h2><svg class="icon"><use href="#i-shield"/></svg>How it works</h2></div>
+  <div class="card videocard">
+    <video id="how-video" controls playsinline preload="metadata" poster="media/how-to-post-safely.jpg" aria-describedby="how-video-desc">
+      <source src="media/how-to-post-safely.mp4" type="video/mp4">
+    </video>
+    <p class="sub" id="how-video-desc" style="margin:0">Two-minute walkthrough: posting a review step by step, then six ways to protect yourself. No sound; all instructions are on screen and written out below.</p>
+  </div>
   <div class="card">
     <ol class="flow" style="margin:0;padding:0">
       <li><div><b>Find your institution</b><p>Search 3,239 US community colleges, state universities, and private nonprofit colleges.</p></div></li>
@@ -398,8 +405,12 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
   <div class="card">
     <div class="sec-h" style="padding:0"><h2 style="font-size:16px">Protecting yourself</h2></div>
     <ul class="lim">
-      <li><b>Details can identify you.</b> At a small college, a meeting date, a policy number cited against you, or a program you alone teach points to you. Describe patterns instead.</li>
-      <li><b>Experience answers stay grouped.</b> Each yes/no figure appears only after at least 3 people answer it, so no single answer stands out.</li>
+      <li><b>Describe patterns, not incidents.</b> "Budget cuts are announced without asking the departments affected" could come from many people. "At the Oct. 4 meeting he told me my lab would close" points to a few.</li>
+      <li><b>Leave out details only you would know:</b> dates of specific meetings or emails, a policy number cited against you, a program only you teach, your exact department or title.</li>
+      <li><b>Post from your own phone or computer,</b> on cellular data or home internet, not a work computer or campus Wi-Fi. A VPN adds another layer.</li>
+      <li><b>Timing can point to you.</b> Wait a while after a specific event, especially a small meeting, before posting.</li>
+      <li><b>What the site keeps:</b> your ratings, answers, written review, and the status, role, and years you choose to show. Never stored with a review: your name, email, account, or IP address. Yes/no answers appear only after at least 3 people answer.</li>
+      <li><b>Keep it about conduct in the role.</b> No student names, no health, family, or personal-life details, nothing you can't support. Reviews that read as personal attacks are removed.</li>
       <li><b>Editing your review.</b> This browser remembers your reviews, so reviewing the same person again replaces your earlier review. Another device posts a new one.</li>
     </ul>
   </div>
@@ -407,7 +418,7 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
     <div class="sec-h" style="padding:0"><h2 style="font-size:16px">Limits to know</h2></div>
     <ul class="lim">
       <li><b>Nothing confirms reviewers work there.</b> Anyone can post, including about colleges they never worked at. Read scores alongside the number of reviews and the written detail.</li>
-      <li><b>No accounts, no IP addresses saved.</b> The site stores only what you type and select. Like any web service, the database host keeps short-lived request logs that can include IP addresses; using a VPN or public network adds a layer of protection.</li>
+      <li><b>No accounts, no IP addresses saved.</b> The site stores only what you type and select. Like any web service, the database host keeps short-lived request logs that can include IP addresses; a VPN adds a layer of protection.</li>
       <li><b>Moderation.</b> Readers can report a review; three reports hide it until the site owner checks it. The owner can also hide any review or administrator listing.</li>
     </ul>
   </div>
@@ -781,6 +792,7 @@ function route(force){
   VIEWS.forEach(x => $("#v-"+x).hidden = x!==v);
   document.querySelectorAll(".nav a").forEach(a => a.setAttribute("aria-current", a.dataset.v===v || (v==="admin"&&a.dataset.v==="leaderboard") ? "page" : "false"));
   if(v!=="admin" && S.view && S.view!=="admin") S.prevView = S.view; else if(v==="admin" && S.view!=="admin") S.prevView = S.view;
+  if(v!=="how"){ const hv=document.getElementById("how-video"); if(hv && !hv.paused) hv.pause(); }
   S.view = v; renderView(); window.scrollTo(0,0);
 }
 function renderView(){
