@@ -85,7 +85,7 @@ Keep a human able to override the agent, and keep the secret key in the agent's 
 - **Floods:** the database rejects more than 15 reviews of one administrator per hour and more than 60 reviews site-wide per minute. Add Cloudflare Turnstile if spam becomes a problem.
 - **Editing:** the browser that posted a review holds a private key that lets it update that review. Another device posts a new review.
 - **Experience answers** appear only as percentages once at least 3 people have answered a question.
-- **Legal:** in the US, Section 230 generally protects sites from liability for what users post. Publish a terms page and a takedown contact before launch, and respond to removal requests.
+- **Legal:** in the US, Section 230 generally protects sites from liability for what users post. The How it works tab carries the terms and the removal-request contact (ratemyadministrators@gmail.com); answer requests within 7 days.
 
 ## Files
 
