@@ -65,7 +65,8 @@ main{padding-block:16px 110px;display:flex;flex-direction:column;gap:16px}
 .label{font:500 10px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--faint)}
 .search{display:flex;align-items:center;gap:8px;background:var(--card-hi);border-radius:10px;padding:0 12px;height:46px}
 .search .icon{color:var(--blue)}
-.search input{flex:1;min-width:0;background:none;border:0;outline:0;height:100%}
+.search input{flex:1;min-width:0;background:none;border:0;outline:0;height:100%;font-size:16px}
+input.txt,select.sel,textarea.txt{font-size:16px}
 .search input::placeholder{color:var(--faint)}
 .chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
@@ -518,7 +519,7 @@ async function loadDirectory(){
   try{
     const r = await fetch("data/directory.json"); if(!r.ok) throw new Error(r.status); const j = await r.json();
     S.dirMeta = j.meta || {};
-    S.dir = j.inst.map(a => ({id:a[0], name:a[1], city:a[2], state:a[3], system:a[4], domain:a[5], type:a[6], _n:norm(a[1]+" "+a[2]+" "+(a[4]||"")+" "+(STATES[a[3]]||"")+" "+aliases(a[1]))}));
+    S.dir = j.inst.map(a => ({id:a[0], name:a[1], city:a[2], state:a[3], system:a[4], domain:a[5], type:a[6], _n:norm(a[1]+" "+a[2]+" "+(a[4]||"")+" "+(STATES[a[3]]||"")+" "+aliases(a[1])), _nm:norm(a[1]), _al:norm(aliases(a[1]))}));
     S.dir.forEach(i => { S.byId.set(i.id, i); S.counts[i.type]++; });
   }catch(e){ S.dirError = "The college directory didn't load. Reload the page to try again."; }
   fillStates(); renderAll();
@@ -609,7 +610,7 @@ function renderInstitutions(){
   const q = norm($("#in-q").value), st = $("#in-state").value, rated = $("#in-rated").checked;
   const ratedSet = new Set([...S.admins.values()].map(a=>a.instId));
   const qs = q ? q.split(" ") : [];
-  const rows = S.dir.filter(i => i.type===S.ui.inTab && (!st || i.state===st) && (!rated || ratedSet.has(i.id)) && qs.every(w => i._n.includes(w)));
+  const rows = searchInst(S.dir.filter(i => i.type===S.ui.inTab && (!st || i.state===st) && (!rated || ratedSet.has(i.id))), $("#in-q").value, 100000);
   $("#in-count").textContent = `${rows.length.toLocaleString()} ${rows.length===1?"match":"matches"}`;
   $("#in-list").innerHTML = rows.slice(0,S.ui.inLimit).map(i => {
     const s = instStats(i.id);
@@ -687,10 +688,30 @@ function renderS2(){
   }
   b.innerHTML = `<label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="s2-q" type="search" placeholder="Type your college's name" autocomplete="off"></label><div class="picklist" id="s2-list" hidden></div>`;
 }
+// Rank: name starts with the search > a word in the name starts with it > nickname > anywhere in the name > city/system/state.
+const STOP = new Set(["of","the","and","at","in","for","college","university","community"]);
+function searchInst(list, raw, limit){
+  const q = norm(raw); if(!q) return list.slice(0, limit);
+  const qs = q.split(" ");
+  const out = [];
+  for(const i of list){
+    let s;
+    if(i._nm.startsWith(q)) s = 0;
+    else if(i._al && (" "+i._al).includes(" "+q)) s = 1;
+    else if(qs.every(w => (" "+i._nm).includes(" "+w))) s = 2;
+    else if(qs.every(w => i._nm.includes(w))) s = 3;
+    else if(qs.every(w => i._n.includes(w))) s = 4;
+    else continue;
+    if(q.length < 3 && s > 2) continue;           // one or two letters: only names that start with them
+    out.push([s, i]);
+  }
+  out.sort((a,b) => a[0]-b[0] || a[1].name.localeCompare(b[1].name));
+  return out.slice(0, limit).map(x => x[1]);
+}
 function renderS2List(){
   const el = $("#s2-list"); if(!el) return; const q = norm($("#s2-q").value);
-  if(q.length<2){ el.hidden = true; return; }
-  const qs = q.split(" "); const rows = S.dir.filter(i => qs.every(w=>i._n.includes(w))).slice(0,30);
+  if(q.length<1){ el.hidden = true; return; }
+  const rows = searchInst(S.dir, q, 40);
   el.hidden = false;
   el.innerHTML = rows.map(i=>`<button class="pick" data-pick-inst="${esc(i.id)}"><span>${esc(i.name)}</span><small>${esc(i.city)}, ${esc(i.state)}</small></button>`).join("") || `<div class="sub" style="padding:10px">No match. Check the spelling.</div>`;
 }
