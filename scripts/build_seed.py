@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 inst = {r[0]: r[1] for r in json.load(open(ROOT / "data" / "directory.json"))["inst"]}
-LEVELS = {"exec", "vp", "dean", "director"}
+LEVELS = {"board", "exec", "vp", "dean", "director"}
 
 def q(v):
     return "null" if v in (None, "") else "'" + str(v).replace("'", "''") + "'"
@@ -26,7 +26,7 @@ for path in sys.argv[1:]:
         if a.get("instId") not in inst or len(name) < 5 or len(name) > 80 or len(title) < 3 or a.get("level") not in LEVELS:
             skipped.append(a); continue
         key = (a["instId"], name.lower())
-        rank = ["exec", "vp", "dean", "director"].index(a["level"])
+        rank = ["board", "exec", "vp", "dean", "director"].index(a["level"])
         if key in seen:  # same person, second title: combine them, keep the higher level
             r = seen[key]
             if title.lower() not in r["title"].lower():

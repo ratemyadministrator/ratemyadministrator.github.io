@@ -214,6 +214,8 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 .star{width:40px;height:40px;border-radius:6px;border:0;background:var(--card-hi);display:grid;place-items:center;color:var(--faint)}
 .star.on{color:var(--amber)}
 .star.on svg{fill:currentColor}
+.star.na{width:auto;padding:0 12px;font:600 12px/1 var(--mono);letter-spacing:.04em}
+.star.na.on{background:var(--blue-bg);color:var(--blue)}
 .stars .lbl{margin-left:auto;font:500 10.5px/1 var(--mono);text-transform:uppercase;color:var(--faint)}
 .exp{background:var(--surface);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px}
 .exp p{margin:0;font-size:13px}
@@ -296,7 +298,7 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="welcome-h" hidden>
   <div class="box">
     <h2 id="welcome-h"><span>Rate my</span> <s>Professor</s> <span class="stamp">Administrator</span></h2>
-    <p>Anonymous reviews of the deans, VPs, and presidents who run your college. What would you like to do?</p>
+    <p>Anonymous reviews of the deans, VPs, presidents, and trustees who run your college. What would you like to do?</p>
     <button class="choice rate" data-go="submit"><span class="ci"><svg class="icon lg"><use href="#i-pen"/></svg></span><span><b>Rate an administrator</b><small>Find your college and post an anonymous review</small></span></button>
     <button class="choice read" data-go="institutions"><span class="ci"><svg class="icon lg"><use href="#i-bank"/></svg></span><span><b>Read reviews</b><small>Look up a college and see how its leaders are rated</small></span></button>
     <button class="skip" data-go="leaderboard">Skip to the leaderboard</button>
@@ -308,7 +310,7 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 <section class="view" id="v-leaderboard">
   <div class="manifesto">
     <h1><span>Rate my</span><s>Professor</s><span class="stamp">Administrator</span></h1>
-    <p>Faculty and staff review the deans, vice presidents, presidents, and chancellors who run their institutions. Post anonymously: no account, no email, no name.</p>
+    <p>Faculty and staff review the deans, vice presidents, presidents, chancellors, and board trustees who run their institutions. Post anonymously: no account, no email, no name.</p>
     <div class="statline"><span><b class="num" id="st-inst">0</b> institutions</span><span><b class="num" id="st-admins">0</b> administrators</span><span><b class="num" id="st-reviews">0</b> reviews</span></div>
   </div>
   <label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="lb-q" type="search" placeholder="Search administrator, title, or institution" autocomplete="off"></label>
@@ -367,7 +369,7 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
   </div>
 
   <div class="step" id="s4" aria-disabled="true">
-    <div class="stephd"><h3><i id="s4n">3</i>Ratings</h3><span class="label">1 to 5 stars</span></div>
+    <div class="stephd"><h3><i id="s4n">3</i>Ratings</h3><span class="label">Stars, or N/A</span></div>
     <div id="metrics" style="display:flex;flex-direction:column;gap:10px"></div>
     <div class="field"><span class="label">Your experience (optional; shown only as group percentages)</span><div id="exps" style="display:flex;flex-direction:column;gap:8px"></div></div>
     <div class="field"><span class="label">Recommend contract renewal?</span>
@@ -491,7 +493,7 @@ const EXP_STATS = [
   {k:"union", f:(p,n)=>`${p}% of ${n} respondents needed the union to resolve an issue`, bad:true}
 ];
 const MIN_N = 3;
-const LEVELS = {exec:"President / Chancellor", vp:"VP / Provost", dean:"Dean / Assoc. dean", director:"Director / Manager"};
+const LEVELS = {board:"Trustee / Board member", exec:"President / Chancellor", vp:"VP / Provost", dean:"Dean / Assoc. dean", director:"Director / Manager"};
 const TAGS = [["Assigns, doesn't ask",0],["Expects unpaid extra work",0],["Dismissive",0],["Unclear expectations",0],["Changes assignments without notice",0],["Evasive about pay",0],["Discipline without due process",0],["Retaliates against concerns",0],["Works around the contract",0],["Top-down decisions",0],["Respectful",1],["Communicates clearly",1],["Open to disagreement",1],["Asks before assigning",1],["Pays for extra work",1],["Gives notice before changes",1],["Works with the union",1],["Supports special programs",1],["Senate-respectful",1]];
 
 /* ---------- state ---------- */
@@ -543,20 +545,27 @@ function fillStates(){
 }
 
 /* ---------- aggregates ---------- */
-function finish(a){ let t=0; METRICS.forEach(m=>t+=a.avg[m.k]); a.overall=t/METRICS.length; a.grp={}; Object.keys(GROUPS).forEach(gk=>{ const ms=METRICS.filter(m=>m.g===gk); a.grp[gk]=ms.reduce((s,m)=>s+a.avg[m.k],0)/ms.length; }); a.weak=METRICS.reduce((w,m)=>a.avg[m.k]<a.avg[w.k]?m:w, METRICS[0]); return a; }
+const mean = xs => xs.length ? xs.reduce((s,x)=>s+x,0)/xs.length : null;
+function finish(a){
+  const has = METRICS.filter(m => a.avg[m.k] != null);
+  a.overall = mean(has.map(m=>a.avg[m.k]));
+  a.grp = {}; Object.keys(GROUPS).forEach(gk => { a.grp[gk] = mean(has.filter(m=>m.g===gk).map(m=>a.avg[m.k])); });
+  a.weak = has.length ? has.reduce((w,m)=>a.avg[m.k]<a.avg[w.k]?m:w, has[0]) : null;
+  return a;
+}
 function aggregates(){
   const by = new Map();
-  for(const [id,r] of S.summary){ const a={n:r.n, avg:{}, exp:{}, yes:r.yes, votes:r.votes, tags:new Map(), last:Date.parse(r.last_at)||0, latest:null}; METRICS.forEach(m=>a.avg[m.k]=+r["avg_"+m.k]); by.set(id, finish(a)); }
+  for(const [id,r] of S.summary){ const a={n:r.n, avg:{}, exp:{}, yes:r.yes, votes:r.votes, tags:new Map(), last:Date.parse(r.last_at)||0, latest:null}; METRICS.forEach(m=>a.avg[m.k]= r["avg_"+m.k]==null ? null : +r["avg_"+m.k]); by.set(id, finish(a)); }
   const full = new Map();
   for(const r of S.reviews){
-    let a = full.get(r.adminId); if(!a){ a = {n:0, sums:Object.fromEntries(METRICS.map(m=>[m.k,0])), exp:{}, yes:0, votes:0, tags:new Map(), last:0, latest:null}; full.set(r.adminId,a); }
-    a.n++; METRICS.forEach(m => a.sums[m.k] += +r.scores?.[m.k] || 0);
+    let a = full.get(r.adminId); if(!a){ a = {n:0, sums:Object.fromEntries(METRICS.map(m=>[m.k,0])), cnt:Object.fromEntries(METRICS.map(m=>[m.k,0])), exp:{}, yes:0, votes:0, tags:new Map(), last:0, latest:null}; full.set(r.adminId,a); }
+    a.n++; METRICS.forEach(m => { const v = r.scores?.[m.k]; if(typeof v==="number"){ a.sums[m.k] += v; a.cnt[m.k]++; } });
     if(r.verdict==="yes"||r.verdict==="no"){ a.votes++; if(r.verdict==="yes") a.yes++; }
     EXP.forEach(x => { const v = r.exp?.[x.k]; if(v==='yes'||v==='no'){ const e = a.exp[x.k] ||= {y:0,n:0}; e.n++; if(v==='yes') e.y++; } });
     (r.tags||[]).forEach(t => a.tags.set(t,(a.tags.get(t)||0)+1));
     if((r.createdAt||0) > a.last){ a.last = r.createdAt||0; a.latest = r; }
   }
-  for(const [id,a] of full){ a.avg={}; METRICS.forEach(m=>a.avg[m.k]=a.sums[m.k]/a.n); by.set(id, finish(a)); }
+  for(const [id,a] of full){ a.avg={}; METRICS.forEach(m=>a.avg[m.k]= a.cnt[m.k] ? a.sums[m.k]/a.cnt[m.k] : null); by.set(id, finish(a)); }
   return by;
 }
 let AGG = new Map();
@@ -577,7 +586,7 @@ function adminCard(id){
       <div style="min-width:0"><p class="aname">${esc(ad.name)}</p><div class="ameta">${esc(ad.title||LEVELS[ad.level]||"")}</div>
       <div class="ainst">${esc(inst?inst.name:ad.instName||"")}${inst?` · ${esc(inst.state)}`:""}</div></div></div>
       <div class="score"><b class="t-${tn} num">${fmt(g?.overall)}</b><span class="num">${g?g.n:0} review${g&&g.n===1?"":"s"}</span></div></div>
-    ${g?`<div class="indices"><div><span>Treatment</span><b class="t-${tone(g.grp.people)}-ink num">${fmt(g.grp.people)}</b></div><div><span>Process</span><b class="t-${tone(g.grp.process)}-ink num">${fmt(g.grp.process)}</b></div><div><span>Weakest</span><b class="t-${tone(g.avg[g.weak.k])}-ink num">${esc(g.weak.s)} ${fmt(g.avg[g.weak.k])}</b></div></div>`:""}
+    ${g?`<div class="indices"><div><span>Treatment</span><b class="t-${tone(g.grp.people)}-ink num">${fmt(g.grp.people)}</b></div><div><span>Process</span><b class="t-${tone(g.grp.process)}-ink num">${fmt(g.grp.process)}</b></div><div><span>Weakest</span><b class="t-${tone(g.weak?g.avg[g.weak.k]:null)}-ink num">${g.weak?`${esc(g.weak.s)} ${fmt(g.avg[g.weak.k])}`:"--"}</b></div></div>`:""}
     ${topTags.length?`<div class="tags">${topTags.map(([t,c])=>`<span class="tag ${posSet.has(t)?"pos":"neg"}">${esc(t)} <span class="num" style="opacity:.7">${c}</span></span>`).join("")}</div>`:""}
     ${g?.latest?.text?`<p class="quote">"${esc(g.latest.text.length>220?g.latest.text.slice(0,217)+"...":g.latest.text)}"</p>`:""}
   </button>`;
@@ -668,7 +677,7 @@ function renderAdminDetail(){
   <button class="btn primary" data-act="rate-admin" data-admin="${esc(id)}">${ic("pen")}Review ${esc(ad.name.split(" ")[0]||"this administrator")}</button>
   <div class="sec-h"><h2 style="font-size:16px">Reviews</h2></div>
   ${revs.map(r=>`<article class="rv"><div class="rvh"><span>${esc(r.status||"Anonymous")}${r.lastYear?` through ${esc(r.lastYear)}`:""} · ${esc(r.role||"")} · ${esc(r.years||"")}</span><span class="num">${dateStr(r.createdAt)}</span></div>
-    <div class="indices">${METRICS.map(m=>`<div><span>${esc(m.s)}</span><b class="t-${tone(r.scores?.[m.k])}-ink num">${r.scores?.[m.k]??"--"}</b></div>`).join("")}</div>
+    <div class="indices">${METRICS.map(m=>`<div><span>${esc(m.s)}</span><b class="t-${tone(r.scores?.[m.k])}-ink num">${r.scores?.[m.k]??"N/A"}</b></div>`).join("")}</div>
     ${r.text?`<p>${esc(r.text)}</p>`:""}
     <div class="row" style="justify-content:space-between">${(r.tags||[]).length?`<div class="tags">${r.tags.map(t=>`<span class="tag ${posSet.has(t)?"pos":"neg"}">${esc(t)}</span>`).join("")}</div>`:"<span></span>"}
     <span class="label">Renewal: ${esc(r.verdict||"--")}</span></div>
@@ -755,11 +764,11 @@ function adminPicks(list, q){
 function renderS4(){
   const ready = !!(S.form.admin||S.form.newAdmin);
   $("#s4").setAttribute("aria-disabled", !ready); $("#s5").setAttribute("aria-disabled", !ready);
-  const allScored = METRICS.every(m=>S.form.scores[m.k]);
+  const allScored = METRICS.every(m=>S.form.scores[m.k]!=null);
   $("#s4n").className = allScored && S.form.verdict ? "done":""; $("#s4n").innerHTML = allScored && S.form.verdict ? ic("check","sm") : "3";
-  $("#metrics").innerHTML = Object.entries(GROUPS).map(([gk,gl])=>`<span class="label" style="margin-top:4px">${gl}</span>`+METRICS.filter(m=>m.g===gk).map(m=>{ const v = S.form.scores[m.k]||0; return `<div class="metric"><div class="top"><div><b>${esc(m.t)}</b><small>${esc(m.d)}</small></div><span class="val num">${v?v.toFixed(1):"--"}</span></div>
-    <div class="stars" role="radiogroup" aria-label="${esc(m.t)}">${[1,2,3,4,5].map(n=>`<button type="button" class="star ${n<=v?"on":""}" data-m="${m.k}" data-n="${n}" role="radio" aria-checked="${n===v}" aria-label="${n} star${n>1?"s":""}">${ic("star")}</button>`).join("")}
-    <span class="lbl">${v? (v<=2?m.lo:v>=4?m.hi:"Mixed") : "Not rated"}</span></div></div>`; }).join("")).join("");
+  $("#metrics").innerHTML = Object.entries(GROUPS).map(([gk,gl])=>`<span class="label" style="margin-top:4px">${gl}</span>`+METRICS.filter(m=>m.g===gk).map(m=>{ const sv = S.form.scores[m.k]; const na = sv==="na"; const v = typeof sv==="number" ? sv : 0; return `<div class="metric"><div class="top"><div><b>${esc(m.t)}</b><small>${esc(m.d)}</small></div><span class="val num">${na?"N/A":v?v.toFixed(1):"--"}</span></div>
+    <div class="stars" role="radiogroup" aria-label="${esc(m.t)}">${[1,2,3,4,5].map(n=>`<button type="button" class="star ${n<=v?"on":""}" data-m="${m.k}" data-n="${n}" role="radio" aria-checked="${n===v}" aria-label="${n} star${n>1?"s":""}">${ic("star")}</button>`).join("")}<button type="button" class="star na ${na?"on":""}" data-m="${m.k}" data-n="na" role="radio" aria-checked="${na}" aria-label="Not applicable">N/A</button>
+    <span class="lbl">${na ? "Doesn't apply" : v ? (v<=2?m.lo:v>=4?m.hi:"Mixed") : "Not rated"}</span></div></div>`; }).join("")).join("");
   const ex = S.form.exp;
   $("#exps").innerHTML = EXP.filter(x => !x.parent || ex[x.parent]==="yes").map(x => `<div class="exp ${x.parent?"sub-q":""}"><p>${esc(x.q)}</p><div class="yn">${[["yes","Yes"],["no","No"],["na","Doesn't apply"]].map(([v,l])=>`<button type="button" data-exp="${x.k}" data-val="${v}" aria-pressed="${ex[x.k]===v}">${l}</button>`).join("")}</div></div>`).join("");
   document.querySelectorAll(".verdict").forEach(b=>b.setAttribute("aria-pressed", b.dataset.v===S.form.verdict));
@@ -772,8 +781,9 @@ async function submitReview(){
   const f = S.form, text = $("#rv-text").value.trim();
   if(!S.db){ err.textContent = S.dbError || "The review database isn't connected. Reload the page and try again."; return; }
   if(!f.inst || !(f.admin||f.newAdmin)){ err.textContent = "Choose an institution and an administrator."; return; }
-  const miss = METRICS.filter(m=>!f.scores[m.k]).map(m=>m.t.toLowerCase());
-  if(miss.length){ err.textContent = "Rate every index before submitting: " + miss.join(", ") + "."; return; }
+  const miss = METRICS.filter(m=>f.scores[m.k]==null).map(m=>m.t.toLowerCase());
+  if(miss.length){ err.textContent = "Give stars or tap N/A for: " + miss.join(", ") + "."; return; }
+  if(METRICS.filter(m=>typeof f.scores[m.k]==="number").length < 3){ err.textContent = "Rate at least three areas with stars. Mark the rest N/A."; return; }
   if(!f.verdict){ err.textContent = "Choose Yes, No, or Abstain on contract renewal."; return; }
   if(text.length < 40){ err.textContent = "Write at least 40 characters so the review explains the scores."; return; }
   const btn = $("#rv-submit"); btn.disabled = true; btn.innerHTML = `${ic("lock")}Saving`;
@@ -790,7 +800,7 @@ async function submitReview(){
         S.admins.set(adminId, {name:f.newAdmin.name, title:f.newAdmin.title, level:f.newAdmin.level, instId:f.inst});
       }
     }
-    const body = {scores:{...f.scores}, exp:Object.fromEntries(Object.entries(f.exp).filter(([,v])=>v)), verdict:f.verdict, tags:[...f.tags], body:text, role:$("#rv-role").value, years:$("#rv-yrs").value, emp_status:$("#rv-status").value, last_year:$("#rv-last").value};
+    const body = {scores:Object.fromEntries(Object.entries(f.scores).filter(([,v])=>typeof v==="number")), exp:Object.fromEntries(Object.entries(f.exp).filter(([,v])=>v)), verdict:f.verdict, tags:[...f.tags], body:text, role:$("#rv-role").value, years:$("#rv-yrs").value, emp_status:$("#rv-status").value, last_year:$("#rv-last").value};
     const mine = store.get("rma-mine") || {}; const prior = mine[adminId];
     let updated = false;
     if(prior?.id && prior?.key){ const up = await SB.rpc("update_review",{p_id:prior.id, p_key:prior.key, p_review:body}); updated = !up.error; }
@@ -842,7 +852,7 @@ document.addEventListener("click", async e => {
   if(t.matches("#in-tabs .tab")){ S.ui.inTab = t.dataset.t; S.ui.inLimit = 60; return renderInstitutions(); }
   if(t.id==="in-more"){ S.ui.inLimit += 120; return renderInstitutions(); }
   if(t.dataset.exp){ const ex = S.form.exp; ex[t.dataset.exp] = ex[t.dataset.exp]===t.dataset.val ? undefined : t.dataset.val; EXP.forEach(x=>{ if(x.parent && ex[x.parent]!=="yes") delete ex[x.k]; }); return renderS4(); }
-  if(t.classList.contains("star")){ S.form.scores[t.dataset.m] = +t.dataset.n; return renderS4(); }
+  if(t.classList.contains("star")){ S.form.scores[t.dataset.m] = t.dataset.n==="na" ? "na" : +t.dataset.n; return renderS4(); }
   if(t.classList.contains("verdict")){ S.form.verdict = t.dataset.v; return renderS4(); }
   if(t.classList.contains("tagpick")){ const g = t.dataset.tag; if(S.form.tags.has(g)) S.form.tags.delete(g); else if(S.form.tags.size<4) S.form.tags.add(g); else toast("Pick up to 4 tags."); return renderS4(); }
   if(t.dataset.pickInst){ S.form.inst = t.dataset.pickInst; S.form.admin = null; S.form.newAdmin = null; renderS2(); renderS3(); return renderS4(); }

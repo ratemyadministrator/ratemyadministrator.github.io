@@ -11,7 +11,7 @@ create table public.admins (
   id          uuid primary key default gen_random_uuid(),
   name        text not null check (char_length(name) between 5 and 80),
   title       text not null check (char_length(title) between 3 and 160),
-  level       text not null check (level in ('exec','vp','dean','director')),
+  level       text not null check (level in ('board','exec','vp','dean','director')),
   inst_id     text not null check (char_length(inst_id) between 3 and 80),
   inst_name   text,
   source_url  text,                       -- public page the listing came from (seeded entries)
@@ -27,11 +27,15 @@ create index admins_inst_idx on public.admins (inst_id);
 -- Reviews
 -- ---------------------------------------------------------------
 create or replace function public.valid_scores(s jsonb) returns boolean
-language sql immutable as $$
+language sql immutable set search_path = '' as $$
+  -- each rating is 1-5; areas marked N/A are simply left out; at least 3 must be rated
   select jsonb_typeof(s) = 'object'
-     and (select bool_and((s->>k) ~ '^[1-5]$')
-          from unnest(array['respect','communication','openness','asktask','retaliation',
-                            'compensation','assign','discipline','gov','contract']) as k)
+     and not exists (
+       select 1 from jsonb_each_text(s) e
+       where e.key <> all (array['respect','communication','openness','asktask','retaliation',
+                                 'compensation','assign','discipline','gov','contract'])
+          or e.value !~ '^[1-5]$')
+     and (select count(*) from jsonb_object_keys(s)) >= 3
 $$;
 
 create table public.reviews (
