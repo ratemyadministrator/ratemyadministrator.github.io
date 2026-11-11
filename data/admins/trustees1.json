@@ -1,0 +1,2152 @@
+[
+ {
+  "name": "Suzanne Levy",
+  "title": "Board President, Area 2 Trustee",
+  "level": "board",
+  "district": "Allan Hancock Joint Community College District",
+  "homeInstId": "c-ca-allan-hancock-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.hancockcollege.edu/board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Alejandra Enciso",
+  "title": "Board Vice President, Area 3 Trustee",
+  "level": "board",
+  "district": "Allan Hancock Joint Community College District",
+  "homeInstId": "c-ca-allan-hancock-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.hancockcollege.edu/board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Elisa Pardo",
+  "title": "Area 1 Trustee",
+  "level": "board",
+  "district": "Allan Hancock Joint Community College District",
+  "homeInstId": "c-ca-allan-hancock-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.hancockcollege.edu/board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Gregory A. Pensa",
+  "title": "Area 5 Trustee",
+  "level": "board",
+  "district": "Allan Hancock Joint Community College District",
+  "homeInstId": "c-ca-allan-hancock-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.hancockcollege.edu/board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Kenneth D. Ostini",
+  "title": "Area 4 Trustee",
+  "level": "board",
+  "district": "Allan Hancock Joint Community College District",
+  "homeInstId": "c-ca-allan-hancock-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.hancockcollege.edu/board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Deborah Ortiz",
+  "title": "Board President, Area 6",
+  "level": "board",
+  "district": "Los Rios Community College District",
+  "homeInstId": "c-ca-american-river-college",
+  "alsoInstIds": [
+   "c-ca-cosumnes-river-college"
+  ],
+  "sourceUrl": "https://losrios.edu/about-los-rios/board-of-trustees/our-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Tami Nelson",
+  "title": "Board Vice President, Area 7",
+  "level": "board",
+  "district": "Los Rios Community College District",
+  "homeInstId": "c-ca-american-river-college",
+  "alsoInstIds": [
+   "c-ca-cosumnes-river-college"
+  ],
+  "sourceUrl": "https://losrios.edu/about-los-rios/board-of-trustees/our-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Dustin Johnson",
+  "title": "Trustee, Area 1",
+  "level": "board",
+  "district": "Los Rios Community College District",
+  "homeInstId": "c-ca-american-river-college",
+  "alsoInstIds": [
+   "c-ca-cosumnes-river-college"
+  ],
+  "sourceUrl": "https://losrios.edu/about-los-rios/board-of-trustees/our-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Robert Jones",
+  "title": "Trustee, Area 2",
+  "level": "board",
+  "district": "Los Rios Community College District",
+  "homeInstId": "c-ca-american-river-college",
+  "alsoInstIds": [
+   "c-ca-cosumnes-river-college"
+  ],
+  "sourceUrl": "https://losrios.edu/about-los-rios/board-of-trustees/our-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "John Knight",
+  "title": "Trustee, Area 3",
+  "level": "board",
+  "district": "Los Rios Community College District",
+  "homeInstId": "c-ca-american-river-college",
+  "alsoInstIds": [
+   "c-ca-cosumnes-river-college"
+  ],
+  "sourceUrl": "https://losrios.edu/about-los-rios/board-of-trustees/our-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Kelly Wilkerson",
+  "title": "Trustee, Area 4",
+  "level": "board",
+  "district": "Los Rios Community College District",
+  "homeInstId": "c-ca-american-river-college",
+  "alsoInstIds": [
+   "c-ca-cosumnes-river-college"
+  ],
+  "sourceUrl": "https://losrios.edu/about-los-rios/board-of-trustees/our-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Colette Harris-Mathews",
+  "title": "Trustee, Area 5",
+  "level": "board",
+  "district": "Los Rios Community College District",
+  "homeInstId": "c-ca-american-river-college",
+  "alsoInstIds": [
+   "c-ca-cosumnes-river-college"
+  ],
+  "sourceUrl": "https://losrios.edu/about-los-rios/board-of-trustees/our-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Steve Buffalo",
+  "title": "Board President, Trustee Area 2",
+  "level": "board",
+  "district": "Antelope Valley Community College District",
+  "homeInstId": "c-ca-antelope-valley-community-college-district",
+  "alsoInstIds": [],
+  "sourceUrl": "https://drupal.avc.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Barbara Gaines",
+  "title": "Board Vice President, Trustee Area 5",
+  "level": "board",
+  "district": "Antelope Valley Community College District",
+  "homeInstId": "c-ca-antelope-valley-community-college-district",
+  "alsoInstIds": [],
+  "sourceUrl": "https://drupal.avc.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Michael Rives",
+  "title": "Board Clerk, Trustee Area 3",
+  "level": "board",
+  "district": "Antelope Valley Community College District",
+  "homeInstId": "c-ca-antelope-valley-community-college-district",
+  "alsoInstIds": [],
+  "sourceUrl": "https://drupal.avc.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Michelle Harvey",
+  "title": "Trustee, Trustee Area 1",
+  "level": "board",
+  "district": "Antelope Valley Community College District",
+  "homeInstId": "c-ca-antelope-valley-community-college-district",
+  "alsoInstIds": [],
+  "sourceUrl": "https://drupal.avc.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Michael Adams",
+  "title": "Trustee, Trustee Area 4",
+  "level": "board",
+  "district": "Antelope Valley Community College District",
+  "homeInstId": "c-ca-antelope-valley-community-college-district",
+  "alsoInstIds": [],
+  "sourceUrl": "https://drupal.avc.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Nan Gomez-Heitzeberg",
+  "title": "Board President, Trustee Area 3",
+  "level": "board",
+  "district": "Kern Community College District",
+  "homeInstId": "c-ca-bakersfield-college",
+  "alsoInstIds": [
+   "c-ca-cerro-coso-community-college"
+  ],
+  "sourceUrl": "https://kccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Kay S. Meek",
+  "title": "Board Vice-President, Trustee Area 7",
+  "level": "board",
+  "district": "Kern Community College District",
+  "homeInstId": "c-ca-bakersfield-college",
+  "alsoInstIds": [
+   "c-ca-cerro-coso-community-college"
+  ],
+  "sourceUrl": "https://kccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Yovani Jimenez",
+  "title": "Board Clerk, Trustee Area 6",
+  "level": "board",
+  "district": "Kern Community College District",
+  "homeInstId": "c-ca-bakersfield-college",
+  "alsoInstIds": [
+   "c-ca-cerro-coso-community-college"
+  ],
+  "sourceUrl": "https://kccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Kyle Carter",
+  "title": "Trustee, Area 1",
+  "level": "board",
+  "district": "Kern Community College District",
+  "homeInstId": "c-ca-bakersfield-college",
+  "alsoInstIds": [
+   "c-ca-cerro-coso-community-college"
+  ],
+  "sourceUrl": "https://kccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "John S. Corkins",
+  "title": "Trustee, Area 5",
+  "level": "board",
+  "district": "Kern Community College District",
+  "homeInstId": "c-ca-bakersfield-college",
+  "alsoInstIds": [
+   "c-ca-cerro-coso-community-college"
+  ],
+  "sourceUrl": "https://kccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Christina Scrivner",
+  "title": "Trustee, Area 2",
+  "level": "board",
+  "district": "Kern Community College District",
+  "homeInstId": "c-ca-bakersfield-college",
+  "alsoInstIds": [
+   "c-ca-cerro-coso-community-college"
+  ],
+  "sourceUrl": "https://kccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Dan Diaz",
+  "title": "Trustee, Area 4",
+  "level": "board",
+  "district": "Kern Community College District",
+  "homeInstId": "c-ca-bakersfield-college",
+  "alsoInstIds": [
+   "c-ca-cerro-coso-community-college"
+  ],
+  "sourceUrl": "https://kccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Julie Hackbarth-McIntyre",
+  "title": "Board President, Area D",
+  "level": "board",
+  "district": "Barstow Community College District",
+  "homeInstId": "c-ca-barstow-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.barstow.edu/about-bcc/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "John Gregg",
+  "title": "Board Vice President, Area E",
+  "level": "board",
+  "district": "Barstow Community College District",
+  "homeInstId": "c-ca-barstow-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.barstow.edu/about-bcc/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Yolanda Minor",
+  "title": "Board Secretary, Area A",
+  "level": "board",
+  "district": "Barstow Community College District",
+  "homeInstId": "c-ca-barstow-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.barstow.edu/about-bcc/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Sonia Compton-Reay",
+  "title": "Board Member, Area B",
+  "level": "board",
+  "district": "Barstow Community College District",
+  "homeInstId": "c-ca-barstow-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.barstow.edu/about-bcc/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Paul Wilkey",
+  "title": "Board Member, Area C",
+  "level": "board",
+  "district": "Barstow Community College District",
+  "homeInstId": "c-ca-barstow-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.barstow.edu/about-bcc/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Louis Quindlen",
+  "title": "Board President, Area 3",
+  "level": "board",
+  "district": "Peralta Community College District",
+  "homeInstId": "c-ca-berkeley-city-college",
+  "alsoInstIds": [
+   "c-ca-college-of-alameda"
+  ],
+  "sourceUrl": "https://www.peralta.edu/boardoftrustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Paulina Gonzalez-Brito",
+  "title": "Board Vice-President, Area 2",
+  "level": "board",
+  "district": "Peralta Community College District",
+  "homeInstId": "c-ca-berkeley-city-college",
+  "alsoInstIds": [
+   "c-ca-college-of-alameda"
+  ],
+  "sourceUrl": "https://www.peralta.edu/boardoftrustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Nicky González Yuen",
+  "title": "Trustee, Area 4",
+  "level": "board",
+  "district": "Peralta Community College District",
+  "homeInstId": "c-ca-berkeley-city-college",
+  "alsoInstIds": [
+   "c-ca-college-of-alameda"
+  ],
+  "sourceUrl": "https://www.peralta.edu/boardoftrustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Cindi Napoli-Abella Reiss",
+  "title": "Trustee, Area 5",
+  "level": "board",
+  "district": "Peralta Community College District",
+  "homeInstId": "c-ca-berkeley-city-college",
+  "alsoInstIds": [
+   "c-ca-college-of-alameda"
+  ],
+  "sourceUrl": "https://www.peralta.edu/boardoftrustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Dyana Delfín Polk",
+  "title": "Trustee, Area 6",
+  "level": "board",
+  "district": "Peralta Community College District",
+  "homeInstId": "c-ca-berkeley-city-college",
+  "alsoInstIds": [
+   "c-ca-college-of-alameda"
+  ],
+  "sourceUrl": "https://www.peralta.edu/boardoftrustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Sheweet Yohannes",
+  "title": "Trustee, Area 7",
+  "level": "board",
+  "district": "Peralta Community College District",
+  "homeInstId": "c-ca-berkeley-city-college",
+  "alsoInstIds": [
+   "c-ca-college-of-alameda"
+  ],
+  "sourceUrl": "https://www.peralta.edu/boardoftrustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "John Blacklock",
+  "title": "Board President, Area V - Paradise",
+  "level": "board",
+  "district": "Butte-Glenn Community College District",
+  "homeInstId": "c-ca-butte-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.butte.edu/about/leadership/board-of-trustees/",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "John Nock",
+  "title": "Board Vice President, Area VI - Durham",
+  "level": "board",
+  "district": "Butte-Glenn Community College District",
+  "homeInstId": "c-ca-butte-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.butte.edu/about/leadership/board-of-trustees/",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "John Dahlmeier",
+  "title": "Board Clerk, Area I - Oroville",
+  "level": "board",
+  "district": "Butte-Glenn Community College District",
+  "homeInstId": "c-ca-butte-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.butte.edu/about/leadership/board-of-trustees/",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "William McGinnis",
+  "title": "Trustee, Area II - Chico",
+  "level": "board",
+  "district": "Butte-Glenn Community College District",
+  "homeInstId": "c-ca-butte-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.butte.edu/about/leadership/board-of-trustees/",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Rick Krepelka",
+  "title": "Trustee, Area III - Chico",
+  "level": "board",
+  "district": "Butte-Glenn Community College District",
+  "homeInstId": "c-ca-butte-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.butte.edu/about/leadership/board-of-trustees/",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Michael Boeger",
+  "title": "Trustee, Area IV - Gridley",
+  "level": "board",
+  "district": "Butte-Glenn Community College District",
+  "homeInstId": "c-ca-butte-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.butte.edu/about/leadership/board-of-trustees/",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Eugene Massa",
+  "title": "Trustee, Area VII - Glenn County",
+  "level": "board",
+  "district": "Butte-Glenn Community College District",
+  "homeInstId": "c-ca-butte-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.butte.edu/about/leadership/board-of-trustees/",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Donna Ziel",
+  "title": "Board Chair, Area I",
+  "level": "board",
+  "district": "Cabrillo Community College District",
+  "homeInstId": "c-ca-cabrillo-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cabrillo.edu/governing-board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Adam Spickler",
+  "title": "Board Vice Chair, Area II",
+  "level": "board",
+  "district": "Cabrillo Community College District",
+  "homeInstId": "c-ca-cabrillo-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cabrillo.edu/governing-board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Ken Wagman",
+  "title": "Board Clerk, Area IV",
+  "level": "board",
+  "district": "Cabrillo Community College District",
+  "homeInstId": "c-ca-cabrillo-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cabrillo.edu/governing-board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Christina Cuevas",
+  "title": "Trustee, Area III",
+  "level": "board",
+  "district": "Cabrillo Community College District",
+  "homeInstId": "c-ca-cabrillo-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cabrillo.edu/governing-board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Francisco Estrada",
+  "title": "Trustee, Area V",
+  "level": "board",
+  "district": "Cabrillo Community College District",
+  "homeInstId": "c-ca-cabrillo-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cabrillo.edu/governing-board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "J. Dan Rothwell",
+  "title": "Trustee, Area VI",
+  "level": "board",
+  "district": "Cabrillo Community College District",
+  "homeInstId": "c-ca-cabrillo-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cabrillo.edu/governing-board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Steve Trujillo",
+  "title": "Trustee, Area VII",
+  "level": "board",
+  "district": "Cabrillo Community College District",
+  "homeInstId": "c-ca-cabrillo-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cabrillo.edu/governing-board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Wayne Lee",
+  "title": "Board President",
+  "level": "board",
+  "district": "San Mateo County Community College District",
+  "homeInstId": "c-ca-canada-college",
+  "alsoInstIds": [
+   "c-ca-college-of-san-mateo"
+  ],
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration",
+  "checked": "2026-11-11",
+  "note": "Source is the 2026-2027 Canada College catalog; district board-members page could not be fetched"
+ },
+ {
+  "name": "Richard Holober",
+  "title": "Board Vice President",
+  "level": "board",
+  "district": "San Mateo County Community College District",
+  "homeInstId": "c-ca-canada-college",
+  "alsoInstIds": [
+   "c-ca-college-of-san-mateo"
+  ],
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration",
+  "checked": "2026-11-11",
+  "note": "Source is the 2026-2027 Canada College catalog"
+ },
+ {
+  "name": "Mike Guingona",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Mateo County Community College District",
+  "homeInstId": "c-ca-canada-college",
+  "alsoInstIds": [
+   "c-ca-college-of-san-mateo"
+  ],
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration",
+  "checked": "2026-11-11",
+  "note": "Source is the 2026-2027 Canada College catalog"
+ },
+ {
+  "name": "Lisa Petrides",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Mateo County Community College District",
+  "homeInstId": "c-ca-canada-college",
+  "alsoInstIds": [
+   "c-ca-college-of-san-mateo"
+  ],
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration",
+  "checked": "2026-11-11",
+  "note": "Source is the 2026-2027 Canada College catalog"
+ },
+ {
+  "name": "John Pimentel",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Mateo County Community College District",
+  "homeInstId": "c-ca-canada-college",
+  "alsoInstIds": [
+   "c-ca-college-of-san-mateo"
+  ],
+  "sourceUrl": "https://catalog.canadacollege.edu/current/administration",
+  "checked": "2026-11-11",
+  "note": "Source is the 2026-2027 Canada College catalog"
+ },
+ {
+  "name": "Dawn Green",
+  "title": "Board President, Trustee Area 2",
+  "level": "board",
+  "district": "Cerritos Community College District",
+  "homeInstId": "c-ca-cerritos-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cerritos.edu/about/board/member-directory.htm",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Zurich Lewis",
+  "title": "Board Vice President, Trustee Area 7",
+  "level": "board",
+  "district": "Cerritos Community College District",
+  "homeInstId": "c-ca-cerritos-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cerritos.edu/about/board/member-directory.htm",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Shin Liu",
+  "title": "Board Clerk, Trustee Area 5",
+  "level": "board",
+  "district": "Cerritos Community College District",
+  "homeInstId": "c-ca-cerritos-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cerritos.edu/about/board/member-directory.htm",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "James Cody Birkey",
+  "title": "Trustee, Trustee Area 3",
+  "level": "board",
+  "district": "Cerritos Community College District",
+  "homeInstId": "c-ca-cerritos-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cerritos.edu/about/board/member-directory.htm",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Mariana Pacheco",
+  "title": "Trustee, Trustee Area 1",
+  "level": "board",
+  "district": "Cerritos Community College District",
+  "homeInstId": "c-ca-cerritos-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cerritos.edu/about/board/member-directory.htm",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Mariana Rios",
+  "title": "Trustee, Trustee Area 4",
+  "level": "board",
+  "district": "Cerritos Community College District",
+  "homeInstId": "c-ca-cerritos-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cerritos.edu/about/board/member-directory.htm",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Sandra Salazar",
+  "title": "Trustee, Trustee Area 6",
+  "level": "board",
+  "district": "Cerritos Community College District",
+  "homeInstId": "c-ca-cerritos-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cerritos.edu/about/board/member-directory.htm",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Linda Granger",
+  "title": "Board President, Trustee Area 2",
+  "level": "board",
+  "district": "Chabot-Las Positas Community College District",
+  "homeInstId": "c-ca-chabot-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://clpccd.org/bot/boardmembers.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Steve Lanza",
+  "title": "Board Secretary, Trustee Area 7",
+  "level": "board",
+  "district": "Chabot-Las Positas Community College District",
+  "homeInstId": "c-ca-chabot-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://clpccd.org/bot/boardmembers.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Hector Garcia",
+  "title": "Trustee, Trustee Area 1",
+  "level": "board",
+  "district": "Chabot-Las Positas Community College District",
+  "homeInstId": "c-ca-chabot-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://clpccd.org/bot/boardmembers.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Hal G. Gin",
+  "title": "Trustee, Trustee Area 6",
+  "level": "board",
+  "district": "Chabot-Las Positas Community College District",
+  "homeInstId": "c-ca-chabot-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://clpccd.org/bot/boardmembers.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Catheryn Grier",
+  "title": "Trustee, Trustee Area 5",
+  "level": "board",
+  "district": "Chabot-Las Positas Community College District",
+  "homeInstId": "c-ca-chabot-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://clpccd.org/bot/boardmembers.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Maria L. Heredia",
+  "title": "Trustee, Trustee Area 4",
+  "level": "board",
+  "district": "Chabot-Las Positas Community College District",
+  "homeInstId": "c-ca-chabot-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://clpccd.org/bot/boardmembers.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Harris Mojadedi",
+  "title": "Trustee, Trustee Area 3",
+  "level": "board",
+  "district": "Chabot-Las Positas Community College District",
+  "homeInstId": "c-ca-chabot-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://clpccd.org/bot/boardmembers.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Gary C. Ovitt",
+  "title": "Governing Board President, Trustee Area 4",
+  "level": "board",
+  "district": "Chaffey Community College District",
+  "homeInstId": "c-ca-chaffey-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.chaffey.edu/leadership/governingboard.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Lee C. McDougal",
+  "title": "Governing Board Vice President, Trustee Area 3",
+  "level": "board",
+  "district": "Chaffey Community College District",
+  "homeInstId": "c-ca-chaffey-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.chaffey.edu/leadership/governingboard.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Andrea Dutton",
+  "title": "Governing Board Clerk, Trustee Area 1",
+  "level": "board",
+  "district": "Chaffey Community College District",
+  "homeInstId": "c-ca-chaffey-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.chaffey.edu/leadership/governingboard.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Deana Olivares-Lambert",
+  "title": "Governing Board Member, Trustee Area 2",
+  "level": "board",
+  "district": "Chaffey Community College District",
+  "homeInstId": "c-ca-chaffey-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.chaffey.edu/leadership/governingboard.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Gloria Negrete-McLeod",
+  "title": "Governing Board Member (Immediate Past President), Trustee Area 5",
+  "level": "board",
+  "district": "Chaffey Community College District",
+  "homeInstId": "c-ca-chaffey-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.chaffey.edu/leadership/governingboard.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Laura J. Bollinger",
+  "title": "Board President, Trustee Area 2",
+  "level": "board",
+  "district": "Citrus Community College District",
+  "homeInstId": "c-ca-citrus-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.citruscollege.edu/admin/bot/Pages/BOTMembers.aspx",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Anthony Contreras",
+  "title": "Board Vice President, Trustee Area 1",
+  "level": "board",
+  "district": "Citrus Community College District",
+  "homeInstId": "c-ca-citrus-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.citruscollege.edu/admin/bot/Pages/BOTMembers.aspx",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Randa B. Wahbe",
+  "title": "Board Clerk/Secretary, Trustee Area 5",
+  "level": "board",
+  "district": "Citrus Community College District",
+  "homeInstId": "c-ca-citrus-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.citruscollege.edu/admin/bot/Pages/BOTMembers.aspx",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Steven Bluitt Flowers",
+  "title": "Board Member, Trustee Area 4",
+  "level": "board",
+  "district": "Citrus Community College District",
+  "homeInstId": "c-ca-citrus-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.citruscollege.edu/admin/bot/Pages/BOTMembers.aspx",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Cheryl Alexander",
+  "title": "Board Member, Trustee Area 3",
+  "level": "board",
+  "district": "Citrus Community College District",
+  "homeInstId": "c-ca-citrus-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.citruscollege.edu/admin/bot/Pages/BOTMembers.aspx",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Robert A. Fuentes",
+  "title": "Board President",
+  "level": "board",
+  "district": "State Center Community College District",
+  "homeInstId": "c-ca-clovis-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://scccd.edu/about/board-of-trustees/index.html",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on board page"
+ },
+ {
+  "name": "Destiny Rodriguez",
+  "title": "Board Vice President",
+  "level": "board",
+  "district": "State Center Community College District",
+  "homeInstId": "c-ca-clovis-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://scccd.edu/about/board-of-trustees/index.html",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on board page"
+ },
+ {
+  "name": "Magdalena Gomez",
+  "title": "Board Secretary",
+  "level": "board",
+  "district": "State Center Community College District",
+  "homeInstId": "c-ca-clovis-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://scccd.edu/about/board-of-trustees/index.html",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on board page"
+ },
+ {
+  "name": "Austin B. Ewell III",
+  "title": "Trustee",
+  "level": "board",
+  "district": "State Center Community College District",
+  "homeInstId": "c-ca-clovis-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://scccd.edu/about/board-of-trustees/index.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Deborah J. Ikeda",
+  "title": "Trustee",
+  "level": "board",
+  "district": "State Center Community College District",
+  "homeInstId": "c-ca-clovis-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://scccd.edu/about/board-of-trustees/index.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Nasreen Johnson",
+  "title": "Trustee",
+  "level": "board",
+  "district": "State Center Community College District",
+  "homeInstId": "c-ca-clovis-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://scccd.edu/about/board-of-trustees/index.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Danielle Parra",
+  "title": "Trustee",
+  "level": "board",
+  "district": "State Center Community College District",
+  "homeInstId": "c-ca-clovis-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://scccd.edu/about/board-of-trustees/index.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Ken Stoppenbrink",
+  "title": "Trustee, Trustee Area 1",
+  "level": "board",
+  "district": "West Hills Community College District",
+  "homeInstId": "c-ca-coalinga-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://westhillscollege.com/news/posts/public-notice-whccd-board.php",
+  "checked": "2026-11-11",
+  "note": "Provisionally appointed June 8, 2026 to fill Nina Oxborrow's seat (resigned eff. June 30, 2026); appointed term runs through Nov 30, 2026; district board page not yet updated"
+ },
+ {
+  "name": "Salvador Raygoza",
+  "title": "Trustee, Trustee Area 2",
+  "level": "board",
+  "district": "West Hills Community College District",
+  "homeInstId": "c-ca-coalinga-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://westhillscollege.com/district/administration/board-of-trustees/trustees.php",
+  "checked": "2026-11-11",
+  "note": "Board page lists term expiring 2026; board page appears outdated"
+ },
+ {
+  "name": "Martin Maldonado",
+  "title": "Trustee, Trustee Area 3",
+  "level": "board",
+  "district": "West Hills Community College District",
+  "homeInstId": "c-ca-coalinga-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://westhillscollege.com/district/administration/board-of-trustees/trustees.php",
+  "checked": "2026-11-11",
+  "note": "Re-elected 2024 per district news Dec 2024"
+ },
+ {
+  "name": "Crystal Jackson",
+  "title": "Trustee, Trustee Area 4",
+  "level": "board",
+  "district": "West Hills Community College District",
+  "homeInstId": "c-ca-coalinga-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://westhillscollege.com/district/administration/board-of-trustees/trustees.php",
+  "checked": "2026-11-11",
+  "note": "Re-elected 2024 per district news Dec 2024"
+ },
+ {
+  "name": "Mark McKean",
+  "title": "Trustee, Trustee Area 5",
+  "level": "board",
+  "district": "West Hills Community College District",
+  "homeInstId": "c-ca-coalinga-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://westhillscollege.com/district/administration/board-of-trustees/trustees.php",
+  "checked": "2026-11-11",
+  "note": "Listed as board president on board page and in Dec 2024 news; current officer role unconfirmed"
+ },
+ {
+  "name": "Omar Hernandez",
+  "title": "Trustee, Trustee Area 6",
+  "level": "board",
+  "district": "West Hills Community College District",
+  "homeInstId": "c-ca-coalinga-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://westhillscollege.com/news/posts/ohernandez_dec2024.php",
+  "checked": "2026-11-11",
+  "note": "Seated Dec 2024 replacing Steve Cantu; area inferred from board page listing Cantu as Area 6"
+ },
+ {
+  "name": "Jeff Levinson",
+  "title": "Trustee, Trustee Area 7",
+  "level": "board",
+  "district": "West Hills Community College District",
+  "homeInstId": "c-ca-coalinga-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://westhillscollege.com/district/administration/board-of-trustees/trustees.php",
+  "checked": "2026-11-11",
+  "note": "Listed as vice president on board page (outdated page); term listed as expiring 2026"
+ },
+ {
+  "name": "Elizabeth Dorn Parker",
+  "title": "Board President, Trustee Area 5",
+  "level": "board",
+  "district": "Coast Community College District",
+  "homeInstId": "c-ca-coastline-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cccd.edu/boardoftrustees/meetourtrustees.html",
+  "checked": "2026-11-11",
+  "note": "Term listed 12/2022-12/2026"
+ },
+ {
+  "name": "Jim Moreno",
+  "title": "Board Vice President, Trustee Area 1",
+  "level": "board",
+  "district": "Coast Community College District",
+  "homeInstId": "c-ca-coastline-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cccd.edu/boardoftrustees/meetourtrustees.html",
+  "checked": "2026-11-11",
+  "note": "Term listed 12/2022-12/2026"
+ },
+ {
+  "name": "Phu Nguyen",
+  "title": "Board Clerk, Trustee Area 2",
+  "level": "board",
+  "district": "Coast Community College District",
+  "homeInstId": "c-ca-coastline-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cccd.edu/boardoftrustees/meetourtrustees.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Kim Carr",
+  "title": "Trustee, Trustee Area 3",
+  "level": "board",
+  "district": "Coast Community College District",
+  "homeInstId": "c-ca-coastline-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cccd.edu/boardoftrustees/meetourtrustees.html",
+  "checked": "2026-11-11",
+  "note": "Appointed Feb 2026 to replace retiring Lorraine Prinsky; term listed 03/2026-12/2026"
+ },
+ {
+  "name": "Mary Hornbuckle",
+  "title": "Trustee, Trustee Area 4",
+  "level": "board",
+  "district": "Coast Community College District",
+  "homeInstId": "c-ca-coastline-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://cccd.edu/boardoftrustees/meetourtrustees.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Wanden P. Treanor",
+  "title": "Board President, Area 3",
+  "level": "board",
+  "district": "Marin Community College District",
+  "homeInstId": "c-ca-college-of-marin",
+  "alsoInstIds": [],
+  "sourceUrl": "https://marin.edu/node/501",
+  "checked": "2026-11-11",
+  "note": "Term listed through 2026"
+ },
+ {
+  "name": "Crystal Martinez",
+  "title": "Board Vice President, Area 2",
+  "level": "board",
+  "district": "Marin Community College District",
+  "homeInstId": "c-ca-college-of-marin",
+  "alsoInstIds": [],
+  "sourceUrl": "https://marin.edu/node/501",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Diana Conti",
+  "title": "Board Clerk, Area 6",
+  "level": "board",
+  "district": "Marin Community College District",
+  "homeInstId": "c-ca-college-of-marin",
+  "alsoInstIds": [],
+  "sourceUrl": "https://marin.edu/node/501",
+  "checked": "2026-11-11",
+  "note": "Term listed through 2026"
+ },
+ {
+  "name": "Paul da Silva",
+  "title": "Trustee, Area 4",
+  "level": "board",
+  "district": "Marin Community College District",
+  "homeInstId": "c-ca-college-of-marin",
+  "alsoInstIds": [],
+  "sourceUrl": "https://marin.edu/node/501",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Suzanne Brown Crow",
+  "title": "Trustee, Area 1",
+  "level": "board",
+  "district": "Marin Community College District",
+  "homeInstId": "c-ca-college-of-marin",
+  "alsoInstIds": [],
+  "sourceUrl": "https://marin.edu/node/501",
+  "checked": "2026-11-11",
+  "note": "Term listed through 2026"
+ },
+ {
+  "name": "Henry Faust",
+  "title": "Trustee, Area 5",
+  "level": "board",
+  "district": "Marin Community College District",
+  "homeInstId": "c-ca-college-of-marin",
+  "alsoInstIds": [],
+  "sourceUrl": "https://marin.edu/node/501",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Sharlene Johnson",
+  "title": "Board President, Trustee Area 4",
+  "level": "board",
+  "district": "Santa Clarita Community College District",
+  "homeInstId": "c-ca-college-of-the-canyons",
+  "alsoInstIds": [],
+  "sourceUrl": "https://outest.canyons.edu/administration/board",
+  "checked": "2026-11-11",
+  "note": "Source is the outest.canyons.edu mirror of the board page"
+ },
+ {
+  "name": "Fred Arnold",
+  "title": "Board Vice President, Trustee Area 3",
+  "level": "board",
+  "district": "Santa Clarita Community College District",
+  "homeInstId": "c-ca-college-of-the-canyons",
+  "alsoInstIds": [],
+  "sourceUrl": "https://outest.canyons.edu/administration/board",
+  "checked": "2026-11-11",
+  "note": "Source is the outest.canyons.edu mirror of the board page"
+ },
+ {
+  "name": "Edel Alonso",
+  "title": "Board Clerk, Trustee Area 2",
+  "level": "board",
+  "district": "Santa Clarita Community College District",
+  "homeInstId": "c-ca-college-of-the-canyons",
+  "alsoInstIds": [],
+  "sourceUrl": "https://outest.canyons.edu/administration/board",
+  "checked": "2026-11-11",
+  "note": "Source is the outest.canyons.edu mirror of the board page"
+ },
+ {
+  "name": "Darlene Trevino",
+  "title": "Trustee, Trustee Area 1",
+  "level": "board",
+  "district": "Santa Clarita Community College District",
+  "homeInstId": "c-ca-college-of-the-canyons",
+  "alsoInstIds": [],
+  "sourceUrl": "https://outest.canyons.edu/administration/board",
+  "checked": "2026-11-11",
+  "note": "Source is the outest.canyons.edu mirror of the board page"
+ },
+ {
+  "name": "Carlos Guerrero",
+  "title": "Trustee, Trustee Area 5",
+  "level": "board",
+  "district": "Santa Clarita Community College District",
+  "homeInstId": "c-ca-college-of-the-canyons",
+  "alsoInstIds": [],
+  "sourceUrl": "https://outest.canyons.edu/administration/board",
+  "checked": "2026-11-11",
+  "note": "Source is the outest.canyons.edu mirror of the board page"
+ },
+ {
+  "name": "Rubén AríAztlán Pérez",
+  "title": "Trustee, Trustee Area 1",
+  "level": "board",
+  "district": "Desert Community College District",
+  "homeInstId": "c-ca-college-of-the-desert",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.collegeofthedesert.edu/desert-community-college-district",
+  "checked": "2026-11-11",
+  "note": "Source is 2025-2026 catalog board listing; officer titles not shown"
+ },
+ {
+  "name": "Mary Jane Sanchez-Fulton",
+  "title": "Trustee, Trustee Area 2",
+  "level": "board",
+  "district": "Desert Community College District",
+  "homeInstId": "c-ca-college-of-the-desert",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.collegeofthedesert.edu/desert-community-college-district",
+  "checked": "2026-11-11",
+  "note": "Source is 2025-2026 catalog board listing; officer titles not shown"
+ },
+ {
+  "name": "Ron Oden",
+  "title": "Trustee, Trustee Area 3",
+  "level": "board",
+  "district": "Desert Community College District",
+  "homeInstId": "c-ca-college-of-the-desert",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.collegeofthedesert.edu/desert-community-college-district",
+  "checked": "2026-11-11",
+  "note": "Source is 2025-2026 catalog board listing; officer titles not shown"
+ },
+ {
+  "name": "Joel L. Kinnamon",
+  "title": "Trustee, Trustee Area 4",
+  "level": "board",
+  "district": "Desert Community College District",
+  "homeInstId": "c-ca-college-of-the-desert",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.collegeofthedesert.edu/desert-community-college-district",
+  "checked": "2026-11-11",
+  "note": "Source is 2025-2026 catalog board listing; officer titles not shown"
+ },
+ {
+  "name": "Mark Meyer",
+  "title": "Trustee, Trustee Area 5",
+  "level": "board",
+  "district": "Desert Community College District",
+  "homeInstId": "c-ca-college-of-the-desert",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.collegeofthedesert.edu/desert-community-college-district",
+  "checked": "2026-11-11",
+  "note": "Source is 2025-2026 catalog board listing; officer titles not shown"
+ },
+ {
+  "name": "Lorraine Pedrotti",
+  "title": "Trustee, Area 1",
+  "level": "board",
+  "district": "Redwoods Community College District",
+  "homeInstId": "c-ca-college-of-the-redwoods",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.redwoods.edu/about/board/index.php",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 2026"
+ },
+ {
+  "name": "Jack Rice",
+  "title": "Trustee, Area 2",
+  "level": "board",
+  "district": "Redwoods Community College District",
+  "homeInstId": "c-ca-college-of-the-redwoods",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.redwoods.edu/about/board/index.php",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 2026"
+ },
+ {
+  "name": "Carol Mathews",
+  "title": "Trustee, Area 3",
+  "level": "board",
+  "district": "Redwoods Community College District",
+  "homeInstId": "c-ca-college-of-the-redwoods",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.redwoods.edu/about/board/index.php",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 2026"
+ },
+ {
+  "name": "Richard Dorn",
+  "title": "Trustee, Area 4",
+  "level": "board",
+  "district": "Redwoods Community College District",
+  "homeInstId": "c-ca-college-of-the-redwoods",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.redwoods.edu/about/board/index.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Sara Dronkers",
+  "title": "Trustee, Area 5",
+  "level": "board",
+  "district": "Redwoods Community College District",
+  "homeInstId": "c-ca-college-of-the-redwoods",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.redwoods.edu/about/board/index.php",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 2026"
+ },
+ {
+  "name": "Colleen Mullery",
+  "title": "Trustee, Area 6",
+  "level": "board",
+  "district": "Redwoods Community College District",
+  "homeInstId": "c-ca-college-of-the-redwoods",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.redwoods.edu/about/board/index.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Sally Biggin",
+  "title": "Trustee, Area 7",
+  "level": "board",
+  "district": "Redwoods Community College District",
+  "homeInstId": "c-ca-college-of-the-redwoods",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.redwoods.edu/about/board/index.php",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Greg Sherman",
+  "title": "Trustee, Ward 1",
+  "level": "board",
+  "district": "Sequoias Community College District",
+  "homeInstId": "c-ca-college-of-the-sequoias",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.cos.edu/about-college-sequoias/board-members/",
+  "checked": "2026-11-11",
+  "note": "Source is 2026-2027 catalog; officer titles not shown"
+ },
+ {
+  "name": "Ken Nunes",
+  "title": "Trustee, Ward 2",
+  "level": "board",
+  "district": "Sequoias Community College District",
+  "homeInstId": "c-ca-college-of-the-sequoias",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.cos.edu/about-college-sequoias/board-members/",
+  "checked": "2026-11-11",
+  "note": "Source is 2026-2027 catalog; officer titles not shown"
+ },
+ {
+  "name": "Raymond Macareno",
+  "title": "Trustee, Ward 3",
+  "level": "board",
+  "district": "Sequoias Community College District",
+  "homeInstId": "c-ca-college-of-the-sequoias",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.cos.edu/about-college-sequoias/board-members/",
+  "checked": "2026-11-11",
+  "note": "Source is 2026-2027 catalog; officer titles not shown"
+ },
+ {
+  "name": "Connie Diaz",
+  "title": "Trustee, Ward 4",
+  "level": "board",
+  "district": "Sequoias Community College District",
+  "homeInstId": "c-ca-college-of-the-sequoias",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.cos.edu/about-college-sequoias/board-members/",
+  "checked": "2026-11-11",
+  "note": "Source is 2026-2027 catalog; officer titles not shown"
+ },
+ {
+  "name": "John Lehn",
+  "title": "Trustee, Ward 5",
+  "level": "board",
+  "district": "Sequoias Community College District",
+  "homeInstId": "c-ca-college-of-the-sequoias",
+  "alsoInstIds": [],
+  "sourceUrl": "https://catalog.cos.edu/about-college-sequoias/board-members/",
+  "checked": "2026-11-11",
+  "note": "Source is 2026-2027 catalog; officer titles not shown"
+ },
+ {
+  "name": "Erica Mitchell",
+  "title": "Board President, Area 7",
+  "level": "board",
+  "district": "Siskiyou Joint Community College District",
+  "homeInstId": "c-ca-college-of-the-siskiyous",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.siskiyous.edu/board",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 2026"
+ },
+ {
+  "name": "Gregory Hanna",
+  "title": "Board Vice-President, Area 6",
+  "level": "board",
+  "district": "Siskiyou Joint Community College District",
+  "homeInstId": "c-ca-college-of-the-siskiyous",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.siskiyous.edu/board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Ray Kellar",
+  "title": "Trustee, Area 1",
+  "level": "board",
+  "district": "Siskiyou Joint Community College District",
+  "homeInstId": "c-ca-college-of-the-siskiyous",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.siskiyous.edu/board",
+  "checked": "2026-11-11",
+  "note": "Provisionally appointed Aug 2025; term listed as expiring Dec 2026"
+ },
+ {
+  "name": "Debbie Derby",
+  "title": "Trustee, Area 2",
+  "level": "board",
+  "district": "Siskiyou Joint Community College District",
+  "homeInstId": "c-ca-college-of-the-siskiyous",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.siskiyous.edu/board",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 2026"
+ },
+ {
+  "name": "Carol Cupp",
+  "title": "Trustee, Area 3",
+  "level": "board",
+  "district": "Siskiyou Joint Community College District",
+  "homeInstId": "c-ca-college-of-the-siskiyous",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.siskiyous.edu/board",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 2026"
+ },
+ {
+  "name": "Christal Duncan",
+  "title": "Trustee, Area 4",
+  "level": "board",
+  "district": "Siskiyou Joint Community College District",
+  "homeInstId": "c-ca-college-of-the-siskiyous",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.siskiyous.edu/board",
+  "checked": "2026-11-11",
+  "note": "Provisionally appointed Nov 2025; term listed as expiring Dec 2026"
+ },
+ {
+  "name": "Kathy Koon",
+  "title": "Trustee, Area 5",
+  "level": "board",
+  "district": "Siskiyou Joint Community College District",
+  "homeInstId": "c-ca-college-of-the-siskiyous",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.siskiyous.edu/board",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Milton E. Richards",
+  "title": "Board President, Area 3",
+  "level": "board",
+  "district": "Yosemite Community College District",
+  "homeInstId": "c-ca-columbia-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://yosemite.edu/trustees/boardmembers.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Jenny Nicolau",
+  "title": "Board Vice President, Area 4",
+  "level": "board",
+  "district": "Yosemite Community College District",
+  "homeInstId": "c-ca-columbia-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://yosemite.edu/trustees/boardmembers.html",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Nov 2026"
+ },
+ {
+  "name": "Don Davis",
+  "title": "Trustee, Area 1",
+  "level": "board",
+  "district": "Yosemite Community College District",
+  "homeInstId": "c-ca-columbia-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://yosemite.edu/trustees/boardmembers.html",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Nov 2026"
+ },
+ {
+  "name": "Nancy Hinton",
+  "title": "Trustee, Area 2",
+  "level": "board",
+  "district": "Yosemite Community College District",
+  "homeInstId": "c-ca-columbia-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://yosemite.edu/trustees/boardmembers.html",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Nov 2026"
+ },
+ {
+  "name": "Darin Gharat",
+  "title": "Trustee, Area 5",
+  "level": "board",
+  "district": "Yosemite Community College District",
+  "homeInstId": "c-ca-columbia-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://yosemite.edu/trustees/boardmembers.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Leslie Beggs",
+  "title": "Trustee, Area 6",
+  "level": "board",
+  "district": "Yosemite Community College District",
+  "homeInstId": "c-ca-columbia-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://yosemite.edu/trustees/boardmembers.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Antonio Aguilar",
+  "title": "Trustee, Area 7",
+  "level": "board",
+  "district": "Yosemite Community College District",
+  "homeInstId": "c-ca-columbia-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://yosemite.edu/trustees/boardmembers.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Andres Ramos",
+  "title": "Trustee, Trustee Area 1",
+  "level": "board",
+  "district": "Compton Community College District",
+  "homeInstId": "c-ca-compton-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.compton.edu/district/board-of-trustees/index.aspx",
+  "checked": "2026-11-11",
+  "note": "Officer titles not shown on board page"
+ },
+ {
+  "name": "Nicole J. Jones",
+  "title": "Trustee, Trustee Area 2",
+  "level": "board",
+  "district": "Compton Community College District",
+  "homeInstId": "c-ca-compton-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.compton.edu/district/board-of-trustees/index.aspx",
+  "checked": "2026-11-11",
+  "note": "Listed as provisional appointment"
+ },
+ {
+  "name": "Sonia Lopez",
+  "title": "Trustee, Trustee Area 3",
+  "level": "board",
+  "district": "Compton Community College District",
+  "homeInstId": "c-ca-compton-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.compton.edu/district/board-of-trustees/index.aspx",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Juanita Doplemore",
+  "title": "Trustee, Trustee Area 4",
+  "level": "board",
+  "district": "Compton Community College District",
+  "homeInstId": "c-ca-compton-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.compton.edu/district/board-of-trustees/index.aspx",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Sharoni Denise Little",
+  "title": "Trustee, Trustee Area 5",
+  "level": "board",
+  "district": "Compton Community College District",
+  "homeInstId": "c-ca-compton-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.compton.edu/district/board-of-trustees/index.aspx",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Diana Honig",
+  "title": "Governing Board President, Ward 2",
+  "level": "board",
+  "district": "Contra Costa Community College District",
+  "homeInstId": "c-ca-contra-costa-college",
+  "alsoInstIds": [
+   "c-ca-diablo-valley-college"
+  ],
+  "sourceUrl": "https://www.4cd.edu/gb",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Fernando Sandoval",
+  "title": "Governing Board Vice President, Ward 5",
+  "level": "board",
+  "district": "Contra Costa Community College District",
+  "homeInstId": "c-ca-contra-costa-college",
+  "alsoInstIds": [
+   "c-ca-diablo-valley-college"
+  ],
+  "sourceUrl": "https://www.4cd.edu/gb",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "John E. Márquez",
+  "title": "Governing Board Secretary, Ward 1",
+  "level": "board",
+  "district": "Contra Costa Community College District",
+  "homeInstId": "c-ca-contra-costa-college",
+  "alsoInstIds": [
+   "c-ca-diablo-valley-college"
+  ],
+  "sourceUrl": "https://www.4cd.edu/gb",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 11, 2026"
+ },
+ {
+  "name": "Rebecca Barrett",
+  "title": "Governing Board Member, Ward 3",
+  "level": "board",
+  "district": "Contra Costa Community College District",
+  "homeInstId": "c-ca-contra-costa-college",
+  "alsoInstIds": [
+   "c-ca-diablo-valley-college"
+  ],
+  "sourceUrl": "https://www.4cd.edu/gb",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 11, 2026"
+ },
+ {
+  "name": "Andy Li",
+  "title": "Governing Board Member, Ward 4",
+  "level": "board",
+  "district": "Contra Costa Community College District",
+  "homeInstId": "c-ca-contra-costa-college",
+  "alsoInstIds": [
+   "c-ca-diablo-valley-college"
+  ],
+  "sourceUrl": "https://www.4cd.edu/gb",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring Dec 11, 2026"
+ },
+ {
+  "name": "Mary Lombardo",
+  "title": "Board President, Area 3",
+  "level": "board",
+  "district": "Copper Mountain Community College District",
+  "homeInstId": "c-ca-copper-mountain-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/office-of-the-president/trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Tyler Fowlkes",
+  "title": "Board Vice President, Area 2",
+  "level": "board",
+  "district": "Copper Mountain Community College District",
+  "homeInstId": "c-ca-copper-mountain-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/office-of-the-president/trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Dick Rogers",
+  "title": "Board Clerk, Area 1",
+  "level": "board",
+  "district": "Copper Mountain Community College District",
+  "homeInstId": "c-ca-copper-mountain-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/office-of-the-president/trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Graydon S. Uyeda",
+  "title": "Trustee, Area 4",
+  "level": "board",
+  "district": "Copper Mountain Community College District",
+  "homeInstId": "c-ca-copper-mountain-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/office-of-the-president/trustees",
+  "checked": "2026-11-11",
+  "note": "Goes by Chuck; term listed 2024-2026; Area 4 on Nov 3, 2026 ballot"
+ },
+ {
+  "name": "Anna Stump",
+  "title": "Trustee, Area 5",
+  "level": "board",
+  "district": "Copper Mountain Community College District",
+  "homeInstId": "c-ca-copper-mountain-community-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cmccd.edu/campus/operations/office-of-the-president/trustees",
+  "checked": "2026-11-11",
+  "note": "Term listed 2024-2026; Area 5 on Nov 3, 2026 ballot"
+ },
+ {
+  "name": "Frank Reyes",
+  "title": "Trustee, Area 1",
+  "level": "board",
+  "district": "San Bernardino Community College District",
+  "homeInstId": "c-ca-crafton-hills-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://sbccd.edu/about-sbccd/board-of-trustees/trustees/",
+  "checked": "2026-11-11",
+  "note": "Board page last modified 12/16/2024; officer titles on page conflict, so not recorded"
+ },
+ {
+  "name": "Joseph R. Williams",
+  "title": "Trustee, Area 2",
+  "level": "board",
+  "district": "San Bernardino Community College District",
+  "homeInstId": "c-ca-crafton-hills-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://sbccd.edu/about-sbccd/board-of-trustees/trustees/",
+  "checked": "2026-11-11",
+  "note": "Board page last modified 12/16/2024; page lists him as Board Clerk in table and Board Vice Chair in sidebar"
+ },
+ {
+  "name": "John Longville",
+  "title": "Trustee, Area 3",
+  "level": "board",
+  "district": "San Bernardino Community College District",
+  "homeInstId": "c-ca-crafton-hills-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://sbccd.edu/about-sbccd/board-of-trustees/trustees/",
+  "checked": "2026-11-11",
+  "note": "Board page last modified 12/16/2024"
+ },
+ {
+  "name": "Nathan D. Gonzales",
+  "title": "Trustee, Area 4",
+  "level": "board",
+  "district": "San Bernardino Community College District",
+  "homeInstId": "c-ca-crafton-hills-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://sbccd.edu/about-sbccd/board-of-trustees/trustees/",
+  "checked": "2026-11-11",
+  "note": "Board page last modified 12/16/2024; page lists him as Board Vice Chair in table and Board Chair in sidebar"
+ },
+ {
+  "name": "Carlos Aguilera",
+  "title": "Trustee, Area 5",
+  "level": "board",
+  "district": "San Bernardino Community College District",
+  "homeInstId": "c-ca-crafton-hills-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://sbccd.edu/about-sbccd/board-of-trustees/trustees/",
+  "checked": "2026-11-11",
+  "note": "Board page last modified 12/16/2024"
+ },
+ {
+  "name": "Stephanie Houston",
+  "title": "Trustee, Area 6",
+  "level": "board",
+  "district": "San Bernardino Community College District",
+  "homeInstId": "c-ca-crafton-hills-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://sbccd.edu/about-sbccd/board-of-trustees/trustees/",
+  "checked": "2026-11-11",
+  "note": "Board page last modified 12/16/2024; listed as Board Chair in page table"
+ },
+ {
+  "name": "Cherina Betters",
+  "title": "Trustee, Area 7",
+  "level": "board",
+  "district": "San Bernardino Community College District",
+  "homeInstId": "c-ca-crafton-hills-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://sbccd.edu/about-sbccd/board-of-trustees/trustees/",
+  "checked": "2026-11-11",
+  "note": "Board page last modified 12/16/2024; listed as Board Clerk in page sidebar"
+ },
+ {
+  "name": "Debra Stakes",
+  "title": "Board President",
+  "level": "board",
+  "district": "San Luis Obispo County Community College District",
+  "homeInstId": "c-ca-cuesta-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cuesta.edu/about/boardtrustees/Contact-Board-of-Trustees.html",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on source page"
+ },
+ {
+  "name": "Danna Stroud",
+  "title": "Board Vice President",
+  "level": "board",
+  "district": "San Luis Obispo County Community College District",
+  "homeInstId": "c-ca-cuesta-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cuesta.edu/about/boardtrustees/Contact-Board-of-Trustees.html",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on source page"
+ },
+ {
+  "name": "Mary Strobridge",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Luis Obispo County Community College District",
+  "homeInstId": "c-ca-cuesta-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cuesta.edu/about/boardtrustees/Contact-Board-of-Trustees.html",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on source page"
+ },
+ {
+  "name": "Patrick Mullen",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Luis Obispo County Community College District",
+  "homeInstId": "c-ca-cuesta-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cuesta.edu/about/boardtrustees/Contact-Board-of-Trustees.html",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on source page"
+ },
+ {
+  "name": "Pete Sysak",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Luis Obispo County Community College District",
+  "homeInstId": "c-ca-cuesta-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.cuesta.edu/about/boardtrustees/Contact-Board-of-Trustees.html",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on source page"
+ },
+ {
+  "name": "Debbie Justeson",
+  "title": "Governing Board President",
+  "level": "board",
+  "district": "Grossmont-Cuyamaca Community College District",
+  "homeInstId": "c-ca-cuyamaca-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.gcccd.edu/governing-board/",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on board page"
+ },
+ {
+  "name": "Julie Schorr",
+  "title": "Governing Board Vice President",
+  "level": "board",
+  "district": "Grossmont-Cuyamaca Community College District",
+  "homeInstId": "c-ca-cuyamaca-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.gcccd.edu/governing-board/",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on board page"
+ },
+ {
+  "name": "Elena Adams",
+  "title": "Governing Board Clerk",
+  "level": "board",
+  "district": "Grossmont-Cuyamaca Community College District",
+  "homeInstId": "c-ca-cuyamaca-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.gcccd.edu/governing-board/",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on board page"
+ },
+ {
+  "name": "Brad Monroe",
+  "title": "Governing Board Member",
+  "level": "board",
+  "district": "Grossmont-Cuyamaca Community College District",
+  "homeInstId": "c-ca-cuyamaca-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.gcccd.edu/governing-board/",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on board page"
+ },
+ {
+  "name": "Cindy Page",
+  "title": "Governing Board Member",
+  "level": "board",
+  "district": "Grossmont-Cuyamaca Community College District",
+  "homeInstId": "c-ca-cuyamaca-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.gcccd.edu/governing-board/",
+  "checked": "2026-11-11",
+  "note": "Trustee area not stated on board page"
+ },
+ {
+  "name": "Barbara Dunsheath",
+  "title": "Board President, Trustee Area 1",
+  "level": "board",
+  "district": "North Orange County Community College District",
+  "homeInstId": "c-ca-cypress-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://nocccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": "Term listed 2022-2026"
+ },
+ {
+  "name": "Ed Lopez",
+  "title": "Board Vice President, Trustee Area 2",
+  "level": "board",
+  "district": "North Orange County Community College District",
+  "homeInstId": "c-ca-cypress-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://nocccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Mark A. Lopez",
+  "title": "Board Secretary, Trustee Area 5",
+  "level": "board",
+  "district": "North Orange County Community College District",
+  "homeInstId": "c-ca-cypress-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://nocccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Stephen T. Blount",
+  "title": "Trustee, Trustee Area 3",
+  "level": "board",
+  "district": "North Orange County Community College District",
+  "homeInstId": "c-ca-cypress-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://nocccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": "Term listed 2022-2026"
+ },
+ {
+  "name": "Evangelina Rosales",
+  "title": "Trustee, Trustee Area 4",
+  "level": "board",
+  "district": "North Orange County Community College District",
+  "homeInstId": "c-ca-cypress-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://nocccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Jeffrey P. Brown",
+  "title": "Trustee, Trustee Area 6",
+  "level": "board",
+  "district": "North Orange County Community College District",
+  "homeInstId": "c-ca-cypress-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://nocccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": "Term listed 2022-2026"
+ },
+ {
+  "name": "Ryan Bent",
+  "title": "Trustee, Trustee Area 7",
+  "level": "board",
+  "district": "North Orange County Community College District",
+  "homeInstId": "c-ca-cypress-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://nocccd.edu/board-trustees",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Terry Godfrey",
+  "title": "Board President, Trustee Area 5",
+  "level": "board",
+  "district": "Foothill-De Anza Community College District",
+  "homeInstId": "c-ca-de-anza-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://fhda.edu/_about-us/_board/board-member-profiles.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Laura Casas",
+  "title": "Board Vice President, Trustee Area 1",
+  "level": "board",
+  "district": "Foothill-De Anza Community College District",
+  "homeInstId": "c-ca-de-anza-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://fhda.edu/_about-us/_board/board-member-profiles.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Alexander Gvatua",
+  "title": "Trustee, Trustee Area 2",
+  "level": "board",
+  "district": "Foothill-De Anza Community College District",
+  "homeInstId": "c-ca-de-anza-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://fhda.edu/_about-us/_board/board-member-profiles.html",
+  "checked": "2026-11-11",
+  "note": "Appointed Jan 15, 2025 to fill a vacancy; term listed as expiring 2026"
+ },
+ {
+  "name": "Peter Landsberger",
+  "title": "Trustee, Trustee Area 3",
+  "level": "board",
+  "district": "Foothill-De Anza Community College District",
+  "homeInstId": "c-ca-de-anza-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://fhda.edu/_about-us/_board/board-member-profiles.html",
+  "checked": "2026-11-11",
+  "note": ""
+ },
+ {
+  "name": "Pearl Cheng",
+  "title": "Trustee, Trustee Area 4",
+  "level": "board",
+  "district": "Foothill-De Anza Community College District",
+  "homeInstId": "c-ca-de-anza-college",
+  "alsoInstIds": [],
+  "sourceUrl": "https://fhda.edu/_about-us/_board/board-member-profiles.html",
+  "checked": "2026-11-11",
+  "note": "Term listed as expiring 2026"
+ },
+ {
+  "name": "Aliya Chisti",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Francisco Community College District",
+  "homeInstId": "c-ca-city-college-of-san-francisco",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.ccsf.edu/Board/",
+  "checked": "2026-11-11",
+  "note": "ccsf.edu/Board page is outdated (still lists Alan Wong, Murrell Green, Shanell Williams); current officer roles unconfirmed; elected Nov 2024"
+ },
+ {
+  "name": "Anita Martinez",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Francisco Community College District",
+  "homeInstId": "c-ca-city-college-of-san-francisco",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.ccsf.edu/Board/",
+  "checked": "2026-11-11",
+  "note": "Listed as Vice-President on outdated ccsf.edu/Board page; current officer role unconfirmed; elected 2022, term ends 2026"
+ },
+ {
+  "name": "Susan Solomon",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Francisco Community College District",
+  "homeInstId": "c-ca-city-college-of-san-francisco",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.ccsf.edu/Board/",
+  "checked": "2026-11-11",
+  "note": "Elected 2022, term ends 2026; listed on ccsf.edu/Board page"
+ },
+ {
+  "name": "Vick Van Chung",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Francisco Community College District",
+  "homeInstId": "c-ca-city-college-of-san-francisco",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.ccsf.edu/Board/",
+  "checked": "2026-11-11",
+  "note": "Elected 2022, term ends 2026; listed on ccsf.edu/Board page"
+ },
+ {
+  "name": "Heather McCarty",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Francisco Community College District",
+  "homeInstId": "c-ca-city-college-of-san-francisco",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.sf.gov/news-mayor-lurie-appoints-ruth-ferguson-to-city-college-of-san-francisco-board-of-trustees",
+  "checked": "2026-11-11",
+  "note": "Not on outdated ccsf.edu/Board page; top vote-getter in Nov 2024 election (GrowSF results) and named as a City College trustee in Jan 2026 sf.gov release"
+ },
+ {
+  "name": "Luis Zamora",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Francisco Community College District",
+  "homeInstId": "c-ca-city-college-of-san-francisco",
+  "alsoInstIds": [],
+  "sourceUrl": "https://elections.growsf.org/2024-11-05/ccsf/",
+  "checked": "2026-11-11",
+  "note": "Not on outdated ccsf.edu/Board page; won a seat in Nov 2024 election per GrowSF results"
+ },
+ {
+  "name": "Ruth Ferguson",
+  "title": "Trustee",
+  "level": "board",
+  "district": "San Francisco Community College District",
+  "homeInstId": "c-ca-city-college-of-san-francisco",
+  "alsoInstIds": [],
+  "sourceUrl": "https://www.sf.gov/news-mayor-lurie-appoints-ruth-ferguson-to-city-college-of-san-francisco-board-of-trustees",
+  "checked": "2026-11-11",
+  "note": "Appointed by Mayor Lurie Jan 5, 2026 to the seat vacated by Alan Wong (now District 4 Supervisor); ran unopposed Nov 2026 for the remainder of that term"
+ }
+]
