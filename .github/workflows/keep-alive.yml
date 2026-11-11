@@ -1,0 +1,23 @@
+name: Keep database awake
+
+# Supabase pauses free projects after 7 days without activity.
+# This makes one small read every 3 days so that never happens.
+# It uses the publishable key, which is already public in config.js.
+
+on:
+  schedule:
+    - cron: "41 15 */3 * *"   # every 3 days, 7:41 am Pacific
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read one row from the database
+        run: |
+          URL=$(grep -o 'https://[a-z0-9]*\.supabase\.co' config.js | head -1)
+          KEY=$(grep -o 'sb_publishable_[A-Za-z0-9_-]*' config.js | head -1)
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$URL/rest/v1/admins?select=id&limit=1" -H "apikey: $KEY")
+          echo "Supabase answered $code"
+          test "$code" = "200"
