@@ -388,12 +388,12 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
     <div class="note warn"><svg class="icon"><use href="#i-flag"/></svg><span>Stick to conduct in the role. No student names, no medical or family details, no claims you can't support. Details only you would know, like a specific meeting date, a policy number cited against you, or a program you alone teach, can identify you at a small college. Reviews that read as personal attacks are removed.</span></div>
     <div class="grid2">
       <div class="field"><label class="label" for="rv-status">Your status (shown)</label>
-        <select class="sel" id="rv-status"><option>Current employee</option><option>Former employee</option><option>Retired</option><option>Prefer not to say</option></select></div>
-      <div class="field"><label class="label" for="rv-last">Last worked under them (shown)</label>
+        <select class="sel" id="rv-status"><option>Current employee</option><option>Former employee</option><option>Retired</option><option>Student</option><option>Former student</option><option>Community member</option><option>Prefer not to say</option></select></div>
+      <div class="field"><label class="label" for="rv-last">Last interaction with them (shown)</label>
         <select class="sel" id="rv-last"></select></div>
       <div class="field"><label class="label" for="rv-role">Your role (shown)</label>
-        <select class="sel" id="rv-role"><option>Full-time faculty</option><option>Part-time / adjunct faculty</option><option>Classified staff</option><option>Counselor / librarian</option><option>Department chair</option><option>Prefer not to say</option></select></div>
-      <div class="field"><label class="label" for="rv-yrs">Years at institution (shown)</label>
+        <select class="sel" id="rv-role"><option>Full-time faculty</option><option>Part-time / adjunct faculty</option><option>Classified staff</option><option>Counselor / librarian</option><option>Department chair</option><option>Student</option><option>Community member</option><option>Prefer not to say</option></select></div>
+      <div class="field"><label class="label" for="rv-yrs">Years connected to institution (shown)</label>
         <select class="sel" id="rv-yrs"><option>Under 3 years</option><option>3 to 10 years</option><option>Over 10 years</option><option>Prefer not to say</option></select></div>
     </div>
     <button class="btn primary block" id="rv-submit" type="button"><svg class="icon"><use href="#i-lock"/></svg>Submit review</button>
@@ -906,6 +906,7 @@ document.addEventListener("input", e => {
 });
 document.addEventListener("change", e => {
   if(["lb-state","lb-sort"].includes(e.target.id)) renderLeaderboard();
+  if(e.target.id==="rv-status"){ const v=e.target.value, r=$("#rv-role"); if(/student/i.test(v)) r.value="Student"; else if(v==="Community member") r.value="Community member"; else if(["Student","Community member"].includes(r.value)) r.value="Full-time faculty"; }
   if(["in-state","in-rated"].includes(e.target.id)){ S.ui.inLimit = 60; renderInstitutions(); }
 });
 $("#rv-submit").addEventListener("click", submitReview);
