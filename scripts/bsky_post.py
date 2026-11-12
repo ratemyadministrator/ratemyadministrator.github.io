@@ -4,6 +4,8 @@ Run by .github/workflows/bluesky.yml. It needs the secrets BSKY_HANDLE and BSKY_
 Also follows up to 5 handles a run from social/follow.json (results in social/followed.json).
 Reposts up to 2 a run from social/repost.json and saves fresh candidates from followed
 accounts to social/candidates.json for the daily operator to choose from.
+Collects replies/mentions into social/mentions.json and posts answers queued in
+social/replies.json (up to 5 a run).
 Queue format: a list of {"id": "...", "text": "...", "not_before": "YYYY-MM-DD" (optional)}.
 URLs in the text become clickable links. Each run publishes at most one post. Published posts
 move to social/posted.json along with their Bluesky link.
@@ -16,6 +18,8 @@ FOLLOW, FOLLOWED = "social/follow.json", "social/followed.json"
 FOLLOWS_PER_RUN = 5
 CANDIDATES, REPOST, REPOSTED = "social/candidates.json", "social/repost.json", "social/reposted.json"
 REPOSTS_PER_RUN = 2
+MENTIONS, REPLIES, REPLIED = "social/mentions.json", "social/replies.json", "social/replied.json"
+REPLIES_PER_RUN = 5
 
 
 def call(method, body, token=None):
@@ -119,6 +123,65 @@ def repost_some(s):
     json.dump(done, open(REPOSTED, "w"), indent=2)
 
 
+def gather_mentions(s):
+    """Append new replies, mentions and quote-posts of our account to social/mentions.json
+    (newest last, last 300 kept) for the daily operator to answer."""
+    seen = load(MENTIONS)
+    known = {m["uri"] for m in seen}
+    try:
+        notes = get("app.bsky.notification.listNotifications", {"limit": 50}, s["accessJwt"])["notifications"]
+    except Exception as e:
+        print("notifications failed", e)
+        return
+    new = []
+    for n in notes:
+        if n["reason"] not in ("reply", "mention", "quote") or n["uri"] in known:
+            continue
+        rec = n.get("record", {})
+        root = (rec.get("reply") or {}).get("root") or {"uri": n["uri"], "cid": n["cid"]}
+        new.append({"uri": n["uri"], "cid": n["cid"], "reason": n["reason"], "author": n["author"]["handle"],
+                    "text": rec.get("text", "")[:1000], "at": n.get("indexedAt", ""),
+                    "root_uri": root["uri"], "root_cid": root["cid"], "answered": False,
+                    "url": f"https://bsky.app/profile/{n['author']['handle']}/post/{n['uri'].rsplit('/', 1)[1]}"})
+    new.sort(key=lambda m: m["at"])
+    json.dump((seen + new)[-300:], open(MENTIONS, "w"), indent=2)
+    print(len(new), "new replies/mentions")
+
+
+def send_replies(s):
+    """Post up to REPLIES_PER_RUN replies from social/replies.json:
+    {"to_uri", "to_cid", "root_uri", "root_cid", "text"} (copy uri/cid/root_* from mentions.json)."""
+    todo, done = load(REPLIES), load(REPLIED)
+    for item in todo[:REPLIES_PER_RUN]:
+        todo.remove(item)
+        text = item["text"].strip()
+        now = datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z")
+        if len(text) > 300:
+            done.append({**item, "at": now, "result": f"skipped: {len(text)} characters"})
+            continue
+        record = {"$type": "app.bsky.feed.post", "text": text, "langs": ["en"], "createdAt": now,
+                  "reply": {"root": {"uri": item["root_uri"], "cid": item["root_cid"]},
+                            "parent": {"uri": item["to_uri"], "cid": item["to_cid"]}}}
+        facets = link_facets(text)
+        if facets:
+            record["facets"] = facets
+        try:
+            call("com.atproto.repo.createRecord", {"repo": s["did"], "collection": "app.bsky.feed.post", "record": record}, s["accessJwt"])
+            result = "replied"
+        except Exception as e:
+            result = f"failed: {e}"
+        print("reply", item["to_uri"], result)
+        done.append({**item, "at": now, "result": result})
+    mentions = load(MENTIONS)
+    answered = {d["to_uri"] for d in done if d.get("result") == "replied"}
+    for m in mentions:
+        if m["uri"] in answered:
+            m["answered"] = True
+    json.dump(mentions, open(MENTIONS, "w"), indent=2)
+    json.dump(todo, open(REPLIES, "w"), indent=2)
+    json.dump(done, open(REPLIED, "w"), indent=2)
+
+
 def main():
     handle, pw = os.environ.get("BSKY_HANDLE"), os.environ.get("BSKY_APP_PASSWORD")
     if not handle or not pw:
@@ -127,6 +190,8 @@ def main():
     s = call("com.atproto.server.createSession", {"identifier": handle, "password": pw})
     follow_some(s)
     repost_some(s)
+    gather_mentions(s)
+    send_replies(s)
     gather_candidates(s)
     queue = json.load(open(QUEUE)) if os.path.exists(QUEUE) else []
     today = datetime.date.today().isoformat()
