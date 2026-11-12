@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+# Generated at deploy time by scripts/build_pages.py
+/colleges/
+/reviews/
+/sitemap.xml

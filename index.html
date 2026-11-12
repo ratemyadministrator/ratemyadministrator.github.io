@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Rate My Administrator</title>
-<meta name="description" content="Anonymous reviews of college deans, vice presidents, presidents and chancellors.">
+<title>Rate My Administrator: Anonymous Reviews of College Deans, Presidents and Trustees</title>
+<meta name="description" content="Rate your dean, vice president, president or college trustee anonymously. No account, no work email. 2,800+ California college administrators and trustees listed.">
+<link rel="canonical" href="https://ratemyadministrator.github.io/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rate My Administrator","url":"https://ratemyadministrator.github.io/","description":"Anonymous reviews of college administrators and trustees by the faculty, staff and students who work with them."}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="icons/favicon-64.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -266,6 +268,7 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 </style>
 </head>
 <body>
+<noscript><p style="padding:16px">Rate My Administrator needs JavaScript to post reviews. <a href="/colleges/">Browse colleges and administrator reviews</a>.</p></noscript>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
@@ -658,7 +661,7 @@ function renderInstitutions(){
 }
 function renderInstDetail(){
   if(S.db && !S.loadedInst.has(S.ui.instDetail)){ loadInstAdmins(S.ui.instDetail).then(()=>{ if(S.view==="institutions") renderInstitutions(); }); }
-  const i = S.byId.get(S.ui.instDetail); if(!i){ S.ui.instDetail=null; return renderInstitutions(); }
+  const i = S.byId.get(S.ui.instDetail); if(!i){ if(!S.dir.length && !S.dirError){ $("#inst-detail").innerHTML = `<div class="empty"><p>Loading…</p></div>`; return; } S.ui.instDetail=null; return renderInstitutions(); }
   const s = instStats(i.id);
   const ids = [...S.admins.keys()].filter(id => atInst(S.admins.get(id), i.id)).sort((a,b)=>(AGG.get(b)?.n||0)-(AGG.get(a)?.n||0));
   $("#inst-detail").innerHTML = `<button class="back" data-act="inst-back">${ic("back","sm")}All institutions</button>
@@ -957,6 +960,15 @@ async function connect(){
   if(!location.hash){ w.hidden = false; setTimeout(()=>w.querySelector(".choice")?.focus(), 50); }
   w.addEventListener("click", e => { const b = e.target.closest("[data-go]"); if(b){ w.hidden = true; go(b.dataset.go); } else if(e.target === w){ w.hidden = true; } });
   document.addEventListener("keydown", e => { if(e.key==="Escape" && !w.hidden) w.hidden = true; });
+})();
+// Deep links from the static college and review pages: /?inst=<id> or /?admin=<id>
+(() => {
+  const q = new URLSearchParams(location.search), inst = q.get("inst"), admin = q.get("admin");
+  if(!inst && !admin) return;
+  try{ history.replaceState(null, "", location.pathname + (admin ? "#admin" : "#institutions")); }catch{}
+  if(admin){ S.ui.adminDetail = admin; S.prevView = "institutions"; }
+  else S.ui.instDetail = inst;
+  $("#welcome").hidden = true;
 })();
 route();
 loadDirectory();

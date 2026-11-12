@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /social/
+Disallow: /supabase/
+Disallow: /scripts/
+Disallow: /seed/
+
+Sitemap: https://ratemyadministrator.github.io/sitemap.xml
