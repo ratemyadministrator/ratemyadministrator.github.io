@@ -5,9 +5,19 @@
     "not_before": "2026-11-14"
   },
   {
+    "id": "ed-professionalism",
+    "not_before": "2026-11-15",
+    "text": "\"Unprofessional\" may be the most flexible word in higher ed. Too often it means you disagreed in a meeting, asked about pay, or put a concern in writing.\n\nIf a standard isn't written down, it isn't a standard. It's a leash.\n\nhttps://ratemyadministrator.github.io/"
+  },
+  {
     "id": "safety",
     "text": "Posting safely: describe patterns, not one-off details only you would know. A specific meeting date or a program you alone teach can identify you at a small college.\n\nThe How it works page has a short guide and video.\n\nhttps://ratemyadministrator.github.io/#how",
     "not_before": "2026-11-16"
+  },
+  {
+    "id": "ed-unpaid",
+    "not_before": "2026-11-17",
+    "text": "Committee chair. Accreditation report. Program review. Curriculum rewrite.\n\n\"It's just part of the job,\" until you ask for release time.\n\nExtra work without extra pay or time is a pay cut. Rate whether your administrators ask, or just assign:\nhttps://ratemyadministrator.github.io/"
   },
   {
     "id": "trustees",
@@ -15,8 +25,23 @@
     "not_before": "2026-11-18"
   },
   {
+    "id": "ed-governance",
+    "not_before": "2026-11-19",
+    "text": "Shared governance means faculty help make the decision, not hear about it afterward.\n\n\"We informed the senate\" is not consultation. \"We gathered feedback\" after it was decided is not governance.\n\nhttps://ratemyadministrator.github.io/"
+  },
+  {
     "id": "students",
     "text": "Students and community members can rate administrators too. Had a run-in with a dean over a grade appeal or a complaint? Questions that don't apply can be marked N/A.\n\nhttps://ratemyadministrator.github.io/",
     "not_before": "2026-11-20"
+  },
+  {
+    "id": "ed-parttime",
+    "not_before": "2026-11-21",
+    "text": "Part-time faculty teach a huge share of college classes, often with no job security and no say.\n\nThey're also the least able to complain about a bad dean without risking next semester's assignment. That's why reviews here are anonymous.\n\nhttps://ratemyadministrator.github.io/"
+  },
+  {
+    "id": "ed-retaliation",
+    "not_before": "2026-11-23",
+    "text": "Retaliation rarely looks like retaliation. It looks like a schedule change, a lost section, a sudden \"concern\" about your tone, a committee you're no longer on.\n\nPatterns are easier to see when people can compare notes.\n\nhttps://ratemyadministrator.github.io/"
   }
 ]
