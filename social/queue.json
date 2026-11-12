@@ -1,0 +1,26 @@
+[
+  {
+    "id": "intro",
+    "text": "Students rate professors. Now faculty and staff can rate their deans, VPs, presidents and trustees, anonymously.\n\nNo account, no work-email check, no IP addresses stored. 2,800+ California administrators and trustees listed.\n\nhttps://ratemyadministrator.github.io/"
+  },
+  {
+    "id": "asktask",
+    "text": "Does your dean ask, or just assign?\n\nRate My Administrator scores the things faculty actually live with: extra work handed down without asking, whether it's paid, retaliation, shared governance and following the contract.\n\nhttps://ratemyadministrator.github.io/",
+    "not_before": "2026-11-14"
+  },
+  {
+    "id": "safety",
+    "text": "Posting safely: describe patterns, not one-off details only you would know. A specific meeting date or a program you alone teach can identify you at a small college.\n\nThe How it works page has a short guide and video.\n\nhttps://ratemyadministrator.github.io/#how",
+    "not_before": "2026-11-16"
+  },
+  {
+    "id": "trustees",
+    "text": "Board trustees are on Rate My Administrator too, for every California community college district plus the UC Regents and CSU Trustees.\n\nThey vote on budgets, contracts and presidents. Faculty and staff can now say how that's going.\n\nhttps://ratemyadministrator.github.io/",
+    "not_before": "2026-11-18"
+  },
+  {
+    "id": "students",
+    "text": "Students and community members can rate administrators too. Had a run-in with a dean over a grade appeal or a complaint? Questions that don't apply can be marked N/A.\n\nhttps://ratemyadministrator.github.io/",
+    "not_before": "2026-11-20"
+  }
+]
