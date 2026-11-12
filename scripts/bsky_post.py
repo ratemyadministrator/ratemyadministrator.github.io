@@ -2,6 +2,8 @@
 
 Run by .github/workflows/bluesky.yml. It needs the secrets BSKY_HANDLE and BSKY_APP_PASSWORD.
 Also follows up to 5 handles a run from social/follow.json (results in social/followed.json).
+Reposts up to 2 a run from social/repost.json and saves fresh candidates from followed
+accounts to social/candidates.json for the daily operator to choose from.
 Queue format: a list of {"id": "...", "text": "...", "not_before": "YYYY-MM-DD" (optional)}.
 URLs in the text become clickable links. Each run publishes at most one post. Published posts
 move to social/posted.json along with their Bluesky link.
@@ -12,6 +14,8 @@ API = "https://bsky.social/xrpc/"
 QUEUE, POSTED = "social/queue.json", "social/posted.json"
 FOLLOW, FOLLOWED = "social/follow.json", "social/followed.json"
 FOLLOWS_PER_RUN = 5
+CANDIDATES, REPOST, REPOSTED = "social/candidates.json", "social/repost.json", "social/reposted.json"
+REPOSTS_PER_RUN = 2
 
 
 def call(method, body, token=None):
@@ -58,6 +62,63 @@ def follow_some(s):
     json.dump(done, open(FOLLOWED, "w"), indent=2)
 
 
+def load(path):
+    return json.load(open(path)) if os.path.exists(path) else []
+
+
+def gather_candidates(s):
+    """Save recent original posts (no replies or reposts, last 4 days) from followed accounts,
+    so the daily operator can choose which ones to share."""
+    since = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=4)).isoformat()
+    shared = {r["uri"] for r in load(REPOSTED)}
+    out = []
+    for f in load(FOLLOWED):
+        if f.get("result") != "followed":
+            continue
+        try:
+            feed = get("app.bsky.feed.getAuthorFeed",
+                       {"actor": f["handle"], "limit": 15, "filter": "posts_no_replies"}, s["accessJwt"])["feed"]
+        except Exception as e:
+            print("feed failed", f["handle"], e)
+            continue
+        for item in feed:
+            post = item["post"]
+            if item.get("reason") or post["uri"] in shared:
+                continue  # skip their reposts and anything already shared
+            created = post["record"].get("createdAt", "")
+            if created < since:
+                continue
+            out.append({"uri": post["uri"], "cid": post["cid"], "author": post["author"]["handle"],
+                        "created": created, "text": post["record"].get("text", "")[:500],
+                        "likes": post.get("likeCount", 0), "reposts": post.get("repostCount", 0),
+                        "url": f"https://bsky.app/profile/{post['author']['handle']}/post/{post['uri'].rsplit('/', 1)[1]}"})
+    out.sort(key=lambda c: c["created"], reverse=True)
+    json.dump(out, open(CANDIDATES, "w"), indent=2)
+    print(len(out), "repost candidates saved")
+
+
+def repost_some(s):
+    """Repost up to REPOSTS_PER_RUN items from social/repost.json (each {"uri", "cid"}, as in candidates.json)."""
+    todo, done = load(REPOST), load(REPOSTED)
+    shared = {r["uri"] for r in done}
+    for item in todo[:REPOSTS_PER_RUN]:
+        todo.remove(item)
+        if item["uri"] in shared:
+            continue
+        now = datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z")
+        try:
+            call("com.atproto.repo.createRecord", {"repo": s["did"], "collection": "app.bsky.feed.repost",
+                 "record": {"$type": "app.bsky.feed.repost", "subject": {"uri": item["uri"], "cid": item["cid"]},
+                            "createdAt": now}}, s["accessJwt"])
+            result = "reposted"
+        except Exception as e:
+            result = f"failed: {e}"
+        print(item["uri"], result)
+        done.append({**item, "at": now, "result": result})
+    json.dump(todo, open(REPOST, "w"), indent=2)
+    json.dump(done, open(REPOSTED, "w"), indent=2)
+
+
 def main():
     handle, pw = os.environ.get("BSKY_HANDLE"), os.environ.get("BSKY_APP_PASSWORD")
     if not handle or not pw:
@@ -65,11 +126,17 @@ def main():
         return
     s = call("com.atproto.server.createSession", {"identifier": handle, "password": pw})
     follow_some(s)
+    repost_some(s)
+    gather_candidates(s)
     queue = json.load(open(QUEUE)) if os.path.exists(QUEUE) else []
     today = datetime.date.today().isoformat()
     due = [p for p in queue if p.get("not_before", "") <= today]
     if not due:
         print("No post due today.")
+        return
+    recent = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=20)).isoformat()
+    if any(p.get("posted_at", "") > recent for p in load(POSTED)):
+        print("Already posted in the last 20 hours; next post waits.")
         return
     post = due[0]
     text = post["text"].strip()

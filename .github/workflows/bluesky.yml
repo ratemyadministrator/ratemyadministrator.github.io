@@ -4,6 +4,7 @@ name: Post to Bluesky
 on:
   schedule:
     - cron: "17 17 * * *"   # about 9-10 AM Pacific
+    - cron: "47 2 * * *"    # about 6-7 PM Pacific (reposts and fresh candidates; still one post a day max)
   workflow_dispatch:
 
 permissions:
