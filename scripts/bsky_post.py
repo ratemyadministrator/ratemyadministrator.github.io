@@ -20,6 +20,7 @@ CANDIDATES, REPOST, REPOSTED = "social/candidates.json", "social/repost.json", "
 REPOSTS_PER_RUN = 2
 MENTIONS, REPLIES, REPLIED = "social/mentions.json", "social/replies.json", "social/replied.json"
 REPLIES_PER_RUN = 5
+STATS = "social/stats.json"
 
 
 def call(method, body, token=None):
@@ -182,6 +183,36 @@ def send_replies(s):
     json.dump(done, open(REPLIED, "w"), indent=2)
 
 
+def record_stats(s):
+    """Keep running totals for the daily report: followers, and new follows, reposts, likes and
+    quotes of our posts since the previous run. Stores only counts and handles of new followers
+    (public information), never message content."""
+    stats = json.load(open(STATS)) if os.path.exists(STATS) else {"history": [], "seen": []}
+    try:
+        prof = get("app.bsky.actor.getProfile", {"actor": s["did"]}, s["accessJwt"])
+        notes = get("app.bsky.notification.listNotifications", {"limit": 100}, s["accessJwt"])["notifications"]
+    except Exception as e:
+        print("stats failed", e)
+        return
+    seen = set(stats.get("seen", []))
+    counts = {"follow": 0, "repost": 0, "like": 0, "quote": 0, "reply": 0, "mention": 0}
+    new_followers = []
+    for n in notes:
+        if n["uri"] in seen or n["reason"] not in counts:
+            continue
+        counts[n["reason"]] += 1
+        if n["reason"] == "follow":
+            new_followers.append(n["author"]["handle"])
+        seen.add(n["uri"])
+    stats["history"].append({"at": datetime.datetime.now(datetime.timezone.utc).isoformat()[:16],
+                             "followers": prof.get("followersCount", 0), "following": prof.get("followsCount", 0),
+                             "posts": prof.get("postsCount", 0), "new": counts, "new_followers": new_followers})
+    stats["history"] = stats["history"][-120:]
+    stats["seen"] = list(seen)[-1000:]
+    json.dump(stats, open(STATS, "w"), indent=2)
+    print("followers", prof.get("followersCount", 0), "new", counts)
+
+
 def main():
     handle, pw = os.environ.get("BSKY_HANDLE"), os.environ.get("BSKY_APP_PASSWORD")
     if not handle or not pw:
@@ -191,6 +222,7 @@ def main():
     follow_some(s)
     repost_some(s)
     gather_mentions(s)
+    record_stats(s)
     send_replies(s)
     gather_candidates(s)
     queue = json.load(open(QUEUE)) if os.path.exists(QUEUE) else []
