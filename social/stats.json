@@ -14,7 +14,27 @@
         "mention": 0
       },
       "new_followers": []
+    },
+    {
+      "at": "2026-11-13T00:59",
+      "followers": 0,
+      "following": 12,
+      "posts": 1,
+      "new": {
+        "follow": 0,
+        "repost": 0,
+        "like": 1,
+        "quote": 0,
+        "reply": 0,
+        "mention": 0
+      },
+      "new_followers": [],
+      "liked_or_shared_by": [
+        "like: chiitan.love"
+      ]
     }
   ],
-  "seen": []
+  "seen": [
+    "at://did:plc:t5pur7eruxfgxy7ynpfrmg2w/app.bsky.feed.like/3n25cup7pjk2i"
+  ]
 }
