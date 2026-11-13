@@ -196,17 +196,20 @@ def record_stats(s):
         return
     seen = set(stats.get("seen", []))
     counts = {"follow": 0, "repost": 0, "like": 0, "quote": 0, "reply": 0, "mention": 0}
-    new_followers = []
+    new_followers, engagers = [], []
     for n in notes:
         if n["uri"] in seen or n["reason"] not in counts:
             continue
         counts[n["reason"]] += 1
         if n["reason"] == "follow":
             new_followers.append(n["author"]["handle"])
+        elif n["reason"] in ("like", "repost"):
+            engagers.append(f'{n["reason"]}: {n["author"]["handle"]}')
         seen.add(n["uri"])
     stats["history"].append({"at": datetime.datetime.now(datetime.timezone.utc).isoformat()[:16],
                              "followers": prof.get("followersCount", 0), "following": prof.get("followsCount", 0),
-                             "posts": prof.get("postsCount", 0), "new": counts, "new_followers": new_followers})
+                             "posts": prof.get("postsCount", 0), "new": counts, "new_followers": new_followers,
+                             "liked_or_shared_by": engagers})
     stats["history"] = stats["history"][-120:]
     stats["seen"] = list(seen)[-1000:]
     json.dump(stats, open(STATS, "w"), indent=2)
