@@ -23,6 +23,42 @@ LEVEL_ORDER = ["exec", "vp", "dean", "director", "board"]
 esc = html.escape
 
 
+
+# Evergreen guide pages (plain, sourced). Each: (slug, title, description, body_html)
+GUIDES = [
+    ("what-is-shared-governance",
+     "What Shared Governance Means for College Faculty and Staff | Rate My Administrator",
+     "A plain guide to shared governance: what it is, what California law requires of community college boards, and how to tell real consultation from a rubber stamp.",
+     """<p class="crumb"><a href="/">Home</a> › Guides</p>
+<h1>What shared governance means</h1>
+<p class="sub">A plain-language guide for faculty, staff and students</p>
+<p>Shared governance is the idea that a college is run jointly: the board and administrators handle overall direction and budgets, and faculty have the main say on academic matters such as curriculum, degree requirements and standards. Staff and students also have a defined voice. It is not a courtesy. In many places it is written into law and policy.</p>
+<h2>Where the idea comes from</h2>
+<p>The classic statement is the 1966 <a href="https://www.aaup.org/report/statement-government-colleges-and-universities">Statement on Government of Colleges and Universities</a>, written jointly by the AAUP, the American Council on Education and the Association of Governing Boards. It says faculty have primary responsibility for curriculum, methods of instruction, research, faculty status and the parts of student life that relate to education.</p>
+<h2>What California law requires at community colleges</h2>
+<ul>
+<li>The Education Code requires each district board to ensure faculty, staff and students can <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&amp;sectionNum=70902">participate effectively in district and college governance</a> (Section 70902(b)(7)).</li>
+<li>Title 5 regulations list the "academic and professional matters" on which boards must consult the academic senate, often called the "10+1": curriculum, degree and certificate requirements, grading policies, educational program development, student preparation and success standards, governance structures as they relate to faculty roles, faculty roles in accreditation, faculty professional development, program review, institutional planning and budget processes, and other matters the board and senate agree on (<a href="https://www.law.cornell.edu/regulations/california/5-CCR-53200">5 CCR § 53200</a>).</li>
+<li>On those matters the board must "consult collegially": either rely primarily on the senate's advice or reach mutual agreement with it, and it can depart from that advice only in exceptional circumstances and, if asked, must explain why in writing (<a href="https://www.law.cornell.edu/regulations/california/5-CCR-53203">5 CCR § 53203</a>).</li>
+<li>Classified staff and students have their own participation rights under Title 5 (<a href="https://www.law.cornell.edu/regulations/california/5-CCR-51023.5">§ 51023.5</a> and <a href="https://www.law.cornell.edu/regulations/california/5-CCR-51023.7">§ 51023.7</a>).</li>
+</ul>
+<p>Working conditions such as pay, workload and discipline are a separate track: they belong to collective bargaining with the union, not to the senate.</p>
+<h2>Real consultation vs. a rubber stamp</h2>
+<ul>
+<li><b>Real:</b> faculty are asked before a decision is made, have time and information to respond, and can see how their advice changed the outcome.</li>
+<li><b>Rubber stamp:</b> the senate is "informed" after the fact, feedback is gathered once the plan is final, or committees meet but never see the numbers.</li>
+<li><b>Warning signs:</b> decisions announced over the summer, task forces that replace standing committees, and "we heard you" messages with no change.</li>
+</ul>
+<h2>What you can do</h2>
+<ul>
+<li>Read your district's board policy on participation in governance (often numbered BP 2510) and your senate's bylaws.</li>
+<li>Ask your senate or union what was consulted on and when.</li>
+<li>Rate how your administrators handle shared governance. "Shared governance" is one of the ten things every review on <a href="/">Rate My Administrator</a> scores, anonymously.</li>
+</ul>
+<p class="t">This guide is general information, not legal advice. Rules differ at the CSU, the UC and in other states.</p>
+<a class="btn" href="/">Rate an administrator</a>"""),
+]
+
 def config():
     src = open(os.path.join(ROOT, "config.js")).read()
     url = re.search(r'supabaseUrl:\s*"([^"]+)"', src).group(1)
@@ -82,7 +118,7 @@ def page(title, desc, path, body, jsonld=None):
 <style>{CSS}</style>{ld}</head><body>
 <header><a href="/">RATE MY<b>ADMINISTRATOR</b></a></header><main>{body}
 <footer>Rate My Administrator is an independent project, not affiliated with any college, district or union.
-Reviews are anonymous opinions of the people who posted them. <a href="/#how">How it works, terms and removal requests</a>.</footer>
+Reviews are anonymous opinions of the people who posted them. <a href="/#how">How it works, terms and removal requests</a> · <a href="/guides/what-is-shared-governance/">What shared governance means</a>.</footer>
 </main></body></html>"""
 
 
@@ -187,6 +223,11 @@ def main():
                              "Find your college and anonymously rate its deans, vice presidents, president and trustees.",
                              "/colleges/", f'<h1>Colleges</h1><p class="sub">{len(by_inst)} colleges with administrators listed. '
                                            f'More states are on the way.</p><ul class="list">{items}</ul>'))
+
+    for slug, title, desc, body in GUIDES:
+        path = f"/guides/{slug}/"
+        write(path, page(title, desc, path, body))
+        urls.append((SITE + path, today))
 
     sm = "".join(f"<url><loc>{u}</loc><lastmod>{m}</lastmod></url>" for u, m in urls)
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
