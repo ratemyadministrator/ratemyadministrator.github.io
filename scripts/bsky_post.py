@@ -37,6 +37,10 @@ def link_facets(text):
     for m in re.finditer(rb"https?://[^\s)]+[^\s).,!?]", raw):
         facets.append({"index": {"byteStart": m.start(), "byteEnd": m.end()},
                        "features": [{"$type": "app.bsky.richtext.facet#link", "uri": m.group().decode()}]})
+    # Hashtags (e.g. #HigherEd) become tag facets so they are clickable and searchable.
+    for m in re.finditer(rb"(?:^|(?<=\s))#([A-Za-z][A-Za-z0-9_]{0,63})", raw):
+        facets.append({"index": {"byteStart": m.start(), "byteEnd": m.end()},
+                       "features": [{"$type": "app.bsky.richtext.facet#tag", "tag": m.group(1).decode()}]})
     return facets
 
 
