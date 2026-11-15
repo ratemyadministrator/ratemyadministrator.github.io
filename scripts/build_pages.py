@@ -180,6 +180,10 @@ def main():
                 f'<p>Anonymous ratings of the deans, vice presidents, president and trustees at {esc(i["name"])}, from the faculty, staff and students who work with them. '
                 f'No account and no work email needed.</p>',
                 f'<a class="btn" href="/?inst={iid}">Rate an administrator here</a>']
+        if n_rev == 0:
+            body.insert(4, f'<p style="background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:8px;padding:12px 14px">'
+                           f'<b>No one has rated {esc(i["name"])} leadership yet.</b> Be the first. It takes about two minutes, '
+                           f'and nothing about you is collected: no account, no email, no IP address.</p>')
         for lv in LEVEL_ORDER:
             group = [a for a in lst if a["level"] == lv]
             if not group:
