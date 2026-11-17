@@ -160,6 +160,22 @@
       },
       "new_followers": [],
       "liked_or_shared_by": []
+    },
+    {
+      "at": "2026-11-17T03:35",
+      "followers": 0,
+      "following": 17,
+      "posts": 4,
+      "new": {
+        "follow": 0,
+        "repost": 0,
+        "like": 0,
+        "quote": 0,
+        "reply": 0,
+        "mention": 0
+      },
+      "new_followers": [],
+      "liked_or_shared_by": []
     }
   ],
   "seen": [
