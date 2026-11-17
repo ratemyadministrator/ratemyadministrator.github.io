@@ -176,6 +176,22 @@
       },
       "new_followers": [],
       "liked_or_shared_by": []
+    },
+    {
+      "at": "2026-11-17T18:07",
+      "followers": 0,
+      "following": 22,
+      "posts": 5,
+      "new": {
+        "follow": 0,
+        "repost": 0,
+        "like": 0,
+        "quote": 0,
+        "reply": 0,
+        "mention": 0
+      },
+      "new_followers": [],
+      "liked_or_shared_by": []
     }
   ],
   "seen": [

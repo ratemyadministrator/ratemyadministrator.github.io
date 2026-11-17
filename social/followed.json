@@ -83,5 +83,30 @@
     "handle": "ruaaup-aft.bsky.social",
     "at": "2026-11-17T03:35:00.479794+00:00",
     "result": "followed"
+  },
+  {
+    "handle": "insidehighered.com",
+    "at": "2026-11-17T18:07:32.225242+00:00",
+    "result": "followed"
+  },
+  {
+    "handle": "mzinshteyn.bsky.social",
+    "at": "2026-11-17T18:07:32.879995+00:00",
+    "result": "followed"
+  },
+  {
+    "handle": "calmatters.org",
+    "at": "2026-11-17T18:07:33.330108+00:00",
+    "result": "followed"
+  },
+  {
+    "handle": "aftwa.bsky.social",
+    "at": "2026-11-17T18:07:33.801231+00:00",
+    "result": "followed"
+  },
+  {
+    "handle": "aft.org",
+    "at": "2026-11-17T18:07:34.521963+00:00",
+    "result": "followed"
   }
 ]
