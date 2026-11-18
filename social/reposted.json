@@ -86,5 +86,21 @@
     "url": "https://bsky.app/profile/ucaft.bsky.social/post/3n2eqlzmr7s2w",
     "at": "2026-11-17T03:35:01.198037Z",
     "result": "reposted"
+  },
+  {
+    "uri": "at://did:plc:jwucxa4tonukvnam72rec6gk/app.bsky.feed.post/3n2jco5qlnd2y",
+    "cid": "bafyreih5ycmf45j7mx2tokxaosek3c5dbefvb6idkavioou6xdhn7vg5zu",
+    "author": "chronicle.com",
+    "url": "https://bsky.app/profile/chronicle.com/post/3n2jco5qlnd2y",
+    "at": "2026-11-18T03:38:08.499578Z",
+    "result": "reposted"
+  },
+  {
+    "uri": "at://did:plc:ysdibsjglggly2lpmoekupxd/app.bsky.feed.post/3n2jgs3ap5c2v",
+    "cid": "bafyreigwpjdsffn6fouoqdfwwjkyrysnfnpscinukklr7odeh6yfvru4se",
+    "author": "psc-cuny.org",
+    "url": "https://bsky.app/profile/psc-cuny.org/post/3n2jgs3ap5c2v",
+    "at": "2026-11-18T03:38:08.677149Z",
+    "result": "reposted"
   }
 ]
