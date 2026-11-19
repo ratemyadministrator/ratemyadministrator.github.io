@@ -242,10 +242,29 @@
       },
       "new_followers": [],
       "liked_or_shared_by": []
+    },
+    {
+      "at": "2026-11-19T18:00",
+      "followers": 1,
+      "following": 24,
+      "posts": 7,
+      "new": {
+        "follow": 0,
+        "repost": 0,
+        "like": 1,
+        "quote": 0,
+        "reply": 0,
+        "mention": 0
+      },
+      "new_followers": [],
+      "liked_or_shared_by": [
+        "like: maciekhamela.bsky.social"
+      ]
     }
   ],
   "seen": [
     "at://did:plc:k77kd7k27as3e54pwdndhdfg/app.bsky.graph.follow/3n2m3twqpy32m",
+    "at://did:plc:hz3thvwswybpm2jskkwl4hgv/app.bsky.feed.like/3n2n7trwmyi2p",
     "at://did:plc:t5pur7eruxfgxy7ynpfrmg2w/app.bsky.feed.like/3n25cup7pjk2i"
   ]
 }
