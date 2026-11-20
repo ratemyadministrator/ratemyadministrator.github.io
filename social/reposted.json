@@ -126,5 +126,21 @@
     "url": "https://bsky.app/profile/chronicle.com/post/3n2jaebit2h2q",
     "at": "2026-11-19T18:00:19.023850Z",
     "result": "reposted"
+  },
+  {
+    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n2oehkrx4b2y",
+    "cid": "bafyreifjozhejfr7t4cbjqtpqo6yygjqw6flhc2f4l3j4fxmgsv5yeo3sm",
+    "author": "insidehighered.com",
+    "url": "https://bsky.app/profile/insidehighered.com/post/3n2oehkrx4b2y",
+    "at": "2026-11-20T03:36:05.444682Z",
+    "result": "reposted"
+  },
+  {
+    "uri": "at://did:plc:oxahz6hhtvdg7wbpsy6iausu/app.bsky.feed.post/3n2nc2gpcrv24",
+    "cid": "bafyreihdxnmlh46545eez4kyexrptjijvxvncbqgkg5jczuicrahjuzi3i",
+    "author": "cfaunited.bsky.social",
+    "url": "https://bsky.app/profile/cfaunited.bsky.social/post/3n2nc2gpcrv24",
+    "at": "2026-11-20T03:36:05.704094Z",
+    "result": "reposted"
   }
 ]
