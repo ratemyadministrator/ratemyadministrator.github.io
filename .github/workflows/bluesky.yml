@@ -6,6 +6,11 @@ on:
     - cron: "17 17 * * *"   # about 9-10 AM Pacific
     - cron: "47 2 * * *"    # about 6-7 PM Pacific (reposts and fresh candidates; still one post a day max)
   workflow_dispatch:
+    inputs:
+      stats_only:
+        description: "Only refresh follower/engagement stats (no posting, following or reposting)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -23,6 +28,7 @@ jobs:
         env:
           BSKY_HANDLE: ${{ secrets.BSKY_HANDLE }}
           BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
+          STATS_ONLY: ${{ inputs.stats_only }}
         run: python3 scripts/bsky_post.py
       - name: Save queue changes
         run: |

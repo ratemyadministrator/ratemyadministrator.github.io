@@ -226,6 +226,9 @@ def main():
         print("Bluesky secrets not set; nothing to do.")
         return
     s = call("com.atproto.server.createSession", {"identifier": handle, "password": pw})
+    if os.environ.get("STATS_ONLY", "").lower() == "true":  # fresh numbers for the daily report; no posting or following
+        record_stats(s)
+        return
     follow_some(s)
     repost_some(s)
     gather_mentions(s)
