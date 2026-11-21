@@ -7,7 +7,7 @@
 <meta name="description" content="Rate your dean, vice president, president or college trustee anonymously. No account, no work email. 2,800+ California college administrators and trustees listed.">
 <link rel="canonical" href="https://ratemyadministrator.github.io/">
 <meta name="google-site-verification" content="StDr8efwVyIa8z8HByx49c-WgdSBwPRllVBXX06P_Bc">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rate My Administrator","url":"https://ratemyadministrator.github.io/","description":"Anonymous reviews of college administrators and trustees by the faculty, staff and students who work with them."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rate My Administrator","url":"https://ratemyadministrator.github.io/","description":"Anonymous reviews of college administrators and trustees by faculty, staff, students and community members, current and retired."}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="icons/favicon-64.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -73,6 +73,12 @@ main{padding-block:16px 110px;display:flex;flex-direction:column;gap:16px}
 
 /* generic */
 .card{background:var(--card);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px}
+details.fold{display:block}details.fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:32px}
+details.fold>summary::-webkit-details-marker{display:none}details.fold>summary>span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.fold-hint{color:var(--faint);font-size:13px}.fold-chev{flex:none;width:20px;height:20px;color:var(--faint);transition:transform .15s}
+details.fold[open]>.fold-chev,details.fold[open]>summary .fold-chev{transform:rotate(180deg)}details.fold[open]>summary{margin-bottom:12px}
+details.fold>summary:focus-visible{outline:2px solid var(--blue);outline-offset:4px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){.fold-chev{transition:none}}
 .sec-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-inline:2px}
 .sec-h h2{margin:0;font:600 18px/1.3 var(--display);letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
 .sec-h h2 .icon{color:var(--red)}
@@ -424,8 +430,8 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
       <li><div><b>Post anonymously</b><p>No email, no name, no verification. Everything about you is optional and starts at "Prefer not to say." Anything you choose to share (status, a broad role like faculty or staff, years, and whether your contact was in the last 2 years) shows only once an administrator has at least 3 reviews. Reviews show the month posted, not the day.</p></div></li>
     </ol>
   </div>
-  <div class="card">
-    <div class="sec-h" style="padding:0"><h2 style="font-size:16px">Protecting yourself</h2></div>
+  <details class="card fold">
+    <summary><span><h2 style="font-size:16px;margin:0">Protecting yourself</h2><span class="fold-hint">How to stay anonymous when you post</span></span><svg class="icon fold-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
     <ul class="lim">
       <li><b>Describe patterns, not incidents.</b> "Budget cuts are announced without asking the departments affected" could come from many people. "At the Oct. 4 meeting he told me my lab would close" points to a few.</li>
       <li><b>Leave out details only you would know:</b> dates of specific meetings or emails, a policy number cited against you, a program only you teach, your exact department or title.</li>
@@ -435,25 +441,25 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
       <li><b>Keep it about conduct in the role.</b> No student names, no health, family, or personal-life details, nothing you can't support. Reviews that read as personal attacks are removed.</li>
       <li><b>Editing your review.</b> This browser remembers your reviews, so reviewing the same person again replaces your earlier review. Another device posts a new one.</li>
     </ul>
-  </div>
-  <div class="card">
-    <div class="sec-h" style="padding:0"><h2 style="font-size:16px">Limits to know</h2></div>
+  </details>
+  <details class="card fold">
+    <summary><span><h2 style="font-size:16px;margin:0">Limits to know</h2><span class="fold-hint">What the site can and can't do</span></span><svg class="icon fold-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
     <ul class="lim">
       <li><b>Nothing confirms reviewers work there.</b> Anyone can post, including about colleges they never worked at. Read scores alongside the number of reviews and the written detail.</li>
       <li><b>No accounts, no IP addresses saved.</b> The site stores only what you type and select. Like any web service, the database host keeps short-lived request logs that can include IP addresses; a VPN adds a layer of protection.</li>
       <li><b>Moderation.</b> Readers can report a review; three reports hide it until the site owner checks it. The owner can also hide any review or administrator listing.</li>
     </ul>
-  </div>
-  <div class="card" id="guides">
-    <div class="sec-h" style="padding:0"><h2 style="font-size:16px">Guides</h2></div>
+  </details>
+  <details class="card fold" id="guides">
+    <summary><span><h2 style="font-size:16px;margin:0">Guides</h2><span class="fold-hint">Plain-language explainers</span></span><svg class="icon fold-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
     <ul class="lim">
       <li><a href="/guides/what-is-shared-governance/">What shared governance means</a>: what California law requires and how to tell real consultation from a rubber stamp.</li>
     </ul>
-  </div>
-  <div class="card" id="terms">
-    <div class="sec-h" style="padding:0"><h2 style="font-size:16px">Terms and removal requests</h2></div>
+  </details>
+  <details class="card fold" id="terms">
+    <summary><span><h2 style="font-size:16px;margin:0">Terms and removal requests</h2><span class="fold-hint">Rules, removals and privacy</span></span><svg class="icon fold-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
     <ul class="lim">
-      <li><b>What this site is for.</b> College faculty and staff sharing their experience of how administrators and trustees perform their public roles.</li>
+      <li><b>What this site is for.</b> Anyone affected by how a college is run, including current and retired faculty and staff, students and community members, sharing their experience of how administrators and trustees perform their public roles.</li>
       <li><b>Reviews are opinions.</b> Each review is its author's own view and experience, not a statement by this site.</li>
       <li><b>Not allowed:</b> threats or harassment; slurs; claims you know are false; private life, health, or family details; student names; anyone's contact information; reviews of people who don't hold a leadership role.</li>
       <li><b>One review per person per administrator.</b> Update your earlier review instead of posting again.</li>
@@ -461,12 +467,12 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
       <li><b>Removal requests and corrections.</b> Email <a href="mailto:ratemyadministrators@gmail.com">ratemyadministrators@gmail.com</a> with the person's name, the college, and what's wrong (for example, a review that breaks these rules, or someone listed who has left the job). Requests are answered within 7 days.</li>
       <li><b>No identities to hand over.</b> The site doesn't collect reviewers' names, emails, or accounts, so it has none to disclose.</li>
     </ul>
-  </div>
-  <div class="card">
-    <div class="sec-h" style="padding:0"><h2 style="font-size:16px">The directory</h2></div>
+  </details>
+  <details class="card fold">
+    <summary><span><h2 style="font-size:16px;margin:0">The directory</h2><span class="fold-hint">Where the listings come from</span></span><svg class="icon fold-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
     <p class="sub" style="margin:0" id="dir-meta"></p>
     <div class="kv" id="dir-kv"></div>
-  </div>
+  </details>
 </section>
 </main>
 

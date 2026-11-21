@@ -198,7 +198,7 @@ def main():
                 f'<h1>{esc(i["name"])} administrator reviews</h1>',
                 f'<p class="sub">{esc(i["city"] or "")}{", " if i["city"] else ""}{esc(i["state"])} · {len(lst)} administrators and trustees listed · '
                 f'{n_rev} review{"s" if n_rev != 1 else ""}</p>',
-                f'<p>Anonymous ratings of the deans, vice presidents, president and trustees at {esc(i["name"])}, from the faculty, staff and students who work with them. '
+                f'<p>Anonymous ratings of the deans, vice presidents, president and trustees at {esc(i["name"])}, from faculty, staff, students and community members, current and retired. '
                 f'No account and no work email needed.</p>',
                 f'<a class="btn" href="/?inst={iid}">Rate an administrator here</a>']
         if n_rev == 0:
@@ -216,7 +216,7 @@ def main():
                 link = f'/reviews/{admin_slug[a["id"]]}/' if a["id"] in admin_slug else f'/?admin={a["id"]}'
                 body.append(f'<li>{score}<a href="{link}">{esc(a["name"])}</a><div class="t">{esc(a["title"])}</div></li>')
             body.append("</ul>")
-        desc = f'Anonymous reviews of administrators and trustees at {i["name"]}: deans, vice presidents, president and board, rated by faculty, staff and students.'
+        desc = f'Anonymous reviews of administrators and trustees at {i["name"]}: deans, vice presidents, president and board, rated by faculty, staff, students and community members.'
         write(path, page(f'{i["name"]} Administrator Reviews | Rate My Administrator', desc, path, "\n".join(body),
                          {"@context": "https://schema.org", "@type": "CollegeOrUniversity", "name": i["name"],
                           "address": {"@type": "PostalAddress", "addressLocality": i["city"], "addressRegion": i["state"]}}))
@@ -235,7 +235,7 @@ def main():
                 f'<p><b>{fmt(overall(s))} / 5</b> overall from {s["n"]} anonymous review{"s" if s["n"] != 1 else ""}. {renew}</p>'
                 f'<a class="btn" href="/?admin={aid}">Rate {esc(a["name"].split()[0])}</a><a class="btn alt" href="/?admin={aid}">All ratings and details</a>'
                 f'<h2>Ratings</h2><table>{rows}</table><h2>What people say</h2>{quotes}')
-        desc = f'{s["n"]} anonymous review{"s" if s["n"] != 1 else ""} of {a["name"]}, {a["title"]} at {i["name"]}, by faculty, staff and students.'
+        desc = f'{s["n"]} anonymous review{"s" if s["n"] != 1 else ""} of {a["name"]}, {a["title"]} at {i["name"]}, by faculty, staff, students and community members.'
         write(path, page(f'{a["name"]}, {i["name"]}: Reviews | Rate My Administrator', desc, path, body))
         urls.append((SITE + path, (s.get("last_at") or today)[:10]))
 
