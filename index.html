@@ -352,13 +352,14 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 <section class="view" id="v-institutions" hidden>
   <div id="inst-browse" class="view">
     <div class="sec-h"><h2><svg class="icon"><use href="#i-bank"/></svg>Institutions</h2><span class="sub num" id="in-count"></span></div>
-    <div class="tabs" role="tablist" id="in-tabs">
-      <button class="tab" role="tab" data-t="community" aria-selected="true"><b>CC <small id="c-community">0</small></b><span>Community</span></button>
-      <button class="tab" role="tab" data-t="state" aria-selected="false"><b>State <small id="c-state">0</small></b><span>Public univ.</span></button>
-      <button class="tab" role="tab" data-t="private" aria-selected="false"><b>Private <small id="c-private">0</small></b><span>Nonprofit</span></button>
-    </div>
     <label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="in-q" type="search" placeholder="Search college, city, or system" autocomplete="off"></label>
-    <div class="row"><select class="sel" id="in-state" aria-label="State" style="flex:1"></select>
+    <div class="chips" id="in-type" role="group" aria-label="Institution type">
+      <button class="chip" data-t="" aria-pressed="true">All</button>
+      <button class="chip" data-t="community" aria-pressed="false">Community colleges</button>
+      <button class="chip" data-t="state" aria-pressed="false">State universities</button>
+      <button class="chip" data-t="private" aria-pressed="false">Private</button>
+    </div>
+    <div class="row"><select class="sel" id="in-state" aria-label="State" style="flex:1 1 140px"></select>
       <label class="row" style="flex:none;gap:6px;color:var(--muted);font-size:12px;cursor:pointer"><input type="checkbox" id="in-rated" style="accent-color:var(--red)"> Has reviews</label></div>
     <div class="ilist" id="in-list"></div>
     <button class="btn" id="in-more" hidden>Show more</button>
@@ -533,7 +534,7 @@ const TAGS = [["Assigns, doesn't ask",0],["Expects unpaid extra work",0],["Dismi
 /* ---------- state ---------- */
 const S = {dir:[], byId:new Map(), counts:{community:0,state:0,private:0}, admins:new Map(), reviews:[], summary:new Map(), loadedAdmins:new Set(), loadedInst:new Set(), totals:{admins:0,reviews:0}, db:null,
   dbReady:false, dbError:"", verify:null, form:{inst:null, admin:null, newAdmin:null, scores:{}, exp:{}, verdict:null, tags:new Set()},
-  ui:{lbType:"", inTab:"community", inLimit:60, instDetail:null, adminDetail:null}};
+  ui:{lbType:"", inTab:"", inLimit:60, instDetail:null, adminDetail:null}};
 
 const store = {
   get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
@@ -665,15 +666,14 @@ function renderLeaderboard(){
 
 /* ---------- institutions ---------- */
 function renderInstitutions(){
-  ["community","state","private"].forEach(t => $("#c-"+t).textContent = S.counts[t].toLocaleString());
-  document.querySelectorAll("#in-tabs .tab").forEach(b => b.setAttribute("aria-selected", b.dataset.t===S.ui.inTab));
+  document.querySelectorAll("#in-type .chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.t===S.ui.inTab));
   if(S.ui.instDetail){ $("#inst-browse").hidden = true; $("#inst-detail").hidden = false; renderInstDetail(); return; }
   $("#inst-browse").hidden = false; $("#inst-detail").hidden = true;
   if(S.dirError){ $("#in-list").innerHTML = `<div class="empty"><h3>Directory unavailable</h3><p>${esc(S.dirError)}</p></div>`; return; }
   const q = norm($("#in-q").value), st = $("#in-state").value, rated = $("#in-rated").checked;
   const ratedSet = new Set([...S.admins.values()].map(a=>a.instId));
   const qs = q ? q.split(" ") : [];
-  const rows = searchInst(S.dir.filter(i => i.type===S.ui.inTab && (!st || i.state===st) && (!rated || ratedSet.has(i.id))), $("#in-q").value, 100000);
+  const rows = searchInst(S.dir.filter(i => (!S.ui.inTab || i.type===S.ui.inTab) && (!st || i.state===st) && (!rated || ratedSet.has(i.id))), $("#in-q").value, 100000);
   $("#in-count").textContent = `${rows.length.toLocaleString()} ${rows.length===1?"match":"matches"}`;
   $("#in-list").innerHTML = rows.slice(0,S.ui.inLimit).map(i => {
     const s = instStats(i.id);
@@ -681,7 +681,7 @@ function renderInstitutions(){
       <div class="mt">${esc(i.city)}${i.city?", ":""}${esc(i.state)}${i.domain?` · <span class="mono" style="font-size:11px">${esc(i.domain)}</span>`:""}</div>
       ${i.system?`<div class="sys">${esc(i.system)}</div>`:""}</div>
       <div class="rt">${s.reviews?`<b class="t-${tone(s.avg)}-ink num">${fmt(s.avg)}</b>${s.admins} rated`:`${s.admins?s.admins+" listed":"No reviews"}`}</div></button>`;
-  }).join("") || `<div class="empty">${ic("search")}<h3>No matching institution</h3><p>Check the spelling, switch the type tab, or clear the state filter.</p></div>`;
+  }).join("") || `<div class="empty">${ic("search")}<h3>No matching institution</h3><p>Check the spelling, or set the type and state filters back to All.</p></div>`;
   $("#in-more").hidden = rows.length <= S.ui.inLimit;
 }
 function renderInstDetail(){
@@ -888,10 +888,10 @@ const renderAll = () => renderView();
 
 /* ---------- events ---------- */
 document.addEventListener("click", async e => {
-  const t = e.target.closest("[data-act],[data-admin],[data-inst],[data-pick-inst],[data-pick-admin],[data-exp],.star,.verdict,.tagpick,#lb-type .chip,#in-tabs .tab,#in-more");
+  const t = e.target.closest("[data-act],[data-admin],[data-inst],[data-pick-inst],[data-pick-admin],[data-exp],.star,.verdict,.tagpick,#lb-type .chip,#in-type .chip,#in-more");
   if(!t) return;
+  if(t.matches("#in-type .chip")){ S.ui.inTab = t.dataset.t; S.ui.inLimit = 60; return renderInstitutions(); }
   if(t.matches("#lb-type .chip")){ S.ui.lbType = t.dataset.t; document.querySelectorAll("#lb-type .chip").forEach(c=>c.setAttribute("aria-pressed", c===t)); return renderLeaderboard(); }
-  if(t.matches("#in-tabs .tab")){ S.ui.inTab = t.dataset.t; S.ui.inLimit = 60; return renderInstitutions(); }
   if(t.id==="in-more"){ S.ui.inLimit += 120; return renderInstitutions(); }
   if(t.dataset.exp){ const ex = S.form.exp; ex[t.dataset.exp] = ex[t.dataset.exp]===t.dataset.val ? undefined : t.dataset.val; EXP.forEach(x=>{ if(x.parent && ex[x.parent]!=="yes") delete ex[x.k]; }); return renderS4(); }
   if(t.classList.contains("star")){ S.form.scores[t.dataset.m] = t.dataset.n==="na" ? "na" : +t.dataset.n; return renderS4(); }
