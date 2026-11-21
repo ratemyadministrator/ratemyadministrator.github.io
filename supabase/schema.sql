@@ -55,7 +55,19 @@ create table public.reviews (
   report_count   int not null default 0,
   hidden         boolean not null default false,
   created_at     timestamptz not null default now(),
-  updated_at     timestamptz
+  updated_at     timestamptz,
+  -- Public, coarse versions of reviewer details (2026-11-21). Exact values above are never readable by the public key.
+  posted_month   date generated always as ((date_trunc('month', created_at at time zone 'UTC'))::date) stored,
+  role_group     text generated always as (case
+      when role in ('Full-time faculty','Part-time / adjunct faculty','Department chair','Counselor / librarian','Faculty') then 'Faculty'
+      when role in ('Classified staff','Staff') then 'Staff'
+      when role in ('Student','Community member') then role
+      else 'Prefer not to say' end) stored,
+  last_period    text generated always as (case
+      when last_year in ('recent','earlier') then last_year
+      when last_year ~ '^[0-9]{4}$' then
+        case when last_year::int >= extract(year from (created_at at time zone 'UTC'))::int - 2 then 'recent' else 'earlier' end
+      else null end) stored
 );
 create index reviews_admin_idx on public.reviews (admin_id) where not hidden;
 create index reviews_created_idx on public.reviews (created_at desc);
@@ -102,7 +114,7 @@ select a.id, a.name, a.title, a.level, a.inst_id,
        avg((r.scores->>'contract')::numeric)      as avg_contract,
        count(*) filter (where r.verdict = 'yes')::int            as yes,
        count(*) filter (where r.verdict in ('yes','no'))::int    as votes,
-       max(r.created_at) as last_at
+       max(r.posted_month) as last_at
 from public.admins a
 join public.reviews r on r.admin_id = a.id and not r.hidden
 where a.status = 'active'
@@ -153,7 +165,8 @@ revoke all on public.admins, public.reviews, public.reports from anon, authentic
 
 -- Read: active admins, visible reviews (never the edit key hash or report counts)
 grant select (id, name, title, level, inst_id, inst_name, status, created_at) on public.admins to anon, authenticated;
-grant select (id, admin_id, inst_id, scores, exp, verdict, tags, body, role, years, emp_status, last_year, created_at, updated_at, hidden)
+-- Exact times (created_at, updated_at) and detailed role/last_year are NOT readable by the public key.
+grant select (id, admin_id, inst_id, scores, exp, verdict, tags, body, role_group, years, emp_status, last_period, posted_month, hidden)
   on public.reviews to anon, authenticated;
 grant select on public.admin_summary to anon, authenticated;
 
