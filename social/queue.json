@@ -1,13 +1,13 @@
 [
   {
-    "id": "directory-daily",
-    "text": "We add administrators to the directory every day, from official college pages. New this week: University of Arizona, Pima Community College, Harvard (incl. the Medical School), CSU East Bay and CSU Monterey Bay.\n\nSomeone missing? Add them when you post a review.\nhttps://ratemyadministrator.github.io/ #HigherEd",
-    "not_before": "2026-11-22"
-  },
-  {
     "id": "solidarity-cfa-yes",
     "text": "97% of voting CFA members authorized a strike if needed to win a fair CSU contract: pay, workload, lecturer security, AI protections, academic freedom. Final factfinding hearing is Dec 10.\n\nSolidarity, CFA.\n\nhttps://www.calfac.org/cfa-members-vote-yes-to-authorize-a-strike/\n\n#FacultyUnion",
     "not_before": "2026-11-22"
+  },
+  {
+    "id": "directory-daily",
+    "text": "We add administrators every day, from official college pages. New this week: University of Arizona, Pima Community College, Harvard incl. its Medical School, CSU East Bay, CSU Monterey Bay.\n\nSomeone missing? Add them when you post a review.\nhttps://ratemyadministrator.github.io/ #HigherEd",
+    "not_before": "2026-11-23"
   },
   {
     "id": "students",
