@@ -135,7 +135,7 @@ def page(title, desc, path, body, jsonld=None):
 <style>{CSS}</style>{ld}</head><body>
 <header><a href="/">RATE MY<b>ADMINISTRATOR</b></a></header><main>{body}
 <footer>Rate My Administrator is an independent project, not affiliated with any college, district or union.
-Reviews are anonymous opinions of the people who posted them. <a href="/#how">How it works, terms and removal requests</a> · <a href="/guides/what-is-shared-governance/">What shared governance means</a>.</footer>
+Reviews are anonymous opinions of the people who posted them. <a href="/#how">How it works, terms and removal requests</a> · <a href="https://bsky.app/profile/ratemyadmin.bsky.social" rel="noopener noreferrer">Follow on Bluesky</a> · <a href="/guides/what-is-shared-governance/">What shared governance means</a>.</footer>
 </main></body></html>"""
 
 
