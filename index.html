@@ -392,13 +392,13 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
     <div class="note warn"><svg class="icon"><use href="#i-flag"/></svg><span>Stick to conduct in the role. No student names, no medical or family details, no claims you can't support. Details only you would know, like a specific meeting date, a policy number cited against you, or a program you alone teach, can identify you at a small college. Reviews that read as personal attacks are removed.</span></div>
     <div class="grid2">
       <div class="field"><label class="label" for="rv-status">Your status (shown)</label>
-        <select class="sel" id="rv-status"><option>Current employee</option><option>Former employee</option><option>Retired</option><option>Student</option><option>Former student</option><option>Community member</option><option>Prefer not to say</option></select></div>
+        <select class="sel" id="rv-status"><option>Current employee</option><option>Former employee</option><option>Retired</option><option>Student</option><option>Former student</option><option>Community member</option><option selected>Prefer not to say</option></select></div>
       <div class="field"><label class="label" for="rv-last">Last interaction with them (shown)</label>
         <select class="sel" id="rv-last"></select></div>
       <div class="field"><label class="label" for="rv-role">Your role (shown)</label>
-        <select class="sel" id="rv-role"><option>Full-time faculty</option><option>Part-time / adjunct faculty</option><option>Classified staff</option><option>Counselor / librarian</option><option>Department chair</option><option>Student</option><option>Community member</option><option>Prefer not to say</option></select></div>
+        <select class="sel" id="rv-role"><option>Faculty</option><option>Staff</option><option>Student</option><option>Community member</option><option selected>Prefer not to say</option></select></div>
       <div class="field"><label class="label" for="rv-yrs">Years connected to institution (shown)</label>
-        <select class="sel" id="rv-yrs"><option>Under 3 years</option><option>3 to 10 years</option><option>Over 10 years</option><option>Prefer not to say</option></select></div>
+        <select class="sel" id="rv-yrs"><option>Under 3 years</option><option>3 to 10 years</option><option>Over 10 years</option><option selected>Prefer not to say</option></select></div>
     </div>
     <button class="btn primary block" id="rv-submit" type="button"><svg class="icon"><use href="#i-lock"/></svg>Submit review</button>
     <div class="err" id="rv-err" role="alert"></div>
@@ -419,7 +419,7 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
       <li><div><b>Find your institution</b><p>Search 3,239 US community colleges, state universities, and private nonprofit colleges.</p></div></li>
       <li><div><b>Find or add the administrator</b><p>Search people already listed there. If they're missing, add their name and title. Matching names at the same college are merged, so each person is listed once.</p></div></li>
       <li><div><b>Rate and write</b><p>Ten 1-to-5 ratings, optional yes/no questions about your experience, a renewal vote, and a written review.</p></div></li>
-      <li><div><b>Post anonymously</b><p>No email, no name, no verification. The review shows only what you choose: your status, role, years, and the last year you worked under this person.</p></div></li>
+      <li><div><b>Post anonymously</b><p>No email, no name, no verification. Everything about you is optional and starts at "Prefer not to say." Anything you choose to share (status, a broad role like faculty or staff, years, and whether your contact was in the last 2 years) shows only once an administrator has at least 3 reviews. Reviews show the month posted, not the day.</p></div></li>
     </ol>
   </div>
   <div class="card">
@@ -429,7 +429,7 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
       <li><b>Leave out details only you would know:</b> dates of specific meetings or emails, a policy number cited against you, a program only you teach, your exact department or title.</li>
       <li><b>Post from your own phone or computer,</b> on cellular data or home internet, not a work computer or campus Wi-Fi. A VPN adds another layer.</li>
       <li><b>Timing can point to you.</b> Wait a while after a specific event, especially a small meeting, before posting.</li>
-      <li><b>What the site keeps:</b> your ratings, answers, written review, and the status, role, and years you choose to show. Never stored with a review: your name, email, account, or IP address. Yes/no answers appear only after at least 3 people answer.</li>
+      <li><b>What the site keeps:</b> your ratings, answers, written review, and the status, role, and years you choose to share. The exact posting time is kept private; the public sees only the month. Never stored with a review: your name, email, account, or IP address. Yes/no answers appear only after at least 3 people answer.</li>
       <li><b>Keep it about conduct in the role.</b> No student names, no health, family, or personal-life details, nothing you can't support. Reviews that read as personal attacks are removed.</li>
       <li><b>Editing your review.</b> This browser remembers your reviews, so reviewing the same person again replaces your earlier review. Another device posts a new one.</li>
     </ul>
@@ -539,7 +539,14 @@ const initials = n => norm(n).split(" ").filter(w=>!["dr","mr","ms","mrs","phd",
 function tone(v){ if(v==null) return "none"; if(v<2.3) return "crit"; if(v<3.2) return "warn"; if(v<4) return "ok"; return "good"; }
 const toneLabel = {crit:"Red alert", warn:"Caution", ok:"Fair", good:"Trusted", none:"Unrated"};
 const fmt = v => v==null ? "--" : v.toFixed(1);
-const dateStr = ms => ms ? new Date(ms).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"}) : "";
+const dateStr = ms => ms ? new Date(ms).toLocaleDateString(undefined,{year:"numeric",month:"short",timeZone:"UTC"}) : "";
+/* Reviewer details are shown in broad groups only, and only once an administrator has MIN_DETAIL_N reviews. */
+const MIN_DETAIL_N = 3;
+const ROLE_GROUP = {"Full-time faculty":"Faculty","Part-time / adjunct faculty":"Faculty","Department chair":"Faculty","Counselor / librarian":"Faculty","Classified staff":"Staff"};
+const roleGroup = v => !v || v==="Prefer not to say" ? "" : (ROLE_GROUP[v] || v);
+const lastLabel = (v, ms) => { if(v==="recent") return "contact within 2 years"; if(v==="earlier") return "contact over 2 years ago";
+  if(/^\d{4}$/.test(v||"") && ms) return (+v >= new Date(ms).getUTCFullYear()-2) ? "contact within 2 years" : "contact over 2 years ago"; return ""; };
+const reviewerLine = r => [r.status, lastLabel(r.lastYear, r.createdAt), roleGroup(r.role), r.years].filter(x => x && x!=="Prefer not to say").join(" · ") || "Details not shared";
 
 /* ---------- directory ---------- */
 const NICK = {"Los Angeles":"ucla","San Diego":"ucsd","Santa Barbara":"ucsb","Santa Cruz":"ucsc","Davis":"ucd","Irvine":"uci","Riverside":"ucr","Merced":"ucm","San Francisco":"ucsf","Berkeley":"cal ucb"};
@@ -693,14 +700,14 @@ function renderAdminDetail(){
     <div style="min-width:0"><h2>${esc(ad.name)}</h2><div class="sub">${esc(ad.title||"")}${ad.title?" · ":""}${esc(LEVELS[ad.level]||"")}</div>
     ${inst?`<button class="btn ghost" data-inst="${esc(inst.id)}" style="font:500 11px/1.4 var(--mono)">${esc(inst.name)} · ${esc(inst.state)}</button>`:""}</div></div>
     <div class="score"><b class="t-${tn} num">${fmt(g?.overall)}</b><span class="num">${g?g.n:0} reviews</span></div></div>
-    ${g?`<div class="kv"><div><span class="label">Renewal endorsed</span><b class="num">${g.votes?Math.round(100*g.yes/g.votes)+"%":"--"}</b></div><div><span class="label">Current staff reviews</span><b class="num">${S.reviews.filter(r=>r.adminId===id && r.status==="Current employee").length} of ${g.n}</b></div></div>`:""}
+    ${g?`<div class="kv"><div><span class="label">Renewal endorsed</span><b class="num">${g.votes?Math.round(100*g.yes/g.votes)+"%":"--"}</b></div></div>`:""}
   </div>
   ${g?`<div class="card">${Object.entries(GROUPS).map(([gk,gl])=>`<span class="label">${gl} · <span class="num">${fmt(g.grp[gk])}</span></span><div class="bars">${METRICS.filter(m=>m.g===gk).map(m=>{const v=g.avg[m.k];return `<div class="bar"><span>${esc(m.t)}</span><span class="v t-${tone(v)}-ink num">${fmt(v)}</span><div class="track"><div class="fill" style="width:${(v/5*100).toFixed(0)}%;background:var(--${{crit:"red-soft",warn:"amber",ok:"blue",good:"green",none:"faint"}[tone(v)]})"></div></div></div>`}).join("")}</div>`).join("")}
    ${g.tags.size?`<div class="tags">${[...g.tags.entries()].sort((a,b)=>b[1]-a[1]).map(([t,c])=>`<span class="tag ${posSet.has(t)?"pos":"neg"}">${esc(t)} <span class="num" style="opacity:.7">${c}</span></span>`).join("")}</div>`:""}</div>`:""}
   ${g?expCard(g):""}
   <button class="btn primary" data-act="rate-admin" data-admin="${esc(id)}">${ic("pen")}Review ${esc(ad.name.split(" ")[0]||"this administrator")}</button>
-  <div class="sec-h"><h2 style="font-size:16px">Reviews</h2></div>
-  ${revs.map(r=>`<article class="rv"><div class="rvh"><span>${esc(r.status||"Anonymous")}${r.lastYear?` through ${esc(r.lastYear)}`:""} · ${esc(r.role||"")} · ${esc(r.years||"")}</span><span class="num">${dateStr(r.createdAt)}</span></div>
+  <div class="sec-h"><h2 style="font-size:16px">Reviews</h2></div>${revs.length && revs.length<MIN_DETAIL_N?`<p class="sub" style="margin:-4px 0 10px">To protect reviewers, details like role and years appear once ${MIN_DETAIL_N} or more people have reviewed this administrator.</p>`:""}
+  ${revs.map(r=>`<article class="rv"><div class="rvh"><span>${revs.length>=MIN_DETAIL_N ? esc(reviewerLine(r)) : "Anonymous reviewer"}</span><span class="num">${dateStr(r.createdAt)}</span></div>
     <div class="indices">${METRICS.map(m=>`<div><span>${esc(m.s)}</span><b class="t-${tone(r.scores?.[m.k])}-ink num">${r.scores?.[m.k]??"N/A"}</b></div>`).join("")}</div>
     ${r.text?`<p>${esc(r.text)}</p>`:""}
     <div class="row" style="justify-content:space-between">${(r.tags||[]).length?`<div class="tags">${r.tags.map(t=>`<span class="tag ${posSet.has(t)?"pos":"neg"}">${esc(t)}</span>`).join("")}</div>`:"<span></span>"}
@@ -798,7 +805,7 @@ function renderS4(){
   document.querySelectorAll(".verdict").forEach(b=>b.setAttribute("aria-pressed", b.dataset.v===S.form.verdict));
   $("#tagpicks").innerHTML = TAGS.map(([t,p])=>`<button type="button" class="tagpick ${p?"p":""}" data-tag="${esc(t)}" aria-pressed="${S.form.tags.has(t)}">${p?"+":"-"} ${esc(t)}</button>`).join("");
 }
-function renderSubmit(){ const ly=$("#rv-last"); if(!ly.options.length){ const y=new Date().getFullYear(); ly.innerHTML=`<option value="${y}">${y} (still there)</option>`+Array.from({length:25},(_,k)=>y-1-k).map(v=>`<option value="${v}">${v}</option>`).join("")+`<option value="earlier">Earlier</option>`; } renderS2(); renderS3(); renderS4(); }
+function renderSubmit(){ const ly=$("#rv-last"); if(!ly.options.length){ ly.innerHTML=`<option value="recent">Within the last 2 years</option><option value="earlier">More than 2 years ago</option><option value="" selected>Prefer not to say</option>`; } renderS2(); renderS3(); renderS4(); }
 
 async function submitReview(){
   const err = $("#rv-err"); err.textContent = "";
@@ -916,7 +923,7 @@ document.addEventListener("input", e => {
 });
 document.addEventListener("change", e => {
   if(["lb-state","lb-sort"].includes(e.target.id)) renderLeaderboard();
-  if(e.target.id==="rv-status"){ const v=e.target.value, r=$("#rv-role"); if(/student/i.test(v)) r.value="Student"; else if(v==="Community member") r.value="Community member"; else if(["Student","Community member"].includes(r.value)) r.value="Full-time faculty"; }
+  if(e.target.id==="rv-status"){ const v=e.target.value, r=$("#rv-role"); if(/student/i.test(v)) r.value="Student"; else if(v==="Community member") r.value="Community member"; else if(["Student","Community member"].includes(r.value)) r.value="Prefer not to say"; }
   if(["in-state","in-rated"].includes(e.target.id)){ S.ui.inLimit = 60; renderInstitutions(); }
 });
 $("#rv-submit").addEventListener("click", submitReview);
@@ -926,7 +933,7 @@ document.addEventListener("click", e => { const a = e.target.closest('a[href^="#
 
 /* ---------- database ---------- */
 let SB = null;
-const toReview = r => ({_id:r.id, adminId:r.admin_id, instId:r.inst_id, scores:r.scores, exp:r.exp||{}, verdict:r.verdict, tags:r.tags||[], text:r.body, role:r.role, years:r.years, status:r.emp_status, lastYear:r.last_year, createdAt:Date.parse(r.updated_at||r.created_at)});
+const toReview = r => ({_id:r.id, adminId:r.admin_id, instId:r.inst_id, scores:r.scores, exp:r.exp||{}, verdict:r.verdict, tags:r.tags||[], text:r.body, years:r.years, status:r.emp_status, lastYear:r.last_period ?? r.last_year, role:r.role_group ?? r.role, createdAt:Date.parse(r.posted_month||r.updated_at||r.created_at)});
 async function loadInstAdmins(instId){
   const {data, error} = await SB.from("admins").select("id,name,title,level,inst_id,also_inst").or(`inst_id.eq.${instId},also_inst.cs.{${instId}}`).order("name").limit(1000);
   if(error){ toast("Administrators didn't load: " + error.message); return; }
@@ -935,7 +942,8 @@ async function loadInstAdmins(instId){
 async function loadAdminReviews(adminId){
   S.loadedAdmins.add(adminId);
   if(!S.admins.has(adminId)){ const a = await SB.from("admins").select("id,name,title,level,inst_id,also_inst").eq("id",adminId).maybeSingle(); if(a.data) S.admins.set(a.data.id,{name:a.data.name,title:a.data.title,level:a.data.level,instId:a.data.inst_id,also:a.data.also_inst||[]}); }
-  const {data, error} = await SB.from("reviews").select("id,admin_id,inst_id,scores,exp,verdict,tags,body,role,years,emp_status,last_year,created_at,updated_at").eq("admin_id", adminId).order("created_at",{ascending:false}).limit(1000);
+  let {data, error} = await SB.from("reviews").select("id,admin_id,inst_id,scores,exp,verdict,tags,body,role_group,years,emp_status,last_period,posted_month").eq("admin_id", adminId).order("posted_month",{ascending:false}).limit(1000);
+  if(error) ({data, error} = await SB.from("reviews").select("id,admin_id,inst_id,scores,exp,verdict,tags,body,role,years,emp_status,last_year,created_at,updated_at").eq("admin_id", adminId).order("created_at",{ascending:false}).limit(1000));
   if(error){ S.loadedAdmins.delete(adminId); toast("Reviews didn't load: " + error.message); return; }
   S.reviews = S.reviews.filter(r => r.adminId !== adminId).concat(data.map(toReview));
 }

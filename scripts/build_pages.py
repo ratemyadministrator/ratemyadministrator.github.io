@@ -9,7 +9,7 @@ publishable key in config.js, then writes (not committed to git):
   sitemap.xml
 Pages link into the app with ?inst=<id> and ?admin=<id>.
 """
-import datetime, html, json, os, re, sys, urllib.request
+import datetime, html, json, os, re, sys, urllib.request, urllib.error
 
 SITE = "https://ratemyadministrator.github.io"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -79,6 +79,23 @@ def fetch_all(url, key, path):
         start += 1000
 
 
+# Reviewer details: broad groups only, shown only once an administrator has MIN_DETAIL_N reviews; month, never day.
+MIN_DETAIL_N = 3
+ROLE_GROUP = {"Full-time faculty": "Faculty", "Part-time / adjunct faculty": "Faculty", "Department chair": "Faculty",
+              "Counselor / librarian": "Faculty", "Classified staff": "Staff"}
+MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
+
+
+def reviewer_line(r, n):
+    d = (r.get("posted_month") or r.get("created_at") or "")[:7]
+    when = f"{MONTHS[int(d[5:7]) - 1]} {d[:4]}" if len(d) == 7 else ""
+    if n < MIN_DETAIL_N:
+        return " · ".join(x for x in ["Anonymous reviewer", when] if x)
+    role = r.get("role_group") or ROLE_GROUP.get(r.get("role") or "", r.get("role") or "")
+    parts = [r.get("emp_status"), role, r.get("years"), when]
+    return " · ".join(x for x in parts if x and x != "Prefer not to say")
+
+
 def slugify(s):
     s = re.sub(r"[^a-z0-9]+", "-", s.lower().replace("&", "and")).strip("-")
     return s[:80] or "x"
@@ -138,7 +155,11 @@ def main():
     reviews = {}
     for i in range(0, len(reviewed), 100):
         ids = ",".join(reviewed[i:i + 100])
-        for r in fetch_all(url, key, f"reviews?select=admin_id,body,verdict,role,emp_status,last_year,created_at&admin_id=in.({ids})&order=created_at.desc"):
+        try:  # coarse public columns (role_group, posted_month); older database falls back
+            rows = fetch_all(url, key, f"reviews?select=admin_id,body,verdict,role_group,emp_status,years,posted_month&admin_id=in.({ids})&order=posted_month.desc")
+        except urllib.error.HTTPError:
+            rows = fetch_all(url, key, f"reviews?select=admin_id,body,verdict,role,emp_status,years,created_at&admin_id=in.({ids})&order=created_at.desc")
+        for r in rows:
             reviews.setdefault(r["admin_id"], []).append(r)
     print(f"{len(admins)} listings, {len(summary)} reviewed")
 
@@ -207,9 +228,8 @@ def main():
         s, i, path = summary[aid], inst[a["inst_id"]], f"/reviews/{slug}/"
         rows = "".join(f'<tr><td>{lbl}</td><td class="n">{fmt(s.get("avg_" + k))}</td></tr>' for k, lbl in METRICS if s.get("avg_" + k) is not None)
         renew = f'{round(100 * s["yes"] / s["votes"])}% would endorse renewal ({s["votes"]} votes)' if s["votes"] else ""
-        quotes = "".join(
-            f'<blockquote>{esc(r["body"])}<div class="t">{esc(r.get("role") or "")} · {esc(r.get("emp_status") or "")} · {r["created_at"][:10]}</div></blockquote>'
-            for r in reviews.get(aid, [])[:20])
+        revs = reviews.get(aid, [])
+        quotes = "".join(f'<blockquote>{esc(r["body"])}<div class="t">{esc(reviewer_line(r, len(revs)))}</div></blockquote>' for r in revs[:20])
         body = (f'<p class="crumb"><a href="/colleges/">Colleges</a> › <a href="/colleges/{slugs[a["inst_id"]]}/">{esc(i["name"])}</a></p>'
                 f'<h1>{esc(a["name"])}</h1><p class="sub">{esc(a["title"])} · {esc(i["name"])}</p>'
                 f'<p><b>{fmt(overall(s))} / 5</b> overall from {s["n"]} anonymous review{"s" if s["n"] != 1 else ""}. {renew}</p>'
