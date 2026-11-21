@@ -325,7 +325,7 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 <section class="view" id="v-leaderboard">
   <div class="manifesto">
     <h1><span>Rate my</span><s>Professor</s><span class="stamp">Administrator</span></h1>
-    <p>Faculty and staff review the deans, vice presidents, presidents, chancellors, and board trustees who run their institutions. Post anonymously: no account, no email, no name.</p>
+    <p>Faculty, staff, students and community members review the deans, vice presidents, presidents, chancellors, and board trustees who run their colleges. Post anonymously: no account, no email, no name.</p>
     <div class="statline"><span><b class="num" id="st-inst">0</b> institutions</span><span><b class="num" id="st-admins">0</b> administrators</span><span><b class="num" id="st-reviews">0</b> reviews</span></div>
   </div>
   <label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="lb-q" type="search" placeholder="Search administrator, title, or institution" autocomplete="off"></label>
@@ -550,6 +550,8 @@ const norm = s => String(s||"").toLowerCase().normalize("NFKD").replace(/[\u0300
 const initials = n => norm(n).split(" ").filter(w=>!["dr","mr","ms","mrs","phd","edd"].includes(w)).slice(0,2).map(w=>w[0]).join("").toUpperCase() || "?";
 function tone(v){ if(v==null) return "none"; if(v<2.3) return "crit"; if(v<3.2) return "warn"; if(v<4) return "ok"; return "good"; }
 const toneLabel = {crit:"Red alert", warn:"Caution", ok:"Fair", good:"Trusted", none:"Unrated"};
+/* Badge on an administrator: no verdict-style label until MIN_DETAIL_N reviews, so one review can't brand anyone. */
+const badge = (g, tn) => g && g.n < MIN_DETAIL_N ? `<i class="t-none" title="Fewer than ${MIN_DETAIL_N} reviews">TOO FEW</i>` : `<i class="t-${tn}">${toneLabel[tn].toUpperCase()}</i>`;
 const fmt = v => v==null ? "--" : v.toFixed(1);
 const dateStr = ms => ms ? new Date(ms).toLocaleDateString(undefined,{year:"numeric",month:"short",timeZone:"UTC"}) : "";
 /* Reviewer details are shown in broad groups only, and only once an administrator has MIN_DETAIL_N reviews. */
@@ -625,7 +627,7 @@ function adminCard(id){
   const topTags = g ? [...g.tags.entries()].sort((a,b)=>b[1]-a[1]).slice(0,3) : [];
   const posSet = new Set(TAGS.filter(t=>t[1]).map(t=>t[0]));
   return `<button class="acard" data-admin="${esc(id)}">
-    <div class="ahead"><div class="aid"><div class="avatar">${esc(initials(ad.name))}<i class="t-${tn}">${toneLabel[tn].toUpperCase()}</i></div>
+    <div class="ahead"><div class="aid"><div class="avatar">${esc(initials(ad.name))}${badge(g, tn)}</div>
       <div style="min-width:0"><p class="aname">${esc(ad.name)}</p><div class="ameta">${esc(ad.title||LEVELS[ad.level]||"")}</div>
       <div class="ainst">${esc(inst?inst.name:ad.instName||"")}${inst?` · ${esc(inst.state)}`:""}</div></div></div>
       <div class="score"><b class="t-${tn} num">${fmt(g?.overall)}</b><span class="num">${g?g.n:0} review${g&&g.n===1?"":"s"}</span></div></div>
@@ -694,7 +696,7 @@ function renderInstDetail(){
     <div class="sub">${esc(i.city)}, ${esc(STATES[i.state]||i.state)}${i.system?` · ${esc(i.system)}`:""}</div>
     <div class="kv"><div><span class="label">Leadership score</span><b class="t-${tone(s.avg)}-ink num">${fmt(s.avg)}</b></div><div><span class="label">Administrators</span><b class="num">${s.admins}</b></div><div><span class="label">Reviews</span><b class="num">${s.reviews}</b></div><div><span class="label">Email domain</span><b class="mono" style="font-size:13px">${esc(i.domain||"Not on file")}</b></div></div>
    </div>
-   <button class="btn primary" data-act="rate-here" data-inst="${esc(i.id)}">${ic("pen")}Rate an administrator here</button>
+   <button class="btn primary" data-act="rate-here" data-inst="${esc(i.id)}">${ic("pen")}Rate or add an administrator</button>
    <div class="alist">${ids.map(adminCard).join("") || `<div class="empty">${ic("gavel")}<h3>No administrators listed yet</h3><p>Add the first one when you submit a review. Search finds existing names so the same person isn't listed twice.</p></div>`}</div>`;
 }
 
@@ -707,7 +709,7 @@ function renderAdminDetail(){
   const revs = S.reviews.filter(r=>r.adminId===id).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
   const posSet = new Set(TAGS.filter(t=>t[1]).map(t=>t[0]));
   box.innerHTML = `<button class="back" data-act="admin-back">${ic("back","sm")}Back</button>
-  <div class="dhead"><div class="ahead"><div class="aid"><div class="avatar" style="width:56px;height:56px;font-size:19px">${esc(initials(ad.name))}<i class="t-${tn}">${toneLabel[tn].toUpperCase()}</i></div>
+  <div class="dhead"><div class="ahead"><div class="aid"><div class="avatar" style="width:56px;height:56px;font-size:19px">${esc(initials(ad.name))}${badge(g, tn)}</div>
     <div style="min-width:0"><h2>${esc(ad.name)}</h2><div class="sub">${esc(ad.title||"")}${ad.title?" · ":""}${esc(LEVELS[ad.level]||"")}</div>
     ${inst?`<button class="btn ghost" data-inst="${esc(inst.id)}" style="font:500 11px/1.4 var(--mono)">${esc(inst.name)} · ${esc(inst.state)}</button>`:""}</div></div>
     <div class="score"><b class="t-${tn} num">${fmt(g?.overall)}</b><span class="num">${g?g.n:0} reviews</span></div></div>
