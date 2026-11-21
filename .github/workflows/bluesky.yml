@@ -11,6 +11,10 @@ on:
         description: "Only refresh follower/engagement stats (no posting, following or reposting)"
         type: boolean
         default: false
+      post_id:
+        description: "Publish this queued post id now (skips the date and once-a-day checks)"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -29,6 +33,7 @@ jobs:
           BSKY_HANDLE: ${{ secrets.BSKY_HANDLE }}
           BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
           STATS_ONLY: ${{ inputs.stats_only }}
+          POST_ID: ${{ inputs.post_id }}
         run: python3 scripts/bsky_post.py
       - name: Save queue changes
         run: |

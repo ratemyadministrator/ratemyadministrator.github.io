@@ -237,14 +237,20 @@ def main():
     gather_candidates(s)
     queue = json.load(open(QUEUE)) if os.path.exists(QUEUE) else []
     today = datetime.date.today().isoformat()
-    due = [p for p in queue if p.get("not_before", "") <= today]
-    if not due:
-        print("No post due today.")
-        return
-    recent = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=20)).isoformat()
-    if any(p.get("posted_at", "") > recent for p in load(POSTED)):
-        print("Already posted in the last 20 hours; next post waits.")
-        return
+    post_id = os.environ.get("POST_ID", "").strip()
+    if post_id:  # manual run: publish this queued post now, skipping the date and once-a-day checks
+        due = [p for p in queue if p.get("id") == post_id]
+        if not due:
+            sys.exit(f"No queued post with id {post_id}.")
+    else:
+        due = [p for p in queue if p.get("not_before", "") <= today]
+        if not due:
+            print("No post due today.")
+            return
+        recent = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=20)).isoformat()
+        if any(p.get("posted_at", "") > recent for p in load(POSTED)):
+            print("Already posted in the last 20 hours; next post waits.")
+            return
     post = due[0]
     text = post["text"].strip()
     if len(text) > 300:
