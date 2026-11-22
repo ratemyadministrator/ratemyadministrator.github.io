@@ -119,6 +119,8 @@ ul.list{list-style:none;padding:0;margin:0}ul.list li{background:var(--card);bor
 .t{color:var(--muted);font-size:.92rem}.r{float:right;color:var(--fg);font-weight:700}
 table{width:100%;border-collapse:collapse}td{padding:6px 0;border-bottom:1px solid var(--line)}td.n{text-align:right;font-weight:700}
 blockquote{margin:10px 0;background:var(--card);border-left:3px solid var(--red);padding:10px 14px;border-radius:6px;white-space:pre-wrap}
+.intro{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:14px 0 4px;font-size:.95rem}
+.intro .btn{margin:10px 8px 0 0;padding:8px 14px}
 footer{color:var(--faint);font-size:.85rem;margin-top:40px;border-top:1px solid var(--line);padding-top:14px}
 """
 
@@ -133,7 +135,9 @@ def page(title, desc, path, body, jsonld=None):
 <meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{SITE}{path}"><meta property="og:image" content="{SITE}/icons/icon-512.png">
 <style>{CSS}</style>{ld}</head><body>
-<header><a href="/">RATE MY<b>ADMINISTRATOR</b></a></header><main>{body}
+<header><a href="/">RATE MY<b>ADMINISTRATOR</b></a></header><main>
+<div class="intro">Anonymously rate college deans, vice presidents, presidents and trustees. Faculty, staff, students and community members can post; no account, no email.<br>
+<a class="btn" href="/#submit">Rate an administrator</a><a class="btn alt" href="/">Go to the main site</a></div>{body}
 <footer>Rate My Administrator is an independent project, not affiliated with any college, district or union.
 Reviews are anonymous opinions of the people who posted them. <a href="/#how">How it works, terms and removal requests</a> · <a href="https://bsky.app/profile/ratemyadmin.bsky.social" rel="noopener noreferrer">Follow on Bluesky</a> · <a href="/guides/what-is-shared-governance/">What shared governance means</a>.</footer>
 </main></body></html>"""
@@ -243,10 +247,11 @@ def main():
     items = "".join(f'<li><span class="r t">{len(by_inst[iid])} listed</span><a href="/colleges/{slugs[iid]}/">{esc(inst[iid]["name"])}</a>'
                     f'<div class="t">{esc(inst[iid]["city"] or "")}, {esc(inst[iid]["state"])}</div></li>'
                     for iid in sorted(by_inst, key=lambda x: inst[x]["name"]))
-    write("/colleges/", page("Colleges | Rate My Administrator",
+    write("/colleges/", page("All colleges and administrators | Rate My Administrator",
                              "Find your college and anonymously rate its deans, vice presidents, president and trustees.",
-                             "/colleges/", f'<h1>Colleges</h1><p class="sub">{len(by_inst)} colleges with administrators listed. '
-                                           f'More states are on the way.</p><ul class="list">{items}</ul>'))
+                             "/colleges/", f'<h1>All colleges</h1><p class="sub">{len(by_inst)} colleges with administrators listed, A to Z. Tap your college to see '
+                                           f'its administrators and their ratings. Not listed? <a href="/#institutions">Search all 3,239 colleges</a> '
+                                           f'and add an administrator yourself.</p><ul class="list">{items}</ul>'))
 
     for slug, title, desc, body in GUIDES:
         path = f"/guides/{slug}/"
