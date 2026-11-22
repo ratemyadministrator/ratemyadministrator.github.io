@@ -694,13 +694,13 @@ function renderInstDetail(){
   const s = instStats(i.id);
   const ids = [...S.admins.keys()].filter(id => atInst(S.admins.get(id), i.id)).sort((a,b)=>(AGG.get(b)?.n||0)-(AGG.get(a)?.n||0));
   $("#inst-detail").innerHTML = `<button class="back" data-act="inst-back">${ic("back","sm")}All institutions</button>
+   ${S.loadedInst.has(i.id) && ids.length < 5 ? fillCard(i.id) : ""}
    <div class="dhead"><span class="typebadge ty-${i.type}" style="align-self:flex-start">${TYPES[i.type]}</span><h2>${esc(i.name)}</h2>
     <div class="sub">${esc(i.city)}, ${esc(STATES[i.state]||i.state)}${i.system?` · ${esc(i.system)}`:""}</div>
     <div class="kv"><div><span class="label">Leadership score</span><b class="t-${tone(s.avg)}-ink num">${fmt(s.avg)}</b></div><div><span class="label">Administrators</span><b class="num">${s.admins}</b></div><div><span class="label">Reviews</span><b class="num">${s.reviews}</b></div><div><span class="label">Email domain</span><b class="mono" style="font-size:13px">${esc(i.domain||"Not on file")}</b></div></div>
    </div>
    <button class="btn primary" data-act="rate-here" data-inst="${esc(i.id)}">${ic("pen")}Rate or add an administrator</button>
-   <div class="alist">${ids.map(adminCard).join("") || `<div class="empty">${ic("gavel")}<h3>No administrators listed yet</h3><p>Add the first one when you submit a review. Search finds existing names so the same person isn't listed twice.</p></div>`}</div>
-   ${S.loadedInst.has(i.id) && ids.length < 5 ? fillCard(i.id) : ""}`;
+   <div class="alist">${ids.map(adminCard).join("") || `<div class="empty">${ic("gavel")}<h3>No administrators listed yet</h3><p>Add the first one when you submit a review. Search finds existing names so the same person isn't listed twice.</p></div>`}</div>`;
 }
 
 function fillCard(instId){
