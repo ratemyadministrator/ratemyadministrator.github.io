@@ -10,7 +10,7 @@ Queue format: a list of {"id": "...", "text": "...", "not_before": "YYYY-MM-DD" 
 URLs in the text become clickable links. Each run publishes at most one post. Published posts
 move to social/posted.json along with their Bluesky link.
 """
-import datetime, json, os, re, sys, urllib.parse, urllib.request
+import datetime, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 
 API = "https://bsky.social/xrpc/"
 QUEUE, POSTED = "social/queue.json", "social/posted.json"
@@ -49,6 +49,42 @@ def get(method, params, token):
                                  headers={"Authorization": "Bearer " + token})
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)
+
+
+def upload_video(s, path):
+    """Upload an MP4 for a native Bluesky video post. Uses Bluesky's video service (which
+    processes the video and makes the thumbnail); falls back to a plain blob upload."""
+    data = open(path, "rb").read()
+    pds = next((x["serviceEndpoint"] for x in (s.get("didDoc") or {}).get("service", []) if x.get("id") == "#atproto_pds"), "https://bsky.social")
+    try:
+        aud = "did:web:" + urllib.parse.urlparse(pds).hostname
+        tok = get("com.atproto.server.getServiceAuth", {"aud": aud, "lxm": "com.atproto.repo.uploadBlob",
+                  "exp": int(datetime.datetime.now().timestamp()) + 1800}, s["accessJwt"])["token"]
+        q = urllib.parse.urlencode({"did": s["did"], "name": os.path.basename(path)})
+        req = urllib.request.Request("https://video.bsky.app/xrpc/app.bsky.video.uploadVideo?" + q, data=data,
+                                     headers={"Content-Type": "video/mp4", "Authorization": "Bearer " + tok})
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                job = json.load(r)
+        except urllib.error.HTTPError as e:  # 409 = this exact file was uploaded before; the body still has the job
+            if e.code != 409:
+                raise
+            job = json.load(e)
+        job_id = job.get("jobId") or job.get("jobStatus", {}).get("jobId")
+        for _ in range(120):
+            st = json.load(urllib.request.urlopen("https://video.bsky.app/xrpc/app.bsky.video.getJobStatus?jobId=" + job_id, timeout=30))["jobStatus"]
+            if st.get("blob"):
+                return st["blob"]
+            if st.get("state") == "JOB_STATE_FAILED":
+                raise RuntimeError(st.get("error") or "video processing failed")
+            time.sleep(3)
+        raise RuntimeError("video processing timed out")
+    except Exception as e:
+        print("Video service upload failed, using plain blob upload:", e)
+        req = urllib.request.Request(API + "com.atproto.repo.uploadBlob", data=data,
+                                     headers={"Content-Type": "video/mp4", "Authorization": "Bearer " + s["accessJwt"]})
+        with urllib.request.urlopen(req, timeout=300) as r:
+            return json.load(r)["blob"]
 
 
 def follow_some(s):
@@ -260,6 +296,10 @@ def main():
     facets = link_facets(text)
     if facets:
         record["facets"] = facets
+    if post.get("video"):  # native video: plays in the feed with a thumbnail; the link in the text goes to the live page
+        w, h = post.get("aspect", [1920, 1080])
+        record["embed"] = {"$type": "app.bsky.embed.video", "video": upload_video(s, post["video"]),
+                           "alt": post.get("alt", "")[:1000], "aspectRatio": {"width": w, "height": h}}
     r = call("com.atproto.repo.createRecord",
              {"repo": s["did"], "collection": "app.bsky.feed.post", "record": record}, s["accessJwt"])
     rkey = r["uri"].rsplit("/", 1)[1]

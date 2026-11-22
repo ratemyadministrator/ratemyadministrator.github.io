@@ -26,9 +26,9 @@ esc = html.escape
 
 VIDEO_LD = {"@context": "https://schema.org", "@type": "VideoObject",
             "name": "How to post an anonymous review of a college administrator safely",
-            "description": "A two-minute walkthrough of Rate My Administrator: find your college, add or pick an administrator, rate ten areas, write a review, and six ways to protect your anonymity. No sound; all instructions are on screen.",
+            "description": "A two-minute walkthrough of Rate My Administrator: find your college, pick the administrator from its list, rate ten areas, write a review, request a college that isn't filled in yet, and six ways to protect your anonymity. No sound; all instructions are on screen.",
             "thumbnailUrl": ["https://ratemyadministrator.github.io/media/how-to-post-safely.jpg"],
-            "uploadDate": "2026-11-11T15:07:53-08:00", "duration": "PT1M55S",
+            "uploadDate": "2026-11-22T15:30:00-08:00", "duration": "PT2M3S",
             "contentUrl": "https://ratemyadministrator.github.io/media/how-to-post-safely.mp4",
             "embedUrl": "https://ratemyadministrator.github.io/guides/how-to-post-safely/"}
 
@@ -55,22 +55,23 @@ GUIDES = [
      "How to Post an Anonymous Review of a College Administrator Safely (Video) | Rate My Administrator",
      "Two-minute video: how to rate a dean, vice president, president or trustee anonymously on Rate My Administrator, plus six ways to keep small details from identifying you.",
      """<h1>How to post a review safely</h1>
-<video controls playsinline preload="metadata" poster="/media/how-to-post-safely.jpg" width="1920" height="1080" style="width:100%;height:auto;border-radius:10px;background:#060e20;margin-top:8px" aria-describedby="vid-text">
-<source src="/media/how-to-post-safely.mp4" type="video/mp4">Your browser can't play this video. Open "Read the steps instead" below.</video>
+<video controls playsinline preload="metadata" poster="/media/how-to-post-safely.jpg?v=2" width="1920" height="1080" style="width:100%;height:auto;border-radius:10px;background:#060e20;margin-top:8px" aria-describedby="vid-text">
+<source src="/media/how-to-post-safely.mp4?v=2" type="video/mp4">Your browser can't play this video. Open "Read the steps instead" below.</video>
 <a class="btn" href="/">Go to Rate My Administrator</a>
 <details id="vid-text" style="margin-top:14px"><summary style="cursor:pointer;color:var(--blue)">Read the steps instead</summary>
 <h2>Posting a review, step by step</h2>
 <ol>
 <li><b>Open the site</b> and choose <a href="/#submit">Rate an administrator</a>.</li>
 <li><b>Find your college.</b> Type part of its name and pick it from the list.</li>
-<li><b>Find the administrator,</b> or tap + to add them. Use their name and title exactly as the college lists them.</li>
+<li><b>Pick the administrator from the list.</b> Most colleges already list their president, vice presidents, deans, directors, managers and trustees. If someone is missing, tap <i>Add someone not listed</i> and use their name and title as the college lists them.</li>
 <li><b>Rate ten areas from 1 to 5 stars,</b> such as respect, clear communication, non-retaliation, fair assignments, shared governance and following the contract. Mark any that don't apply as N/A.</li>
 <li><b>Answer the optional yes/no questions</b> about your experience. They appear only as group totals once at least 3 people answer, never as one person's answers.</li>
 <li><b>Say whether you'd recommend renewal,</b> then pick up to four tags.</li>
 <li><b>Write your review.</b> Describe patterns, not one-time incidents, and read the reminder that small details can identify you.</li>
 <li><b>Post it.</b> No name, no email, no account. Your review appears right away.</li>
 </ol>
-<p class="t">Since the video was made, every "about you" field starts at "Prefer not to say," roles are shown only in broad groups, and those details appear only once an administrator has at least 3 reviews.</p>
+<h2>College not filled in yet?</h2>
+<p>Find it under <a href="/#institutions">Institutions</a> and tap <b>Request this college</b>. Its president, vice presidents, deans, trustees and managers are added from official college pages, usually within 24 hours. Only the college is saved with a request, nothing about you.</p>
 <h2>Six ways to protect yourself</h2>
 <ol>
 <li><b>Describe patterns, not incidents.</b> "Budget cuts are announced without asking the departments affected" could come from many people. "At the Oct. 4 budget meeting he told me my lab would close" points to a few.</li>
