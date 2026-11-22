@@ -87,6 +87,23 @@ def upload_video(s, path):
             return json.load(r)["blob"]
 
 
+def replace_old(s, url):
+    """Delete an earlier post of ours that a new post replaces, only if nobody has engaged with it."""
+    rkey = url.rstrip("/").rsplit("/", 1)[1]
+    uri = f"at://{s['did']}/app.bsky.feed.post/{rkey}"
+    try:
+        old = get("app.bsky.feed.getPosts", {"uris": uri}, s["accessJwt"])["posts"]
+    except Exception as e:
+        print("Couldn't check the old post; leaving it up:", e); return False
+    if not old:
+        print("Old post not found (already gone)."); return True
+    o = old[0]; n = sum(o.get(k, 0) for k in ("likeCount", "repostCount", "replyCount", "quoteCount"))
+    if n:
+        print(f"Old post has {n} likes/reposts/replies/quotes; leaving it up."); return False
+    call("com.atproto.repo.deleteRecord", {"repo": s["did"], "collection": "app.bsky.feed.post", "rkey": rkey}, s["accessJwt"])
+    print("Deleted the old post it replaces:", url); return True
+
+
 def follow_some(s):
     """Follow up to FOLLOWS_PER_RUN handles from social/follow.json (a list of handles)."""
     todo = json.load(open(FOLLOW)) if os.path.exists(FOLLOW) else []
@@ -306,6 +323,11 @@ def main():
     url = f"https://bsky.app/profile/{s['handle']}/post/{rkey}"
     queue.remove(post)
     posted = json.load(open(POSTED)) if os.path.exists(POSTED) else []
+    if post.get("replaces"):  # new post goes up first, then the unengaged old one comes down
+        if replace_old(s, post["replaces"]):
+            for p in posted:
+                if p.get("url") == post["replaces"]:
+                    p["deleted_at"] = record["createdAt"]; p["replaced_by"] = url
     posted.append({**post, "posted_at": record["createdAt"], "url": url})
     json.dump(queue, open(QUEUE, "w"), indent=2)
     json.dump(posted, open(POSTED, "w"), indent=2)
