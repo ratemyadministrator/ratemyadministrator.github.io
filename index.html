@@ -685,7 +685,7 @@ function renderInstitutions(){
     return `<button class="irow" data-inst="${esc(i.id)}"><div style="min-width:0"><div class="nm">${esc(i.name)}</div>
       <div class="mt">${esc(i.city)}${i.city?", ":""}${esc(i.state)}${i.domain?` · <span class="mono" style="font-size:11px">${esc(i.domain)}</span>`:""}</div>
       ${i.system?`<div class="sys">${esc(i.system)}</div>`:""}</div>
-      <div class="rt">${s.reviews?`<b class="t-${tone(s.avg)}-ink num">${fmt(s.avg)}</b>${s.admins} rated`:`${s.admins?s.admins+" listed":"No reviews"}`}</div></button>`;
+      <div class="rt">${s.reviews?`<b class="t-${tone(s.avg)}-ink num">${fmt(s.avg)}</b>${s.reviews} review${s.reviews===1?"":"s"}`:`${s.admins?s.admins+" listed":"No reviews"}`}</div></button>`;
   }).join("") || `<div class="empty">${ic("search")}<h3>No matching institution</h3><p>Check the spelling, or set the type and state filters back to All.</p></div>`;
   $("#in-more").hidden = rows.length <= S.ui.inLimit;
 }
