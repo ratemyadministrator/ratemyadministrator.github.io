@@ -507,18 +507,18 @@ const METRICS = [
   {k:"asktask", g:"people", s:"Asks, not tasks", t:"Asks rather than tasks", d:"Extra duties are requested, not ordered, and saying no is an acceptable answer", lo:"Tasks you", hi:"Asks you"},
   {k:"retaliation", g:"people", s:"No reprisal", t:"Non-retaliation", d:"Asking questions or raising concerns doesn't lead to reassignment, warnings, or lost work", lo:"Retaliatory", hi:"Safe to speak"},
   {k:"compensation", g:"process", s:"Pays for work", t:"Compensates extra work", d:"Extra duties are paid or credited, and questions about pay, stipends, and hours get clear written answers", lo:"Unpaid", hi:"Fairly paid"},
-  {k:"assign", g:"process", s:"Assignments", t:"Fair assignments and notice", d:"Changes to your classes, programs, or schedule come with advance notice and a stated reason", lo:"Without notice", hi:"Fair and explained"},
+  {k:"assign", g:"process", s:"Assignments", t:"Fair assignments and notice", d:"Changes to your classes, duties, shifts, schedule, or work location come with advance notice and a stated reason", lo:"Without notice", hi:"Fair and explained"},
   {k:"discipline", g:"process", s:"Due process", t:"Fair and proportionate discipline", d:"Discipline cites the actual policy, follows the contract, and lets you respond before it is issued", lo:"Arbitrary", hi:"Fair process"},
-  {k:"gov", g:"process", s:"Governance", t:"Shared governance", d:"Consults the Academic Senate and honors faculty's role in academic and professional matters", lo:"Ignores Senate", hi:"Genuine partner"},
+  {k:"gov", g:"process", s:"Governance", t:"Shared governance", d:"Consults the Academic and Classified Senates and the staff affected, and takes their input seriously", lo:"Ignores input", hi:"Genuine partner"},
   {k:"contract", g:"process", s:"Contract", t:"Respects the contract and union", d:"Follows the collective bargaining agreement and responds to grievances promptly and in good faith", lo:"Works around it", hi:"Honors it"}
 ];
 const EXP = [
   {k:"raised", q:"Did you raise a concern with this administrator, such as pay, workload, policy, or safety?"},
   {k:"adverse", q:"Afterward, did you face an adverse action, such as a reassignment, a warning, or lost work?", parent:"raised"},
-  {k:"notice", q:"Was one of your classes, programs, or assignments changed without notice or a stated reason?"},
+  {k:"notice", q:"Were your classes, duties, shifts, or assignments changed without notice or a stated reason?"},
   {k:"disciplined", q:"Did this administrator discipline you, including a written or verbal warning?"},
   {k:"process", q:"Before it was issued, were you told the policy basis and given a chance to respond?", parent:"disciplined"},
-  {k:"unpaid", q:"Were you given extra work, beyond your load or contract, without pay or release time?"},
+  {k:"unpaid", q:"Were you given extra work beyond your job description, load, or contract, without pay, overtime, comp time, or release time?"},
   {k:"payanswer", q:"When you asked about pay, stipends, or paid hours, did you get a clear answer in writing?"},
   {k:"union", q:"Did you need your union's help to resolve an issue with this administrator?"}
 ];
@@ -526,7 +526,7 @@ const EXP_STATS = [
   {k:"adverse", f:(p,n)=>`${p}% of the ${n} who raised a concern reported an adverse action afterward`, bad:true},
   {k:"notice", f:(p,n)=>`${p}% of ${n} respondents had an assignment changed without notice`, bad:true},
   {k:"process", f:(p,n)=>`${p}% of the ${n} who were disciplined got the policy basis and a chance to respond first`, bad:false},
-  {k:"unpaid", f:(p,n)=>`${p}% of ${n} respondents were given extra work without pay or release time`, bad:true},
+  {k:"unpaid", f:(p,n)=>`${p}% of ${n} respondents were given extra work without pay, overtime, comp time, or release time`, bad:true},
   {k:"payanswer", f:(p,n)=>`${p}% of ${n} who asked about pay got a clear written answer`, bad:false},
   {k:"union", f:(p,n)=>`${p}% of ${n} respondents needed the union to resolve an issue`, bad:true}
 ];
