@@ -73,6 +73,7 @@ main{padding-block:16px 110px;display:flex;flex-direction:column;gap:16px}
 
 /* generic */
 .card{background:var(--card);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.btn.dusty{background:#9fbcd9;color:#0e2336;border-color:#9fbcd9;font-weight:600}.btn.dusty:hover,.btn.dusty:focus-visible{background:#b4cce4}
 .card.follow{padding:12px 16px}.card.follow a:not(.btn){display:flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none}.card.follow a>span{display:flex;flex-direction:column;gap:2px;min-width:0;overflow-wrap:anywhere}.card.follow .icon{width:22px;height:22px;color:var(--blue)}.card.follow a:hover b,.card.follow a:focus-visible b{text-decoration:underline}
 details.fold{display:block}details.fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:32px}
 details.fold>summary::-webkit-details-marker{display:none}details.fold>summary>span{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -706,7 +707,7 @@ function renderInstDetail(){
 function fillCard(instId){
   let done = false; try{ done = !!(JSON.parse(localStorage.getItem("rma-fill")||"{}"))[instId]; }catch{}
   return `<div class="card" id="fill-card"><b>Want this college filled in?</b><p class="sub" style="margin:0">We'll add its president, vice presidents, deans, trustees and managers from official college pages, usually within 24 hours. Nothing about you is saved with the request.</p>
-    ${done ? `<p class="sub" style="margin:0;color:var(--green)">${ic("check","sm")} Requested. Check back tomorrow.</p>` : `<button class="btn" data-act="req-fill" data-inst="${esc(instId)}">${ic("plus")}Request this college</button>`}</div>`;
+    ${done ? `<p class="sub" style="margin:0;color:var(--green)">${ic("check","sm")} Requested. Check back tomorrow.</p>` : `<button class="btn dusty" data-act="req-fill" data-inst="${esc(instId)}">${ic("plus")}Request this college</button>`}</div>`;
 }
 
 /* ---------- admin detail ---------- */
