@@ -28,7 +28,7 @@ VIDEO_LD = {"@context": "https://schema.org", "@type": "VideoObject",
             "name": "How to post an anonymous review of a college administrator safely",
             "description": "A two-minute walkthrough of Rate My Administrator: find your college, pick the administrator from its list, rate ten areas, write a review, request a college that isn't filled in yet, and six ways to protect your anonymity. No sound; all instructions are on screen.",
             "thumbnailUrl": ["https://ratemyadministrator.github.io/media/how-to-post-safely.jpg"],
-            "uploadDate": "2026-11-22T15:30:00-08:00", "duration": "PT2M3S",
+            "uploadDate": "2026-11-22T15:30:00-08:00", "duration": "PT2M4S",
             "contentUrl": "https://ratemyadministrator.github.io/media/how-to-post-safely.mp4",
             "embedUrl": "https://ratemyadministrator.github.io/guides/how-to-post-safely/"}
 
@@ -55,8 +55,8 @@ GUIDES = [
      "How to Post an Anonymous Review of a College Administrator Safely (Video) | Rate My Administrator",
      "Two-minute video: how to rate a dean, vice president, president or trustee anonymously on Rate My Administrator, plus six ways to keep small details from identifying you.",
      """<h1>How to post a review safely</h1>
-<video controls playsinline preload="metadata" poster="/media/how-to-post-safely.jpg?v=2" width="1920" height="1080" style="width:100%;height:auto;border-radius:10px;background:#060e20;margin-top:8px" aria-describedby="vid-text">
-<source src="/media/how-to-post-safely.mp4?v=2" type="video/mp4">Your browser can't play this video. Open "Read the steps instead" below.</video>
+<video controls playsinline preload="metadata" poster="/media/how-to-post-safely.jpg?v=3" width="1920" height="1080" style="width:100%;height:auto;border-radius:10px;background:#060e20;margin-top:8px" aria-describedby="vid-text">
+<source src="/media/how-to-post-safely.mp4?v=3" type="video/mp4">Your browser can't play this video. Open "Read the steps instead" below.</video>
 <a class="btn" href="/">Go to Rate My Administrator</a>
 <details id="vid-text" style="margin-top:14px"><summary style="cursor:pointer;color:var(--blue)">Read the steps instead</summary>
 <h2>Posting a review, step by step</h2>
