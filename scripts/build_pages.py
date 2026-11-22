@@ -37,12 +37,11 @@ GUIDES = [
     ("how-to-post-safely",
      "How to Post an Anonymous Review of a College Administrator Safely (Video) | Rate My Administrator",
      "Two-minute video: how to rate a dean, vice president, president or trustee anonymously on Rate My Administrator, plus six ways to keep small details from identifying you.",
-     """<p class="crumb"><a href="/">Home</a> › Guides</p>
-<h1>How to post a review safely</h1>
-<p class="sub">A two-minute walkthrough. No sound; all instructions are on screen.</p>
-<video controls playsinline preload="metadata" poster="/media/how-to-post-safely.jpg" width="1920" height="1080" style="width:100%;height:auto;border-radius:10px;background:#060e20" aria-describedby="vid-text">
-<source src="/media/how-to-post-safely.mp4" type="video/mp4">Your browser can't play this video. The steps are written out below.</video>
-<div id="vid-text">
+     """<h1>How to post a review safely</h1>
+<video controls playsinline preload="metadata" poster="/media/how-to-post-safely.jpg" width="1920" height="1080" style="width:100%;height:auto;border-radius:10px;background:#060e20;margin-top:8px" aria-describedby="vid-text">
+<source src="/media/how-to-post-safely.mp4" type="video/mp4">Your browser can't play this video. Open "Read the steps instead" below.</video>
+<a class="btn" href="/">Go to Rate My Administrator</a>
+<details id="vid-text" style="margin-top:14px"><summary style="cursor:pointer;color:var(--blue)">Read the steps instead</summary>
 <h2>Posting a review, step by step</h2>
 <ol>
 <li><b>Open the site</b> and choose <a href="/#submit">Rate an administrator</a>.</li>
@@ -64,9 +63,8 @@ GUIDES = [
 <li><b>Know what the site keeps:</b> your ratings, answers and written review, plus any details you choose to share. Never stored with a review: your name, email, account or IP address.</li>
 <li><b>Keep it about conduct in the role.</b> No student names, no health, family or personal-life details, nothing you can't support. Reviews that read as personal attacks are removed.</li>
 </ol>
-</div>
-<p><b>Your review stays anonymous when the details do too.</b></p>
-<a class="btn" href="/#submit">Rate an administrator</a>""", VIDEO_LD),
+</details>
+""", VIDEO_LD, False),
     ("what-is-shared-governance",
      "What Shared Governance Means for College Faculty and Staff | Rate My Administrator",
      "A plain guide to shared governance: what it is, what California law requires of community college boards, and how to tell real consultation from a rubber stamp.",
@@ -166,7 +164,11 @@ footer{color:var(--faint);font-size:.85rem;margin-top:40px;border-top:1px solid 
 """
 
 
-def page(title, desc, path, body, jsonld=None):
+INTRO = """<div class="intro">Anonymously rate college deans, vice presidents, presidents and trustees. Faculty, staff, students and community members can post; no account, no email.<br>
+<a class="btn" href="/#submit">Rate an administrator</a><a class="btn alt" href="/">Go to the main site</a></div>"""
+
+
+def page(title, desc, path, body, jsonld=None, intro=True):
     ld = f'<script type="application/ld+json">{json.dumps(jsonld)}</script>' if jsonld else ""
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -177,8 +179,7 @@ def page(title, desc, path, body, jsonld=None):
 <meta property="og:url" content="{SITE}{path}"><meta property="og:image" content="{SITE}/icons/icon-512.png">
 <style>{CSS}</style>{ld}</head><body>
 <header><a href="/">RATE MY<b>ADMINISTRATOR</b></a></header><main>
-<div class="intro">Anonymously rate college deans, vice presidents, presidents and trustees. Faculty, staff, students and community members can post; no account, no email.<br>
-<a class="btn" href="/#submit">Rate an administrator</a><a class="btn alt" href="/">Go to the main site</a></div>{body}
+{INTRO if intro else ""}{body}
 <footer>Rate My Administrator is an independent project, not affiliated with any college, district or union.
 Reviews are anonymous opinions of the people who posted them. <a href="/#how">How it works, terms and removal requests</a> · <a href="/guides/how-to-post-safely/">How to post safely (video)</a> · <a href="https://bsky.app/profile/ratemyadmin.bsky.social" rel="noopener noreferrer">Follow on Bluesky</a> · <a href="/guides/what-is-shared-governance/">What shared governance means</a>.</footer>
 </main></body></html>"""
@@ -294,9 +295,9 @@ def main():
                                            f'its administrators and their ratings. Not listed? <a href="/#institutions">Search all 3,239 colleges</a> '
                                            f'and add an administrator yourself.</p><ul class="list">{items}</ul>'))
 
-    for slug, title, desc, body, *ld in GUIDES:
+    for slug, title, desc, body, *extra in GUIDES:
         path = f"/guides/{slug}/"
-        write(path, page(title, desc, path, body, ld[0] if ld else None))
+        write(path, page(title, desc, path, body, extra[0] if extra else None, extra[1] if len(extra) > 1 else True))
         urls.append((SITE + path, today))
 
     sm = "".join(f"<url><loc>{u}</loc><lastmod>{m}</lastmod></url>" for u, m in urls)
