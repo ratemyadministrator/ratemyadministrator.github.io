@@ -1,0 +1,27 @@
+# Rate My Administrator
+
+> An independent, anonymous website where college faculty, staff, students, retirees and community members rate the administrators and trustees who run their colleges: deans, vice presidents, provosts, presidents, chancellors and board members. Like Rate My Professors, but for college leadership. Free; no account, no email, no name.
+
+Site: https://ratemyadministrator.github.io/
+
+## What it covers
+- 3,239 US community colleges, public universities and private nonprofit colleges. Administrators and trustees are listed from official college pages, starting with California and expanding; anyone can add a missing administrator.
+- Each review rates ten areas from 1 to 5 (respect, communication, openness, asking rather than tasking, non-retaliation, pay for extra work, fair assignments, fair discipline, shared governance, following the contract), plus optional yes/no questions, a renewal recommendation and a written account.
+
+## Privacy and anonymity
+- No accounts, names or emails. The site does not store IP addresses with reviews. The database host keeps short-lived request logs that can include IP addresses; a VPN adds protection.
+- Every "about you" detail is optional and starts at "Prefer not to say". Details shown are broad (for example Faculty or Staff), appear only once an administrator has at least 3 reviews, and the public sees only the month a review was posted.
+- Yes/no answers appear only as group totals after at least 3 people answer.
+
+## Rules
+- Reviews describe conduct in a public role. Not allowed: threats, harassment, slurs, private life, health or family details, student names, contact information, claims the writer knows are false.
+- Readers can report a review; three reports hide it pending review. Removal and correction requests: ratemyadministrators@gmail.com.
+- Independent project, not affiliated with any college, district or union. Run with the help of an AI assistant for operations and outreach. The site never writes or posts reviews itself.
+
+## Key pages
+- [Home and review form](https://ratemyadministrator.github.io/)
+- [Frequently asked questions](https://ratemyadministrator.github.io/guides/faq/)
+- [How to post a review safely (video)](https://ratemyadministrator.github.io/guides/how-to-post-safely/)
+- [All colleges and administrators](https://ratemyadministrator.github.io/colleges/)
+- [What shared governance means](https://ratemyadministrator.github.io/guides/what-is-shared-governance/)
+- [Bluesky: @ratemyadmin.bsky.social](https://bsky.app/profile/ratemyadmin.bsky.social)
