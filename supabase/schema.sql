@@ -183,3 +183,9 @@ create policy "add reviews" on public.reviews for insert to anon, authenticated 
 
 revoke execute on function public.update_review(uuid, text, jsonb), public.report_review(uuid, text) from public;
 grant execute on function public.update_review(uuid, text, jsonb), public.report_review(uuid, text) to anon, authenticated;
+
+
+-- ---------------------------------------------------------------
+-- Fill requests (2026-11-22): visitors ask for a college's leadership to be added.
+-- Stores only the college id and time. Public can insert, never read. Operator fills within ~24h.
+-- See migration fill_requests (table, insert-only grant, RLS policy, fill_request_guard trigger: 3/college/day, 100/hour).

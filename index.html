@@ -699,7 +699,14 @@ function renderInstDetail(){
     <div class="kv"><div><span class="label">Leadership score</span><b class="t-${tone(s.avg)}-ink num">${fmt(s.avg)}</b></div><div><span class="label">Administrators</span><b class="num">${s.admins}</b></div><div><span class="label">Reviews</span><b class="num">${s.reviews}</b></div><div><span class="label">Email domain</span><b class="mono" style="font-size:13px">${esc(i.domain||"Not on file")}</b></div></div>
    </div>
    <button class="btn primary" data-act="rate-here" data-inst="${esc(i.id)}">${ic("pen")}Rate or add an administrator</button>
-   <div class="alist">${ids.map(adminCard).join("") || `<div class="empty">${ic("gavel")}<h3>No administrators listed yet</h3><p>Add the first one when you submit a review. Search finds existing names so the same person isn't listed twice.</p></div>`}</div>`;
+   <div class="alist">${ids.map(adminCard).join("") || `<div class="empty">${ic("gavel")}<h3>No administrators listed yet</h3><p>Add the first one when you submit a review. Search finds existing names so the same person isn't listed twice.</p></div>`}</div>
+   ${S.loadedInst.has(i.id) && ids.length < 5 ? fillCard(i.id) : ""}`;
+}
+
+function fillCard(instId){
+  let done = false; try{ done = !!(JSON.parse(localStorage.getItem("rma-fill")||"{}"))[instId]; }catch{}
+  return `<div class="card" id="fill-card"><b>Want this college filled in?</b><p class="sub" style="margin:0">We'll add its president, vice presidents, deans, trustees and managers from official college pages, usually within 24 hours. Nothing about you is saved with the request.</p>
+    ${done ? `<p class="sub" style="margin:0;color:var(--green)">${ic("check","sm")} Requested. Check back tomorrow.</p>` : `<button class="btn" data-act="req-fill" data-inst="${esc(instId)}">${ic("plus")}Request this college</button>`}</div>`;
 }
 
 /* ---------- admin detail ---------- */
@@ -910,6 +917,12 @@ document.addEventListener("click", async e => {
     case "open-add": { const d = $("#s3-add"); if(d){ d.open = true; d.scrollIntoView({behavior:"smooth", block:"center"}); setTimeout(()=>$("#na-name")?.focus(), 300); } else { toast("Choose an institution first."); } return; }
     case "inst-back": S.ui.instDetail = null; return renderInstitutions();
     case "admin-back": go(S.prevView||"leaderboard"); return;
+    case "req-fill": { if(!S.db){ toast("The database isn't connected. Reload and try again."); return; } t.disabled = true;
+      SB.from("fill_requests").insert({inst_id: t.dataset.inst}).then(({error}) => {
+        if(error){ t.disabled = false; toast("Request didn't go through: " + error.message); return; }
+        try{ const m = JSON.parse(localStorage.getItem("rma-fill")||"{}"); m[t.dataset.inst] = Date.now(); localStorage.setItem("rma-fill", JSON.stringify(m)); }catch{}
+        const c = $("#fill-card"); if(c) c.outerHTML = fillCard(t.dataset.inst); toast("Thanks! We'll add this college's leadership, usually within 24 hours.");
+      }); return; }
     case "rate-here": S.form.inst = t.dataset.inst; S.form.admin=null; S.form.newAdmin=null; go("submit"); return;
     case "rate-admin": { const a = S.admins.get(t.dataset.admin); S.form.inst = a.instId; S.form.admin = t.dataset.admin; S.form.newAdmin=null; go("submit"); return; }
     case "change-inst": S.form.inst = null; S.form.admin = null; S.form.newAdmin = null; return renderSubmit();
