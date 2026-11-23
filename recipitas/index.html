@@ -67,6 +67,11 @@
   .shop-item.c-purple { border-left-color:#9a6bd0; background:rgba(154,107,208,.14); }
   /* ReciPitas name */
   .brand .reci { color:#f6b98c; } .brand .pitas { color:#ffffff; }
+  button.c-mauve { background:#8a5a6b; border-color:#8a5a6b; color:#fff6f8; box-shadow:0 0 18px rgba(170,110,130,.3); }
+  button.c-teal { background:#2f6e70; border-color:#2f6e70; color:#effcfb; box-shadow:0 0 18px rgba(60,140,140,.3); }
+  button.c-slate { background:#465c88; border-color:#465c88; color:#f1f5ff; box-shadow:0 0 18px rgba(90,120,180,.3); }
+  .ways { display:flex; flex-direction:column; gap:10px; }
+  .ways button { text-align:left; justify-content:flex-start; }
   button.small { padding:4px 10px; min-height:34px; font-size:14px; }
   button:disabled { opacity:.4; cursor:default; }
   input, textarea, select { font:19px/1.35 var(--hand); width:100%; padding:7px 8px; color:var(--ink); background:rgba(239,228,200,.07); border:0; border-bottom:1.5px solid rgba(214,181,177,.45); border-radius:6px 6px 0 0; }
@@ -627,9 +632,7 @@ async function renderEditor(id) {
       ${ai ? '' : '<p class="muted" style="margin-top:0">AI entry is off: the server has no Gemini API key yet. Manual entry still works.</p>'}
       <div class="row">
         <button type="button" class="primary wide" id="voiceBtn" ${ai ? '' : 'disabled'}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Speak it</button>
-        <button type="button" class="wide c-rose" id="photoBtn" ${ai ? '' : 'disabled'}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Take photo</button>
-        <button type="button" class="wide c-plum" id="moreBtn" ${ai ? '' : 'disabled'}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>More ways…</button>
-        <button type="button" class="wide c-wine" id="fileBtn" ${ai ? '' : 'disabled'}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M12 11v6M9 14l3-3 3 3"/></svg>Upload a file</button>
+        <button type="button" class="wide c-mauve" id="moreBtn" ${ai ? '' : 'disabled'}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>More ways to fill in</button>
       </div>
       <div id="recArea"></div>
     </div>
@@ -667,9 +670,7 @@ async function renderEditor(id) {
   document.getElementById('cancelBtn').onclick = () => { location.hash = id ? 'recipe-' + id : 'recipes'; };
   form.onsubmit = (e) => { e.preventDefault(); saveDraft(id); };
   document.getElementById('voiceBtn').onclick = startVoice;
-  document.getElementById('photoBtn').onclick = () => photoFlow('photoInput');
   document.getElementById('moreBtn').onclick = moreOptions;
-  document.getElementById('fileBtn').onclick = fileFlow;
 }
 
 function fillForm() {
@@ -861,15 +862,27 @@ async function textFlow() {
   extract({ kind: 'text', text }, 'text');
 }
 async function moreOptions() {
-  const r = await modal('<p style="margin-top:0;font-weight:600">More ways to fill in</p>', [
-    { label: 'Cancel', value: null },
-    { label: 'Type or paste text', value: 'text' },
-    { label: 'Upload a recording', value: 'audio' },
-    { label: 'Choose photos', value: 'lib', cls: 'primary' },
-  ]);
-  if (r.value === 'text') textFlow();
-  if (r.value === 'audio') audioFileFlow();
-  if (r.value === 'lib') photoFlow('photoLibInput');
+  const ways = [
+    { id: 'cam', cls: 'c-rose', icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>', label: 'Take a photo', run: () => photoFlow('photoInput') },
+    { id: 'lib', cls: 'c-plum', icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 21h12a2 2 0 0 0 2-2V9"/><path d="M5 15l4-4 3 3 2-2 3 3"/></svg>', label: 'Choose photos', run: () => photoFlow('photoLibInput') },
+    { id: 'file', cls: 'c-wine', icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M12 11v6M9 14l3-3 3 3"/></svg>', label: 'Upload a file (PDF, Word, text)', run: fileFlow },
+    { id: 'text', cls: 'c-teal', icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><path d="M5 6h14M5 10h14M5 14h10M5 18h7"/></svg>', label: 'Type or paste text', run: textFlow },
+    { id: 'audio', cls: 'c-slate', icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>', label: 'Upload a recording', run: audioFileFlow },
+  ];
+  const bg = document.createElement('div');
+  bg.className = 'modal-bg';
+  bg.innerHTML = '<div class="modal" role="dialog" aria-modal="true" aria-labelledby="mwTitle"><h3 id="mwTitle" style="margin-top:0">More ways to fill in</h3><div class="ways">' +
+    ways.map((w) => '<button type="button" class="wide ' + w.cls + '" data-way="' + w.id + '">' + w.icon + w.label + '</button>').join('') +
+    '</div><div class="actions"><button type="button" data-way="cancel">Cancel</button></div></div>';
+  document.body.appendChild(bg);
+  bg.querySelector('[data-way]').focus();
+  bg.onclick = (e) => {
+    const b = e.target.closest('[data-way]');
+    if (!b && e.target !== bg) return;
+    bg.remove();
+    const w = b && ways.find((x) => x.id === b.dataset.way);
+    if (w) w.run();
+  };
 }
 
 // ---------- AI: change a recipe by voice ----------
