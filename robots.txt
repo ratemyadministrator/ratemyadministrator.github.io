@@ -4,5 +4,6 @@ Disallow: /social/
 Disallow: /supabase/
 Disallow: /scripts/
 Disallow: /seed/
+Disallow: /recipitas/
 
 Sitemap: https://ratemyadministrator.github.io/sitemap.xml
