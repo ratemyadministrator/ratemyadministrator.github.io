@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ReciPitas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ReciPitas">
+<meta name="theme-color" content="#24151b">
+<style>
+  /* Theme taken from the kitchen picture: night greens, lantern amber, cream */
+  :root { --ink:#f7e8de; --ink-soft:#d6b5b1; --panel:rgba(34,18,25,.66); --panel2:rgba(54,30,39,.55); --line:rgba(232,182,178,.24);
+    --amber:#f08a3c; --amber-glow:rgba(255,135,55,.42); --green:#8a5a66; --danger:#f29b8c;
+    --hand:'Helvetica Neue', Helvetica, Arial, sans-serif; --script:'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; color:var(--ink); font:19px/1.55 var(--hand); background:#24151b; }
+  .scene { position:fixed; inset:0; z-index:0; }
+  .scene img { width:100%; height:100%; object-fit:cover; object-position:center 35%; display:block; }
+  .scene::after { content:''; position:absolute; inset:0; background:radial-gradient(120% 80% at 50% 45%, rgba(0,0,0,0) 40%, rgba(18,8,12,.55)); }
+  body:not(.home) .scene::after { background:linear-gradient(rgba(18,8,12,.25), rgba(18,8,12,.1) 25%, rgba(18,8,12,.45)); }
+  header { position:fixed; top:0; left:0; right:0; z-index:6; padding:calc(12px + env(safe-area-inset-top)) 18px 22px; display:flex; align-items:center; gap:10px; color:var(--ink);
+    background:linear-gradient(rgba(18,8,12,.78), rgba(18,8,12,.35) 70%, rgba(18,8,12,0)); }
+  header h1 { font:300 33px/1.05 var(--script); letter-spacing:0; margin:0; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#fbeadf; text-shadow:0 0 22px rgba(255,140,60,.45), 0 2px 6px rgba(0,0,0,.8); }
+  header button { background:rgba(239,228,200,.1); color:var(--ink); border:1.5px solid rgba(239,228,200,.4); }
+  .book { position:relative; z-index:1; max-width:760px; margin:0 auto; padding:calc(120px + env(safe-area-inset-top)) 12px calc(92px + env(safe-area-inset-bottom)); }
+  body.home .book { padding-top:calc(64vh + env(safe-area-inset-top)); }
+  main.page { position:relative; min-height:50vh; padding:22px 18px 30px; border-radius:18px; background:var(--panel);
+    -webkit-backdrop-filter:blur(5px) saturate(115%); backdrop-filter:blur(5px) saturate(115%); border:1px solid var(--line); box-shadow:0 16px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,220,160,.08); }
+
+  /* tabs: silhouette shelf with a lantern glow on the open one */
+  nav.tabs { position:fixed; bottom:0; left:0; right:0; z-index:6; display:flex; gap:6px; align-items:flex-end; padding:0 10px env(safe-area-inset-bottom); max-width:760px; margin:0 auto; }
+  nav.tabs button { flex:1; min-height:52px; padding:6px 4px 8px; border:1px solid var(--line); border-bottom:0; border-radius:10px 10px 0 0; background:rgba(30,16,22,.9);
+    font:500 15px/1 var(--hand); letter-spacing:.01em; color:var(--ink-soft); box-shadow:0 -3px 10px rgba(0,0,0,.45); transform:translateY(6px); transition:transform .2s, min-height .2s, color .2s;
+    display:flex; align-items:center; justify-content:center; gap:6px; }
+  nav.tabs svg { width:20px; height:20px; flex:0 0 20px; }
+  nav.tabs button.on { color:#ffd2b0; background:linear-gradient(rgba(70,36,22,.95), rgba(40,22,30,.95)); border-color:rgba(240,138,60,.55); transform:translateY(0); min-height:60px;
+    box-shadow:0 -6px 22px var(--amber-glow); }
+
+  button { font:500 16px/1.2 var(--hand); letter-spacing:.01em; text-transform:none; padding:9px 16px; border-radius:8px; border:1.5px solid var(--line); background:rgba(239,228,200,.08); color:var(--ink); cursor:pointer; min-height:44px; }
+  button.primary { background:#df7a32; color:#fff7ef; border-color:#df7a32; box-shadow:0 0 22px rgba(255,130,50,.45); }
+  button.danger { color:var(--danger); border-color:rgba(229,138,120,.45); }
+  button.primary.danger { background:#b8483a; color:#fff; border-color:#b8483a; box-shadow:none; }
+  button.wide { flex-basis:100%; min-height:48px; font-size:17px; }
+  button.primary:disabled { background:rgba(223,122,50,.35); border-color:transparent; box-shadow:none; color:rgba(255,247,239,.7); }
+  button.c-rose { background:#a34c5c; border-color:#a34c5c; color:#fff5f3; box-shadow:0 0 18px rgba(200,90,110,.3); }
+  button.c-plum { background:#6c4a7c; border-color:#6c4a7c; color:#f8f0ff; box-shadow:0 0 18px rgba(140,100,170,.3); }
+  button.c-wine { background:#7a2c3c; border-color:#7a2c3c; color:#fff2f2; box-shadow:0 0 18px rgba(160,50,70,.3); }
+  button.c-rose:disabled, button.c-plum:disabled, button.c-wine:disabled { opacity:.45; box-shadow:none; }
+  /* shopping: store colors, arrows */
+  .shop-item { gap:4px; padding:4px 4px 4px 8px; margin:3px 0; border-radius:8px; border-bottom:0; border-left:6px solid transparent; background:rgba(255,255,255,.03); }
+  .shop-item .ibtn { flex:0 0 30px; width:30px; min-height:30px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:8px; }
+  .shop-item .ibtn:disabled { opacity:.25; }
+  .shop-item .ibtn.del { color:var(--danger); border-color:rgba(242,155,140,.35); }
+  .dot { flex:0 0 28px; width:28px; min-height:28px; height:28px; padding:0; border-radius:50%; border:2px dashed rgba(214,181,177,.6); background:transparent; }
+  .dot.c-rose { background:#e36b86; border:2px solid #fff3; } .dot.c-amber { background:#f08a3c; border:2px solid #fff3; } .dot.c-green { background:#5fae6e; border:2px solid #fff3; }
+  .dot.c-blue { background:#4e8fd6; border:2px solid #fff3; } .dot.c-purple { background:#9a6bd0; border:2px solid #fff3; }
+  .shop-item.c-rose { border-left-color:#e36b86; background:rgba(227,107,134,.14); } .shop-item.c-amber { border-left-color:#f08a3c; background:rgba(240,138,60,.14); }
+  .shop-item.c-green { border-left-color:#5fae6e; background:rgba(95,174,110,.14); } .shop-item.c-blue { border-left-color:#4e8fd6; background:rgba(78,143,214,.14); }
+  .shop-item.c-purple { border-left-color:#9a6bd0; background:rgba(154,107,208,.14); }
+  /* ReciPitas name */
+  .brand .reci { color:#f6b98c; } .brand .pitas { color:#ffffff; }
+  button.small { padding:4px 10px; min-height:34px; font-size:14px; }
+  button:disabled { opacity:.4; cursor:default; }
+  input, textarea, select { font:19px/1.35 var(--hand); width:100%; padding:7px 8px; color:var(--ink); background:rgba(239,228,200,.07); border:0; border-bottom:1.5px solid rgba(214,181,177,.45); border-radius:6px 6px 0 0; }
+  textarea { resize:vertical; min-height:70px; border:1.5px solid rgba(214,181,177,.35); border-radius:8px; }
+  select { border:1.5px solid rgba(214,181,177,.4); border-radius:8px; background:rgba(40,22,30,.95); }
+  input::placeholder, textarea::placeholder { color:rgba(214,181,177,.6); }
+  input:focus, textarea:focus, select:focus { outline:none; border-color:var(--amber); background:rgba(239,228,200,.11); }
+  label { display:block; font-size:17px; color:var(--ink-soft); margin:12px 0 2px; }
+  input[type=checkbox] { appearance:none; -webkit-appearance:none; width:26px; height:26px; flex:0 0 26px; margin:0; padding:0; border:2px solid var(--ink-soft); border-radius:6px; background:rgba(239,228,200,.06); cursor:pointer; }
+  input[type=checkbox]:checked { border-color:var(--amber); background:rgba(240,138,60,.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 13c2 1.5 3.5 3.5 5 6 3-7 7-11.5 11-15' fill='none' stroke='%23f08a3c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/90% no-repeat; }
+  .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .row > * { flex:1; }
+  .row > .shrink { flex:0 0 auto; }
+  .muted { color:var(--ink-soft); font-size:17px; }
+  h2 { font:300 37px/1.08 var(--script); margin:4px 0 6px; color:#fbeadf; text-shadow:0 0 20px rgba(255,140,60,.25); }
+  h3 { font:500 25px/1.15 var(--script); margin:24px 0 8px; color:#f4c9b8; padding-bottom:4px; border-bottom:1px solid rgba(240,138,60,.25); }
+  a { color:var(--amber); }
+
+  .card { background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:10px 14px 12px; margin-bottom:12px; box-shadow:0 4px 10px rgba(0,0,0,.3); }
+  button.rcard { display:flex; gap:12px; width:100%; text-align:left; align-items:flex-start; min-height:0; }
+  .rcard:hover, .rcard:focus-visible { border-color:rgba(240,138,60,.5); box-shadow:0 0 16px var(--amber-glow); }
+  .rcard .t { font:500 25px/1.2 var(--script); color:#fbeadf; margin-bottom:2px; }
+  .chips { display:flex; gap:6px; overflow-x:auto; padding:6px 2px 12px; }
+  .chip { flex:0 0 auto; padding:2px 14px; min-height:34px; font-size:14px; border-radius:8px; }
+  .chip.on { background:rgba(240,138,60,.22); color:#ffd2b0; border-color:rgba(240,138,60,.75); box-shadow:0 0 12px rgba(255,135,55,.3); }
+  .meta { display:flex; flex-wrap:wrap; gap:2px 16px; font-size:17px; color:var(--ink-soft); margin:6px 0; }
+  .meta b { color:var(--ink); font-weight:400; font-size:19px; }
+  ul.ing { list-style:none; padding:0; margin:0; }
+  ul.ing li { display:flex; gap:10px; align-items:center; padding:4px 0; min-height:36px; border-bottom:1px solid rgba(232,182,178,.1); }
+  ul.ing label { margin:0; color:var(--ink); font-size:20px; }
+  ol.steps { padding-left:24px; } ol.steps li { margin-bottom:8px; }
+  ol.steps li::marker { color:var(--amber); font-family:var(--hand); font-weight:500; font-size:17px; }
+  .ing-edit { border:1px solid var(--line); border-radius:10px; padding:6px 8px; margin-bottom:10px; background:rgba(239,228,200,.03); }
+  .ing-edit .grid { display:grid; grid-template-columns: 1fr 1fr; gap:4px 10px; }
+  .ing-edit .grid .wide { grid-column: 1 / -1; }
+  .tools { display:flex; gap:6px; justify-content:flex-end; margin-top:6px; flex-wrap:wrap; }
+  .step-edit { display:flex; gap:8px; align-items:flex-start; margin-bottom:8px; }
+  .step-edit .n { flex:0 0 24px; padding-top:8px; font:500 21px var(--script); color:var(--amber); }
+  .step-edit .body { flex:1; }
+
+  /* lantern-lit box for the AI buttons */
+  .ai-box { position:relative; padding:14px; margin:2px 0 18px; border-radius:14px; border:1px solid rgba(240,138,60,.35);
+    background:radial-gradient(120% 140% at 50% -20%, rgba(240,138,60,.28), rgba(46,26,34,.6) 60%); box-shadow:0 0 24px rgba(240,138,60,.15); }
+  .ai-box .head { font:500 23px/1.1 var(--script); margin-bottom:6px; color:#ffd2b0; }
+  .shop-group h3 { display:flex; align-items:center; gap:8px; }
+  .shop-group h3 span { flex:1; }
+  .shop-item { display:flex; gap:10px; align-items:center; padding:3px 0; min-height:40px; border-bottom:1px solid rgba(232,182,178,.1); }
+  .shop-item .txt { flex:1; text-align:left; border:0; background:none; padding:4px 0; min-height:0; font:20px/1.35 var(--hand); letter-spacing:0; text-transform:none; border-radius:0; }
+  .shop-item.done .txt { text-decoration:line-through; text-decoration-thickness:2px; text-decoration-color:var(--amber); color:rgba(214,181,177,.7); }
+  .toast { position:fixed; left:50%; transform:translateX(-50%); bottom:calc(80px + env(safe-area-inset-bottom)); background:rgba(52,26,20,.96); color:#ffd2b0; border:1px solid rgba(240,138,60,.5); border-radius:12px; padding:10px 16px; z-index:50; max-width:90%; font-size:19px; box-shadow:0 0 20px var(--amber-glow); }
+  .modal-bg { position:fixed; inset:0; background:rgba(4,10,8,.65); z-index:30; display:flex; align-items:center; justify-content:center; padding:16px; }
+  .modal { background:rgba(40,22,30,.97); border:1px solid var(--line); padding:18px; width:100%; max-width:460px; max-height:90vh; overflow:auto; border-radius:16px; box-shadow:0 16px 40px rgba(0,0,0,.6); }
+  .modal .actions { display:flex; gap:8px; justify-content:flex-end; margin-top:16px; flex-wrap:wrap; }
+  .busy { position:fixed; inset:0; background:rgba(18,8,12,.8); z-index:40; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; font:500 25px var(--script); color:#ffd2b0; text-align:center; padding:20px; }
+  .spin { width:40px; height:40px; border:4px solid rgba(214,181,177,.25); border-top-color:var(--amber); border-radius:50%; animation:sp 0.9s linear infinite; }
+  @keyframes sp { to { transform:rotate(360deg); } }
+  .empty { text-align:center; color:var(--ink-soft); padding:40px 10px; font-size:21px; }
+  .banner { background:rgba(240,138,60,.15); border:1px solid rgba(240,138,60,.4); border-radius:10px; padding:8px 12px; font-size:17px; margin-bottom:10px; }
+  .hidden { display:none !important; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+  .mic.live { background:#b3261e; color:#fff; border-color:#b3261e; }
+  :focus-visible { outline:3px solid var(--amber); outline-offset:2px; }
+  ::selection { background:rgba(240,138,60,.35); }
+
+  /* page turn */
+  .turning { position:fixed; z-index:4; overflow:hidden; pointer-events:none; border-radius:16px; transform-origin:left center; animation:turnFwd .65s cubic-bezier(.45,.05,.55,.95) forwards; will-change:transform; }
+  .turning.back { transform-origin:right center; animation-name:turnBack; }
+  .turning > main { position:absolute; left:0; width:100%; margin:0; }
+  .turning::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,.55)); opacity:0; animation:shade .65s ease-in forwards; }
+  .turning.back::after { background:linear-gradient(270deg, rgba(0,0,0,0), rgba(0,0,0,.55)); }
+  @keyframes turnFwd { from { transform:perspective(1600px) rotateY(0); } to { transform:perspective(1600px) rotateY(-105deg); } }
+  @keyframes turnBack { from { transform:perspective(1600px) rotateY(0); } to { transform:perspective(1600px) rotateY(105deg); } }
+  @keyframes shade { to { opacity:1; } }
+  @media (prefers-reduced-motion: reduce) { .spin { animation:none; } .turning { display:none; } nav.tabs button { transition:none; } }
+  @media (prefers-reduced-transparency: reduce) { main.page { background:rgba(34,18,25,.97); } }
+  a.rcard { display:flex; gap:12px; color:inherit; text-decoration:none; }
+  .rec { display:flex; align-items:center; gap:10px; margin-top:10px; }
+  .dot { width:14px; height:14px; border-radius:50%; background:#e0483a; box-shadow:0 0 10px #e0483a; animation:pulse 1s infinite; }
+  @keyframes pulse { 50% { opacity:.3; } }
+  .login { max-width:380px; margin:0 auto; }
+  /* Home: the whole scene sits at the top at its true shape; the list starts below their shoulders */
+  /* Typewritten recipes on aged paper */
+  body.reading main.page { background:none; border:0; box-shadow:none; -webkit-backdrop-filter:none; backdrop-filter:none; padding:0; min-height:0; }
+  .typed, .rcard { --tink:#2a241c;
+    background-color:#e9dab4;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .33 0 0 0 0 .24 0 0 0 0 .12 0 0 0 .2 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+      radial-gradient(ellipse at 25% 12%, rgba(255,250,232,.6), transparent 55%),
+      radial-gradient(circle at 88% 82%, rgba(150,105,45,.2), transparent 32%),
+      radial-gradient(circle at 8% 92%, rgba(140,98,40,.16), transparent 28%),
+      radial-gradient(circle at 92% 8%, rgba(150,105,45,.12), transparent 22%); }
+  .typed { position:relative; color:var(--tink); font:17px/1.65 'Special Elite', 'Courier Prime', 'Courier New', monospace; padding:28px 22px 30px; margin:4px 2px 20px; border-radius:2px;
+    box-shadow:0 16px 36px rgba(0,0,0,.6), inset 0 0 70px rgba(115,80,30,.38), inset 0 0 6px rgba(90,60,20,.35); transform:rotate(-.35deg); text-shadow:0 0 .7px rgba(42,36,28,.55); }
+  .typed h2 { font:400 27px/1.25 'Special Elite', 'Courier New', monospace; color:var(--tink); text-transform:uppercase; letter-spacing:.03em; margin:0 0 6px; text-shadow:.5px 0 0 rgba(42,36,28,.5), 0 0 1px rgba(42,36,28,.4); }
+  .typed h3 { font:400 17px/1.3 'Special Elite', 'Courier New', monospace; color:var(--tink); text-transform:uppercase; letter-spacing:.14em; margin:24px 0 8px; padding-bottom:3px; border-bottom:1px dashed rgba(42,36,28,.5); text-shadow:0 0 .7px rgba(42,36,28,.55); }
+  .typed p { margin:.4em 0; }
+  .typed .muted, .typed .meta { color:#594c38; font-size:15px; }
+  .typed .meta b { color:var(--tink); font-size:16px; font-weight:400; }
+  .typed a { color:#6b3a12; }
+  .typed ul.ing li { border-bottom:1px dotted rgba(42,36,28,.3); }
+  .typed ul.ing label { color:var(--tink); font-size:17px; }
+  .typed input[type=checkbox] { border-color:var(--tink); border-radius:2px; background-color:transparent; }
+  .typed input[type=checkbox]:checked { border-color:var(--tink); background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 5l14 14M19 5L5 19' fill='none' stroke='%232a241c' stroke-width='3' stroke-linecap='square'/%3E%3C/svg%3E") center/80% no-repeat; }
+  .typed ol.steps li::marker { color:var(--tink); font-family:inherit; font-size:17px; font-weight:400; }
+  .typed button.primary { background:transparent; color:var(--tink); border:2px solid var(--tink); box-shadow:none; font-family:'Special Elite', 'Courier New', monospace; letter-spacing:.1em; border-radius:3px; }
+  .typed :focus-visible { outline-color:#6b3a12; }
+  .rcard { color:var(--tink) !important; font:16px/1.5 'Special Elite', 'Courier New', monospace !important; border:0 !important; border-radius:2px !important; box-shadow:0 6px 14px rgba(0,0,0,.45), inset 0 0 30px rgba(115,80,30,.35) !important; text-shadow:0 0 .6px rgba(42,36,28,.5); }
+  #list .rcard:nth-child(odd) { transform:rotate(-.5deg); } #list .rcard:nth-child(even) { transform:rotate(.4deg); }
+  .rcard .t { font:400 20px/1.3 'Special Elite', 'Courier New', monospace !important; color:var(--tink) !important; text-transform:uppercase; letter-spacing:.03em; }
+  .rcard .muted { color:#594c38 !important; font-size:14px; }
+  .rcard:hover, .rcard:focus-visible { box-shadow:0 0 18px rgba(255,140,60,.45), inset 0 0 30px rgba(115,80,30,.35) !important; }
+
+  @media (max-width: 760px) {
+    body.home .scene { position:absolute; bottom:auto; height:calc(100vw * 1.7917); }
+    body.home .scene img { height:100%; object-position:center top; }
+    body.home .book { padding-top:calc(100vw * 1.3); }
+  }
+  @media (min-width: 761px) { body.home .scene img { object-position:center 58%; } }
+</style>
+</head>
+<body>
+<header><h1 id="title"><span class="brand"><span class="reci">Reci</span><span class="pitas">Pitas</span></span></h1><button id="logoutBtn" class="small hidden" type="button">Lock</button></header>
+<div class="scene" aria-hidden="true"><img src="kitchen.jpg" alt=""></div>
+<div class="book"><main id="app" class="page" aria-live="polite"></main></div>
+<nav class="tabs hidden" id="tabs" aria-label="Main">
+  <button type="button" data-tab="recipes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 9h8M8 13h6"/></svg>Recipes</button>
+  <button type="button" data-tab="new"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Add</button>
+  <button type="button" data-tab="shopping"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h2l2.4 11h11L21 7H6"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg>Shopping</button>
+</nav>
+
+<input type="file" id="photoInput" accept="image/*" capture="environment" class="hidden">
+<input type="file" id="photoLibInput" accept="image/*" multiple class="hidden">
+<input type="file" id="audioInput" accept="audio/*" class="hidden">
+<input type="file" id="docInput" accept=".pdf,.docx,.doc,.txt,.md,.rtf,.html,.htm,.csv,application/pdf,text/*,image/*" class="hidden">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+<script>
+"use strict";
+const $app = document.getElementById('app');
+const state = { status: null, recipes: [], categories: [], q: '', sort: 'name', category: '', dirty: false, lastHash: '' };
+let allowNav = false;
+
+// ---------- helpers ----------
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+const ingText = (i) => [[i.quantity, i.unit, i.name].map((x) => (x || '').trim()).filter(Boolean).join(' '), [i.prep_notes, i.description].filter((x) => x && x.trim()).join('; ')].filter(Boolean).join(', ');
+const BRAND = '<span class="brand"><span class="reci">Reci</span><span class="pitas">Pitas</span></span>';
+function setTitle(t) {
+  const el = document.getElementById('title');
+  if (t === 'Recipe Box' || t === 'Recipes') { el.innerHTML = BRAND; document.title = 'ReciPitas'; }
+  else { el.textContent = t; document.title = t + ' · ReciPitas'; }
+}
+function toast(msg, ms) { const t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), ms || 2600); }
+function busy(msg) { const b = document.createElement('div'); b.className = 'busy'; b.innerHTML = '<div class="spin"></div><div>' + esc(msg) + '</div>'; document.body.appendChild(b); return () => b.remove(); }
+
+// ---------- Supabase connection ----------
+// These two values are public by design: they only identify the project. Recipes, the list and the
+// Gemini key are all locked behind the family code, which the database checks on every request.
+// The Gemini key is NOT here; it lives in Supabase secrets.
+const SUPABASE_URL = 'https://anshkqqfekiucjssaxeg.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_DpAMexAC3MgIT2nrit1Iyg_0v6hdyoG';
+const CODE_KEY = 'recipe-box-family-code';
+function savedCode() { try { return localStorage.getItem(CODE_KEY) || ''; } catch (e) { return ''; } }
+function rememberCode(c) { try { if (c) localStorage.setItem(CODE_KEY, c); else localStorage.removeItem(CODE_KEY); } catch (e) { /* private mode: asks again next time */ } }
+let familyCode = savedCode();
+let sb = null;
+function connect(code) {
+  familyCode = code;
+  sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false, autoRefreshToken: false }, global: { headers: { 'x-family-code': code } } });
+}
+async function codeWorks(code) {
+  connect(code);
+  const { data, error } = await sb.rpc('family_ok');
+  if (error) throw new Error('Can\'t connect right now. Check your internet and try again.');
+  return data === true;
+}
+
+function fail(error, status) { const e = new Error((error && error.message) || 'Something went wrong'); e.status = status; throw e; }
+async function q(promise) {
+  const { data, error } = await promise;
+  if (error) fail(error);
+  return data;
+}
+const RFIELDS = ['name', 'description', 'prep_time', 'cook_time', 'total_time', 'servings', 'category', 'notes', 'source'];
+function cleanRecipe(b) {
+  const row = {};
+  RFIELDS.forEach((f) => { row[f] = String(b[f] == null ? '' : b[f]); });
+  row.ingredients = (b.ingredients || []).map((i) => ({ quantity: String(i.quantity || ''), unit: String(i.unit || ''), name: String(i.name || ''), prep_notes: String(i.prep_notes || ''), description: String(i.description || '') }))
+    .filter((i) => Object.values(i).some((v) => v.trim()));
+  row.steps = (b.steps || []).map((x) => String(typeof x === 'string' ? x : (x && x.text) || '')).filter((x) => x.trim());
+  return row;
+}
+const shape = (r) => ({ ...r, ingredients: (r.ingredients || []).map((i, k) => ({ ...i, id: String(k) })), steps: (r.steps || []).map((t, k) => ({ id: String(k), text: t })) });
+async function allRecipes() { return q(sb.from('recipes').select('*')); }
+async function listShopping() {
+  const rows = await q(sb.from('shopping_items').select('*'));
+  return rows.sort((a, b) => a.recipe_name.localeCompare(b.recipe_name, undefined, { sensitivity: 'base' }) || a.position - b.position);
+}
+async function aiCall(body) {
+  const { data, error } = await sb.functions.invoke('ai', { body, headers: { 'x-family-code': familyCode } });
+  if (!error) return data;
+  let payload = null, status = 0;
+  try { status = error.context.status; payload = await error.context.json(); } catch (e) { /* no body */ }
+  if (status === 401) { rememberCode(''); state.status.loggedIn = false; renderLogin('That family code no longer works. Please enter the current one.'); }
+  const err = new Error((payload && payload.error) || 'Could not reach the recipe reader. Check your connection and try again.');
+  err.data = payload; err.status = status; throw err;
+}
+
+// Same calls the app made to its own server, answered by Supabase instead
+async function api(method, url, body) {
+  const u = new URL(url, location.origin);
+  const parts = u.pathname.replace(/^\/api\//, '').split('/');
+  const p = u.searchParams;
+  let route = parts[0];
+  if (parts[0] === 'ai' || parts[1] === 'from-recipe' || parts[1] === 'clear' || parts[1] === 'move') route += '/' + parts[1];
+  else if (parts[2]) route += '/' + parts[2];
+  else if (parts[1]) route += '/:id';
+  const key = method + ' ' + route;
+  const id = parts[1];
+  switch (key) {
+    case 'GET status': return { authRequired: true, loggedIn: !!familyCode && (await codeWorks(familyCode)), aiConfigured: true };
+    case 'GET recipes': {
+      const qq = (p.get('q') || '').trim().toLowerCase(), cat = p.get('category') || '', sort = p.get('sort') || 'name';
+      let rows = await allRecipes();
+      if (qq) rows = rows.filter((r) => [r.name, r.description, r.notes, r.category, r.source].some((x) => (x || '').toLowerCase().includes(qq)) || (r.ingredients || []).some((i) => [i.name, i.prep_notes, i.description].join(' ').toLowerCase().includes(qq)));
+      if (cat === '__none__') rows = rows.filter((r) => !r.category.trim());
+      else if (cat) rows = rows.filter((r) => r.category.trim().toLowerCase() === cat.toLowerCase());
+      const cmp = { name: (a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }), newest: (a, b) => b.created_at.localeCompare(a.created_at), oldest: (a, b) => a.created_at.localeCompare(b.created_at), modified: (a, b) => b.updated_at.localeCompare(a.updated_at) }[sort] || ((a, b) => a.name.localeCompare(b.name));
+      return rows.sort(cmp).map((r) => ({ ...r, ingredient_count: (r.ingredients || []).length }));
+    }
+    case 'GET categories': {
+      const m = new Map();
+      (await allRecipes()).forEach((r) => { const c = r.category.trim(); if (c) { const k = c.toLowerCase(); const e = m.get(k) || { name: c, count: 0 }; e.count++; m.set(k, e); } });
+      return Array.from(m.values()).sort((a, b) => a.name.localeCompare(b.name));
+    }
+    case 'GET recipes/:id': {
+      const rows = await q(sb.from('recipes').select('*').eq('id', id));
+      if (!rows.length) fail({ message: 'Recipe not found' }, 404);
+      return shape(rows[0]);
+    }
+    case 'POST recipes': {
+      if (!String(body.name || '').trim()) fail({ message: 'A recipe name is required' }, 400);
+      return shape(await q(sb.from('recipes').insert(cleanRecipe(body)).select().single()));
+    }
+    case 'PUT recipes/:id': {
+      if (!String(body.name || '').trim()) fail({ message: 'A recipe name is required' }, 400);
+      return shape(await q(sb.from('recipes').update(cleanRecipe(body)).eq('id', id).select().single()));
+    }
+    case 'DELETE recipes/:id': await q(sb.from('recipes').delete().eq('id', id)); return { ok: true };
+    case 'POST recipes/duplicate': {
+      const rows = await q(sb.from('recipes').select('*').eq('id', id));
+      if (!rows.length) fail({ message: 'Recipe not found' }, 404);
+      return shape(await q(sb.from('recipes').insert(cleanRecipe({ ...rows[0], name: rows[0].name + ' (copy)' })).select().single()));
+    }
+    case 'GET shopping': return listShopping();
+    case 'POST shopping/from-recipe': {
+      const rows = await q(sb.from('recipes').select('*').eq('id', parts[2]));
+      if (!rows.length) fail({ message: 'Recipe not found' }, 404);
+      const r = rows[0];
+      const pick = body && Array.isArray(body.ingredientIds) ? new Set(body.ingredientIds) : null;
+      const base = Date.now();
+      const items = (r.ingredients || []).map((i, k) => ({ i, k })).filter(({ k }) => !pick || pick.has(String(k)))
+        .map(({ i }, n) => ({ recipe_id: r.id, recipe_name: r.name, quantity: i.quantity || '', unit: i.unit || '', name: i.name || '(item)', note: [i.prep_notes, i.description].filter(Boolean).join('; '), checked: false, position: base + n }));
+      // Rebuild this recipe's list so picking it again never doubles it up
+      await q(sb.from('shopping_items').delete().eq('recipe_id', r.id));
+      if (items.length) await q(sb.from('shopping_items').insert(items));
+      return { added: items.length, items: await listShopping() };
+    }
+    case 'POST shopping': {
+      if (!String(body.name || '').trim()) fail({ message: 'Item needs a name' }, 400);
+      let recipe_id = null, recipe_name = '';
+      if (body.recipe_id) { const rows = await q(sb.from('recipes').select('id,name').eq('id', body.recipe_id)); if (rows.length) { recipe_id = rows[0].id; recipe_name = rows[0].name; } }
+      await q(sb.from('shopping_items').insert({ recipe_id, recipe_name, quantity: body.quantity || '', unit: body.unit || '', name: body.name, note: body.note || '', checked: false, position: Date.now() }));
+      return listShopping();
+    }
+    case 'PATCH shopping/:id': {
+      const patch = {}; ['quantity', 'unit', 'name', 'note', 'checked', 'color'].forEach((k) => { if (k in body) patch[k] = k === 'checked' ? !!body.checked : String(body[k]); });
+      await q(sb.from('shopping_items').update(patch).eq('id', id));
+      return listShopping();
+    }
+    case 'DELETE shopping/:id': await q(sb.from('shopping_items').delete().eq('id', id)); return listShopping();
+    case 'POST shopping/clear': {
+      let rows = await listShopping();
+      if (body.scope !== 'all') rows = rows.filter((i) => i.checked);
+      if (typeof body.group === 'string') rows = rows.filter((i) => (i.recipe_name || '') === body.group);
+      if (rows.length) await q(sb.from('shopping_items').delete().in('id', rows.map((i) => i.id)));
+      return listShopping();
+    }
+    case 'POST shopping/move': {
+      // Swap an item with its neighbor in the same group
+      const all = await listShopping();
+      const it = all.find((i) => i.id === body.id); if (!it) return all;
+      const group = all.filter((i) => (i.recipe_name || '') === (it.recipe_name || ''));
+      const k = group.indexOf(it), j = body.dir === 'up' ? k - 1 : k + 1;
+      if (j < 0 || j >= group.length) return all;
+      const other = group[j];
+      let a = Number(it.position), b = Number(other.position);
+      if (a === b) b = a + (body.dir === 'up' ? -1 : 1);
+      await q(sb.from('shopping_items').update({ position: b }).eq('id', it.id));
+      await q(sb.from('shopping_items').update({ position: a }).eq('id', other.id));
+      return listShopping();
+    }
+    case 'POST ai/extract': return aiCall({ action: 'extract', ...body });
+    case 'POST ai/edit': return aiCall({ action: 'edit', ...body });
+  }
+  fail({ message: 'Unknown request ' + key });
+}
+
+function modal(html, buttons) {
+  return new Promise((resolve) => {
+    const bg = document.createElement('div');
+    bg.className = 'modal-bg';
+    bg.innerHTML = '<div class="modal" role="dialog" aria-modal="true">' + html + '<div class="actions"></div></div>';
+    const act = bg.querySelector('.actions');
+    buttons.forEach((b) => {
+      const el = document.createElement('button');
+      el.type = 'button'; el.textContent = b.label; if (b.cls) el.className = b.cls;
+      el.onclick = () => { const v = b.value; const form = bg.querySelector('.modal'); bg.remove(); resolve({ value: v, form }); };
+      act.appendChild(el);
+    });
+    document.body.appendChild(bg);
+    const first = bg.querySelector('input, textarea, select') || act.lastChild;
+    first && first.focus();
+  });
+}
+async function confirmBox(msg, okLabel, danger) {
+  const r = await modal('<p>' + esc(msg) + '</p>', [{ label: 'Cancel', value: false }, { label: okLabel || 'OK', value: true, cls: danger ? 'primary danger' : 'primary' }]);
+  return r.value;
+}
+
+const blobToBase64 = (blob) => new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(String(fr.result).split(',')[1]); fr.onerror = rej; fr.readAsDataURL(blob); });
+
+// Resize a photo so uploads are fast; returns { mimeType, data(base64) }
+async function shrinkImage(file, maxSide, quality) {
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = () => rej(new Error('Could not read that image')); i.src = url; });
+    const scale = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
+    const c = document.createElement('canvas');
+    c.width = Math.round(img.naturalWidth * scale); c.height = Math.round(img.naturalHeight * scale);
+    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+    const blob = await new Promise((res) => c.toBlob(res, 'image/jpeg', quality));
+    return { mimeType: 'image/jpeg', data: await blobToBase64(blob) };
+  } finally { URL.revokeObjectURL(url); }
+}
+
+// Convert any recorded/uploaded audio to 16 kHz mono WAV (a format Gemini accepts on every browser)
+async function audioToWav(blob) {
+  const buf = await blob.arrayBuffer();
+  const AC = window.AudioContext || window.webkitAudioContext;
+  const ctx = new AC();
+  const decoded = await new Promise((res, rej) => { const p = ctx.decodeAudioData(buf, res, rej); if (p && p.then) p.then(res, rej); });
+  ctx.close && ctx.close();
+  const rate = 16000;
+  const off = new OfflineAudioContext(1, Math.max(1, Math.ceil(decoded.duration * rate)), rate);
+  const src = off.createBufferSource(); src.buffer = decoded; src.connect(off.destination); src.start();
+  const rendered = await off.startRendering();
+  const pcm = rendered.getChannelData(0);
+  const out = new DataView(new ArrayBuffer(44 + pcm.length * 2));
+  const w = (o, s) => { for (let i = 0; i < s.length; i++) out.setUint8(o + i, s.charCodeAt(i)); };
+  w(0, 'RIFF'); out.setUint32(4, 36 + pcm.length * 2, true); w(8, 'WAVE'); w(12, 'fmt ');
+  out.setUint32(16, 16, true); out.setUint16(20, 1, true); out.setUint16(22, 1, true); out.setUint32(24, rate, true);
+  out.setUint32(28, rate * 2, true); out.setUint16(32, 2, true); out.setUint16(34, 16, true); w(36, 'data'); out.setUint32(40, pcm.length * 2, true);
+  for (let i = 0; i < pcm.length; i++) { const s = Math.max(-1, Math.min(1, pcm[i])); out.setInt16(44 + i * 2, s < 0 ? s * 0x8000 : s * 0x7fff, true); }
+  return { seconds: decoded.duration, file: { mimeType: 'audio/wav', data: await blobToBase64(new Blob([out], { type: 'audio/wav' })) } };
+}
+
+function pickFile(id) {
+  return new Promise((resolve) => {
+    const inp = document.getElementById(id);
+    inp.value = '';
+    inp.onchange = () => resolve(Array.from(inp.files || []));
+    inp.click();
+  });
+}
+
+// ---------- page turn ----------
+function pageRank(h) { return h.startsWith('recipe-') ? 1 : h.startsWith('edit-') || h === 'new' ? 2 : h === 'shopping' ? 3 : 0; }
+function turnPage(dir) {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const r = $app.getBoundingClientRect();
+  const top = Math.max(r.top, 0), bottom = Math.min(r.bottom, innerHeight);
+  if (bottom - top < 40) return;
+  const wrap = document.createElement('div');
+  wrap.className = 'turning' + (dir === 'back' ? ' back' : '');
+  wrap.setAttribute('aria-hidden', 'true');
+  Object.assign(wrap.style, { left: r.left + 'px', top: top + 'px', width: r.width + 'px', height: (bottom - top) + 'px' });
+  const copy = $app.cloneNode(true);
+  const live = $app.querySelectorAll('input, textarea, select'), dup = copy.querySelectorAll('input, textarea, select');
+  dup.forEach((e, k) => { if (live[k]) { if (e.type === 'checkbox') e.checked = live[k].checked; else e.value = live[k].value; } });
+  [copy].concat(Array.from(copy.querySelectorAll('*'))).forEach((e) => Array.from(e.attributes).forEach((a) => { if (a.name === 'id' || a.name === 'for' || a.name === 'name' || a.name.startsWith('data-')) e.removeAttribute(a.name); }));
+  copy.style.top = (r.top - top) + 'px';
+  wrap.appendChild(copy);
+  document.body.appendChild(wrap);
+  setTimeout(() => wrap.remove(), 700);
+}
+
+// ---------- routing ----------
+function route() {
+  const h = location.hash.replace(/^#/, '') || 'recipes';
+  if (state.dirty && !allowNav && h !== state.lastHash) {
+    const back = state.lastHash;
+    history.replaceState(null, '', '#' + back);
+    confirmBox('You have unsaved changes. Leave without saving?', 'Leave', true).then((ok) => { if (ok) { state.dirty = false; location.hash = h; } });
+    return;
+  }
+  allowNav = false;
+  state.dirty = false;
+  if (state.lastHash && state.lastHash !== h && state.status && state.status.loggedIn) turnPage(pageRank(h) >= pageRank(state.lastHash) ? 'fwd' : 'back');
+  state.lastHash = h;
+  document.body.classList.toggle('reading', h.startsWith('recipe-'));
+  document.body.classList.toggle('home', h === 'recipes');
+  if (!state.status || !state.status.loggedIn) return renderLogin();
+  document.querySelectorAll('#tabs [data-tab]').forEach((a) => a.classList.toggle('on', h === a.dataset.tab || (a.dataset.tab === 'recipes' && h.startsWith('recipe-'))));
+  window.scrollTo(0, 0);
+  if (h === 'recipes') return renderList();
+  if (h === 'new') return renderEditor(null);
+  if (h === 'shopping') return renderShopping();
+  if (h.startsWith('recipe-')) return renderRecipe(h.slice(7));
+  if (h.startsWith('edit-')) return renderEditor(h.slice(5));
+  renderList();
+}
+function go(h) { allowNav = true; if (location.hash === '#' + h) route(); else location.hash = h; }
+window.addEventListener('hashchange', route);
+document.getElementById('tabs').onclick = (e) => { const b = e.target.closest('[data-tab]'); if (b) location.hash = b.dataset.tab; };
+window.addEventListener('beforeunload', (e) => { if (state.dirty) { e.preventDefault(); e.returnValue = ''; } });
+
+// ---------- login ----------
+function renderLogin(note) {
+  document.body.classList.add('home');
+  document.getElementById('tabs').classList.add('hidden');
+  document.getElementById('logoutBtn').classList.add('hidden');
+  setTitle('Recipe Box');
+  $app.innerHTML = `<form id="codeForm" class="login">
+    <h2>Welcome</h2>
+    <p class="muted">${esc(note || 'Enter the family code to open ReciPitas. This phone will remember it.')}</p>
+    <label for="code">Family code</label>
+    <input id="code" type="password" autocomplete="current-password" required>
+    <p id="codeErr" class="muted" role="alert" style="color:var(--danger)"></p>
+    <div class="row"><button class="primary wide" id="codeBtn">Open ReciPitas</button></div></form>`;
+  const inp = document.getElementById('code'); inp.focus();
+  document.getElementById('codeForm').onsubmit = async (e) => {
+    e.preventDefault();
+    const code = inp.value.trim(); if (!code) return;
+    const btn = document.getElementById('codeBtn'); btn.disabled = true;
+    try {
+      if (await codeWorks(code)) { rememberCode(code); state.status = { authRequired: true, loggedIn: true, aiConfigured: true }; start(); }
+      else { document.getElementById('codeErr').textContent = 'That code didn\'t work. Check it and try again.'; btn.disabled = false; }
+    } catch (err) { document.getElementById('codeErr').textContent = err.message; btn.disabled = false; }
+  };
+}
+document.getElementById('logoutBtn').onclick = () => { rememberCode(''); familyCode = ''; state.status.loggedIn = false; renderLogin('Locked. Enter the family code to open it again.'); };
+
+// ---------- recipe list ----------
+async function loadList() {
+  const qs = new URLSearchParams({ q: state.q, sort: state.sort, category: state.category });
+  const [recipes, categories] = await Promise.all([api('GET', '/api/recipes?' + qs), api('GET', '/api/categories')]);
+  state.recipes = recipes; state.categories = categories;
+}
+function listItemsHtml() {
+  if (!state.recipes.length) {
+    return state.q || state.category ? '<div class="empty">No recipes match.</div>' : '<div class="empty">No recipes yet.<br><br><button class="primary" type="button" onclick="go(\'new\')">Add your first recipe</button></div>';
+  }
+  return state.recipes.map((r) => `<a class="card rcard" href="#recipe-${r.id}">
+      <div style="min-width:0"><div class="t">${esc(r.name)}</div>
+      <div class="muted">${[r.category, r.total_time, r.servings ? 'Serves ' + r.servings : '', r.ingredient_count + ' ingredient' + (r.ingredient_count === 1 ? '' : 's')].filter(Boolean).map(esc).join(' · ')}</div>
+      ${r.description ? `<div class="muted" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(r.description)}</div>` : ''}</div></a>`).join('');
+}
+function chipsHtml() {
+  const c = [['', 'All']].concat(state.categories.map((x) => [x.name, x.name + ' (' + x.count + ')'])).concat([['__none__', 'Uncategorized']]);
+  return c.map(([v, l]) => `<button type="button" class="chip ${state.category === v ? 'on' : ''}" data-cat="${esc(v)}">${esc(l)}</button>`).join('');
+}
+async function renderList() {
+  setTitle('Recipes');
+  $app.innerHTML = `<div class="row"><label class="sr" for="q">Search recipes</label><input id="q" type="search" placeholder="Search recipes or ingredients" value="${esc(state.q)}">
+    <label class="sr" for="sort">Sort</label><select id="sort" class="shrink" style="width:auto">
+      <option value="name">A–Z</option><option value="newest">Newest</option><option value="oldest">Oldest</option><option value="modified">Recently edited</option></select></div>
+    <div class="chips" id="chips"></div><div id="list"><div class="empty">Loading…</div></div>`;
+  document.getElementById('sort').value = state.sort;
+  const refresh = async () => { await loadList(); document.getElementById('chips').innerHTML = chipsHtml(); document.getElementById('list').innerHTML = listItemsHtml(); };
+  let t;
+  document.getElementById('q').oninput = (e) => { state.q = e.target.value; clearTimeout(t); t = setTimeout(refresh, 200); };
+  document.getElementById('sort').onchange = (e) => { state.sort = e.target.value; refresh(); };
+  document.getElementById('chips').onclick = (e) => { const b = e.target.closest('[data-cat]'); if (b) { state.category = b.dataset.cat; refresh(); } };
+  try { await refresh(); } catch (e) { document.getElementById('list').innerHTML = '<div class="empty">' + esc(e.message) + '</div>'; }
+}
+
+// ---------- recipe view ----------
+async function renderRecipe(id) {
+  $app.innerHTML = '<div class="empty">Loading…</div>';
+  let r;
+  try { r = await api('GET', '/api/recipes/' + id); } catch (e) { $app.innerHTML = '<div class="empty">' + esc(e.message) + '</div>'; return; }
+  setTitle(r.name);
+  const meta = [['Prep', r.prep_time], ['Cook', r.cook_time], ['Total', r.total_time], ['Serves', r.servings], ['Category', r.category]].filter((m) => m[1]);
+  const isUrl = /^https?:\/\//i.test(r.source || '');
+  $app.innerHTML = `
+    <h2>${esc(r.name)}</h2>
+    ${r.description ? `<p>${esc(r.description)}</p>` : ''}
+    ${meta.length ? `<div class="meta">${meta.map((m) => `<span>${m[0]}: <b>${esc(m[1])}</b></span>`).join('')}</div>` : ''}
+    ${r.source ? `<div class="muted">Source: ${isUrl ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${esc(r.source)}</a>` : esc(r.source)}</div>` : ''}
+    <div class="row" style="margin-top:12px">
+      ${state.status.aiConfigured ? `<button type="button" class="primary wide" id="chgBtn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Change by voice</button>` : ''}
+      <button type="button" id="editBtn">Edit</button>
+      <button type="button" id="dupBtn">Duplicate</button>
+      <button type="button" class="danger" id="delBtn">Delete</button>
+    </div>
+    <h3>Ingredients</h3>
+    ${r.ingredients.length ? `<p class="muted" style="margin-top:-4px">Uncheck anything you already have, then add the rest to your shopping list.</p>
+    <ul class="ing">${r.ingredients.map((i) => `<li><input type="checkbox" checked data-ing="${i.id}" id="c${i.id}" aria-label="Include in shopping list"><label for="c${i.id}">${esc(ingText(i))}</label></li>`).join('')}</ul>
+    <div class="row" style="margin-top:10px"><button type="button" id="shopBtn" class="primary">Add to shopping list</button></div>` : '<p class="muted">No ingredients yet.</p>'}
+    <h3>Instructions</h3>
+    ${r.steps.length ? `<ol class="steps">${r.steps.map((s) => `<li>${esc(s.text)}</li>`).join('')}</ol>` : '<p class="muted">No instructions yet.</p>'}
+    ${r.notes ? `<h3>Notes</h3><p style="white-space:pre-wrap">${esc(r.notes)}</p>` : ''}
+    <p class="muted" style="margin-top:24px">Added ${new Date(r.created_at).toLocaleDateString()} · Last edited ${new Date(r.updated_at).toLocaleString()}</p>`;
+  typeset();
+  document.getElementById('editBtn').onclick = () => go('edit-' + id);
+  const cb = document.getElementById('chgBtn');
+  if (cb) cb.onclick = () => changeSavedRecipe(r);
+  document.getElementById('dupBtn').onclick = async () => { const c = await api('POST', '/api/recipes/' + id + '/duplicate'); toast('Duplicated'); go('edit-' + c.id); };
+  document.getElementById('delBtn').onclick = async () => { if (await confirmBox('Delete "' + r.name + '"? This cannot be undone.', 'Delete', true)) { await api('DELETE', '/api/recipes/' + id); toast('Deleted'); go('recipes'); } };
+  const sb = document.getElementById('shopBtn');
+  if (sb) sb.onclick = async () => {
+    const ids = Array.from(document.querySelectorAll('[data-ing]:checked')).map((c) => c.dataset.ing);
+    if (!ids.length) return toast('Nothing selected');
+    const res = await api('POST', '/api/shopping/from-recipe/' + id, { ingredientIds: ids });
+    toast('Shopping list ready: ' + res.added + ' item' + (res.added === 1 ? '' : 's') + ' for ' + r.name);
+  };
+}
+
+// Recipe page: move the recipe onto a typed sheet; the action buttons stay above it
+function typeset() {
+  const actions = document.getElementById('editBtn').closest('.row');
+  const sheet = document.createElement('article');
+  sheet.className = 'typed';
+  Array.from($app.children).forEach((c) => { if (c !== actions && !c.classList.contains('banner')) sheet.appendChild(c); });
+  actions.style.margin = '0 0 12px';
+  $app.appendChild(actions);
+  $app.appendChild(sheet);
+}
+
+// ---------- editor ----------
+let draft = null;
+
+function blankDraft() { return { name: '', description: '', prep_time: '', cook_time: '', total_time: '', servings: '', category: '', notes: '', source: '', ingredients: [{}], steps: [''] }; }
+
+async function renderEditor(id) {
+  if (id) {
+    $app.innerHTML = '<div class="empty">Loading…</div>';
+    try { draft = await api('GET', '/api/recipes/' + id); } catch (e) { $app.innerHTML = '<div class="empty">' + esc(e.message) + '</div>'; return; }
+    draft.steps = draft.steps.map((s) => s.text);
+    if (!draft.ingredients.length) draft.ingredients = [{}];
+    if (!draft.steps.length) draft.steps = [''];
+    setTitle('Edit recipe');
+  } else { draft = blankDraft(); setTitle('New recipe'); }
+  if (!state.categories.length) { try { state.categories = await api('GET', '/api/categories'); } catch (e) { /* optional */ } }
+  const ai = state.status.aiConfigured;
+  $app.innerHTML = `
+    <div class="ai-box">
+      <div class="head">${id ? 'Re-fill from' : 'Fill in automatically'}</div>
+      ${ai ? '' : '<p class="muted" style="margin-top:0">AI entry is off: the server has no Gemini API key yet. Manual entry still works.</p>'}
+      <div class="row">
+        <button type="button" class="primary wide" id="voiceBtn" ${ai ? '' : 'disabled'}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Speak it</button>
+        <button type="button" class="wide c-rose" id="photoBtn" ${ai ? '' : 'disabled'}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Take photo</button>
+        <button type="button" class="wide c-plum" id="moreBtn" ${ai ? '' : 'disabled'}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>More ways…</button>
+        <button type="button" class="wide c-wine" id="fileBtn" ${ai ? '' : 'disabled'}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M12 11v6M9 14l3-3 3 3"/></svg>Upload a file</button>
+      </div>
+      <div id="recArea"></div>
+    </div>
+    <form id="editForm" autocomplete="off">
+      <label for="f_name">Recipe name (required)</label><input id="f_name" data-f="name" required>
+      <label for="f_description">Description</label><textarea id="f_description" data-f="description" rows="2"></textarea>
+      <div class="row">
+        <div><label for="f_prep_time">Prep time</label><input id="f_prep_time" data-f="prep_time"></div>
+        <div><label for="f_cook_time">Cook time</label><input id="f_cook_time" data-f="cook_time"></div>
+        <div><label for="f_total_time">Total time</label><input id="f_total_time" data-f="total_time"></div>
+      </div>
+      <div class="row">
+        <div><label for="f_servings">Servings</label><input id="f_servings" data-f="servings"></div>
+        <div><label for="f_category">Category</label><input id="f_category" data-f="category" list="catList"><datalist id="catList">${state.categories.map((c) => `<option value="${esc(c.name)}">`).join('')}</datalist></div>
+      </div>
+      <h3>Ingredients</h3>
+      <p class="muted" style="margin-top:-4px">Type any amount and unit: "1/2" "cup", "a small" "handful", "enough" with no unit. Nothing is converted.</p>
+      <div id="ingList"></div>
+      <button type="button" id="addIng">+ Add ingredient</button>
+      <h3>Instructions</h3>
+      <div id="stepList"></div>
+      <button type="button" id="addStep">+ Add step</button>
+      <label for="f_notes">Notes</label><textarea id="f_notes" data-f="notes" rows="3"></textarea>
+      <label for="f_source">Source or website</label><input id="f_source" data-f="source">
+      <div class="row" style="margin:22px 0 10px">
+        <button type="button" id="cancelBtn">Cancel</button>
+        <button class="primary" id="saveBtn">Save recipe</button>
+      </div>
+    </form>`;
+  fillForm();
+  const form = document.getElementById('editForm');
+  form.addEventListener('input', () => { state.dirty = true; });
+  document.getElementById('addIng').onclick = () => { syncDraft(); draft.ingredients.push({}); renderIngs(); state.dirty = true; const q = document.querySelectorAll('[data-i="quantity"]'); q[q.length - 1].focus(); };
+  document.getElementById('addStep').onclick = () => { syncDraft(); draft.steps.push(''); renderSteps(); state.dirty = true; const s = document.querySelectorAll('[data-s]'); s[s.length - 1].focus(); };
+  document.getElementById('cancelBtn').onclick = () => { location.hash = id ? 'recipe-' + id : 'recipes'; };
+  form.onsubmit = (e) => { e.preventDefault(); saveDraft(id); };
+  document.getElementById('voiceBtn').onclick = startVoice;
+  document.getElementById('photoBtn').onclick = () => photoFlow('photoInput');
+  document.getElementById('moreBtn').onclick = moreOptions;
+  document.getElementById('fileBtn').onclick = fileFlow;
+}
+
+function fillForm() {
+  document.querySelectorAll('[data-f]').forEach((el) => { el.value = draft[el.dataset.f] || ''; });
+  renderIngs(); renderSteps();
+}
+function renderIngs() {
+  const n = draft.ingredients.length;
+  document.getElementById('ingList').innerHTML = draft.ingredients.map((i, k) => `
+    <div class="ing-edit" data-row="${k}">
+      <div class="grid">
+        <div><label class="sr" for="iq${k}">Amount</label><input id="iq${k}" data-i="quantity" placeholder="Amount" value="${esc(i.quantity)}"></div>
+        <div><label class="sr" for="iu${k}">Unit</label><input id="iu${k}" data-i="unit" placeholder="Unit" value="${esc(i.unit)}"></div>
+        <div class="wide"><label class="sr" for="in${k}">Ingredient</label><input id="in${k}" data-i="name" placeholder="Ingredient" value="${esc(i.name)}"></div>
+        <div class="wide"><label class="sr" for="ip${k}">Preparation</label><input id="ip${k}" data-i="prep_notes" placeholder="Preparation (chopped, softened…)" value="${esc(i.prep_notes)}"></div>
+        ${i.description || i._more ? `<div class="wide"><label class="sr" for="id${k}">Extra description</label><input id="id${k}" data-i="description" placeholder="Extra description" value="${esc(i.description)}"></div>` : ''}
+      </div>
+      <div class="tools">
+        ${i.description || i._more ? '' : `<button type="button" class="small" data-act="more" data-k="${k}">+ Description</button>`}
+        <button type="button" class="small" data-act="up" data-k="${k}" ${k === 0 ? 'disabled' : ''} aria-label="Move up">Up</button>
+        <button type="button" class="small" data-act="down" data-k="${k}" ${k === n - 1 ? 'disabled' : ''} aria-label="Move down">Down</button>
+        <button type="button" class="small danger" data-act="del" data-k="${k}" aria-label="Remove ingredient">Remove</button>
+      </div>
+    </div>`).join('');
+  document.getElementById('ingList').onclick = (e) => {
+    const b = e.target.closest('[data-act]'); if (!b) return;
+    syncDraft(); const k = +b.dataset.k; const a = draft.ingredients;
+    if (b.dataset.act === 'up' && k > 0) [a[k - 1], a[k]] = [a[k], a[k - 1]];
+    if (b.dataset.act === 'down' && k < a.length - 1) [a[k + 1], a[k]] = [a[k], a[k + 1]];
+    if (b.dataset.act === 'del') { a.splice(k, 1); if (!a.length) a.push({}); }
+    if (b.dataset.act === 'more') a[k]._more = true;
+    state.dirty = true; renderIngs();
+  };
+}
+function renderSteps() {
+  const n = draft.steps.length;
+  document.getElementById('stepList').innerHTML = draft.steps.map((s, k) => `
+    <div class="step-edit"><div class="n">${k + 1}.</div><div class="body">
+      <label class="sr" for="st${k}">Step ${k + 1}</label><textarea id="st${k}" data-s="${k}" rows="2">${esc(s)}</textarea>
+      <div class="tools">
+        <button type="button" class="small" data-act="up" data-k="${k}" ${k === 0 ? 'disabled' : ''} aria-label="Move step up">Up</button>
+        <button type="button" class="small" data-act="down" data-k="${k}" ${k === n - 1 ? 'disabled' : ''} aria-label="Move step down">Down</button>
+        <button type="button" class="small danger" data-act="del" data-k="${k}" aria-label="Remove step">Remove</button>
+      </div></div></div>`).join('');
+  document.getElementById('stepList').onclick = (e) => {
+    const b = e.target.closest('[data-act]'); if (!b) return;
+    syncDraft(); const k = +b.dataset.k; const a = draft.steps;
+    if (b.dataset.act === 'up' && k > 0) [a[k - 1], a[k]] = [a[k], a[k - 1]];
+    if (b.dataset.act === 'down' && k < a.length - 1) [a[k + 1], a[k]] = [a[k], a[k + 1]];
+    if (b.dataset.act === 'del') { a.splice(k, 1); if (!a.length) a.push(''); }
+    state.dirty = true; renderSteps();
+  };
+}
+function syncDraft() {
+  document.querySelectorAll('[data-f]').forEach((el) => { draft[el.dataset.f] = el.value; });
+  draft.ingredients = Array.from(document.querySelectorAll('#ingList [data-row]')).map((row, k) => {
+    const o = { _more: draft.ingredients[k] && draft.ingredients[k]._more };
+    row.querySelectorAll('[data-i]').forEach((el) => { o[el.dataset.i] = el.value; });
+    if (!('description' in o)) o.description = (draft.ingredients[k] && draft.ingredients[k].description) || '';
+    return o;
+  });
+  draft.steps = Array.from(document.querySelectorAll('[data-s]')).map((el) => el.value);
+}
+async function saveDraft(id) {
+  syncDraft();
+  if (!draft.name.trim()) { toast('Give the recipe a name'); document.getElementById('f_name').focus(); return; }
+  const body = { ...draft, ingredients: draft.ingredients.map(({ quantity, unit, name, prep_notes, description }) => ({ quantity, unit, name, prep_notes, description })) };
+  const done = busy('Saving…');
+  try {
+    const saved = id ? await api('PUT', '/api/recipes/' + id, body) : await api('POST', '/api/recipes', body);
+    state.dirty = false;
+    toast('Saved');
+    go('recipe-' + saved.id);
+  } catch (e) { toast(e.message, 4000); } finally { done(); }
+}
+
+// ---------- AI: apply an extracted recipe to the form ----------
+async function applyExtracted(rec, label) {
+  syncDraft();
+  const hasContent = draft.name.trim() || draft.ingredients.some((i) => (i.name || '').trim()) || draft.steps.some((s) => s.trim());
+  let mode = 'replace';
+  if (hasContent) {
+    const r = await modal('<p>The form already has content. What should I do with what was read from your ' + esc(label) + '?</p>',
+      [{ label: 'Cancel', value: 'cancel' }, { label: 'Add to it', value: 'merge' }, { label: 'Replace', value: 'replace', cls: 'primary' }]);
+    mode = r.value;
+    if (mode === 'cancel') return;
+  }
+  const fields = ['name', 'description', 'prep_time', 'cook_time', 'total_time', 'servings', 'category', 'notes', 'source'];
+  const ings = (rec.ingredients || []).map((i) => ({ quantity: i.quantity || '', unit: i.unit || '', name: i.name || '', prep_notes: i.prep_notes || '', description: '' }));
+  const steps = (rec.steps || []).filter((s) => s && s.trim());
+  if (mode === 'replace') {
+    fields.forEach((f) => { draft[f] = rec[f] || ''; });
+    draft.ingredients = ings.length ? ings : [{}];
+    draft.steps = steps.length ? steps : [''];
+  } else {
+    fields.forEach((f) => { if (!(draft[f] || '').trim() && rec[f]) draft[f] = rec[f]; });
+    draft.ingredients = draft.ingredients.filter((i) => Object.values(i).some((v) => typeof v === 'string' && v.trim())).concat(ings);
+    draft.steps = draft.steps.filter((s) => s.trim()).concat(steps);
+    if (!draft.ingredients.length) draft.ingredients = [{}];
+    if (!draft.steps.length) draft.steps = [''];
+  }
+  fillForm();
+  state.dirty = true;
+  toast('Filled in. Check it over, then tap Save recipe.', 3500);
+  document.getElementById('f_name').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+async function extract(payload, label) {
+  const done = busy(label === 'recording' ? 'Listening to your recording…' : label === 'photo' ? 'Reading your photo…' : label === 'file' ? 'Reading your file…' : 'Reading your text…');
+  try {
+    const rec = await api('POST', '/api/ai/extract', payload);
+    done();
+    await applyExtracted(rec, label);
+  } catch (e) {
+    done();
+    const t = e.data && e.data.transcript ? '<p class="muted">What I heard: ' + esc(e.data.transcript) + '</p>' : '';
+    await modal('<p>' + esc(e.message) + '</p>' + t, [{ label: 'OK', value: true, cls: 'primary' }]);
+  }
+}
+
+// ---------- AI: voice ----------
+let recorder = null;
+async function startVoice() {
+  const area = document.getElementById('recArea');
+  if (recorder) return;
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !window.MediaRecorder) {
+    const r = await modal('<p>This browser can\'t record here' + (window.isSecureContext ? '' : ' (the microphone needs an https:// address)') + '.</p><p>You can upload a voice memo instead, or use your keyboard\'s dictation button with "Type or paste text".</p>',
+      [{ label: 'Cancel', value: null }, { label: 'Type or paste', value: 'text' }, { label: 'Upload recording', value: 'file', cls: 'primary' }]);
+    if (r.value === 'file') audioFileFlow(); else if (r.value === 'text') textFlow();
+    return;
+  }
+  let stream;
+  try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+  catch (e) { toast('Microphone permission was denied', 3500); return; }
+  const chunks = [];
+  const mr = new MediaRecorder(stream);
+  recorder = mr;
+  const started = Date.now();
+  const MAX = 6 * 60;
+  area.innerHTML = `<div class="rec"><span class="dot" aria-hidden="true"></span><span id="recTime">0:00</span><span class="muted" style="flex:1">Recording — say the name, ingredients, then the steps</span></div>
+    <div class="row" style="margin-top:8px"><button type="button" id="recCancel">Cancel</button><button type="button" class="primary" id="recStop">Done</button></div>`;
+  const tick = setInterval(() => {
+    const s = Math.floor((Date.now() - started) / 1000);
+    const el = document.getElementById('recTime'); if (el) el.textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+    if (s >= MAX) stop(true);
+  }, 250);
+  let cancelled = false;
+  mr.ondataavailable = (e) => { if (e.data && e.data.size) chunks.push(e.data); };
+  mr.onstop = async () => {
+    clearInterval(tick); stream.getTracks().forEach((t) => t.stop()); recorder = null; area.innerHTML = '';
+    if (cancelled) return;
+    const done = busy('Preparing audio…');
+    let wav;
+    try { wav = await audioToWav(new Blob(chunks, { type: mr.mimeType || 'audio/webm' })); } catch (e) { done(); toast('Could not process the recording: ' + e.message, 4000); return; }
+    done();
+    if (wav.seconds < 1) { toast('That recording was empty'); return; }
+    extract({ kind: 'audio', files: [wav.file] }, 'recording');
+  };
+  function stop(auto) { if (mr.state !== 'inactive') { if (auto) toast('Reached the 6-minute limit'); mr.stop(); } }
+  document.getElementById('recStop').onclick = () => stop(false);
+  document.getElementById('recCancel').onclick = () => { cancelled = true; stop(false); };
+  mr.start(1000);
+}
+async function audioFileFlow() {
+  const [f] = await pickFile('audioInput'); if (!f) return;
+  const done = busy('Preparing audio…');
+  let wav;
+  try { wav = await audioToWav(f); } catch (e) { done(); toast('Could not read that audio file', 4000); return; }
+  done();
+  if (wav.seconds > 6 * 60 + 5) { toast('Please use a recording under 6 minutes', 4000); return; }
+  extract({ kind: 'audio', files: [wav.file] }, 'recording');
+}
+
+// ---------- AI: photo + text ----------
+async function photoFlow(inputId) {
+  const files = await pickFile(inputId); if (!files.length) return;
+  if (files.length > 6) { toast('Up to 6 photos at a time'); return; }
+  const done = busy('Preparing photo…');
+  let imgs;
+  try { imgs = await Promise.all(files.map((f) => shrinkImage(f, 2000, 0.85))); } catch (e) { done(); toast(e.message, 4000); return; }
+  done();
+  await extract({ kind: 'image', files: imgs }, 'photo');
+}
+async function textFlow() {
+  const r = await modal('<label for="pasteText" style="margin-top:0">Paste or type a recipe (your keyboard\'s microphone works here too)</label><textarea id="pasteText" rows="10"></textarea>',
+    [{ label: 'Cancel', value: false }, { label: 'Fill in', value: true, cls: 'primary' }]);
+  if (!r.value) return;
+  const text = r.form.querySelector('#pasteText').value;
+  if (!text.trim()) return;
+  extract({ kind: 'text', text }, 'text');
+}
+async function moreOptions() {
+  const r = await modal('<p style="margin-top:0;font-weight:600">More ways to fill in</p>', [
+    { label: 'Cancel', value: null },
+    { label: 'Type or paste text', value: 'text' },
+    { label: 'Upload a recording', value: 'audio' },
+    { label: 'Choose photos', value: 'lib', cls: 'primary' },
+  ]);
+  if (r.value === 'text') textFlow();
+  if (r.value === 'audio') audioFileFlow();
+  if (r.value === 'lib') photoFlow('photoLibInput');
+}
+
+// ---------- AI: change a recipe by voice ----------
+// Opens a small recorder (or typing box) and resolves with { files:[wav] } or { text }, or null if cancelled.
+function askForChange() {
+  return new Promise((resolve) => {
+    const canRec = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+    const bg = document.createElement('div');
+    bg.className = 'modal-bg';
+    bg.innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-labelledby="chgTitle">
+      <h3 id="chgTitle" style="margin-top:0">Change by voice</h3>
+      <p class="muted" style="margin-top:0">Say what to change, like "make it 2 tablespoons of butter" or "add a step at the end to rest it 10 minutes".</p>
+      ${canRec ? `<div class="row"><button type="button" class="primary" id="chgRec">Record</button></div>
+        <div class="rec hidden" id="chgLive"><span class="dot" aria-hidden="true"></span><span id="chgTime">0:00</span><span class="muted" style="flex:1">Listening… tap Done when finished</span></div>`
+        : `<p class="muted">${window.isSecureContext ? 'This browser can\'t record.' : 'Recording needs an https:// address.'} Type it below, or use your keyboard\'s microphone.</p>`}
+      <label for="chgText">${canRec ? 'Or type it' : 'Your change'}</label><textarea id="chgText" rows="3"></textarea>
+      <div class="actions"><button type="button" id="chgCancel">Cancel</button><button type="button" id="chgGo">Make change</button></div></div>`;
+    document.body.appendChild(bg);
+    let mr = null, stream = null, tick = null, cancelled = false;
+    const finish = (v) => { clearInterval(tick); if (stream) stream.getTracks().forEach((t) => t.stop()); bg.remove(); resolve(v); };
+    bg.querySelector('#chgCancel').onclick = () => { cancelled = true; if (mr && mr.state !== 'inactive') mr.stop(); else finish(null); };
+    bg.querySelector('#chgGo').onclick = () => {
+      if (mr && mr.state !== 'inactive') { mr.stop(); return; }
+      const t = bg.querySelector('#chgText').value.trim();
+      if (!t) { toast('Record or type a change first'); return; }
+      finish({ text: t });
+    };
+    const rec = bg.querySelector('#chgRec');
+    if (rec) {
+      rec.focus();
+      rec.onclick = async () => {
+        try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); } catch (e) { toast('Microphone permission was denied', 3500); return; }
+        const chunks = []; mr = new MediaRecorder(stream); const started = Date.now();
+        rec.parentElement.classList.add('hidden'); bg.querySelector('#chgLive').classList.remove('hidden');
+        bg.querySelector('#chgGo').textContent = 'Done'; bg.querySelector('#chgGo').className = 'primary';
+        tick = setInterval(() => { const s = Math.floor((Date.now() - started) / 1000); bg.querySelector('#chgTime').textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); if (s >= 120) mr.stop(); }, 250);
+        mr.ondataavailable = (e) => { if (e.data && e.data.size) chunks.push(e.data); };
+        mr.onstop = async () => {
+          if (cancelled) return finish(null);
+          const done = busy('Preparing audio…');
+          try { const wav = await audioToWav(new Blob(chunks, { type: mr.mimeType || 'audio/webm' })); done(); if (wav.seconds < 0.5) { toast('That recording was empty'); return finish(null); } finish({ files: [wav.file] }); }
+          catch (e) { done(); toast('Could not process the recording', 4000); finish(null); }
+        };
+        mr.start(500);
+      };
+    } else bg.querySelector('#chgText').focus();
+  });
+}
+// Turns the AI's recipe into editor/save shape, keeping any extra ingredient descriptions it left alone
+function fromAI(rec, oldIngs) {
+  const old = new Map((oldIngs || []).filter((i) => i.description).map((i) => [String(i.name || '').trim().toLowerCase(), i.description]));
+  const out = {};
+  ['name', 'description', 'prep_time', 'cook_time', 'total_time', 'servings', 'category', 'notes', 'source'].forEach((f) => { out[f] = String(rec[f] == null ? '' : rec[f]); });
+  out.ingredients = (Array.isArray(rec.ingredients) ? rec.ingredients : []).map((i) => ({ quantity: String(i.quantity || ''), unit: String(i.unit || ''), name: String(i.name || ''), prep_notes: String(i.prep_notes || ''), description: old.get(String(i.name || '').trim().toLowerCase()) || '' }));
+  out.steps = (Array.isArray(rec.steps) ? rec.steps : []).map((x) => String(x || '')).filter((x) => x.trim());
+  return out;
+}
+async function requestChange(recipe) {
+  const req = await askForChange();
+  if (!req) return null;
+  const done = busy('Making your change…');
+  try { const out = await api('POST', '/api/ai/edit', { recipe, ...req }); done(); return out; }
+  catch (e) {
+    done();
+    const t = e.data && e.data.transcript ? '<p class="muted">I heard: "' + esc(e.data.transcript) + '"</p>' : '';
+    await modal('<p>' + esc(e.message) + '</p>' + t, [{ label: 'OK', value: true, cls: 'primary' }]);
+    return null;
+  }
+}
+async function changeSavedRecipe(r) {
+  const out = await requestChange({ ...r, steps: r.steps.map((x) => x.text) });
+  if (!out) return;
+  const heard = out.transcript ? '<p class="muted">You said: "' + esc(out.transcript) + '"</p>' : '';
+  const ok = (await modal('<h3 style="margin-top:0">Save this change?</h3><p>' + esc(out.summary) + '</p>' + heard,
+    [{ label: 'Cancel', value: false }, { label: 'Save change', value: true, cls: 'primary' }])).value;
+  if (!ok) return;
+  const body = fromAI(out.recipe, r.ingredients);
+  if (!body.name.trim()) body.name = r.name;
+  await api('PUT', '/api/recipes/' + r.id, body);
+  toast('Saved. ' + out.summary, 3500);
+  go('recipe-' + r.id);
+}
+
+// ---------- AI: read a recipe from an uploaded file ----------
+async function fileFlow() {
+  const [f] = await pickFile('docInput'); if (!f) return;
+  if (f.size > 20 * 1024 * 1024) { toast('That file is too big (20 MB max)', 4000); return; }
+  const name = f.name.toLowerCase();
+  if (name.endsWith('.doc')) { toast('Older .doc files can\'t be read. Save it as .docx or PDF and try again.', 5000); return; }
+  if (f.type.startsWith('image/') || /\.(jpe?g|png|heic|webp|gif)$/.test(name)) {
+    const done = busy('Preparing photo…');
+    let img; try { img = await shrinkImage(f, 2000, 0.85); } catch (e) { done(); toast(e.message, 4000); return; }
+    done(); return extract({ kind: 'image', files: [img] }, 'photo');
+  }
+  const done = busy('Opening your file…');
+  let data; try { data = await blobToBase64(f); } catch (e) { done(); toast('Could not read that file', 4000); return; }
+  done();
+  extract({ kind: 'document', files: [{ mimeType: f.type || '', name: f.name, data }] }, 'file');
+}
+
+// ---------- shopping ----------
+async function renderShopping() {
+  setTitle('Shopping list');
+  $app.innerHTML = '<div class="empty">Loading…</div>';
+  let items, recipes;
+  try { [items, recipes] = await Promise.all([api('GET', '/api/shopping'), api('GET', '/api/recipes?sort=name')]); } catch (e) { $app.innerHTML = '<div class="empty">' + esc(e.message) + '</div>'; return; }
+  drawShopping(items, recipes);
+}
+const COLORS = ['', 'rose', 'amber', 'green', 'blue', 'purple'];
+const COLOR_NAMES = { rose: 'pink', amber: 'orange', green: 'green', blue: 'blue', purple: 'purple' };
+const svgI = (d) => '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+const ICON_UP = svgI('<path d="M6 15l6-6 6 6"/>'), ICON_DOWN = svgI('<path d="M6 9l6 6 6-6"/>'), ICON_X = svgI('<path d="M7 7l10 10M17 7L7 17"/>');
+function drawShopping(items, recipes) {
+  const groups = new Map();
+  items.forEach((i) => { const g = i.recipe_name || ''; if (!groups.has(g)) groups.set(g, []); groups.get(g).push(i); });
+  const keys = Array.from(groups.keys()).sort((a, b) => (a === '' ? 1 : b === '' ? -1 : a.localeCompare(b)));
+  const anyChecked = items.some((i) => i.checked);
+  $app.innerHTML = `
+    <div class="card">
+      <label for="pickRecipe" style="margin-top:0;font:500 23px/1.15 var(--script);color:#f4c9b8">Make a list from a recipe</label>
+      ${recipes.length ? `<select id="pickRecipe"><option value="">Choose a saved recipe…</option>${recipes.map((r) => `<option value="${r.id}">${esc(r.name)}${r.ingredient_count ? '' : ' (no ingredients)'}</option>`).join('')}</select>`
+        : '<p class="muted" style="margin:0">Save a recipe first, then pick it here.</p>'}
+    </div>
+    <form id="addItem" class="card">
+      <div style="font:500 23px/1.15 var(--script)">Add an item</div>
+      <div class="row" style="margin-top:6px">
+        <input data-a="quantity" placeholder="Amount" aria-label="Amount" style="flex:0 0 28%">
+        <input data-a="unit" placeholder="Unit" aria-label="Unit" style="flex:0 0 28%">
+      </div>
+      <div class="row" style="margin-top:6px"><input data-a="name" placeholder="Item" aria-label="Item" required></div>
+      <div class="row" style="margin-top:6px">
+        <select data-a="recipe_id" aria-label="Which list"><option value="">Extra items</option>${recipes.map((r) => `<option value="${r.id}">For: ${esc(r.name)}</option>`).join('')}</select>
+        <button class="primary shrink">Add</button>
+      </div>
+    </form>
+    ${items.length ? `<p class="muted" style="margin:4px 0 8px">Tap the dot next to an item to color it by store. Use the arrows to reorder.</p>` : ''}
+    ${items.length ? `<div class="row" style="margin:6px 0"><button type="button" id="clearChecked" ${anyChecked ? '' : 'disabled'}>Remove checked items</button><button type="button" class="danger" id="clearAll">Clear whole list</button></div>` : ''}
+    ${items.length ? keys.map((g) => `
+      <div class="shop-group"><h3><span>${g ? esc(g) : 'Extra items'}</span><button type="button" class="small danger" data-cleargroup="${esc(g)}">Clear</button></h3>
+      ${groups.get(g).map((i, k, arr) => `<div class="shop-item ${i.checked ? 'done' : ''} ${i.color ? 'c-' + i.color : ''}">
+        <input type="checkbox" data-check="${i.id}" ${i.checked ? 'checked' : ''} aria-label="Got ${esc(i.name)}">
+        <div class="txt" data-edit="${i.id}" role="button" tabindex="0">${esc(ingText({ quantity: i.quantity, unit: i.unit, name: i.name, prep_notes: i.note }))}</div>
+        <button type="button" class="dot ${i.color ? 'c-' + i.color : ''}" data-color="${i.id}" aria-label="Store color for ${esc(i.name)}: ${i.color ? COLOR_NAMES[i.color] : 'none'}. Tap to change"></button>
+        <button type="button" class="ibtn" data-move="up" data-id="${i.id}" ${k === 0 ? 'disabled' : ''} aria-label="Move ${esc(i.name)} up">${ICON_UP}</button>
+        <button type="button" class="ibtn" data-move="down" data-id="${i.id}" ${k === arr.length - 1 ? 'disabled' : ''} aria-label="Move ${esc(i.name)} down">${ICON_DOWN}</button>
+        <button type="button" class="ibtn del" data-del="${i.id}" aria-label="Delete ${esc(i.name)}">${ICON_X}</button></div>`).join('')}</div>`).join('')
+    : '<div class="empty">Your shopping list is empty.<br>Open a recipe and tap "Add to shopping list", or add items above.</div>'}`;
+
+  const redraw = (list) => drawShopping(list, recipes);
+  const pick = document.getElementById('pickRecipe');
+  if (pick) pick.onchange = async () => {
+    const r = recipes.find((x) => x.id === pick.value);
+    if (!r) return;
+    if (!r.ingredient_count) { toast(r.name + ' has no ingredients yet'); pick.value = ''; return; }
+    const done = busy('Making your list…');
+    try { const res = await api('POST', '/api/shopping/from-recipe/' + r.id, {}); redraw(res.items); toast('Shopping list ready: ' + res.added + ' item' + (res.added === 1 ? '' : 's') + ' for ' + r.name); }
+    finally { done(); }
+  };
+  document.getElementById('addItem').onsubmit = async (e) => {
+    e.preventDefault();
+    const b = {}; e.target.querySelectorAll('[data-a]').forEach((el) => { b[el.dataset.a] = el.value; });
+    if (!b.name.trim()) return;
+    redraw(await api('POST', '/api/shopping', b));
+    const n = document.querySelector('#addItem [data-a="name"]'); n && n.focus();
+  };
+  $app.onchange = async (e) => { const c = e.target.closest('[data-check]'); if (c) redraw(await api('PATCH', '/api/shopping/' + c.dataset.check, { checked: c.checked })); };
+  $app.onclick = async (e) => {
+    const d = e.target.closest('[data-del]');
+    if (d) return redraw(await api('DELETE', '/api/shopping/' + d.dataset.del));
+    const col = e.target.closest('[data-color]');
+    if (col) {
+      const it = items.find((i) => i.id === col.dataset.color); if (!it) return;
+      const next = COLORS[(COLORS.indexOf(it.color || '') + 1) % COLORS.length];
+      it.color = next; col.className = 'dot ' + (next ? 'c-' + next : ''); col.closest('.shop-item').className = 'shop-item' + (it.checked ? ' done' : '') + (next ? ' c-' + next : '');
+      return redraw(await api('PATCH', '/api/shopping/' + it.id, { color: next }));
+    }
+    const mv = e.target.closest('[data-move]');
+    if (mv) { mv.disabled = true; return redraw(await api('POST', '/api/shopping/move', { id: mv.dataset.id, dir: mv.dataset.move })); }
+    const g = e.target.closest('[data-cleargroup]');
+    if (g) { const name = g.dataset.cleargroup; if (await confirmBox('Remove every item under "' + (name || 'Extra items') + '"?', 'Remove', true)) redraw(await api('POST', '/api/shopping/clear', { scope: 'all', group: name })); return; }
+    if (e.target.id === 'clearChecked') return redraw(await api('POST', '/api/shopping/clear', { scope: 'checked' }));
+    if (e.target.id === 'clearAll') { if (await confirmBox('Clear the whole shopping list?', 'Clear', true)) redraw(await api('POST', '/api/shopping/clear', { scope: 'all' })); return; }
+    const ed = e.target.closest('[data-edit]');
+    if (ed) editShopItem(items.find((i) => i.id === ed.dataset.edit), redraw);
+  };
+  $app.onkeydown = (e) => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('[data-edit]')) { e.preventDefault(); e.target.click(); } };
+}
+async function editShopItem(it, redraw) {
+  if (!it) return;
+  const r = await modal(`<div style="font:500 25px/1.15 var(--script)">Edit item</div>
+    <label for="e_q">Amount</label><input id="e_q" value="${esc(it.quantity)}">
+    <label for="e_u">Unit</label><input id="e_u" value="${esc(it.unit)}">
+    <label for="e_n">Item</label><input id="e_n" value="${esc(it.name)}">
+    <label for="e_o">Note</label><input id="e_o" value="${esc(it.note)}">`, [{ label: 'Cancel', value: false }, { label: 'Save', value: true, cls: 'primary' }]);
+  if (!r.value) return;
+  const f = r.form;
+  const name = f.querySelector('#e_n').value;
+  if (!name.trim()) return toast('Item needs a name');
+  redraw(await api('PATCH', '/api/shopping/' + it.id, { quantity: f.querySelector('#e_q').value, unit: f.querySelector('#e_u').value, name, note: f.querySelector('#e_o').value }));
+}
+
+// Reset per-view delegated handlers when leaving the shopping view
+window.addEventListener('hashchange', () => { if (!location.hash.startsWith('#shopping')) { $app.onclick = null; $app.onchange = null; $app.onkeydown = null; } });
+
+// ---------- start ----------
+function start() {
+  document.getElementById('tabs').classList.remove('hidden');
+  document.getElementById('logoutBtn').classList.toggle('hidden', !state.status.authRequired);
+  state.lastHash = '';
+  route();
+}
+window.addEventListener('unhandledrejection', (e) => { if (e.reason && e.reason.message !== 'Please log in') toast(e.reason.message || 'Something went wrong', 4000); });
+(async () => {
+  try { state.status = await api('GET', '/api/status'); }
+  catch (e) { $app.innerHTML = '<div class="empty">' + esc(e.message) + '</div>'; return; }
+  if (state.status.loggedIn) start(); else renderLogin(familyCode ? 'That family code no longer works. Please enter the current one.' : '');
+})();
+</script>
+</body>
+</html>
