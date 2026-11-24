@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ReciPitas</title>
+<title>Flavored With Love</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="ReciPitas">
+<meta name="apple-mobile-web-app-title" content="Flavored With Love">
 <meta name="theme-color" content="#24151b">
 <style>
   /* Theme taken from the kitchen picture: night greens, lantern amber, cream */
@@ -65,8 +65,10 @@
   .shop-item.c-rose { border-left-color:#e36b86; background:rgba(227,107,134,.14); } .shop-item.c-amber { border-left-color:#f08a3c; background:rgba(240,138,60,.14); }
   .shop-item.c-green { border-left-color:#5fae6e; background:rgba(95,174,110,.14); } .shop-item.c-blue { border-left-color:#4e8fd6; background:rgba(78,143,214,.14); }
   .shop-item.c-purple { border-left-color:#9a6bd0; background:rgba(154,107,208,.14); }
-  /* ReciPitas name */
+  /* Flavored With Love name */
+  .brand { font-size:.88em; }
   .brand .reci { color:#f6b98c; } .brand .pitas { color:#ffffff; }
+  .brand .heart-o { display:inline-block; width:.72em; height:.72em; vertical-align:-.04em; margin:0 .02em; color:#ffffff; filter:drop-shadow(0 0 6px rgba(255,255,255,.35)); }
   button.c-mauve { background:#8a5a6b; border-color:#8a5a6b; color:#fff6f8; box-shadow:0 0 18px rgba(170,110,130,.3); }
   button.c-teal { background:#2f6e70; border-color:#2f6e70; color:#effcfb; box-shadow:0 0 18px rgba(60,140,140,.3); }
   button.c-slate { background:#465c88; border-color:#465c88; color:#f1f5ff; box-shadow:0 0 18px rgba(90,120,180,.3); }
@@ -192,7 +194,7 @@
 </style>
 </head>
 <body>
-<header><h1 id="title"><span class="brand"><span class="reci">Reci</span><span class="pitas">Pitas</span></span></h1><button id="logoutBtn" class="small hidden" type="button">Lock</button></header>
+<header><h1 id="title"><span class="brand"><span class="reci">Flavored With </span><span class="pitas">L<svg class="heart-o" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.2l-1.45-1.32C5.4 15.2 2 12.1 2 8.3 2 5.2 4.4 3 7.4 3c1.7 0 3.4.8 4.6 2.1C13.2 3.8 14.9 3 16.6 3 19.6 3 22 5.2 22 8.3c0 3.8-3.4 6.9-8.55 11.58L12 21.2z"/></svg>ve</span></span></h1><button id="logoutBtn" class="small hidden" type="button">Lock</button></header>
 <div class="scene" aria-hidden="true"><img src="kitchen.jpg" alt=""></div>
 <div class="book"><main id="app" class="page" aria-live="polite"></main></div>
 <nav class="tabs hidden" id="tabs" aria-label="Main">
@@ -216,11 +218,11 @@ let allowNav = false;
 // ---------- helpers ----------
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
 const ingText = (i) => [[i.quantity, i.unit, i.name].map((x) => (x || '').trim()).filter(Boolean).join(' '), [i.prep_notes, i.description].filter((x) => x && x.trim()).join('; ')].filter(Boolean).join(', ');
-const BRAND = '<span class="brand"><span class="reci">Reci</span><span class="pitas">Pitas</span></span>';
+const BRAND = '<span class=\"brand\"><span class=\"reci\">Flavored With </span><span class=\"pitas\">L<svg class=\"heart-o\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 21.2l-1.45-1.32C5.4 15.2 2 12.1 2 8.3 2 5.2 4.4 3 7.4 3c1.7 0 3.4.8 4.6 2.1C13.2 3.8 14.9 3 16.6 3 19.6 3 22 5.2 22 8.3c0 3.8-3.4 6.9-8.55 11.58L12 21.2z\"/></svg>ve</span></span>';
 function setTitle(t) {
   const el = document.getElementById('title');
-  if (t === 'Recipe Box' || t === 'Recipes') { el.innerHTML = BRAND; document.title = 'ReciPitas'; }
-  else { el.textContent = t; document.title = t + ' · ReciPitas'; }
+  if (t === 'Recipe Box' || t === 'Recipes') { el.innerHTML = BRAND; document.title = 'Flavored With Love'; }
+  else { el.textContent = t; document.title = t + ' · Flavored With Love'; }
 }
 function toast(msg, ms) { const t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), ms || 2600); }
 function busy(msg) { const b = document.createElement('div'); b.className = 'busy'; b.innerHTML = '<div class="spin"></div><div>' + esc(msg) + '</div>'; document.body.appendChild(b); return () => b.remove(); }
@@ -505,11 +507,11 @@ function renderLogin(note) {
   setTitle('Recipe Box');
   $app.innerHTML = `<form id="codeForm" class="login">
     <h2>Welcome</h2>
-    <p class="muted">${esc(note || 'Enter the family code to open ReciPitas. This phone will remember it.')}</p>
+    <p class="muted">${esc(note || 'Enter the family code to open Flavored With Love. This phone will remember it.')}</p>
     <label for="code">Family code</label>
     <input id="code" type="password" autocomplete="current-password" required>
     <p id="codeErr" class="muted" role="alert" style="color:var(--danger)"></p>
-    <div class="row"><button class="primary wide" id="codeBtn">Open ReciPitas</button></div></form>`;
+    <div class="row"><button class="primary wide" id="codeBtn">Open Flavored With Love</button></div></form>`;
   const inp = document.getElementById('code'); inp.focus();
   document.getElementById('codeForm').onsubmit = async (e) => {
     e.preventDefault();
