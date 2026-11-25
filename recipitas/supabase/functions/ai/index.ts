@@ -163,6 +163,25 @@ async function readWebsite(raw: string): Promise<string | { url: string; title: 
   return { url: res.url || u.href, title, body: text.slice(0, 60000) };
 }
 
+// Fallback for sites that block servers (Pinterest, Cloudflare-protected blogs): Gemini reads the page itself
+// through Google (URL context + Search) and copies out the recipe as plain text.
+async function readViaGemini(url: string): Promise<string> {
+  const prompt = "Open this web page and copy out the recipe on it: the title, servings and times if shown, every ingredient line exactly as written, and every instruction step in order. " +
+    "If it is a Pinterest pin or another page that links to a recipe, follow it to that recipe. Leave out stories, ads and comments. Plain text only. " +
+    "If you cannot find a recipe there, reply with exactly NO RECIPE.\n\n" + url;
+  const call = (model: string) => fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-goog-api-key": Deno.env.get("GEMINI_API_KEY")! },
+    body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: prompt }] }], tools: [{ url_context: {} }, { google_search: {} }], generationConfig: { temperature: 0.1 } }),
+  });
+  let r = await call(GEMINI_MODEL);
+  if (r.status === 404 && GEMINI_MODEL !== "gemini-flash-latest") r = await call("gemini-flash-latest");
+  if (!r.ok) { console.error("url_context fallback failed", r.status, (await r.text()).slice(0, 300)); return ""; }
+  const body: any = await r.json();
+  const text = ((body.candidates && body.candidates[0] && body.candidates[0].content && body.candidates[0].content.parts) || []).map((p: any) => p.text || "").join("").trim();
+  return /^NO RECIPE\b/i.test(text) || text.length < 40 ? "" : text;
+}
+
 // Asks the database whether this family code is right (the database holds only a scrambled copy).
 async function familyOk(code: string) {
   if (!code.trim()) return false;
@@ -226,11 +245,22 @@ Deno.serve(async (req) => {
       for (const f of files) { if (!okType.test(str(f.mimeType)) || !f.data) return json(400, { error: "Unsupported file type" }); parts.push({ inlineData: { mimeType: f.mimeType, data: f.data } }); }
       parts.push({ text: kind === "audio" ? 'This is a recording of someone speaking a recipe. Transcribe it into "transcript", then fill in the recipe fields.' : "These are photos of a recipe. Fill in the recipe fields." });
     } else if (kind === "url") {
-      const page = await readWebsite(str(b.url));
-      if (typeof page === "string") return json(400, { error: page });
+      let page = await readWebsite(str(b.url));
+      if (typeof page === "string") {
+        // Address problems are final; a blocked or unreachable site gets a second try through Gemini.
+        if (/look like a web address|can't be read|Only http/.test(page)) return json(400, { error: page });
+        const viaGemini = await readViaGemini(str(b.url).trim());
+        if (!viaGemini) return json(400, { error: "That website wouldn't let us read the recipe. Try copying the recipe text and using Type or paste text." });
+        page = { url: str(b.url).trim(), title: "", body: "Recipe copied from the page:\n" + viaGemini.slice(0, 60000) };
+      }
       parts.push({ text: "Recipe from the website " + page.url + (page.title ? ' ("' + page.title + '")' : "") + ":\n\n" + page.body });
       parts.push({ text: "Fill in the recipe fields. Set source to " + page.url + ". If the page holds several recipes, use the main one." });
-      const r0 = await ask(parts, EXTRACT_PROMPT, RECIPE_SCHEMA);
+      let r0 = await ask(parts, EXTRACT_PROMPT, RECIPE_SCHEMA);
+      if (r0.found_recipe === false && !page.body.startsWith("Recipe copied from the page:")) {
+        // The page loaded but showed no recipe (common with Pinterest pins): let Gemini follow it.
+        const viaGemini = await readViaGemini(str(b.url).trim());
+        if (viaGemini) r0 = await ask([{ text: "Recipe copied from the page " + page.url + ":\n\n" + viaGemini.slice(0, 60000) }, parts[1]], EXTRACT_PROMPT, RECIPE_SCHEMA);
+      }
       if (r0.found_recipe === false) return json(422, { error: "No recipe was found on that page." });
       if (!str(r0.source).trim()) r0.source = page.url;
       return json(200, r0);
