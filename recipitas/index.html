@@ -194,7 +194,7 @@
 </style>
 </head>
 <body>
-<header><h1 id="title"><span class="brand"><span class="reci">Flavored With </span><span class="pitas">L<svg class="heart-o" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.2l-1.45-1.32C5.4 15.2 2 12.1 2 8.3 2 5.2 4.4 3 7.4 3c1.7 0 3.4.8 4.6 2.1C13.2 3.8 14.9 3 16.6 3 19.6 3 22 5.2 22 8.3c0 3.8-3.4 6.9-8.55 11.58L12 21.2z"/></svg>ve</span></span></h1><button id="logoutBtn" class="small hidden" type="button">Lock</button></header>
+<header><h1 id="title"><span class="brand"><span class="reci">Flavored With </span><span class="pitas">L<svg class="heart-o" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.2l-1.45-1.32C5.4 15.2 2 12.1 2 8.3 2 5.2 4.4 3 7.4 3c1.7 0 3.4.8 4.6 2.1C13.2 3.8 14.9 3 16.6 3 19.6 3 22 5.2 22 8.3c0 3.8-3.4 6.9-8.55 11.58L12 21.2z"/></svg>ve</span></span></h1></header>
 <div class="scene" aria-hidden="true"><img src="kitchen.jpg" alt=""></div>
 <div class="book"><main id="app" class="page" aria-live="polite"></main></div>
 <nav class="tabs hidden" id="tabs" aria-label="Main">
@@ -374,6 +374,11 @@ async function api(method, url, body) {
       await q(sb.from('shopping_items').update({ position: a }).eq('id', other.id));
       return listShopping();
     }
+    case 'POST share': {
+      const { data, error } = await sb.rpc('share_recipe', { rid: body.id });
+      if (error) fail(error);
+      return { token: data };
+    }
     case 'POST ai/extract': return aiCall({ action: 'extract', ...body });
     case 'POST ai/edit': return aiCall({ action: 'edit', ...body });
   }
@@ -503,7 +508,6 @@ window.addEventListener('beforeunload', (e) => { if (state.dirty) { e.preventDef
 function renderLogin(note) {
   document.body.classList.add('home');
   document.getElementById('tabs').classList.add('hidden');
-  document.getElementById('logoutBtn').classList.add('hidden');
   setTitle('Recipe Box');
   $app.innerHTML = `<form id="codeForm" class="login">
     <h2>Welcome</h2>
@@ -523,7 +527,6 @@ function renderLogin(note) {
     } catch (err) { document.getElementById('codeErr').textContent = err.message; btn.disabled = false; }
   };
 }
-document.getElementById('logoutBtn').onclick = () => { rememberCode(''); familyCode = ''; state.status.loggedIn = false; renderLogin('Locked. Enter the family code to open it again.'); };
 
 // ---------- recipe list ----------
 async function loadList() {
@@ -574,6 +577,7 @@ async function renderRecipe(id) {
     ${r.source ? `<div class="muted">Source: ${isUrl ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${esc(r.source)}</a>` : esc(r.source)}</div>` : ''}
     <div class="row" style="margin-top:12px">
       ${state.status.aiConfigured ? `<button type="button" class="primary wide" id="chgBtn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Change by voice</button>` : ''}
+      <button type="button" class="c-teal" id="shareBtn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Share</button>
       <button type="button" id="editBtn">Edit</button>
       <button type="button" id="dupBtn">Duplicate</button>
       <button type="button" class="danger" id="delBtn">Delete</button>
@@ -590,6 +594,7 @@ async function renderRecipe(id) {
   document.getElementById('editBtn').onclick = () => go('edit-' + id);
   const cb = document.getElementById('chgBtn');
   if (cb) cb.onclick = () => changeSavedRecipe(r);
+  document.getElementById('shareBtn').onclick = () => shareRecipe(r);
   document.getElementById('dupBtn').onclick = async () => { const c = await api('POST', '/api/recipes/' + id + '/duplicate'); toast('Duplicated'); go('edit-' + c.id); };
   document.getElementById('delBtn').onclick = async () => { if (await confirmBox('Delete "' + r.name + '"? This cannot be undone.', 'Delete', true)) { await api('DELETE', '/api/recipes/' + id); toast('Deleted'); go('recipes'); } };
   const sb = document.getElementById('shopBtn');
@@ -610,6 +615,26 @@ function typeset() {
   actions.style.margin = '0 0 12px';
   $app.appendChild(actions);
   $app.appendChild(sheet);
+}
+
+// ---------- share one recipe by text ----------
+// Gets the recipe's own read-only link (anyone with it sees just this recipe) and opens the phone's share sheet.
+async function shareRecipe(r) {
+  const done = busy('Making a link…');
+  let url;
+  try { const { token } = await api('POST', '/api/share', { id: r.id }); url = new URL('share.html?r=' + token, location.href).href; }
+  catch (e) { done(); toast('Could not make a share link: ' + e.message, 4500); return; }
+  done();
+  const text = r.name + ' — a recipe from Flavored With Love';
+  if (navigator.share) {
+    try { await navigator.share({ title: r.name, text, url }); return; }
+    catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  const sms = 'sms:?&body=' + encodeURIComponent(text + ' ' + url);
+  const m = await modal('<h3 style="margin-top:0">Share this recipe</h3><p class="muted">Anyone with this link can see this one recipe, nothing else.</p><p style="word-break:break-all;font-size:15px">' + esc(url) + '</p>' +
+    '<div class="row"><a class="btn wide c-teal" style="text-align:center;text-decoration:none;padding:12px;border-radius:8px;color:#effcfb;background:#2f6e70" href="' + esc(sms) + '">Text it</a></div>',
+    [{ label: 'Close', value: null }, { label: 'Copy link', value: 'copy', cls: 'c-slate' }]);
+  if (m.value === 'copy') { try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch (e) { toast('Press and hold the link to copy it', 3500); } }
 }
 
 // ---------- editor ----------
@@ -1092,7 +1117,6 @@ window.addEventListener('hashchange', () => { if (!location.hash.startsWith('#sh
 // ---------- start ----------
 function start() {
   document.getElementById('tabs').classList.remove('hidden');
-  document.getElementById('logoutBtn').classList.toggle('hidden', !state.status.authRequired);
   state.lastHash = '';
   route();
 }
