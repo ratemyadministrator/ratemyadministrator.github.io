@@ -1,6 +1,6 @@
 # Flavored With Love
 
-A family recipe box. Add recipes by speaking, by photo, by uploading a file (PDF, Word, text, web page) or by typing. Amounts stay exactly as you say them ("a tidbit", "enough to cover"). Change any recipe by voice. Build a shopping list from any recipe, color items by store, and reorder them. Share any recipe by text: the link opens a read-only page with just that recipe.
+A family recipe box. Add recipes by speaking, from a website link, by photo, by uploading a file (PDF, Word, text, web page) or by typing. Spoken recipes are tidied into consistent recipe-card wording. Amounts stay exactly as you say them ("a tidbit", "enough to cover"). Change any recipe by voice. Build a shopping list from any recipe, color items by store, and reorder them. Share any recipe by text: the link opens a read-only page with just that recipe.
 
 ## How it fits together
 - This folder is the app page, served by GitHub Pages at https://ratemyadministrator.github.io/recipitas/ (kept out of search engines).

@@ -74,6 +74,10 @@
   button.c-slate { background:#465c88; border-color:#465c88; color:#f1f5ff; box-shadow:0 0 18px rgba(90,120,180,.3); }
   .ways { display:flex; flex-direction:column; gap:10px; }
   .ways button { text-align:left; justify-content:flex-start; }
+  button.c-olive { background:#5e7340; border-color:#5e7340; color:#f6fbea; box-shadow:0 0 18px rgba(120,150,80,.3); }
+  #manualArea.collapsed { display:none; }
+  button.toggle { width:100%; display:flex; align-items:center; justify-content:space-between; gap:10px; margin:0 0 6px; background:rgba(239,228,200,.06); border:1.5px dashed rgba(232,182,178,.45); color:var(--ink); }
+  button.toggle[aria-expanded="true"] svg { transform:rotate(180deg); }
   button.small { padding:4px 10px; min-height:34px; font-size:14px; }
   button:disabled { opacity:.4; cursor:default; }
   input, textarea, select { font:19px/1.35 var(--hand); width:100%; padding:7px 8px; color:var(--ink); background:rgba(239,228,200,.07); border:0; border-bottom:1.5px solid rgba(214,181,177,.45); border-radius:6px 6px 0 0; }
@@ -185,17 +189,26 @@
   .rcard .muted { color:#594c38 !important; font-size:14px; }
   .rcard:hover, .rcard:focus-visible { box-shadow:0 0 18px rgba(255,140,60,.45), inset 0 0 30px rgba(115,80,30,.35) !important; }
 
+  /* Two copies of the kitchen picture stay painted (home layout and fixed layout); switching tabs only
+     flips which one is visible, so older iPhones don't redraw the picture mid page-turn. */
+  .scene { transform:translateZ(0); -webkit-backface-visibility:hidden; backface-visibility:hidden; }
+  .scene-home { position:absolute; bottom:auto; height:calc(100vw * 1.7917); visibility:hidden; }
+  .scene-home img { height:100%; object-position:center top; }
   @media (max-width: 760px) {
-    body.home .scene { position:absolute; bottom:auto; height:calc(100vw * 1.7917); }
-    body.home .scene img { height:100%; object-position:center top; }
+    body.home .scene-fixed { visibility:hidden; }
+    body.home .scene-home { visibility:visible; }
     body.home .book { padding-top:calc(100vw * 1.3); }
   }
-  @media (min-width: 761px) { body.home .scene img { object-position:center 58%; } }
+  @media (min-width: 761px) { .scene-home { display:none; } body.home .scene-fixed img { object-position:center 58%; } }
+  /* the page-turn copy skips the blur, which is costly to animate on older phones */
+  .turning > main { -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
+  .turning { -webkit-backface-visibility:hidden; backface-visibility:hidden; }
 </style>
 </head>
 <body>
 <header><h1 id="title"><span class="brand"><span class="reci">Flavored With </span><span class="pitas">L<svg class="heart-o" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.2l-1.45-1.32C5.4 15.2 2 12.1 2 8.3 2 5.2 4.4 3 7.4 3c1.7 0 3.4.8 4.6 2.1C13.2 3.8 14.9 3 16.6 3 19.6 3 22 5.2 22 8.3c0 3.8-3.4 6.9-8.55 11.58L12 21.2z"/></svg>ve</span></span></h1></header>
-<div class="scene" aria-hidden="true"><img src="kitchen.jpg" alt=""></div>
+<div class="scene scene-fixed" aria-hidden="true"><img src="kitchen.jpg" alt=""></div>
+<div class="scene scene-home" aria-hidden="true"><img src="kitchen.jpg" alt=""></div>
 <div class="book"><main id="app" class="page" aria-live="polite"></main></div>
 <nav class="tabs hidden" id="tabs" aria-label="Main">
   <button type="button" data-tab="recipes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 9h8M8 13h6"/></svg>Recipes</button>
@@ -637,6 +650,21 @@ async function shareRecipe(r) {
   if (m.value === 'copy') { try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch (e) { toast('Press and hold the link to copy it', 3500); } }
 }
 
+// ---------- editor: fold-away manual fields ----------
+function expandManual(focusName) {
+  const area = document.getElementById('manualArea'); if (!area) return;
+  area.classList.remove('collapsed');
+  const t = document.getElementById('manualToggle');
+  if (t) { t.setAttribute('aria-expanded', 'true'); t.querySelector('span').textContent = 'Hide the fields'; }
+  if (focusName) document.getElementById('f_name').focus();
+}
+function collapseManual() {
+  const area = document.getElementById('manualArea'); if (!area) return;
+  area.classList.add('collapsed');
+  const t = document.getElementById('manualToggle');
+  if (t) { t.setAttribute('aria-expanded', 'false'); t.querySelector('span').textContent = 'Fill it in myself'; }
+}
+
 // ---------- editor ----------
 let draft = null;
 
@@ -663,7 +691,8 @@ async function renderEditor(id) {
       </div>
       <div id="recArea"></div>
     </div>
-    <form id="editForm" autocomplete="off">
+    ${id ? '' : `<button type="button" class="wide toggle" id="manualToggle" aria-expanded="false" aria-controls="manualArea"><span>Fill it in myself</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>`}
+    <form id="editForm" autocomplete="off"><div id="manualArea" class="${id ? '' : 'collapsed'}">
       <label for="f_name">Recipe name (required)</label><input id="f_name" data-f="name" required>
       <label for="f_description">Description</label><textarea id="f_description" data-f="description" rows="2"></textarea>
       <div class="row">
@@ -688,7 +717,7 @@ async function renderEditor(id) {
         <button type="button" id="cancelBtn">Cancel</button>
         <button class="primary" id="saveBtn">Save recipe</button>
       </div>
-    </form>`;
+    </div></form>`;
   fillForm();
   const form = document.getElementById('editForm');
   form.addEventListener('input', () => { state.dirty = true; });
@@ -698,6 +727,8 @@ async function renderEditor(id) {
   form.onsubmit = (e) => { e.preventDefault(); saveDraft(id); };
   document.getElementById('voiceBtn').onclick = startVoice;
   document.getElementById('moreBtn').onclick = moreOptions;
+  const mt = document.getElementById('manualToggle');
+  if (mt) mt.onclick = () => (document.getElementById('manualArea').classList.contains('collapsed') ? expandManual(true) : collapseManual());
 }
 
 function fillForm() {
@@ -800,12 +831,13 @@ async function applyExtracted(rec, label) {
     if (!draft.steps.length) draft.steps = [''];
   }
   fillForm();
+  expandManual(false);
   state.dirty = true;
   toast('Filled in. Check it over, then tap Save recipe.', 3500);
   document.getElementById('f_name').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 async function extract(payload, label) {
-  const done = busy(label === 'recording' ? 'Listening to your recording…' : label === 'photo' ? 'Reading your photo…' : label === 'file' ? 'Reading your file…' : 'Reading your text…');
+  const done = busy(label === 'recording' ? 'Listening to your recording…' : label === 'photo' ? 'Reading your photo…' : label === 'file' ? 'Reading your file…' : label === 'link' ? 'Reading the website…' : 'Reading your text…');
   try {
     const rec = await api('POST', '/api/ai/extract', payload);
     done();
@@ -888,8 +920,18 @@ async function textFlow() {
   if (!text.trim()) return;
   extract({ kind: 'text', text }, 'text');
 }
+async function linkFlow() {
+  const r = await modal('<h3 style="margin-top:0">Recipe from a website</h3><label for="linkUrl" style="margin-top:0">Paste the web address of the recipe</label><input id="linkUrl" type="url" inputmode="url" autocomplete="off" placeholder="https://…">',
+    [{ label: 'Cancel', value: false }, { label: 'Read it', value: true, cls: 'c-olive' }]);
+  if (!r.value) return;
+  let url = r.form.querySelector('#linkUrl').value.trim();
+  if (url && !/^https?:\/\//i.test(url)) url = 'https://' + url;
+  if (!/^https?:\/\/[^\s/]+\.[^\s]+/i.test(url)) { toast('That doesn\'t look like a web address. Try pasting it again.', 3500); return; }
+  extract({ kind: 'url', url }, 'link');
+}
 async function moreOptions() {
   const ways = [
+    { id: 'link', cls: 'c-olive', icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>', label: 'Paste a website link', run: linkFlow },
     { id: 'cam', cls: 'c-rose', icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>', label: 'Take a photo', run: () => photoFlow('photoInput') },
     { id: 'lib', cls: 'c-plum', icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 21h12a2 2 0 0 0 2-2V9"/><path d="M5 15l4-4 3 3 2-2 3 3"/></svg>', label: 'Choose photos', run: () => photoFlow('photoLibInput') },
     { id: 'file', cls: 'c-wine', icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M12 11v6M9 14l3-3 3 3"/></svg>', label: 'Upload a file (PDF, Word, text)', run: fileFlow },
