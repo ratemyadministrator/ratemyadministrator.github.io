@@ -2,81 +2,163 @@
   {
     "id": "students",
     "text": "Students and community members can rate administrators too. Had a run-in with a dean over a grade appeal or a complaint? Questions that don't apply can be marked N/A.\n\nhttps://ratemyadministrator.github.io/\n\n#HigherEd #CCCfaculty",
-    "not_before": "2026-11-20"
+    "not_before": "2026-11-20",
+    "kind": "site"
   },
   {
     "id": "ed-parttime",
     "not_before": "2026-11-21",
-    "text": "Part-time faculty teach a huge share of college classes, often with no job security and no say.\n\nThey're also the least able to complain about a bad dean without risking next semester's assignment. That's why reviews here are anonymous.\n\nhttps://ratemyadministrator.github.io/\n\n#Adjunct #AcademicSky"
+    "text": "Part-time faculty teach a huge share of college classes, often with no job security and no say.\n\nThey're also the least able to complain about a bad dean without risking next semester's assignment. That's why reviews here are anonymous.\n\nhttps://ratemyadministrator.github.io/\n\n#Adjunct #AcademicSky",
+    "kind": "editorial"
   },
   {
     "id": "ed-retaliation",
     "not_before": "2026-11-23",
-    "text": "Retaliation rarely looks like retaliation. It looks like a schedule change, a lost section, a sudden \"concern\" about your tone, a committee you're no longer on.\n\nPatterns are easier to see when people can compare notes.\n\nhttps://ratemyadministrator.github.io/\n\n#AcademicSky #HigherEd"
+    "text": "Retaliation rarely looks like retaliation. It looks like a schedule change, a lost section, a sudden \"concern\" about your tone, a committee you're no longer on.\n\nPatterns are easier to see when people can compare notes.\n\nhttps://ratemyadministrator.github.io/\n\n#AcademicSky #HigherEd",
+    "kind": "editorial"
   },
   {
     "id": "ed-askpay",
     "not_before": "2026-11-25",
-    "text": "Funny how fast you become \"a problem\" in higher ed.\n\nAll it takes is one question: \"Is this time paid?\"\n\nAsking whether you'll be paid for your work is not insubordination. It's the most basic question any worker can ask.\n\nhttps://ratemyadministrator.github.io/\n\n#AcademicSky #FacultyUnion"
+    "text": "Funny how fast you become \"a problem\" in higher ed.\n\nAll it takes is one question: \"Is this time paid?\"\n\nAsking whether you'll be paid for your work is not insubordination. It's the most basic question any worker can ask.\n\nhttps://ratemyadministrator.github.io/\n\n#AcademicSky #FacultyUnion",
+    "kind": "editorial"
+  },
+  {
+    "id": "win-lbcc-parttime",
+    "kind": "win",
+    "not_before": "2026-11-25",
+    "text": "A win for part-time faculty: after a successful minimum-wage lawsuit, Long Beach City College part-timers won pay for all hours worked, an average 8.94% raise and back wages.\n\nUnpaid hours are a pay problem, not a professionalism problem. Read more\n#Adjunct #HigherEd",
+    "links": [
+      {
+        "text": "Read more",
+        "url": "https://www.cta.org/educator/posts/long-beach-part-time-faculty-win-after-successful-wage-lawsuit"
+      }
+    ]
+  },
+  {
+    "id": "spotlight-hayward-2026",
+    "kind": "spotlight",
+    "not_before": "2026-11-26",
+    "text": "Celebrating excellent teaching: Shagun Kaur (Communication Studies, De Anza) and Sheila Smith (part-time faculty, Child Development, Solano) received California's 2025-26 Hayward Award for Excellence in Education. Read more\n#AcademicSky",
+    "links": [
+      {
+        "text": "Read more",
+        "url": "https://foundationccc.org/announcing-the-2025-26-hayward-award-for-excellence-in-education-recipients/"
+      }
+    ]
   },
   {
     "id": "ed-noticeless",
     "not_before": "2026-11-27",
-    "text": "A class you've built and taught for years, reassigned with no notice and no explanation.\n\nAdministrators call it \"scheduling flexibility.\" Faculty call it a message.\n\nNotice and reasons cost nothing. Their absence tells you everything.\n\nhttps://ratemyadministrator.github.io/\n\n#AcademicSky #Adjunct"
+    "text": "A class you've built and taught for years, reassigned with no notice and no explanation.\n\nAdministrators call it \"scheduling flexibility.\" Faculty call it a message.\n\nNotice and reasons cost nothing. Their absence tells you everything.\n\nhttps://ratemyadministrator.github.io/\n\n#AcademicSky #Adjunct",
+    "kind": "editorial"
+  },
+  {
+    "id": "win-wiu-librarians",
+    "kind": "win",
+    "not_before": "2026-11-27",
+    "text": "Contracts work: an arbitrator ruled Western Illinois University's layoffs of faculty librarians violated the union contract and ordered reinstatement with full back pay. Read more\n\nKnow your contract. Use your grievance process. #FacultyUnion",
+    "links": [
+      {
+        "text": "Read more",
+        "url": "https://www.aft.org/node/101854"
+      }
+    ]
+  },
+  {
+    "id": "question-one-thing",
+    "kind": "question",
+    "not_before": "2026-11-28",
+    "text": "Faculty and staff: what's one thing your dean or VP could do tomorrow that would make your job meaningfully better?\n\nNo names needed. Replies open. #AcademicSky #HigherEd"
   },
   {
     "id": "ed-verbalwarning",
     "not_before": "2026-11-29",
-    "text": "A \"verbal warning\" that arrives in writing, citing a policy broad enough to cover anything.\n\nWhen discipline follows advocacy, the policy isn't the point. The advocacy is.\n\nIf you've seen this pattern, you're not imagining it.\n\nhttps://ratemyadministrator.github.io/\n\n#FacultyUnion #AcademicSky"
+    "text": "A \"verbal warning\" that arrives in writing, citing a policy broad enough to cover anything.\n\nWhen discipline follows advocacy, the policy isn't the point. The advocacy is.\n\nIf you've seen this pattern, you're not imagining it.\n\nhttps://ratemyadministrator.github.io/\n\n#FacultyUnion #AcademicSky",
+    "kind": "editorial"
+  },
+  {
+    "id": "spotlight-classified-2026",
+    "kind": "spotlight",
+    "not_before": "2026-11-29",
+    "text": "Colleges run on classified professionals. Congratulations to Dr. Lusyna Kim-Narvaez of Mission College, a 2026 California Community Colleges Classified Employee of the Year. Read more\n#HigherEd #ClassifiedStaff",
+    "links": [
+      {
+        "text": "Read more",
+        "url": "https://missioncollege.edu/news/mission-college-celebrates-dr-lusyna-kim-narvaez-as-2026-classified-employee-of-the-year-recipient.html"
+      }
+    ]
+  },
+  {
+    "id": "win-psu-reinstated",
+    "kind": "win",
+    "not_before": "2026-11-30",
+    "text": "Portland State laid off non-tenure-track faculty. Their union, PSU-AAUP, grieved it, and an arbitrator found the layoffs broke the contract. After pressure to comply, PSU agreed in January to reinstate them. Read more\n#FacultyUnion",
+    "links": [
+      {
+        "text": "Read more",
+        "url": "https://www.opb.org/article/2026/01/15/portland-state-university-reinstate-laid-off-faculty/"
+      }
+    ]
   },
   {
     "id": "ed-grievance",
     "not_before": "2026-12-01",
-    "text": "Grievance processes move slowly. The harm they're meant to fix doesn't wait.\n\nBy the time a grievance is heard, the semester is over, the class is gone, and the message has been received by everyone watching.\n\nDocument everything. Talk to your union early.\n\nhttps://ratemyadministrator.github.io/"
+    "text": "Grievance processes move slowly. The harm they're meant to fix doesn't wait.\n\nBy the time a grievance is heard, the semester is over, the class is gone, and the message has been received by everyone watching.\n\nDocument everything. Talk to your union early.\n\nhttps://ratemyadministrator.github.io/",
+    "kind": "editorial"
   },
   {
     "id": "ed-newtrustees",
     "not_before": "2026-12-03",
-    "text": "New trustees are being seated at community colleges across California this month.\n\nTrustees hire and evaluate presidents. They rarely hear from faculty and staff directly.\n\nTell them how leadership is really going, anonymously:\nhttps://ratemyadministrator.github.io/\n\n#CCCfaculty #HigherEd"
+    "text": "New trustees are being seated at community colleges across California this month.\n\nTrustees hire and evaluate presidents. They rarely hear from faculty and staff directly.\n\nTell them how leadership is really going, anonymously:\nhttps://ratemyadministrator.github.io/\n\n#CCCfaculty #HigherEd",
+    "kind": "editorial"
   },
   {
     "id": "ed-leaving",
     "not_before": "2026-12-05",
-    "text": "The faculty colleges lose aren't the ones who don't care. They're the ones who cared, asked questions, got labeled difficult, and finally decided their talent was worth more somewhere else.\n\nBad administration has a cost. It's measured in resignations.\n\nhttps://ratemyadministrator.github.io/"
+    "text": "The faculty colleges lose aren't the ones who don't care. They're the ones who cared, asked questions, got labeled difficult, and finally decided their talent was worth more somewhere else.\n\nBad administration has a cost. It's measured in resignations.\n\nhttps://ratemyadministrator.github.io/",
+    "kind": "editorial"
   },
   {
     "id": "ed-events",
     "not_before": "2026-12-07",
-    "text": "\"It's been on the calendar for months. You should have planned for it.\"\n\nPlanning ahead doesn't make unpaid work paid. Knowing about it early just means you knew early you'd be working for free.\n\nRequired events are work. Work gets paid.\n\nhttps://ratemyadministrator.github.io/\n\n#HigherEd"
+    "text": "\"It's been on the calendar for months. You should have planned for it.\"\n\nPlanning ahead doesn't make unpaid work paid. Knowing about it early just means you knew early you'd be working for free.\n\nRequired events are work. Work gets paid.\n\nhttps://ratemyadministrator.github.io/\n\n#HigherEd",
+    "kind": "editorial"
   },
   {
     "id": "ed-flex",
     "not_before": "2026-12-09",
-    "text": "Mandatory training, outside your contract hours.\n\n\"Just count it as flex.\"\n\nYour flex hours are already met. Now it's simply unpaid time with a different label.\n\nRelabeling work doesn't make it free. Does your administration ask, or just assign?\nhttps://ratemyadministrator.github.io/\n\n#CCCfaculty"
+    "text": "Mandatory training, outside your contract hours.\n\n\"Just count it as flex.\"\n\nYour flex hours are already met. Now it's simply unpaid time with a different label.\n\nRelabeling work doesn't make it free. Does your administration ask, or just assign?\nhttps://ratemyadministrator.github.io/\n\n#CCCfaculty",
+    "kind": "editorial"
   },
   {
     "id": "union-contract",
     "not_before": "2026-12-11",
-    "text": "Every protection faculty rely on, from workload limits to paid extra duties to due process before discipline, exists because someone bargained for it.\n\nYour contract is your union's work. Read it. Know it. Use it.\n\nhttps://ratemyadministrator.github.io/\n\n#FacultyUnion #HigherEd"
+    "text": "Every protection faculty rely on, from workload limits to paid extra duties to due process before discipline, exists because someone bargained for it.\n\nYour contract is your union's work. Read it. Know it. Use it.\n\nhttps://ratemyadministrator.github.io/\n\n#FacultyUnion #HigherEd",
+    "kind": "solidarity"
   },
   {
     "id": "union-join",
     "not_before": "2026-12-13",
-    "text": "If you're faculty or staff and not in your union, this is your sign.\n\nAdministrators negotiate as a team. Workers who stand alone negotiate alone.\n\nGo to a meeting. Ask a question. Bring a coworker.\n\nhttps://ratemyadministrator.github.io/\n\n#FacultyUnion #HigherEd"
+    "text": "If you're faculty or staff and not in your union, this is your sign.\n\nAdministrators negotiate as a team. Workers who stand alone negotiate alone.\n\nGo to a meeting. Ask a question. Bring a coworker.\n\nhttps://ratemyadministrator.github.io/\n\n#FacultyUnion #HigherEd",
+    "kind": "solidarity"
   },
   {
     "id": "union-thanks",
     "not_before": "2026-12-15",
-    "text": "To the union reps who answer the late-night texts, sit in on the disciplinary meetings, and file the grievances nobody else will:\n\nThank you. Colleges run on faculty and staff. Faculty and staff are protected by people like you.\n\nhttps://ratemyadministrator.github.io/\n\n#FacultyUnion #AcademicSky"
+    "text": "To the union reps who answer the late-night texts, sit in on the disciplinary meetings, and file the grievances nobody else will:\n\nThank you. Colleges run on faculty and staff. Faculty and staff are protected by people like you.\n\nhttps://ratemyadministrator.github.io/\n\n#FacultyUnion #AcademicSky",
+    "kind": "solidarity"
   },
   {
     "id": "ed-neverfaculty",
     "not_before": "2026-12-17",
-    "text": "Too many academic deans have never taught a college course, never served on a senate, never carried a full load.\n\nThen they evaluate faculty, set schedules, and decide what \"reasonable workload\" means.\n\nLeading academics should require having done the work.\n\nhttps://ratemyadministrator.github.io/"
+    "text": "Too many academic deans have never taught a college course, never served on a senate, never carried a full load.\n\nThen they evaluate faculty, set schedules, and decide what \"reasonable workload\" means.\n\nLeading academics should require having done the work.\n\nhttps://ratemyadministrator.github.io/",
+    "kind": "editorial"
   },
   {
     "id": "ed-yesdeans",
     "not_before": "2026-12-19",
-    "text": "Some presidents don't hire deans to lead. They hire them to agree.\n\nA dean with no independent judgment can't advocate for faculty, push back on bad decisions, or tell the president no.\n\nLoyalty upward isn't leadership. Rate yours:\nhttps://ratemyadministrator.github.io/\n\n#HigherEd #AcademicSky"
+    "text": "Some presidents don't hire deans to lead. They hire them to agree.\n\nA dean with no independent judgment can't advocate for faculty, push back on bad decisions, or tell the president no.\n\nLoyalty upward isn't leadership. Rate yours:\nhttps://ratemyadministrator.github.io/\n\n#HigherEd #AcademicSky",
+    "kind": "editorial"
   }
 ]

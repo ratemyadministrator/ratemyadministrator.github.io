@@ -6,7 +6,10 @@ Reposts up to 2 a run from social/repost.json and saves fresh candidates from fo
 accounts to social/candidates.json for the daily operator to choose from.
 Collects replies/mentions into social/mentions.json and posts answers queued in
 social/replies.json (up to 5 a run).
-Queue format: a list of {"id": "...", "text": "...", "not_before": "YYYY-MM-DD" (optional)}.
+Queue format: a list of {"id": "...", "text": "...", "kind": "...", "not_before": "YYYY-MM-DD" (optional),
+"priority": true (optional, skips variety rules), "links": [{"text", "url"}] (optional: makes those
+words in the text a link, so long URLs don't count toward the 300 characters)}. Kinds: editorial, solidarity, news, win, spotlight,
+know-your-rights, site, question. Up to two posts a day, rotating kinds; solidarity at most once per 3 days.
 URLs in the text become clickable links. Each run publishes at most one post. Published posts
 move to social/posted.json along with their Bluesky link.
 """
@@ -273,6 +276,27 @@ def record_stats(s):
     print("followers", prof.get("followersCount", 0), "new", counts)
 
 
+GAP_HOURS = 10  # morning and evening runs can each post: up to two posts a day
+KIND_CAPS = {"solidarity": 3}  # at most one post of this kind per N days (unless "priority": true)
+
+
+def pick_order(due, history, now):
+    """Order due posts for variety: drop kinds over their cap, then prefer a kind other than the
+    last one posted. Within that, keep queue order (oldest not_before first)."""
+    live = [h for h in history if not h.get("deleted_at")]
+    last_kind = live[-1].get("kind") if live else None
+    ok = []
+    for p in due:
+        days = KIND_CAPS.get(p.get("kind"))
+        if days and not p.get("priority"):
+            since = (now - datetime.timedelta(days=days)).isoformat()
+            if any(h.get("kind") == p.get("kind") and h.get("posted_at", "") > since for h in live):
+                continue
+        ok.append(p)
+    ok.sort(key=lambda p: (bool(last_kind) and p.get("kind") == last_kind and not p.get("priority"), p.get("not_before", "")))
+    return ok
+
+
 def main():
     handle, pw = os.environ.get("BSKY_HANDLE"), os.environ.get("BSKY_APP_PASSWORD")
     if not handle or not pw:
@@ -300,9 +324,15 @@ def main():
         if not due:
             print("No post due today.")
             return
-        recent = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=20)).isoformat()
-        if any(p.get("posted_at", "") > recent for p in load(POSTED)):
-            print("Already posted in the last 20 hours; next post waits.")
+        now = datetime.datetime.now(datetime.timezone.utc)
+        history = load(POSTED)
+        recent = (now - datetime.timedelta(hours=GAP_HOURS)).isoformat()
+        if any(p.get("posted_at", "") > recent for p in history):
+            print(f"Posted within the last {GAP_HOURS} hours; next post waits.")
+            return
+        due = pick_order(due, history, now)
+        if not due:
+            print("Only capped kinds are due right now; waiting.")
             return
     post = due[0]
     text = post["text"].strip()
@@ -311,6 +341,12 @@ def main():
     record = {"$type": "app.bsky.feed.post", "text": text, "langs": ["en"],
               "createdAt": datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z")}
     facets = link_facets(text)
+    raw = text.encode()
+    for ln in post.get("links", []):  # {"text": words in the post, "url": where they link}: keeps long URLs out of the 300 characters
+        i = raw.find(ln["text"].encode())
+        if i >= 0:
+            facets.append({"index": {"byteStart": i, "byteEnd": i + len(ln["text"].encode())},
+                           "features": [{"$type": "app.bsky.richtext.facet#link", "uri": ln["url"]}]})
     if facets:
         record["facets"] = facets
     if post.get("video"):  # native video: plays in the feed with a thumbnail; the link in the text goes to the live page
