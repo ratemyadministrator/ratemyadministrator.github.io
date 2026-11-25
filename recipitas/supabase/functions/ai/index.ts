@@ -54,6 +54,13 @@ Rules:
 - category: only fill if the cook names one or it is unmistakable (e.g. "dessert", "soup"); otherwise "".
 - steps: one entry per instruction step, in order, in the cook's words lightly cleaned of filler ("um", "uh", false starts).
 - For speech: the cook may correct themselves ("two cups, no, three cups") — use the correction. Ignore talk that is not part of the recipe.
+- For speech, rewrite everything into clean, consistent recipe-card wording, as if neatly written down:
+  - name: short title in Title Case ("Grandma's Chicken Pozole").
+  - ingredient names: short and lowercase ("yellow onion", "chicken thighs"); put "chopped", "softened" and the like in prep_notes.
+  - steps: brief, clear sentences that start with a verb ("Brown the chicken in the oil."), present tense, one main action per step, ending with a period. Merge rambling or repeated bits, drop filler and asides.
+  - description and notes: one or two tidy sentences, only if the cook said something that belongs there.
+  - Keep every amount and unit exactly in the cook's own words ("a tidbit", "a good splash"); only tidy the wording around them.
+- For a website: use only the recipe itself; skip the story, ads, comments and nutrition panels. Keep the site's amounts and units as written, and tidy step wording the same way as for speech.
 - For photos: read handwriting and print carefully; if several images are given they are pages of the same recipe, in order.
 - If there is no recipe at all, set found_recipe to false and leave the rest empty.`;
 
@@ -79,6 +86,7 @@ Rules:
 - They may add, remove, reword or reorder ingredients or steps, rename the recipe, or set times, servings, category, notes, source or description.
 - Only rescale amounts if they ask to (e.g. "double it"); then change only quantities, written in the same style.
 - Spoken requests may include filler or self-corrections; use the final intent.
+- Write any new or changed text in the same clean style as the rest of the recipe: short verb-first steps ending with a period, short lowercase ingredient names.
 - If the request is unclear, not about this recipe, or would mean guessing, set understood to false, explain briefly in summary, and return the recipe unchanged.
 - summary: one short plain sentence, e.g. "Changed butter to 2 tablespoons and added a resting step at the end."`;
 
@@ -120,6 +128,39 @@ async function documentParts(f: any) {
   if (name.endsWith(".rtf")) return [{ text: "Recipe text:\n\n" + buf.toString("latin1").replace(/\\par[d]?/g, "\n").replace(/\{\*?\\[^{}]+}|[{}]|\\[A-Za-z]+-?\d* ?/g, "") }];
   if (/^text\//.test(mime) || /\.(txt|md|csv)$/.test(name)) return [{ text: "Recipe text:\n\n" + buf.toString("utf8") }];
   return null;
+}
+
+// Fetches a recipe web page. Prefers the page's built-in recipe data (schema.org Recipe), else its text.
+async function readWebsite(raw: string): Promise<string | { url: string; title: string; body: string }> {
+  let u: URL;
+  try { u = new URL(raw.trim()); } catch { return "That doesn't look like a web address."; }
+  if (!/^https?:$/.test(u.protocol)) return "Only http and https links can be read.";
+  const host = u.hostname.toLowerCase();
+  if (host === "localhost" || host.endsWith(".local") || host.endsWith(".internal") || /^(127\.|10\.|192\.168\.|169\.254\.|172\.(1[6-9]|2\d|3[01])\.|0\.|\[)/.test(host) || /^\d+$/.test(host))
+    return "That address can't be read.";
+  let res: Response;
+  try {
+    res = await fetch(u.href, { redirect: "follow", signal: AbortSignal.timeout(15000), headers: {
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+      "Accept": "text/html,application/xhtml+xml", "Accept-Language": "en-US,en;q=0.9" } });
+  } catch { return "Couldn't reach that website. Check the link and try again."; }
+  if (!res.ok) return "That website didn't let us read the page (error " + res.status + "). Try copying the recipe text and using Type or paste text instead.";
+  const html = (await res.text()).slice(0, 3_000_000);
+  const title = ((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "").replace(/\s+/g, " ").trim().slice(0, 200);
+  // schema.org Recipe data, which most recipe sites include
+  const found: unknown[] = [];
+  const isRecipe = (o: any) => o && (o["@type"] === "Recipe" || (Array.isArray(o["@type"]) && o["@type"].includes("Recipe")));
+  const walk = (o: any) => { if (!o || typeof o !== "object") return; if (Array.isArray(o)) return o.forEach(walk); if (isRecipe(o)) found.push(o); if (o["@graph"]) walk(o["@graph"]); };
+  for (const m of html.matchAll(/<script[^>]+application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)) { try { walk(JSON.parse(m[1].trim())); } catch { /* skip bad block */ } }
+  if (found.length) {
+    const keep = ["name", "description", "recipeYield", "prepTime", "cookTime", "totalTime", "recipeCategory", "recipeIngredient", "recipeInstructions", "author"];
+    const slim = Object.fromEntries(keep.filter((k) => (found[0] as any)[k] !== undefined).map((k) => [k, (found[0] as any)[k]]));
+    return { url: res.url || u.href, title, body: "Structured recipe data from the page:\n" + JSON.stringify(slim).slice(0, 60000) };
+  }
+  const text = html.replace(/<(script|style|noscript|svg|nav|footer|header)[\s\S]*?<\/\1>/gi, " ").replace(/<br\s*\/?>|<\/(p|li|h\d|div|tr)>/gi, "\n")
+    .replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#39;|&rsquo;/g, "'").replace(/&quot;/g, '"').replace(/[ \t]+/g, " ").replace(/\n\s*\n+/g, "\n").trim();
+  if (text.length < 80) return "That page didn't have readable recipe text.";
+  return { url: res.url || u.href, title, body: text.slice(0, 60000) };
 }
 
 // Asks the database whether this family code is right (the database holds only a scrambled copy).
@@ -184,6 +225,15 @@ Deno.serve(async (req) => {
       const okType = kind === "audio" ? /^audio\// : /^image\//;
       for (const f of files) { if (!okType.test(str(f.mimeType)) || !f.data) return json(400, { error: "Unsupported file type" }); parts.push({ inlineData: { mimeType: f.mimeType, data: f.data } }); }
       parts.push({ text: kind === "audio" ? 'This is a recording of someone speaking a recipe. Transcribe it into "transcript", then fill in the recipe fields.' : "These are photos of a recipe. Fill in the recipe fields." });
+    } else if (kind === "url") {
+      const page = await readWebsite(str(b.url));
+      if (typeof page === "string") return json(400, { error: page });
+      parts.push({ text: "Recipe from the website " + page.url + (page.title ? ' ("' + page.title + '")' : "") + ":\n\n" + page.body });
+      parts.push({ text: "Fill in the recipe fields. Set source to " + page.url + ". If the page holds several recipes, use the main one." });
+      const r0 = await ask(parts, EXTRACT_PROMPT, RECIPE_SCHEMA);
+      if (r0.found_recipe === false) return json(422, { error: "No recipe was found on that page." });
+      if (!str(r0.source).trim()) r0.source = page.url;
+      return json(200, r0);
     } else if (kind === "document") {
       const p = files[0] && files[0].data ? await documentParts(files[0]) : null;
       if (!p) return json(415, { error: "That kind of file isn't supported. Try a PDF, Word (.docx), text file or photo." });
