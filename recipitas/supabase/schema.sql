@@ -1,4 +1,4 @@
--- ReciPitas database (Supabase / Postgres). This is the current setup, for reference and rebuilding.
+-- Flavored With Love database (Supabase / Postgres). This is the current setup, for reference and rebuilding.
 -- Nothing here is secret. The family code itself is never stored, only a bcrypt hash of it.
 
 -- Recipes: free-text amounts and units, kept exactly as written
@@ -90,3 +90,33 @@ create policy "family changes list" on public.shopping_items for update to anon,
 create policy "family deletes from list" on public.shopping_items for delete to anon, authenticated using ((select public.family_ok()));
 
 grant select, insert, update, delete on public.recipes, public.shopping_items to anon, authenticated;
+
+-- Share links: one unguessable link per recipe; the link shows only that recipe, read-only.
+create table private.recipe_shares (
+  token uuid primary key default gen_random_uuid(),
+  recipe_id uuid not null unique references public.recipes(id) on delete cascade,
+  created_at timestamptz not null default now()
+);
+create or replace function public.share_recipe(rid uuid)
+returns uuid language plpgsql volatile security definer set search_path = '' as $$
+declare t uuid;
+begin
+  if not public.family_ok() then raise exception 'Wrong or missing family code' using errcode = '42501'; end if;
+  if not exists (select 1 from public.recipes where id = rid) then raise exception 'Recipe not found'; end if;
+  insert into private.recipe_shares (recipe_id) values (rid) on conflict (recipe_id) do nothing;
+  select token into t from private.recipe_shares where recipe_id = rid;
+  return t;
+end; $$;
+revoke all on function public.share_recipe(uuid) from public;
+grant execute on function public.share_recipe(uuid) to anon, authenticated;
+create or replace function public.shared_recipe(t uuid)
+returns jsonb language sql stable security definer set search_path = '' as $$
+  select jsonb_build_object(
+    'name', r.name, 'description', r.description, 'prep_time', r.prep_time, 'cook_time', r.cook_time,
+    'total_time', r.total_time, 'servings', r.servings, 'category', r.category, 'notes', r.notes,
+    'source', r.source, 'ingredients', r.ingredients, 'steps', r.steps)
+  from private.recipe_shares s join public.recipes r on r.id = s.recipe_id
+  where s.token = t;
+$$;
+revoke all on function public.shared_recipe(uuid) from public;
+grant execute on function public.shared_recipe(uuid) to anon, authenticated;

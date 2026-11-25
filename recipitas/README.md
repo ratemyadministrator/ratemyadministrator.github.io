@@ -1,6 +1,6 @@
-# ReciPitas
+# Flavored With Love
 
-A family recipe box. Add recipes by speaking, by photo, by uploading a file (PDF, Word, text, web page) or by typing. Amounts stay exactly as you say them ("a tidbit", "enough to cover"). Change any recipe by voice. Build a shopping list from any recipe, color items by store, and reorder them.
+A family recipe box. Add recipes by speaking, by photo, by uploading a file (PDF, Word, text, web page) or by typing. Amounts stay exactly as you say them ("a tidbit", "enough to cover"). Change any recipe by voice. Build a shopping list from any recipe, color items by store, and reorder them. Share any recipe by text: the link opens a read-only page with just that recipe.
 
 ## How it fits together
 - This folder is the app page, served by GitHub Pages at https://ratemyadministrator.github.io/recipitas/ (kept out of search engines).
@@ -23,5 +23,6 @@ Nothing in this repo is secret. The Supabase URL and publishable key in `docs/in
 
 ## Files
 - `index.html` — the whole app (one page)
+- `share.html` — read-only page for one shared recipe (opened from a texted link)
 - `supabase/functions/ai/index.ts` — Gemini function (deployed as `ai`)
 - `supabase/schema.sql` — database tables and rules
