@@ -1,11 +1,251 @@
 [
   {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n36lbp4mko2i",
+    "cid": "bafyreihyn2k3o3i7jsdeesn45uprqx4fna66widwjvgby5nbqx74gdzrtq",
+    "author": "calmatters.org",
+    "created": "2026-11-26T02:00:37Z",
+    "text": "Opinion | Reviving California\u2019s downtowns requires investing in the people who work there\n\nThe state's high road training initiative bring workers and employers together to solve problems, such as struggling downtowns.",
+    "likes": 7,
+    "reposts": 2,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n36lbp4mko2i"
+  },
+  {
+    "uri": "at://did:plc:7ksbxruddrzxyof3h4hv34hz/app.bsky.feed.post/3n36l3kb3cc22",
+    "cid": "bafyreia3zyton6lx3e65oyodoxxxtig3etgnyyeha6azpmkyvaqph6z6im",
+    "author": "rweingarten.bsky.social",
+    "created": "2026-11-26T01:57:11.283Z",
+    "text": "Yet another outrage. Kennedy should be subject to real accountability. We beat measles; not anymore",
+    "likes": 39,
+    "reposts": 9,
+    "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n36l3kb3cc22"
+  },
+  {
+    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n36jmr7sh42q",
+    "cid": "bafyreig77kg7q3fxe4jrcpsn25cvpagqyb3hx3bcakvjf7inuyeih4wwl4",
+    "author": "insidehighered.com",
+    "created": "2026-11-26T01:31:01.512873737Z",
+    "text": "Just Explain It to Me! | Part 1: Who Counts as a Citizen in the University Polity?\n\nBy making complaints, a victim becomes a threat to the institution\u2019s viability and the political systems that support it. https://bit.ly/4zMlBjw",
+    "likes": 0,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/insidehighered.com/post/3n36jmr7sh42q"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n36gafhzbx2d",
+    "cid": "bafyreigci7y4spv5t5oxcno467n53sk5jf4yfcmdn3sroxcm4tpjfuriu4",
+    "author": "calmatters.org",
+    "created": "2026-11-26T00:30:25Z",
+    "text": "What the blue wave could mean for California\u2019s economy\n\nA Democrat-controlled Congress could force policy changes that affect the state\u2019s agriculture, wine, tech and other industries.",
+    "likes": 9,
+    "reposts": 2,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n36gafhzbx2d"
+  },
+  {
+    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n36fresscb2b",
+    "cid": "bafyreihyfxkkdmfngvmtkwbim4nylgtyud4negxlwya7uv7z3qwyfwndni",
+    "author": "insidehighered.com",
+    "created": "2026-11-26T00:22:01.30924853Z",
+    "text": "Opinion | When Students Come Home: Rethinking the Responsibilities of Prison Ed Programs\n\nThe work of re-entry is hard. But colleges can build infrastructure and support to help students who started degree programs in prison succeed on their home campuses. https://bit.ly/3XNHAsL",
+    "likes": 1,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/insidehighered.com/post/3n36fresscb2b"
+  },
+  {
+    "uri": "at://did:plc:rremgompoz5ga56odlvaehlc/app.bsky.feed.post/3n36fehh5gc25",
+    "cid": "bafyreicabpcqwsnkuwqoynzuyp7sjgfakxgo3bcayfsi5pdl57hp24lhsm",
+    "author": "aftwa.bsky.social",
+    "created": "2026-11-26T00:14:47.878Z",
+    "text": "Imagine what we could do if we spent that money on literally anything not evil.",
+    "likes": 0,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/aftwa.bsky.social/post/3n36fehh5gc25"
+  },
+  {
+    "uri": "at://did:plc:rremgompoz5ga56odlvaehlc/app.bsky.feed.post/3n36fbbgqic25",
+    "cid": "bafyreidvp4on7vvm26xgllayatmpl6tbhn3nwgzsyrv3hlhnisakut3ayq",
+    "author": "aftwa.bsky.social",
+    "created": "2026-11-26T00:13:00.910Z",
+    "text": "As a general point, between this and BAAJA, we're seeing a real effort to smash and grab more things in the hope that incoming Dems won't be able to unsmash things. It's worth being alert - we can't fight every cause, but we can elevate all causes and spread the fight out.",
+    "likes": 1,
+    "reposts": 1,
+    "url": "https://bsky.app/profile/aftwa.bsky.social/post/3n36fbbgqic25"
+  },
+  {
+    "uri": "at://did:plc:rremgompoz5ga56odlvaehlc/app.bsky.feed.post/3n36f3kz7pc25",
+    "cid": "bafyreih6nkvkkrxlungbt5wyacgg4udu7g7kju4flkgax2j7ya55kkib6u",
+    "author": "aftwa.bsky.social",
+    "created": "2026-11-26T00:09:49.626Z",
+    "text": "The technology to do this doesn't exist and this is completely unfeasible (space is not good at cooling things, apparently), so let's all just point and laugh at Musk's transparent attempt to juice literally any stock now that we've all pointed and laughed at his \"I'm not MAGA\" moment we didn't buy.",
+    "likes": 1,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/aftwa.bsky.social/post/3n36f3kz7pc25"
+  },
+  {
+    "uri": "at://did:plc:rremgompoz5ga56odlvaehlc/app.bsky.feed.post/3n36eunaxms25",
+    "cid": "bafyreigz2ole34tz6kns22larjqizmkq4i5bxku3ft7bcywlajnfmj7pcq",
+    "author": "aftwa.bsky.social",
+    "created": "2026-11-26T00:05:57.095Z",
+    "text": "Large employers rely on union-busting AND ALSO on mistreating their workers. It's a fascinating combination that we shouldn't support.",
+    "likes": 0,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/aftwa.bsky.social/post/3n36eunaxms25"
+  },
+  {
+    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n36cjo46si2b",
+    "cid": "bafyreia34b5oymoqvxro7xqs43nwzqefklvntq2lgb53ognctzinkcckd4",
+    "author": "insidehighered.com",
+    "created": "2026-11-25T23:24:01.394374006Z",
+    "text": "Student Success | What Students Want From Student Success Leaders\n\nFour student ambassadors at Student Success US shared why colleges must look beyond traditional metrics, adapt to students\u2019 needs and build trust. https://bit.ly/4tuls2v\n\n#EDUSky #AcademicSky #HigherEd",
+    "likes": 2,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/insidehighered.com/post/3n36cjo46si2b"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n36b7bsply25",
+    "cid": "bafyreiamsileaguqwd4fzrq5pbvngo4eq5u5xfzmmbppckbq4bojeyv3ni",
+    "author": "calmatters.org",
+    "created": "2026-11-25T23:00:18Z",
+    "text": "California\u2019s workforce is projected to get much older over the next decade. By 2040, about 23% of Californians will be 65 or older, according to an October report from the Public Policy Institute of California. cal.news/3VcxxwG\n\n\ud83d\udcf7 Miguel Gutierrez Jr.",
+    "likes": 9,
+    "reposts": 2,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n36b7bsply25"
+  },
+  {
+    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n367a67az52h",
+    "cid": "bafyreic2zxclyjafxjdlze6pednec6uc7yzeqdnoyhhfyyrkny2vwwfwsq",
+    "author": "insidehighered.com",
+    "created": "2026-11-25T22:25:01.501962604Z",
+    "text": "Global Higher Education Enrollments \u2018to Peak by 2036\u2019\n\nAfrica\u2019s growing youth population is unlikely to offset the demographic dip that will empty classrooms, says new report.\n\nRead the latest from @timeshighered.bsky.social \u27a1\ufe0f https://bit.ly/3X86KlE",
+    "likes": 0,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/insidehighered.com/post/3n367a67az52h"
+  },
+  {
+    "uri": "at://did:plc:7ksbxruddrzxyof3h4hv34hz/app.bsky.feed.post/3n364n477f226",
+    "cid": "bafyreidwprlo6qbvsqsaf6fegcznxeifqxej7vopenboa5upabmku3knzy",
+    "author": "rweingarten.bsky.social",
+    "created": "2026-11-25T21:38:34.394Z",
+    "text": "This is a great start\n\nAnd we need to focus on education as well-k-12 and higher ed, as that creates opportunity for all",
+    "likes": 202,
+    "reposts": 38,
+    "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n364n477f226"
+  },
+  {
+    "uri": "at://did:plc:3a2boyuqqdv3igi2lzfqkiul/app.bsky.feed.post/3n3646rmjpg22",
+    "cid": "bafyreigpof5wx2yhhsnfwwtamedmctidzwab3ihmtlipvscbx5nhmwqatu",
+    "author": "apscuf.org",
+    "created": "2026-11-25T21:30:33.499Z",
+    "text": "The APSCUF office is closed for Thanksgiving. Staff will be available again 8:30 a.m. Monday, Nov. 30.",
+    "likes": 0,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/apscuf.org/post/3n3646rmjpg22"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n36467u5go2d",
+    "cid": "bafyreieajismpvxksuxd5fjyovlnojt3oudl2dbve7372wyhiz4xycbkey",
+    "author": "calmatters.org",
+    "created": "2026-11-25T21:30:14Z",
+    "text": "California spent two months preparing for El Ni\u00f1o. This week, as king tides and a powerful Thanksgiving winter storm batter the coast, the state will find out if it is ready. cal.news/4jCSSsk\n\n\ud83d\udcf7 Noah Berger, AP",
+    "likes": 15,
+    "reposts": 7,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n36467u5go2d"
+  },
+  {
+    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n362jy6ay42g",
+    "cid": "bafyreifjz3op2gs43y465nfgrizdyepn3hkglusolr6x3gzwgalp5ccw3m",
+    "author": "insidehighered.com",
+    "created": "2026-11-25T21:01:02.011434226Z",
+    "text": "McMahon Eyes Potential Settlement with \u2018Ring Boys\u2019\n\nMcMahon and co-defendants have agreed to private mediation in a child sexual abuse case that centers on allegations dating to her time as a WWE executive. McMahon is accused of overlooking the sexual misconduct. https://bit.ly/48I9tEZ",
+    "likes": 2,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/insidehighered.com/post/3n362jy6ay42g"
+  },
+  {
+    "uri": "at://did:plc:56dfye6os3rj65ehngoivxx2/app.bsky.feed.post/3n35yjhqnoc25",
+    "cid": "bafyreiaoag4p4sxtem5i4gkybbvbslk2yjccn7eogkat5bkvm2vzb2g67u",
+    "author": "byjoshmoody.bsky.social",
+    "created": "2026-11-25T20:24:57.317Z",
+    "text": "Scoop: Education Secretary Linda McMahon and co-defendants (Vince McMahon, WWE, TKO) have agreed to private mediation with the 'Ring Boys' who accused them of overlooking child sexual abuse. The move raises the prospect of a settlement without a trial. \nwww.insidehighered.com/news/governm...",
+    "likes": 10,
+    "reposts": 9,
+    "url": "https://bsky.app/profile/byjoshmoody.bsky.social/post/3n35yjhqnoc25"
+  },
+  {
+    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n35yht6cfo2z",
+    "cid": "bafyreicsolr33palm6rm6k7bin4axwmi57d74m4nhkpude667sdyrqznzu",
+    "author": "insidehighered.com",
+    "created": "2026-11-25T20:24:02.176051709Z",
+    "text": "Naval Academy Professor Sues Over Civilian Tenure Cuts https://bit.ly/4AQwjWV",
+    "likes": 4,
+    "reposts": 2,
+    "url": "https://bsky.app/profile/insidehighered.com/post/3n35yht6cfo2z"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n35x5hmutf2a",
+    "cid": "bafyreig6pwdmip4ayuv3psixirbvg62pa4vmmrirubre35nqmmhzhe3fvu",
+    "author": "calmatters.org",
+    "created": "2026-11-25T20:00:20Z",
+    "text": "A DOJ report on how many Native Americans and Alaska Native people in California are missing or have been murdered was due in 2025. Now the state says this winter. cal.news/4j5bhOk\n\n\ud83d\udcf7 Miguel Gutierrez Jr. ",
+    "likes": 24,
+    "reposts": 11,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n35x5hmutf2a"
+  },
+  {
+    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n35vofucvb2o",
+    "cid": "bafyreifzgdlph4drfucuakxtt3sgle7ubyzo2judvo4ucbfpqbr3usdkbq",
+    "author": "insidehighered.com",
+    "created": "2026-11-25T19:34:01.873895987Z",
+    "text": "Mott Community College Removes President\n\nTrustees at the Michigan college abruptly removed President Shaunda Richardson-Snell with no public explanation. https://bit.ly/4zDcLUZ\n\n#EDUSky #AcademicSky #HIgherEd",
+    "likes": 1,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/insidehighered.com/post/3n35vofucvb2o"
+  },
+  {
+    "uri": "at://did:plc:y7xqgguq6uiaor4rzlwbvslk/app.bsky.feed.post/3n35uz3htqc2a",
+    "cid": "bafyreih3535bhv6qxfjmugyvxw4feqqrxc7l7y4zdztkitgnje5xdykmcm",
+    "author": "mzinshteyn.bsky.social",
+    "created": "2026-11-25T19:22:06.348Z",
+    "text": "This site is embracing a worrying us vs them tribalism that eagerly deploys high-minded ad hominem attacks on harmless writers and personalities with intriguing takes. Not everyone is the enemy. Disagree with the argument, not the person.",
+    "likes": 0,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/mzinshteyn.bsky.social/post/3n35uz3htqc2a"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n35s4f37wt25",
+    "cid": "bafyreicuoglbeykwpdqw252tjomzfmqmr7rwmeb3nq7vkdpn6mn7coewkq",
+    "author": "calmatters.org",
+    "created": "2026-11-25T18:30:15Z",
+    "text": "The California immunology research institute had only three workers as of September even though it was supposed to employ more than 50 by the start of the year, CalMatters previously reported. cal.news/3X27wAI\n\n\ud83d\udcf7 Brian van der Brug",
+    "likes": 10,
+    "reposts": 6,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n35s4f37wt25"
+  },
+  {
+    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n35ruszvs52d",
+    "cid": "bafyreigbtxbhomvyqxznpfgwi7m3yc6bi5ulsiwkeglzam64a6zsmxbgya",
+    "author": "insidehighered.com",
+    "created": "2026-11-25T18:26:02.029271995Z",
+    "text": "PEN America Splinter Group Forms Amid Tensions Over Gaza War https://bit.ly/4tl2BqF",
+    "likes": 0,
+    "reposts": 0,
+    "url": "https://bsky.app/profile/insidehighered.com/post/3n35ruszvs52d"
+  },
+  {
+    "uri": "at://did:plc:bpbsj7npsunteidfzbb5mqhj/app.bsky.feed.post/3n35qaocb6c2y",
+    "cid": "bafyreih67pyc2pcypo37tqrhpwepcxnfgrhi67v3qw4pflzq4ekxwjaxza",
+    "author": "aft.org",
+    "created": "2026-11-25T17:56:52.259Z",
+    "text": "Today is International Day for the Elimination of Violence against Women and beginning of 16 days of activism against gender-based violence. The AFT stands with survivors and renews our call to end violence against women and girls in all forms in our schools, hospitals, workplaces and communities.",
+    "likes": 5,
+    "reposts": 2,
+    "url": "https://bsky.app/profile/aft.org/post/3n35qaocb6c2y"
+  },
+  {
     "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n35oleewcp2k",
     "cid": "bafyreidtv4dfhwzc5l457q6xwwn446pf5n7zdzhci6qxhakmpguhspsh3e",
     "author": "insidehighered.com",
     "created": "2026-11-25T17:27:03.465854861Z",
     "text": "Students Say They Don\u2019t Use AI in \u2018Harmful\u2019 Ways, but Their Peers Do\n\nA new @nber.org working paper also shows that most U.S. college students wouldn\u2019t trust AI with personal or social decisions, or \u201canything that genuinely matters.\u201d https://bit.ly/4jC1GxJ\n\n#EDUSky #AcademicSky #HigherEd",
-    "likes": 1,
+    "likes": 2,
     "reposts": 0,
     "url": "https://bsky.app/profile/insidehighered.com/post/3n35oleewcp2k"
   },
@@ -15,8 +255,8 @@
     "author": "aft.org",
     "created": "2026-11-25T17:26:48.026648653Z",
     "text": "Do you have successful teaching strategies, innovative ideas or practical resources to share with fellow educators?\n\nSubmit a proposal to present at AFT TEACH 2027! Share what works, connect with colleagues and discuss strategies they can put into practice \u2935\ufe0f\nhttps://www.aft.org/education/aft-teach",
-    "likes": 0,
-    "reposts": 0,
+    "likes": 2,
+    "reposts": 1,
     "url": "https://bsky.app/profile/aft.org/post/3n35okvnt4k2t"
   },
   {
@@ -25,7 +265,7 @@
     "author": "calmatters.org",
     "created": "2026-11-25T17:00:35Z",
     "text": "Opinion | The uneven recovery of California\u2019s downtowns after the pandemic reflects a broader economic transformation that the next governor will inherit. cal.news/4AQI0gn\n\n\ud83d\udcdd Luis Sandoval\n\ud83d\udcf7 Miguel Gutierrez Jr.",
-    "likes": 6,
+    "likes": 11,
     "reposts": 0,
     "url": "https://bsky.app/profile/calmatters.org/post/3n35n423xte2u"
   },
@@ -45,8 +285,8 @@
     "author": "aaup.org",
     "created": "2026-11-25T16:45:34.742Z",
     "text": "Florida\u2019s Commission for Independent Education voted to require private colleges to respond to ED Secretary McMahon\u2019s Compact 2.0 or lose state licensure\u2026\ud83d\udc40\n\nSee AAUP Compact 2.0 resources here:\n\nwww.aaup.org/issues-highe...",
-    "likes": 2,
-    "reposts": 2,
+    "likes": 3,
+    "reposts": 3,
     "url": "https://bsky.app/profile/aaup.org/post/3n35mb6wqjk2l"
   },
   {
@@ -65,8 +305,8 @@
     "author": "aft.org",
     "created": "2026-11-25T16:20:59.925394497Z",
     "text": "NEW: Illinois will NOT opt in to Trump\u2019s voucher program.\n\n@govpritzker.illinois.gov: \u201cWe should not siphon money from public schools for private education.\u201d\n\nTrump's voucher scheme is a \u201cTrojan horse\u201d that would allow near-universal vouchers, even where voters have rejected them.",
-    "likes": 41,
-    "reposts": 12,
+    "likes": 57,
+    "reposts": 17,
     "url": "https://bsky.app/profile/aft.org/post/3n35kvahdqh2e"
   },
   {
@@ -75,8 +315,8 @@
     "author": "aft.org",
     "created": "2026-11-25T16:05:01.364160741Z",
     "text": "The Great Thanksgiving Listen is back! \ud83c\udf42\n\nThis initiative encourages young people\u2014and people of all ages\u2014to record an interview with an elder, mentor, friend, or loved one and helps students build essential skills in active listening, communication, and empathy.\n\nCheck out the toolkit here \u2935\ufe0f",
-    "likes": 5,
-    "reposts": 4,
+    "likes": 6,
+    "reposts": 5,
     "url": "https://bsky.app/profile/aft.org/post/3n35jyocbzr2a"
   },
   {
@@ -85,8 +325,8 @@
     "author": "rweingarten.bsky.social",
     "created": "2026-11-25T15:49:33.644Z",
     "text": "This is great news\n\nx.com/repjeffries/...",
-    "likes": 11,
-    "reposts": 4,
+    "likes": 12,
+    "reposts": 5,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n35j4zk7ac24"
   },
   {
@@ -96,7 +336,7 @@
     "created": "2026-11-25T15:26:01.886180591Z",
     "text": "Revenue Shares and a Seat at the Table: Mamdani Reimagines Tech Transfer\n\nNew York City has pioneered a new funding model for university research that could change how city governments invest in and benefit from academic innovation. https://bit.ly/4A1ZN48\n\n#EDUSky #AcademicSky #HigherEd",
     "likes": 1,
-    "reposts": 0,
+    "reposts": 1,
     "url": "https://bsky.app/profile/insidehighered.com/post/3n35hsx75fr2f"
   },
   {
@@ -105,8 +345,8 @@
     "author": "aft.org",
     "created": "2026-11-25T15:18:00.553Z",
     "text": "Heads up to families who use Medicare to access healthcare! Changes are coming. Check out this article from @npr.org for more info.",
-    "likes": 6,
-    "reposts": 3,
+    "likes": 8,
+    "reposts": 4,
     "url": "https://bsky.app/profile/aft.org/post/3n35hem5nkk2q"
   },
   {
@@ -125,8 +365,8 @@
     "author": "insidehighered.com",
     "created": "2026-11-25T12:49:01.793934266Z",
     "text": "ICYMI | Congress has repeatedly rejected Trump's proposals to simply cut much of the budget for the nation's research ecosystem. Instead the government has since sought to reorder the whole system.\n\nRead the full story \u27a1\ufe0f https://bit.ly/49etC5E",
-    "likes": 0,
-    "reposts": 1,
+    "likes": 1,
+    "reposts": 3,
     "url": "https://bsky.app/profile/insidehighered.com/post/3n35727ious23"
   },
   {
@@ -135,8 +375,8 @@
     "author": "aaup.org",
     "created": "2026-11-25T03:16:44.404Z",
     "text": "Higher education is a public good. Everyone should be free to learn, contribute, lead and thrive. We have a unique opportunity at this moment to proactively unite around a shared vision for what higher education can be. \n\n#academicsky",
-    "likes": 26,
-    "reposts": 5,
+    "likes": 28,
+    "reposts": 6,
     "url": "https://bsky.app/profile/aaup.org/post/3n3472used22b"
   },
   {
@@ -165,7 +405,7 @@
     "author": "rweingarten.bsky.social",
     "created": "2026-11-25T01:05:16.335Z",
     "text": "Anti-public school talking heads are desperate to keep their billionaire donors\u2019 money flowing after the midterm losses. They\u2019re spreading a false post-election narrative to diminish public education despite what we all know when talking to folks in our communities \u2013 public schools matter \u2013 a lot!",
-    "likes": 29,
+    "likes": 30,
     "reposts": 15,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n33xps5nvc25"
   },
@@ -210,26 +450,6 @@
     "url": "https://bsky.app/profile/calmatters.org/post/3n33vrget3p2d"
   },
   {
-    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n33uxq5qzk23",
-    "cid": "bafyreihag3xsixngzdouuo3mbuxcs2jokniv3yatl5z5k2hc3bv53weswe",
-    "author": "insidehighered.com",
-    "created": "2026-11-25T00:16:01.442358729Z",
-    "text": "Learning Innovation | 3 Questions for Kristen Bourgault on QU\u2019s M.S. in Instructional Design, Technology\n\nA conversation about the program and the field. By Joshua Kim: https://bit.ly/3XLHWA4",
-    "likes": 1,
-    "reposts": 0,
-    "url": "https://bsky.app/profile/insidehighered.com/post/3n33uxq5qzk23"
-  },
-  {
-    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n33rfbw46u2z",
-    "cid": "bafyreicgjb7lhjpnl7p64nexmoild4a3zxfh3e3qk5372sja5xhsyhvn6i",
-    "author": "insidehighered.com",
-    "created": "2026-11-24T23:12:01.307352541Z",
-    "text": "Opinion | What Does AI Leadership Even Mean?\n\nPurchasing an institutional subscription to Anthropic or ChatGPT and publishing an AI think piece somewhere hardly qualifies as leadership. By Roberto Rey Agudo: https://bit.ly/3WT1N05\n\n#EDUSky #AcademicSky #HigherEd",
-    "likes": 7,
-    "reposts": 1,
-    "url": "https://bsky.app/profile/insidehighered.com/post/3n33rfbw46u2z"
-  },
-  {
     "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n33qqlf2lc2f",
     "cid": "bafyreifhrrqhqtn4uj774iemw2l2kawzoo6cv75x6ph5pu2k3llx2miwcu",
     "author": "calmatters.org",
@@ -255,8 +475,8 @@
     "author": "rweingarten.bsky.social",
     "created": "2026-11-24T22:31:57.012Z",
     "text": "Thank you @govpritzker.illinois.gov for standing with Illinois\u2019 students, families & educators by rejecting Trump\u2019s voucher scheme. Public dollars must strengthen public schools that welcome all students, not be used as donations to private schools. gov-pritzker-newsroom.prezly.com/gov-pritzker...",
-    "likes": 100,
-    "reposts": 31,
+    "likes": 123,
+    "reposts": 36,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n33p5mylzk2s"
   },
   {
@@ -265,19 +485,9 @@
     "author": "aft.org",
     "created": "2026-11-24T22:16:01.636152425Z",
     "text": "What can Indigenous knowledge teach us about protecting the Everglades? @sharemylesson.bsky.social's new film lessons featuring Miccosukee environmental leader Betty Osceola connect Native American history, ecology and land use to the challenges we face today. ",
-    "likes": 7,
-    "reposts": 4,
+    "likes": 8,
+    "reposts": 5,
     "url": "https://bsky.app/profile/aft.org/post/3n33ob5v6yo2l"
-  },
-  {
-    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n33ni4xfmd2j",
-    "cid": "bafyreigwwr24zs2qs3iwszrfyrhxhx2fim3jf5noqis5ci6kgt6qrhu5h4",
-    "author": "insidehighered.com",
-    "created": "2026-11-24T22:02:01.794084773Z",
-    "text": "Student Success | 5 Findings on Gen Z\u2019s Changing Priorities\n\nNew research reveals the challenges and opportunities facing young people, from improving mental health to navigating growing AI use and economic pressures. https://bit.ly/4tiRe2s\n\n#EDUSky #AcademicSky #HigherEd",
-    "likes": 1,
-    "reposts": 0,
-    "url": "https://bsky.app/profile/insidehighered.com/post/3n33ni4xfmd2j"
   },
   {
     "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n33lpevokx24",
@@ -290,26 +500,6 @@
     "url": "https://bsky.app/profile/calmatters.org/post/3n33lpevokx24"
   },
   {
-    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n33l6sny5k2t",
-    "cid": "bafyreidggfwyvikolr3wrupkgads6biwhqzbyytgfo6tanl6agr2f3oczu",
-    "author": "insidehighered.com",
-    "created": "2026-11-24T21:21:01.525393985Z",
-    "text": "Book Explores \u2018New American Frontier\u2019 of Training for Tech Jobs\n\n\u201cThese are not your grandfather\u2019s factory jobs,\u201d Rachel Lipson writes, but community colleges are well positioned to help train people for them\u2014if they can find a way to work with employers. https://bit.ly/4CgmIdL\n\n#EDUSky #AcademicSky",
-    "likes": 3,
-    "reposts": 1,
-    "url": "https://bsky.app/profile/insidehighered.com/post/3n33l6sny5k2t"
-  },
-  {
-    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n33hyuzdig2y",
-    "cid": "bafyreido4xr3xlttqm4fmbklbfyonhlrqjobsyxxeftloeil67n26uvo3i",
-    "author": "insidehighered.com",
-    "created": "2026-11-24T20:24:01.441916493Z",
-    "text": "Report: Texas Tech Regent Sought Deal With University Tenant https://bit.ly/4jbxF7s",
-    "likes": 1,
-    "reposts": 0,
-    "url": "https://bsky.app/profile/insidehighered.com/post/3n33hyuzdig2y"
-  },
-  {
     "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n33gohjv7z22",
     "cid": "bafyreiezvctmce2dxc7xq7gpmxzjmmujnobq36hwvrommzmsbn3kb44kfe",
     "author": "calmatters.org",
@@ -320,26 +510,6 @@
     "url": "https://bsky.app/profile/calmatters.org/post/3n33gohjv7z22"
   },
   {
-    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n33f7ie3w32j",
-    "cid": "bafyreigireen3iydcbq5yr2rkxsnreeqg6z5uct34phm3m4l5dz42ln5u4",
-    "author": "insidehighered.com",
-    "created": "2026-11-24T19:34:01.819314561Z",
-    "text": "Loan Limits Unlikely to Reduce Defaults, New Data Shows\n\nWhat the new caps could do, researchers add, is restrict college access for students who have a low credit score but are pursuing careers with a high return on investment. https://bit.ly/4kz4PAq\n\n#EDUSky #AcademicSky #HigherEd",
-    "likes": 5,
-    "reposts": 2,
-    "url": "https://bsky.app/profile/insidehighered.com/post/3n33f7ie3w32j"
-  },
-  {
-    "uri": "at://did:plc:bpbsj7npsunteidfzbb5mqhj/app.bsky.feed.post/3n33c6xnvp727",
-    "cid": "bafyreig63w3q4abukq4cody5dha52xauyi6gtqz37zevp7vghml5hkyehm",
-    "author": "aft.org",
-    "created": "2026-11-24T18:40:03.094300768Z",
-    "text": "Give thanks and save this Thanksgiving with Teleflora. Union members enjoy 30% off flowers and gifts, including festive floral arrangements, holiday centerpieces, gourmet baskets, and chocolate-covered treats perfect for sharing. Offer ends 11/27/26.\n\nShop now: https://unionplus.click/r3z",
-    "likes": 1,
-    "reposts": 0,
-    "url": "https://bsky.app/profile/aft.org/post/3n33c6xnvp727"
-  },
-  {
     "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n33bnem4ru2y",
     "cid": "bafyreihqok5jnoqe3rrb5ynhzzdzkajawzchyl22ju2c6625nplvuyxzxe",
     "author": "calmatters.org",
@@ -348,26 +518,6 @@
     "likes": 2,
     "reposts": 1,
     "url": "https://bsky.app/profile/calmatters.org/post/3n33bnem4ru2y"
-  },
-  {
-    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n33bfv2cmh2j",
-    "cid": "bafyreie76sihj2342iybca4y64z54g2wi4xjeeodaxujazetg5cq5j3iga",
-    "author": "insidehighered.com",
-    "created": "2026-11-24T18:26:01.490122621Z",
-    "text": "New, Full-Time Enrollees in Science, Health Grad Programs Dropped 10% Last Year https://bit.ly/3WOCcW6",
-    "likes": 2,
-    "reposts": 2,
-    "url": "https://bsky.app/profile/insidehighered.com/post/3n33bfv2cmh2j"
-  },
-  {
-    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n335o5d7yz2b",
-    "cid": "bafyreieo5moqc3fhxaujbcmtlxshol5fspyxmzhd7ucxvl6qleea4me63q",
-    "author": "insidehighered.com",
-    "created": "2026-11-24T17:19:03.638860466Z",
-    "text": "Courts Deal Blows to Trump\u2019s Key International Ed Policies\n\nThe administration\u2019s visa limits and student internship restrictions are blocked. But more challenges loom, and advocates say the fight isn\u2019t over. https://bit.ly/4AauiFk\n\n#EDUSky #AcademicSky #HIgherEd",
-    "likes": 3,
-    "reposts": 4,
-    "url": "https://bsky.app/profile/insidehighered.com/post/3n335o5d7yz2b"
   },
   {
     "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n334mz4hkk2m",
@@ -390,32 +540,12 @@
     "url": "https://bsky.app/profile/aaup.org/post/3n3346dhvbc2t"
   },
   {
-    "uri": "at://did:plc:bpbsj7npsunteidfzbb5mqhj/app.bsky.feed.post/3n333js52gt27",
-    "cid": "bafyreifxljuebzs4wigu5fi3wq5e5txe6n3h4puhuumqo55psltzzv7rva",
-    "author": "aft.org",
-    "created": "2026-11-24T16:40:50.202487858Z",
-    "text": "\u201cTo think that the system could go on functioning politically, socially, economically without those students is to misunderstand... U.S. higher ed.\u201d\n\nTrump's immigration crackdown is driving international students away from U.S. colleges and universities\u2014but AFT and @aaup.org are fighting back \ud83d\udd3d",
-    "likes": 31,
-    "reposts": 13,
-    "url": "https://bsky.app/profile/aft.org/post/3n333js52gt27"
-  },
-  {
-    "uri": "at://did:plc:q5jyiiwq2phghraetyo2tkvt/app.bsky.feed.post/3n332gfxw352v",
-    "cid": "bafyreicbtbwuabjhqvl7pdkrnyvc3bbnvk2fwdaebwo4etet26ytii3p2i",
-    "author": "insidehighered.com",
-    "created": "2026-11-24T16:21:03.04395072Z",
-    "text": "Princeton Ph.D. Student Remains in ICE Custody https://bit.ly/4tkC4K0",
-    "likes": 1,
-    "reposts": 0,
-    "url": "https://bsky.app/profile/insidehighered.com/post/3n332gfxw352v"
-  },
-  {
     "uri": "at://did:plc:7ksbxruddrzxyof3h4hv34hz/app.bsky.feed.post/3n332a6jshk2p",
     "cid": "bafyreihidhntdnf75x2gig7dpue4tam676dbewfjqfli3fvysactmaakdm",
     "author": "rweingarten.bsky.social",
     "created": "2026-11-24T16:17:33.935Z",
     "text": "\ud83e\udee2 Virginia Foxx, an 11-term rep who loves vouchers as much as she hates unions, just lost her election. \ud83d\udc40 Her opponent, Chuck Hubbard, focused on bringing people together, creating pathways for economic opportunity for all, and supporting strong public schools. www.washingtonpost.com/politics/202...",
-    "likes": 95,
+    "likes": 97,
     "reposts": 22,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n332a6jshk2p"
   },
@@ -470,34 +600,14 @@
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n32zunvuqc2p"
   },
   {
-    "uri": "at://did:plc:7ksbxruddrzxyof3h4hv34hz/app.bsky.feed.post/3n32zcaukys2p",
-    "cid": "bafyreie2ulwdosrseki4jxrvgmjzale6ubq3fnr53tkadqs5c7ee7xf5jy",
-    "author": "rweingarten.bsky.social",
-    "created": "2026-11-24T16:00:49.752Z",
-    "text": "What\u2019s at stake for students & public schools under Trump\u2019s federal voucher program? I joined civil rights & education leaders to discuss how this program would siphon away public resources with little accountability & why we're urging governors to reject it. Watch: www.youtube.com/watch?v=H5uo...",
-    "likes": 19,
-    "reposts": 11,
-    "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n32zcaukys2p"
-  },
-  {
     "uri": "at://did:plc:jwucxa4tonukvnam72rec6gk/app.bsky.feed.post/3n32zbt7vkb2q",
     "cid": "bafyreicmpnw3jukohuowtnp67tdbllusmv6clogb7curvvybvumnrrzxqu",
     "author": "chronicle.com",
     "created": "2026-11-24T16:00:35.422399463Z",
     "text": "Opinion: Three Emory professors arrested during a 2024 campus protest sued the university. Now Emory is using an anti-SLAPP motion \u2014 a tool meant to protect speech \u2014 to argue the professors are trying to intimidate it. Read their essay: https://chroni.cl/4ja1CEO",
-    "likes": 14,
-    "reposts": 4,
+    "likes": 15,
+    "reposts": 7,
     "url": "https://bsky.app/profile/chronicle.com/post/3n32zbt7vkb2q"
-  },
-  {
-    "uri": "at://did:plc:7ksbxruddrzxyof3h4hv34hz/app.bsky.feed.post/3n32yvopt722p",
-    "cid": "bafyreiazi7v2vhhdipisadvuttiyrqnqzocnov2gr5ro53exqhhnmf4goa",
-    "author": "rweingarten.bsky.social",
-    "created": "2026-11-24T15:53:48.067Z",
-    "text": "If the conduct of Nvidia & Huang & Trump did not present significant legal, fiduciary, national security, safety and moral concerns, this would just be twisted and gross\u2026 but it is all of the above.  The  new Congress must engage in aggressive accountability of the Executive Branch",
-    "likes": 34,
-    "reposts": 10,
-    "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n32yvopt722p"
   },
   {
     "uri": "at://did:plc:jwucxa4tonukvnam72rec6gk/app.bsky.feed.post/3n32vwltnxw2t",
@@ -535,8 +645,8 @@
     "author": "calmatters.org",
     "created": "2026-11-24T02:00:29Z",
     "text": "Opinion | Construction crews on California high-speed rail are doing their job. Politicians aren't\n\nHigh-speed rail moves at the speed of politics. It\u2019s on California lawmakers to do their job and get the project done sooner, better and on budget.",
-    "likes": 32,
-    "reposts": 6,
+    "likes": 34,
+    "reposts": 8,
     "url": "https://bsky.app/profile/calmatters.org/post/3n2zkdmym452q"
   },
   {
@@ -548,16 +658,6 @@
     "likes": 2,
     "reposts": 1,
     "url": "https://bsky.app/profile/ucaft.bsky.social/post/3n2zh7cohzk23"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n2zfcnshrd2c",
-    "cid": "bafyreihomu5ni6rh7sd4m6n25jbudozdq623cqus3jiq6wj55yyq75m46e",
-    "author": "calmatters.org",
-    "created": "2026-11-24T00:30:28Z",
-    "text": "A very strong El Ni\u00f1o could test Central Valley levees this winter, and restored floodplains like Dos Rios State Park offer a natural buffer. cal.news/3XsJXRH\n\n\ud83d\udcf7 River Partners ",
-    "likes": 13,
-    "reposts": 2,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n2zfcnshrd2c"
   },
   {
     "uri": "at://did:plc:oxahz6hhtvdg7wbpsy6iausu/app.bsky.feed.post/3n2zc7jvbv42d",
@@ -580,44 +680,14 @@
     "url": "https://bsky.app/profile/faccc.bsky.social/post/3n2zc4dw5xk2n"
   },
   {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n2zabiynok2k",
-    "cid": "bafyreihivkhwqq4mqxtcw6wc44dbvwl4a43jfpqq4ibc2p2lkp5ndm2lsq",
-    "author": "calmatters.org",
-    "created": "2026-11-23T23:00:21Z",
-    "text": "California, along with 21 other states and Washington D.C., filed a lawsuit on Monday challenging a Trump administration rule that would bar tens of thousands of low-income households from receiving federal housing assistance. cal.news/4AP10Mb\n\n\ud83d\udcf7 Larry Valenzuela",
-    "likes": 18,
-    "reposts": 6,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n2zabiynok2k"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n2z3ad7jik2i",
-    "cid": "bafyreieatxk3o4s2td2krhuwjkdylt4f3q4eh6nf7plpgobl2ke5e6jbk4",
-    "author": "calmatters.org",
-    "created": "2026-11-23T21:30:12Z",
-    "text": "On the surface, California\u2019s homelessness crisis often seems unsurmountable. But every year, thousands of Californians successfully claw their way out of homelessness. CalMatters interviewed five Californians who left homelessness behind. cal.news/4eTylgF\n\n\ud83d\udcf7 Zo\u00eb Meyers and Alisha Jucevic",
-    "likes": 11,
-    "reposts": 7,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n2z3ad7jik2i"
-  },
-  {
     "uri": "at://did:plc:y7xqgguq6uiaor4rzlwbvslk/app.bsky.feed.post/3n2ywncth622n",
     "cid": "bafyreia4xvmt5swrgpmcvf3cwgm5y2swznswqqo6ltjnwcbkirwhcur2fm",
     "author": "mzinshteyn.bsky.social",
     "created": "2026-11-23T20:08:00.207Z",
     "text": "Important story by @jasperjsmith.bsky.social on all the DEI losses in higher-ed and the limits of the new Democratic Party majority in Congress to restore much of those cancellations, especially at the state level. \n\nwww.chronicle.com/article/dont...",
-    "likes": 2,
+    "likes": 3,
     "reposts": 0,
     "url": "https://bsky.app/profile/mzinshteyn.bsky.social/post/3n2ywncth622n"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n2yw7hefvr2m",
-    "cid": "bafyreiebp64w2q4szmep5c3c72retnudgabotlm4byusdmtvazaj4hz2t4",
-    "author": "calmatters.org",
-    "created": "2026-11-23T20:00:15Z",
-    "text": "Pockets of unvaccinated communities have driven local outbreaks in the state, including two earlier this year in Shasta and Riverside counties as well as a regional outbreak in Sacramento and Placer counties. cal.news/4zZ7k3F\n\n\ud83d\udcf7 Justin Sullivan",
-    "likes": 13,
-    "reposts": 6,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n2yw7hefvr2m"
   },
   {
     "uri": "at://did:plc:jcats4toei4ybf5ibk3njty3/app.bsky.feed.post/3n2yttulpmk22",
@@ -638,16 +708,6 @@
     "likes": 1,
     "reposts": 1,
     "url": "https://bsky.app/profile/chronicle.com/post/3n2ysubrqp72t"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n2yr6mwhqh2o",
-    "cid": "bafyreibfsdr54zshufase6lzqr56trncdysha3ji3n5j63s7qykl3izb6u",
-    "author": "calmatters.org",
-    "created": "2026-11-23T18:30:18Z",
-    "text": "California\u2019s higher education systems are considering building their own data centers and creating in-house alternatives to ChatGPT, Claude, and other commercial AI products. cal.news/4j02zzu\n\n\ud83d\udcf7 McKenzie Patterson",
-    "likes": 12,
-    "reposts": 4,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n2yr6mwhqh2o"
   },
   {
     "uri": "at://did:plc:l3jbgdl7a5rtsfyrgjw7spkz/app.bsky.feed.post/3n2yqwhccj22b",
@@ -688,16 +748,6 @@
     "likes": 4,
     "reposts": 3,
     "url": "https://bsky.app/profile/cfaunited.bsky.social/post/3n2ym67czdq24"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n2ym5ysn762k",
-    "cid": "bafyreicptdo7pnunnyg3e7c54fv4yl3dzzxtudbwpc66525rbgkhnvbgce",
-    "author": "calmatters.org",
-    "created": "2026-11-23T17:00:28Z",
-    "text": "Opinion | While the hard-working union members moving earth and pouring concrete in California\u2019s heartland are doing their jobs, the politicians in Sacramento aren\u2019t. The next governor and state Legislature can fix that. cal.news/4zD8SPY\n\n\ud83d\udcdd Carter Lavin and Avery Barrett\n\ud83d\udcf7 Larry Valenzuela",
-    "likes": 52,
-    "reposts": 14,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n2ym5ysn762k"
   },
   {
     "uri": "at://did:plc:jwucxa4tonukvnam72rec6gk/app.bsky.feed.post/3n2yfhsyikl2h",
@@ -748,15 +798,5 @@
     "likes": 4,
     "reposts": 3,
     "url": "https://bsky.app/profile/ucaft.bsky.social/post/3n2wayiwjhk2d"
-  },
-  {
-    "uri": "at://did:plc:p7zuxyadceecigl53tkarstq/app.bsky.feed.post/3n2uibf7gyk2t",
-    "cid": "bafyreihuugapj7hzkfxdvzo6jtjc2bnzuf4kmdgzqzvpfq4kbpfh2xhrvi",
-    "author": "jaweedkaleem.bsky.social",
-    "created": "2026-11-22T01:40:08.705Z",
-    "text": "UC police are getting 11,000 rifle rounds, 1,950 pepper-ball projectiles and more drones after regents approved new purchases:\n\nwww.latimes.com/california/s...",
-    "likes": 25,
-    "reposts": 18,
-    "url": "https://bsky.app/profile/jaweedkaleem.bsky.social/post/3n2uibf7gyk2t"
   }
 ]
