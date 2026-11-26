@@ -28,7 +28,7 @@
   body:not(.home) .scene::after { background:linear-gradient(rgba(18,8,12,.25), rgba(18,8,12,.1) 25%, rgba(18,8,12,.45)); }
   header { position:fixed; top:0; left:0; right:0; z-index:6; padding:calc(12px + env(safe-area-inset-top)) 18px 22px; display:flex; align-items:center; gap:10px; color:var(--ink);
     background:linear-gradient(rgba(18,8,12,.78), rgba(18,8,12,.35) 70%, rgba(18,8,12,0)); }
-  header h1 { font:300 33px/1.05 var(--script); letter-spacing:0; margin:0; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#fbeadf; text-shadow:0 0 22px rgba(255,140,60,.45), 0 2px 6px rgba(0,0,0,.8); }
+  header h1 { font:300 33px/1.25 var(--script); padding-bottom:.06em; letter-spacing:0; margin:0; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#fbeadf; text-shadow:0 0 22px rgba(255,140,60,.45), 0 2px 6px rgba(0,0,0,.8); }
   header button { background:rgba(239,228,200,.1); color:var(--ink); border:1.5px solid rgba(239,228,200,.4); }
   .book { position:relative; z-index:1; max-width:760px; margin:0 auto; padding:calc(120px + env(safe-area-inset-top)) 12px calc(92px + env(safe-area-inset-bottom)); }
   body.home .book { padding-top:calc(64vh + env(safe-area-inset-top)); }
@@ -143,15 +143,13 @@
   ::selection { background:rgba(240,138,60,.35); }
 
   /* page turn */
-  .turning { position:fixed; z-index:4; overflow:hidden; pointer-events:none; border-radius:16px; transform-origin:left center; animation:turnFwd .65s cubic-bezier(.45,.05,.55,.95) forwards; will-change:transform; }
-  .turning.back { transform-origin:right center; animation-name:turnBack; }
+  /* gentle fade: the old page fades away over the new one */
+  .turning { position:fixed; z-index:4; overflow:hidden; pointer-events:none; border-radius:16px; animation:pageFade .32s ease-out forwards; will-change:opacity; }
   .turning > main { position:absolute; left:0; width:100%; margin:0; }
-  .turning::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,.55)); opacity:0; animation:shade .65s ease-in forwards; }
-  .turning.back::after { background:linear-gradient(270deg, rgba(0,0,0,0), rgba(0,0,0,.55)); }
-  @keyframes turnFwd { from { transform:perspective(1600px) rotateY(0); } to { transform:perspective(1600px) rotateY(-105deg); } }
-  @keyframes turnBack { from { transform:perspective(1600px) rotateY(0); } to { transform:perspective(1600px) rotateY(105deg); } }
-  @keyframes shade { to { opacity:1; } }
-  @media (prefers-reduced-motion: reduce) { .spin { animation:none; } .turning { display:none; } nav.tabs button { transition:none; } }
+  @keyframes pageFade { from { opacity:1; } to { opacity:0; } }
+  #app.fade-in { animation:pageIn .32s ease-out; }
+  @keyframes pageIn { from { opacity:.35; } to { opacity:1; } }
+  @media (prefers-reduced-motion: reduce) { .spin { animation:none; } .turning { display:none; } #app.fade-in { animation:none; } nav.tabs button { transition:none; } }
   @media (prefers-reduced-transparency: reduce) { main.page { background:rgba(34,18,25,.97); } }
   a.rcard { display:flex; gap:12px; color:inherit; text-decoration:none; }
   .rec { display:flex; align-items:center; gap:10px; margin-top:10px; }
@@ -484,7 +482,8 @@ function turnPage(dir) {
   copy.style.top = (r.top - top) + 'px';
   wrap.appendChild(copy);
   document.body.appendChild(wrap);
-  setTimeout(() => wrap.remove(), 700);
+  $app.classList.remove('fade-in'); void $app.offsetWidth; $app.classList.add('fade-in');
+  setTimeout(() => wrap.remove(), 360);
 }
 
 // ---------- routing ----------
