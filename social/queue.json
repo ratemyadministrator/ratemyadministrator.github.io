@@ -148,5 +148,29 @@
     "not_before": "2026-12-19",
     "text": "Some presidents don't hire deans to lead. They hire them to agree.\n\nA dean with no independent judgment can't advocate for faculty, push back on bad decisions, or tell the president no.\n\nLoyalty upward isn't leadership. Rate yours:\nhttps://ratemyadministrator.github.io/\n\n#HigherEd #AcademicSky",
     "kind": "editorial"
+  },
+  {
+    "id": "kyr-rep-investigatory",
+    "kind": "know-your-rights",
+    "not_before": "2026-11-24",
+    "text": "Know your rights: union-represented at a California public college? If a meeting is investigatory and you reasonably believe it could lead to discipline, you can ask for a union rep. Ask before answering. Not legal advice; talk to your union.\n\nPERB decisions #HigherEd",
+    "links": [
+      {
+        "text": "PERB decisions",
+        "url": "https://perb.ca.gov/decision-subtopic/408-03000-investigatory-interviews/"
+      }
+    ]
+  },
+  {
+    "id": "news-berkeley-ai-grading",
+    "kind": "news",
+    "not_before": "2026-11-24",
+    "text": "UC Berkeley's business school is piloting an AI grading tool in the spring, raising questions about students and working conditions, the Chronicle reports. Faculty and TAs should have a say before tools like this change the job.\n\nRead more #AcademicSky",
+    "links": [
+      {
+        "text": "Read more",
+        "url": "https://chroni.cl/4zMnCfr"
+      }
+    ]
   }
 ]
