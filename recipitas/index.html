@@ -198,6 +198,14 @@
     body.home .book { padding-top:calc(100vw * 1.3); }
   }
   @media (min-width: 761px) { .scene-home { display:none; } body.home .scene-fixed img { object-position:center 58%; } }
+  /* cover: the whole picture, fitted between the title and the tabs, over a soft blurred copy */
+  .scene-cover { visibility:hidden; background:#24151b; }
+  .scene-cover::after { display:none; }
+  .scene-cover .bd { position:absolute; inset:-30px; width:calc(100% + 60px); height:calc(100% + 60px); object-fit:cover; filter:blur(18px) brightness(.55); }
+  .scene-cover .whole { position:absolute; left:0; right:0; top:calc(env(safe-area-inset-top) + 64px); bottom:calc(env(safe-area-inset-bottom) + 58px); width:100%; height:auto; object-fit:contain; object-position:center; }
+  body.cover .scene-cover { visibility:visible; }
+  body.cover .scene-fixed, body.cover .scene-home { visibility:hidden !important; }
+  body.cover .book { display:none; }
   /* the page-turn copy skips the blur, which is costly to animate on older phones */
   .turning > main { -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
   .turning { -webkit-backface-visibility:hidden; backface-visibility:hidden; }
@@ -207,6 +215,7 @@
 <header><h1 id="title"><span class="brand"><span class="reci">Flavored With </span><span class="pitas">L<svg class="heart-o" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.2l-1.45-1.32C5.4 15.2 2 12.1 2 8.3 2 5.2 4.4 3 7.4 3c1.7 0 3.4.8 4.6 2.1C13.2 3.8 14.9 3 16.6 3 19.6 3 22 5.2 22 8.3c0 3.8-3.4 6.9-8.55 11.58L12 21.2z"/></svg>ve</span></span></h1></header>
 <div class="scene scene-fixed" aria-hidden="true"><img src="kitchen.jpg?v=2" alt=""></div>
 <div class="scene scene-home" aria-hidden="true"><img src="kitchen.jpg?v=2" alt=""></div>
+<div class="scene scene-cover" aria-hidden="true"><img class="bd" src="kitchen.jpg?v=2" alt=""><img class="whole" src="kitchen.jpg?v=2" alt=""></div>
 <div class="book"><main id="app" class="page" aria-live="polite"></main></div>
 <nav class="tabs hidden" id="tabs" aria-label="Main">
   <button type="button" data-tab="recipes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 9h8M8 13h6"/></svg>Recipes</button>
@@ -465,7 +474,7 @@ function pickFile(id) {
 }
 
 // ---------- page turn ----------
-function pageRank(h) { return h.startsWith('recipe-') ? 1 : h.startsWith('edit-') || h === 'new' ? 2 : h === 'shopping' ? 3 : 0; }
+function pageRank(h) { return h === 'home' ? -1 : h.startsWith('recipe-') ? 1 : h.startsWith('edit-') || h === 'new' ? 2 : h === 'shopping' ? 3 : 0; }
 function turnPage(dir) {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const r = $app.getBoundingClientRect();
@@ -488,7 +497,7 @@ function turnPage(dir) {
 
 // ---------- routing ----------
 function route() {
-  const h = location.hash.replace(/^#/, '') || 'recipes';
+  const h = location.hash.replace(/^#/, '') || 'home';
   if (state.dirty && !allowNav && h !== state.lastHash) {
     const back = state.lastHash;
     history.replaceState(null, '', '#' + back);
@@ -501,9 +510,11 @@ function route() {
   state.lastHash = h;
   document.body.classList.toggle('reading', h.startsWith('recipe-'));
   document.body.classList.toggle('home', h === 'recipes');
-  if (!state.status || !state.status.loggedIn) return renderLogin();
+  if (!state.status || !state.status.loggedIn) { document.body.classList.remove('cover'); return renderLogin(); }
+  document.body.classList.toggle('cover', h === 'home');
   document.querySelectorAll('#tabs [data-tab]').forEach((a) => a.classList.toggle('on', h === a.dataset.tab || (a.dataset.tab === 'recipes' && h.startsWith('recipe-'))));
   window.scrollTo(0, 0);
+  if (h === 'home') { document.getElementById('tabs').classList.remove('hidden'); setTitle('Recipe Box'); $app.innerHTML = ''; return; }
   if (h === 'recipes') return renderList();
   if (h === 'new') return renderEditor(null);
   if (h === 'shopping') return renderShopping();
@@ -513,7 +524,8 @@ function route() {
 }
 function go(h) { allowNav = true; if (location.hash === '#' + h) route(); else location.hash = h; }
 window.addEventListener('hashchange', route);
-document.getElementById('tabs').onclick = (e) => { const b = e.target.closest('[data-tab]'); if (b) location.hash = b.dataset.tab; };
+// Tapping Recipes while the list is showing goes back to the whole picture.
+document.getElementById('tabs').onclick = (e) => { const b = e.target.closest('[data-tab]'); if (!b) return; location.hash = (b.dataset.tab === 'recipes' && state.lastHash === 'recipes') ? 'home' : b.dataset.tab; };
 window.addEventListener('beforeunload', (e) => { if (state.dirty) { e.preventDefault(); e.returnValue = ''; } });
 
 // ---------- login ----------
