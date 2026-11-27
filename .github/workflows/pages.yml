@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.retry.outputs.page_url || steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - name: Build college and review pages
@@ -32,5 +32,16 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
+      # Push deploys sometimes can't find the artifact that was uploaded a second earlier
+      # ("No artifacts named github-pages"). Wait briefly, and retry once if it still fails.
+      - name: Let the artifact register
+        run: sleep 15
       - id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Wait before retrying
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 45
+      - id: retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
