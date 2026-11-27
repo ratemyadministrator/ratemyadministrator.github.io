@@ -1,5 +1,65 @@
 [
   {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n3b3qaid2g2r",
+    "cid": "bafyreib7ebpmdr3y36gve3dtnl5kyh4skectrq3mvnqaqeanegajiq375u",
+    "author": "calmatters.org",
+    "created": "2026-11-27T02:00:24Z",
+    "text": "Starting next month, the U.S. Department of Housing and Urban Development plans to bar all families with a \u201cmixed\u201d immigration status from federally funded housing. The upheaval is expected to hit California harder than any other state. cal.news/4AlxzBq\n\n\ud83d\udcf8 Pablo Unzueta",
+    "likes": 25,
+    "reposts": 23,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n3b3qaid2g2r"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n3awp6mrcr2a",
+    "cid": "bafyreieplt5sgtj62t6yv2etdqrh33nu3h4xxyczn6qdo667vgazpcuzpi",
+    "author": "calmatters.org",
+    "created": "2026-11-27T00:30:20Z",
+    "text": "On the surface, California\u2019s homelessness crisis often seems unsurmountable. But every year, thousands of Californians successfully claw their way out of homelessness. CalMatters interviewed five Californians who left homelessness behind. cal.news/3WTDgbh\n\n\ud83d\udcf7 Zo\u00eb Meyers and Alisha Jucevic",
+    "likes": 20,
+    "reposts": 8,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n3awp6mrcr2a"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n3arofio232e",
+    "cid": "bafyreidfwq37obafcns4g5vgvvuysmnkbsj32isrlxkdk77rl354ynorom",
+    "author": "calmatters.org",
+    "created": "2026-11-26T23:00:25Z",
+    "text": "Gov. Gavin Newsom\u2019s unofficial campaign pitch for president boils down two main themes \u2014 California is amazing, and President Donald Trump is dangerous. cal.news/3XaeWBV\n\n\ud83d\udcf7 Anna Hoch-Kenney",
+    "likes": 9,
+    "reposts": 2,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n3arofio232e"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n3amnettiw2a",
+    "cid": "bafyreibr524mcdrxijzjn5ndfrlymutyeiihgwr3pbgdu5cifvch73ka44",
+    "author": "calmatters.org",
+    "created": "2026-11-26T21:30:22Z",
+    "text": "California ordered a count of its missing Native people in 2020. It still doesn\u2019t have one\n\nA DOJ report on missing Native people was due in 2025. Now the state says this winter.",
+    "likes": 21,
+    "reposts": 10,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n3amnettiw2a"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n3ahmgwsly2r",
+    "cid": "bafyreihkazqqrjkonspjgn7sjosxge53gzvyenxo2u6hyqc52gso44tnny",
+    "author": "calmatters.org",
+    "created": "2026-11-26T20:00:22Z",
+    "text": "El Ni\u00f1o-fueled King tides, coastal floods and storms: is California ready?\n\nJust in time for Thanksgiving travel, king tides and coastal flooding will snarl major arteries and flood coastal areas. It\u2019s a test of the state\u2019s preparations for El Ni\u00f1o. Will it be enough?",
+    "likes": 19,
+    "reposts": 8,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n3ahmgwsly2r"
+  },
+  {
+    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n3aclfg3kp2r",
+    "cid": "bafyreieog5m2qjjvsnjhgz5jhpgn3x3ov4ukwiv4xi3fxcxrye5fqkpogi",
+    "author": "calmatters.org",
+    "created": "2026-11-26T18:30:18Z",
+    "text": "The institute likely to get $4 billion from Prop. 38 has no CEO\n\nProp 38 will direct $4 billion to one research institute after California voters approved it. The institute likely to get it has no CEO.",
+    "likes": 8,
+    "reposts": 3,
+    "url": "https://bsky.app/profile/calmatters.org/post/3n3aclfg3kp2r"
+  },
+  {
     "uri": "at://did:plc:b473sk2zkpbr7u4uarlwe6cd/app.bsky.feed.post/3n3a5qeysbc2z",
     "cid": "bafyreicrhpqs7yhls2vtv7soaalvygokt5pgt2nzkv7bmaj7uuy753knwa",
     "author": "faccc.bsky.social",
@@ -15,7 +75,7 @@
     "author": "insidehighered.com",
     "created": "2026-11-26T16:15:12.580221594Z",
     "text": "Happy Thanksgiving from Inside Higher Ed!",
-    "likes": 5,
+    "likes": 6,
     "reposts": 0,
     "url": "https://bsky.app/profile/insidehighered.com/post/3n3a2zsnwga2g"
   },
@@ -25,8 +85,8 @@
     "author": "rweingarten.bsky.social",
     "created": "2026-11-26T15:30:18.807Z",
     "text": "My annual Brussel Sprout cooking for our Thanksgiving \n\nBefore and After\u2026",
-    "likes": 30,
-    "reposts": 3,
+    "likes": 34,
+    "reposts": 4,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n37yjjo2rk2t"
   },
   {
@@ -35,8 +95,8 @@
     "author": "rweingarten.bsky.social",
     "created": "2026-11-26T15:23:24.584Z",
     "text": "Happy Thanksgiving! Thank you to our members for working every day across education, healthcare and public services to build a better life for all.",
-    "likes": 21,
-    "reposts": 5,
+    "likes": 28,
+    "reposts": 8,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n37y56naw22t"
   },
   {
@@ -55,8 +115,8 @@
     "author": "aft.org",
     "created": "2026-11-26T12:58:01.671413257Z",
     "text": "Wishing our AFT members a very happy Thanksgiving! Hope you can enjoy a meal and time with loved ones. \ud83e\udef6",
-    "likes": 15,
-    "reposts": 3,
+    "likes": 18,
+    "reposts": 5,
     "url": "https://bsky.app/profile/aft.org/post/3n37pz7t7gi2e"
   },
   {
@@ -65,8 +125,8 @@
     "author": "rweingarten.bsky.social",
     "created": "2026-11-26T04:20:32.564Z",
     "text": "The new inflation numbers show that working families are still paying more while the billionaires are getting by just fine\u2014thanks in part to the president focusing on Big Tech donors instead of lowering the costs of healthcare, housing, gas, and groceries. www.scrippsnews.com/politics/eco...",
-    "likes": 35,
-    "reposts": 13,
+    "likes": 36,
+    "reposts": 14,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n36t3v3bt22q"
   },
   {
@@ -75,8 +135,8 @@
     "author": "rweingarten.bsky.social",
     "created": "2026-11-26T04:14:03.675Z",
     "text": "At Dilley, kids are suffering inhumane conditions\u2014lacking nutritious food & adequate medical care.. And they're missing out on holiday celebrations & other critical experiences to their development. Kids will carry the trauma of this cruelty for years.\nwww.thebulwark.com/p/a-cruel-th...",
-    "likes": 48,
-    "reposts": 31,
+    "likes": 52,
+    "reposts": 34,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n36sqc7dfs2q"
   },
   {
@@ -95,8 +155,8 @@
     "author": "calmatters.org",
     "created": "2026-11-26T02:00:37Z",
     "text": "Opinion | Reviving California\u2019s downtowns requires investing in the people who work there\n\nThe state's high road training initiative bring workers and employers together to solve problems, such as struggling downtowns.",
-    "likes": 12,
-    "reposts": 2,
+    "likes": 13,
+    "reposts": 3,
     "url": "https://bsky.app/profile/calmatters.org/post/3n36lbp4mko2i"
   },
   {
@@ -215,7 +275,7 @@
     "author": "rweingarten.bsky.social",
     "created": "2026-11-25T21:38:34.394Z",
     "text": "This is a great start\n\nAnd we need to focus on education as well-k-12 and higher ed, as that creates opportunity for all",
-    "likes": 226,
+    "likes": 229,
     "reposts": 40,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n364n477f226"
   },
@@ -256,7 +316,7 @@
     "created": "2026-11-25T20:24:57.317Z",
     "text": "Scoop: Education Secretary Linda McMahon and co-defendants (Vince McMahon, WWE, TKO) have agreed to private mediation with the 'Ring Boys' who accused them of overlooking child sexual abuse. The move raises the prospect of a settlement without a trial. \nwww.insidehighered.com/news/governm...",
     "likes": 11,
-    "reposts": 11,
+    "reposts": 12,
     "url": "https://bsky.app/profile/byjoshmoody.bsky.social/post/3n35yjhqnoc25"
   },
   {
@@ -295,7 +355,7 @@
     "author": "mzinshteyn.bsky.social",
     "created": "2026-11-25T19:22:06.348Z",
     "text": "This site is embracing a worrying us vs them tribalism that eagerly deploys high-minded ad hominem attacks on harmless writers and personalities with intriguing takes. Not everyone is the enemy. Disagree with the argument, not the person.",
-    "likes": 0,
+    "likes": 1,
     "reposts": 0,
     "url": "https://bsky.app/profile/mzinshteyn.bsky.social/post/3n35uz3htqc2a"
   },
@@ -395,7 +455,7 @@
     "author": "aft.org",
     "created": "2026-11-25T16:20:59.925394497Z",
     "text": "NEW: Illinois will NOT opt in to Trump\u2019s voucher program.\n\n@govpritzker.illinois.gov: \u201cWe should not siphon money from public schools for private education.\u201d\n\nTrump's voucher scheme is a \u201cTrojan horse\u201d that would allow near-universal vouchers, even where voters have rejected them.",
-    "likes": 58,
+    "likes": 59,
     "reposts": 17,
     "url": "https://bsky.app/profile/aft.org/post/3n35kvahdqh2e"
   },
@@ -530,16 +590,6 @@
     "url": "https://bsky.app/profile/calmatters.org/post/3n33vrget3p2d"
   },
   {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n33qqlf2lc2f",
-    "cid": "bafyreifhrrqhqtn4uj774iemw2l2kawzoo6cv75x6ph5pu2k3llx2miwcu",
-    "author": "calmatters.org",
-    "created": "2026-11-24T23:00:26Z",
-    "text": "What it took for 5 Californians to pull themselves out of homelessness\n\nWe interviewed five Californians who successfully left homelessness. Each story provides clues into what types of interventions can work.",
-    "likes": 24,
-    "reposts": 7,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n33qqlf2lc2f"
-  },
-  {
     "uri": "at://did:plc:oxahz6hhtvdg7wbpsy6iausu/app.bsky.feed.post/3n33qqain632u",
     "cid": "bafyreifa3luhqhpdempevbrcoesgzokucau5knf34vdj5425emwhpvkeky",
     "author": "cfaunited.bsky.social",
@@ -555,7 +605,7 @@
     "author": "rweingarten.bsky.social",
     "created": "2026-11-24T22:31:57.012Z",
     "text": "Thank you @govpritzker.illinois.gov for standing with Illinois\u2019 students, families & educators by rejecting Trump\u2019s voucher scheme. Public dollars must strengthen public schools that welcome all students, not be used as donations to private schools. gov-pritzker-newsroom.prezly.com/gov-pritzker...",
-    "likes": 129,
+    "likes": 131,
     "reposts": 36,
     "url": "https://bsky.app/profile/rweingarten.bsky.social/post/3n33p5mylzk2s"
   },
@@ -565,49 +615,9 @@
     "author": "aft.org",
     "created": "2026-11-24T22:16:01.636152425Z",
     "text": "What can Indigenous knowledge teach us about protecting the Everglades? @sharemylesson.bsky.social's new film lessons featuring Miccosukee environmental leader Betty Osceola connect Native American history, ecology and land use to the challenges we face today. ",
-    "likes": 8,
+    "likes": 9,
     "reposts": 5,
     "url": "https://bsky.app/profile/aft.org/post/3n33ob5v6yo2l"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n33lpevokx24",
-    "cid": "bafyreibw3acfmlf5cgfbmimevgikeullcp3x53nbh7gmtltgeyxsglow4a",
-    "author": "calmatters.org",
-    "created": "2026-11-24T21:30:16Z",
-    "text": "Leaders and business owners around the state agree that the results of the midterm elections could bring about changes as the president loses the Republican-majority Congress that gave him outsized power \u2014 but not all the possible changes would be welcome to them. cal.news/4AQlDaM \n\n\ud83d\udcf7 Chad Surmick",
-    "likes": 8,
-    "reposts": 2,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n33lpevokx24"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n33gohjv7z22",
-    "cid": "bafyreiezvctmce2dxc7xq7gpmxzjmmujnobq36hwvrommzmsbn3kb44kfe",
-    "author": "calmatters.org",
-    "created": "2026-11-24T20:00:17Z",
-    "text": "Opinion | While to the left of most Indian American voters, neither Nithya Raman or Zohran Mamdani ran as an Indian American candidate. They ran on the basics: Filling potholes, building bike lanes and making groceries more affordable. cal.news/4lbrenv\n\n\ud83d\udcf7 Myung J. Chun",
-    "likes": 14,
-    "reposts": 2,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n33gohjv7z22"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n33bnem4ru2y",
-    "cid": "bafyreihqok5jnoqe3rrb5ynhzzdzkajawzchyl22ju2c6625nplvuyxzxe",
-    "author": "calmatters.org",
-    "created": "2026-11-24T18:30:12Z",
-    "text": "Gov. Gavin Newsom\u2019s unofficial campaign pitch for president boils down two main themes \u2014 California is amazing, and President Donald Trump is dangerous. cal.news/4zBCfC7\n\n\ud83d\udcf7 Anna Hoch-Kenney",
-    "likes": 3,
-    "reposts": 1,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n33bnem4ru2y"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n334mz4hkk2m",
-    "cid": "bafyreiezdmpcoll3vy2htkyerz76n7zca5t5cycjf6k66ipf7dr5i6m67m",
-    "author": "calmatters.org",
-    "created": "2026-11-24T17:00:31Z",
-    "text": "California limits how much retirees can work while receiving a pension, but people \u2014 and employers \u2014 often make mistakes. CalPERS is trying to clarify the rules with two new policies.  cal.news/4jgvyiN\n\n\ud83d\udcf7 Miguel Gutierrez Jr. ",
-    "likes": 5,
-    "reposts": 0,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n334mz4hkk2m"
   },
   {
     "uri": "at://did:plc:jcats4toei4ybf5ibk3njty3/app.bsky.feed.post/3n3346dhvbc2t",
@@ -625,7 +635,7 @@
     "author": "chronicle.com",
     "created": "2026-11-24T16:00:35.422399463Z",
     "text": "Opinion: Three Emory professors arrested during a 2024 campus protest sued the university. Now Emory is using an anti-SLAPP motion \u2014 a tool meant to protect speech \u2014 to argue the professors are trying to intimidate it. Read their essay: https://chroni.cl/4ja1CEO",
-    "likes": 15,
+    "likes": 16,
     "reposts": 7,
     "url": "https://bsky.app/profile/chronicle.com/post/3n32zbt7vkb2q"
   },
@@ -635,7 +645,7 @@
     "author": "chronicle.com",
     "created": "2026-11-24T15:00:37.346347571Z",
     "text": "UC Berkeley's business school is piloting an AI grading tool in the spring. Intended to save professors and teaching assistants time, the tool has raised some questions about the impact on students and working conditions. https://chroni.cl/4zMnCfr",
-    "likes": 4,
+    "likes": 5,
     "reposts": 2,
     "url": "https://bsky.app/profile/chronicle.com/post/3n32vwltnxw2t"
   },
@@ -655,29 +665,9 @@
     "author": "chronicle.com",
     "created": "2026-11-24T14:13:27.593267984Z",
     "text": "Opinion: For millennial humanities scholars, the choice can feel stark: build an audience online and risk institutional skepticism, or stay offline and get left out of the conversation. https://chroni.cl/49c6e8X",
-    "likes": 3,
+    "likes": 5,
     "reposts": 1,
     "url": "https://bsky.app/profile/chronicle.com/post/3n32tcb66wr22"
-  },
-  {
-    "uri": "at://did:plc:ivdi2bkorynmqxsfctxowtd4/app.bsky.feed.post/3n2zkdmym452q",
-    "cid": "bafyreietrdgodmagjztipoobqs46oa65ctdgjh6tqmess3fyyal4oz4xlu",
-    "author": "calmatters.org",
-    "created": "2026-11-24T02:00:29Z",
-    "text": "Opinion | Construction crews on California high-speed rail are doing their job. Politicians aren't\n\nHigh-speed rail moves at the speed of politics. It\u2019s on California lawmakers to do their job and get the project done sooner, better and on budget.",
-    "likes": 34,
-    "reposts": 8,
-    "url": "https://bsky.app/profile/calmatters.org/post/3n2zkdmym452q"
-  },
-  {
-    "uri": "at://did:plc:oriii4dh5lfqdgv55cneznkc/app.bsky.feed.post/3n2zh7cohzk23",
-    "cid": "bafyreia7hcyajeurnob6e5sfkeqys6ptyxpphgory2av5k5lyqqycunx4u",
-    "author": "ucaft.bsky.social",
-    "created": "2026-11-24T01:04:23.892Z",
-    "text": "UCOP administrators complain that UC-AFT\u2019s proposals to control exploding healthcare costs are just too expensive for the university to consider. Unit 18 table team member Virginia Espino responded: \u201cWe\u2019re tired of being your cheap labor force!\u201d Read more at: weteachuc.org/2026/11/22/b... #WeTeachUC",
-    "likes": 2,
-    "reposts": 1,
-    "url": "https://bsky.app/profile/ucaft.bsky.social/post/3n2zh7cohzk23"
   },
   {
     "uri": "at://did:plc:oxahz6hhtvdg7wbpsy6iausu/app.bsky.feed.post/3n2zc7jvbv42d",
@@ -690,22 +680,12 @@
     "url": "https://bsky.app/profile/cfaunited.bsky.social/post/3n2zc7jvbv42d"
   },
   {
-    "uri": "at://did:plc:b473sk2zkpbr7u4uarlwe6cd/app.bsky.feed.post/3n2zc4dw5xk2n",
-    "cid": "bafyreieaensg32nfce6vwz744o4dayfeu7x7npiut7be4eznkejvycr5lq",
-    "author": "faccc.bsky.social",
-    "created": "2026-11-23T23:33:15.818Z",
-    "text": "We're thrilled to announce our 2027 Jonathan Lightman FACCCtivist of the Year, Desiree Ann Montenegro! Desiree teaches Communication Studies at Palo Verde College and served on the FACCC Board of Governors from 2022 to 2025.",
-    "likes": 1,
-    "reposts": 0,
-    "url": "https://bsky.app/profile/faccc.bsky.social/post/3n2zc4dw5xk2n"
-  },
-  {
     "uri": "at://did:plc:y7xqgguq6uiaor4rzlwbvslk/app.bsky.feed.post/3n2ywncth622n",
     "cid": "bafyreia4xvmt5swrgpmcvf3cwgm5y2swznswqqo6ltjnwcbkirwhcur2fm",
     "author": "mzinshteyn.bsky.social",
     "created": "2026-11-23T20:08:00.207Z",
     "text": "Important story by @jasperjsmith.bsky.social on all the DEI losses in higher-ed and the limits of the new Democratic Party majority in Congress to restore much of those cancellations, especially at the state level. \n\nwww.chronicle.com/article/dont...",
-    "likes": 3,
+    "likes": 4,
     "reposts": 0,
     "url": "https://bsky.app/profile/mzinshteyn.bsky.social/post/3n2ywncth622n"
   },
@@ -798,25 +778,5 @@
     "likes": 7,
     "reposts": 3,
     "url": "https://bsky.app/profile/chronicle.com/post/3n2yd3gcb362z"
-  },
-  {
-    "uri": "at://did:plc:y7xqgguq6uiaor4rzlwbvslk/app.bsky.feed.post/3n2wvnctpjk2z",
-    "cid": "bafyreihfbsrda436vyvjxgna6osizp2nc6o7oyjb2k4oxawaidp73jq3am",
-    "author": "mzinshteyn.bsky.social",
-    "created": "2026-11-23T00:44:46.993Z",
-    "text": "Change one letter, ruin a movie\n\nGooffellas.",
-    "likes": 2,
-    "reposts": 0,
-    "url": "https://bsky.app/profile/mzinshteyn.bsky.social/post/3n2wvnctpjk2z"
-  },
-  {
-    "uri": "at://did:plc:oriii4dh5lfqdgv55cneznkc/app.bsky.feed.post/3n2wayiwjhk2d",
-    "cid": "bafyreiardlttigkgwxdpe7c3u6zrjgba555ke6bcunqwym3om3b7zcszde",
-    "author": "ucaft.bsky.social",
-    "created": "2026-11-22T18:35:13.900Z",
-    "text": "\u201cI am a union activist because I believe that we have to stand up and fight, but my hope is is that someday we'll win, writ large, for all of the workers in the UC, including our Senate allies.\u201d - UC-AFT President Katie Rodger www.davisenterprise.com/news/uc-lect...",
-    "likes": 4,
-    "reposts": 3,
-    "url": "https://bsky.app/profile/ucaft.bsky.social/post/3n2wayiwjhk2d"
   }
 ]
