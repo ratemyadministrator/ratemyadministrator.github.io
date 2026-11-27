@@ -150,18 +150,6 @@
     "kind": "editorial"
   },
   {
-    "id": "kyr-rep-investigatory",
-    "kind": "know-your-rights",
-    "not_before": "2026-11-24",
-    "text": "Know your rights: union-represented at a California public college? If a meeting is investigatory and you reasonably believe it could lead to discipline, you can ask for a union rep. Ask before answering. Not legal advice; talk to your union.\n\nPERB decisions #HigherEd",
-    "links": [
-      {
-        "text": "PERB decisions",
-        "url": "https://perb.ca.gov/decision-subtopic/408-03000-investigatory-interviews/"
-      }
-    ]
-  },
-  {
     "id": "news-berkeley-ai-grading",
     "kind": "news",
     "not_before": "2026-11-24",
