@@ -710,21 +710,37 @@
       },
       "new_followers": [],
       "liked_or_shared_by": []
+    },
+    {
+      "at": "2026-11-28T03:38",
+      "followers": 6,
+      "following": 37,
+      "posts": 19,
+      "new": {
+        "follow": 0,
+        "repost": 0,
+        "like": 0,
+        "quote": 0,
+        "reply": 0,
+        "mention": 0
+      },
+      "new_followers": [],
+      "liked_or_shared_by": []
     }
   ],
   "seen": [
-    "at://did:plc:oez76mpnlaom54e3jcpscadt/app.bsky.feed.repost/3n3ax7a7yec2q",
-    "at://did:plc:fp2gnanyyiqgusoiej4i45qx/app.bsky.graph.follow/3n2tsoasy2e2q",
-    "at://did:plc:hz3thvwswybpm2jskkwl4hgv/app.bsky.feed.like/3n2n7trwmyi2p",
-    "at://did:plc:c4uk4vdqppi6tkjnuh67l442/app.bsky.graph.follow/3n2um3z2iwj22",
-    "at://did:plc:k77kd7k27as3e54pwdndhdfg/app.bsky.graph.follow/3n2m3twqpy32m",
-    "at://did:plc:44tddehxgfmyjcpy7cqc5fhd/app.bsky.feed.like/3n2sj3mywo62a",
-    "at://did:plc:lei4xeuro4vw57nawm4tf5nx/app.bsky.graph.follow/3n2tvnogo6i2f",
     "at://did:plc:2h3zlxlji5h3twlhmqo3oezz/app.bsky.feed.like/3n2qdegtn332a",
     "at://did:plc:7tohx5b2cwgddnawmvghryf5/app.bsky.graph.follow/3n2sdoolfjz2x",
+    "at://did:plc:oez76mpnlaom54e3jcpscadt/app.bsky.feed.repost/3n3ax7a7yec2q",
     "at://did:plc:vcuxd3rpuuy3qex5paqzatww/app.bsky.feed.like/3n2s7za56by2k",
-    "at://did:plc:t5pur7eruxfgxy7ynpfrmg2w/app.bsky.feed.like/3n25cup7pjk2i",
     "at://did:plc:ffrcey5mys6bhrdz34rxehnj/app.bsky.feed.like/3n2tbw5w6ab27",
-    "at://did:plc:4nmow5k2ipj5ctgbiig75xah/app.bsky.feed.repost/3n2pvcid32a2c"
+    "at://did:plc:c4uk4vdqppi6tkjnuh67l442/app.bsky.graph.follow/3n2um3z2iwj22",
+    "at://did:plc:44tddehxgfmyjcpy7cqc5fhd/app.bsky.feed.like/3n2sj3mywo62a",
+    "at://did:plc:lei4xeuro4vw57nawm4tf5nx/app.bsky.graph.follow/3n2tvnogo6i2f",
+    "at://did:plc:k77kd7k27as3e54pwdndhdfg/app.bsky.graph.follow/3n2m3twqpy32m",
+    "at://did:plc:fp2gnanyyiqgusoiej4i45qx/app.bsky.graph.follow/3n2tsoasy2e2q",
+    "at://did:plc:4nmow5k2ipj5ctgbiig75xah/app.bsky.feed.repost/3n2pvcid32a2c",
+    "at://did:plc:hz3thvwswybpm2jskkwl4hgv/app.bsky.feed.like/3n2n7trwmyi2p",
+    "at://did:plc:t5pur7eruxfgxy7ynpfrmg2w/app.bsky.feed.like/3n25cup7pjk2i"
   ]
 }
