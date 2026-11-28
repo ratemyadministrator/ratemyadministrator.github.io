@@ -8,7 +8,9 @@ Collects replies/mentions into social/mentions.json and posts answers queued in
 social/replies.json (up to 5 a run).
 Queue format: a list of {"id": "...", "text": "...", "kind": "...", "not_before": "YYYY-MM-DD" (optional),
 "priority": true (optional, skips variety rules), "links": [{"text", "url"}] (optional: makes those
-words in the text a link, so long URLs don't count toward the 300 characters)}. Kinds: editorial, solidarity, news, win, spotlight,
+words in the text a link, so long URLs don't count toward the 300 characters),
+"image": "social/images/<file>.png" (optional: a card shown with the post), "alt": "..." (required with an image),
+"aspect": [width, height] (optional, 1200x675 for images)}. Kinds: editorial, solidarity, news, win, spotlight,
 know-your-rights, site, question. Up to two posts a day, rotating kinds; solidarity at most once per 3 days.
 URLs in the text become clickable links. Each run publishes at most one post. Published posts
 move to social/posted.json along with their Bluesky link.
@@ -88,6 +90,34 @@ def upload_video(s, path):
                                      headers={"Content-Type": "video/mp4", "Authorization": "Bearer " + s["accessJwt"]})
         with urllib.request.urlopen(req, timeout=300) as r:
             return json.load(r)["blob"]
+
+
+IMAGE_TYPES = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg"}
+IMAGE_MAX_BYTES = 1_000_000
+
+
+def image_problem(post):
+    """Why this queued post's image can't be published, or None. Posts without an image are fine."""
+    path = post.get("image")
+    if not path:
+        return None
+    if os.path.splitext(path)[1].lower() not in IMAGE_TYPES:
+        return "image must be a PNG or JPEG"
+    if not os.path.isfile(path):
+        return f"image file not found: {path}"
+    if os.path.getsize(path) > IMAGE_MAX_BYTES:
+        return "image is larger than 1 MB"
+    if not post.get("alt", "").strip():
+        return "an image needs alt text"
+    return None
+
+
+def upload_image(s, path):
+    req = urllib.request.Request(API + "com.atproto.repo.uploadBlob", data=open(path, "rb").read(),
+                                 headers={"Content-Type": IMAGE_TYPES[os.path.splitext(path)[1].lower()],
+                                          "Authorization": "Bearer " + s["accessJwt"]})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        return json.load(r)["blob"]
 
 
 def replace_old(s, url):
@@ -330,11 +360,17 @@ def main():
         if any(p.get("posted_at", "") > recent for p in history):
             print(f"Posted within the last {GAP_HOURS} hours; next post waits.")
             return
-        due = pick_order(due, history, now)
+        for p in due:
+            if image_problem(p):  # leave it queued and post something else, so one bad item never blocks the feed
+                print(f"::warning::Skipping {p.get('id')}: {image_problem(p)}")
+        due = pick_order([p for p in due if not image_problem(p)], history, now)
         if not due:
-            print("Only capped kinds are due right now; waiting.")
+            print("Nothing postable right now (capped kinds or image problems); waiting.")
             return
     post = due[0]
+    if image_problem(post):  # only reachable with a manual post_id
+        print(f"::warning::Not posting {post['id']}: {image_problem(post)}")
+        return
     text = post["text"].strip()
     if len(text) > 300:
         sys.exit(f"Post {post['id']} is {len(text)} characters; Bluesky allows 300.")
@@ -353,6 +389,15 @@ def main():
         w, h = post.get("aspect", [1920, 1080])
         record["embed"] = {"$type": "app.bsky.embed.video", "video": upload_video(s, post["video"]),
                            "alt": post.get("alt", "")[:1000], "aspectRatio": {"width": w, "height": h}}
+    elif post.get("image"):
+        w, h = post.get("aspect", [1200, 675])
+        try:
+            blob = upload_image(s, post["image"])
+        except Exception as e:  # keep it queued; exiting cleanly lets the workflow save follows, reposts and replies
+            print(f"::warning::Image upload failed for {post['id']}, will retry next run: {e}")
+            return
+        record["embed"] = {"$type": "app.bsky.embed.images", "images": [
+            {"image": blob, "alt": post["alt"][:2000], "aspectRatio": {"width": w, "height": h}}]}
     r = call("com.atproto.repo.createRecord",
              {"repo": s["did"], "collection": "app.bsky.feed.post", "record": record}, s["accessJwt"])
     rkey = r["uri"].rsplit("/", 1)[1]

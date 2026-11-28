@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "to_uri": "at://did:plc:7ksbxruddrzxyof3h4hv34hz/app.bsky.feed.post/3n3cmp3c56s23",
+    "to_cid": "bafyreicntswxdfimfqb6ocnvygdshm7ak5ibykaqbvd7e6bjtwftvn6vlq",
+    "root_uri": "at://did:plc:7ksbxruddrzxyof3h4hv34hz/app.bsky.feed.post/3n3cmp3c56s23",
+    "root_cid": "bafyreicntswxdfimfqb6ocnvygdshm7ak5ibykaqbvd7e6bjtwftvn6vlq",
+    "text": "Worth passing to adjuncts: for PSLF, non-tenure-track college faculty get at least 3.35 hours of work credit per credit or contact hour taught, which counts toward full time. Rule: https://www.law.cornell.edu/cfr/text/34/685.219"
+  },
+  {
+    "to_uri": "at://did:plc:jcats4toei4ybf5ibk3njty3/app.bsky.feed.post/3n3472used22b",
+    "to_cid": "bafyreiecly4ivjucio6na4qyvelp34gs2dvrkvr5tyyu43rjshpegoblmu",
+    "root_uri": "at://did:plc:jcats4toei4ybf5ibk3njty3/app.bsky.feed.post/3n3472used22b",
+    "root_cid": "bafyreiecly4ivjucio6na4qyvelp34gs2dvrkvr5tyyu43rjshpegoblmu",
+    "text": "A shared vision holds up best when the people doing the work help write it, adjuncts and classified staff included, and not just by commenting after the draft is finished."
+  },
+  {
+    "to_uri": "at://did:plc:oxahz6hhtvdg7wbpsy6iausu/app.bsky.feed.post/3n35n3z7wfe2z",
+    "to_cid": "bafyreiblrz4br77urjc2mlks4r3njmc2bqxo3yh4ldhlj7hs35wtvioiwa",
+    "root_uri": "at://did:plc:oxahz6hhtvdg7wbpsy6iausu/app.bsky.feed.post/3n35n3z7wfe2z",
+    "root_cid": "bafyreiblrz4br77urjc2mlks4r3njmc2bqxo3yh4ldhlj7hs35wtvioiwa",
+    "text": "Belongs in every contract: notice before new AI tools arrive, a person accountable for any evaluation, and job protections. Much easier to get in writing before a pilot starts than after."
+  }
+]

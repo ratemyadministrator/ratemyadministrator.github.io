@@ -3,7 +3,9 @@
     "id": "ed-retaliation",
     "not_before": "2026-11-23",
     "text": "Retaliation rarely looks like retaliation. It looks like a schedule change, a lost section, a sudden \"concern\" about your tone, a committee you're no longer on.\n\nPatterns are easier to see when people can compare notes.\n\nhttps://ratemyadministrator.github.io/\n\n#AcademicSky #HigherEd",
-    "kind": "editorial"
+    "kind": "editorial",
+    "image": "social/images/rma-editorial-retaliation.png",
+    "alt": "Card: PATTERN. Retaliation rarely looks like retaliation. It looks like a schedule change, a lost section, a sudden \"concern\" about your tone, a committee you're no longer on. Patterns are easier to see when people compare notes. Footer: ratemyadministrator.github.io, @ratemyadmin.bsky.social"
   },
   {
     "id": "ed-askpay",
@@ -160,5 +162,35 @@
         "url": "https://chroni.cl/4zMnCfr"
       }
     ]
+  },
+  {
+    "id": "card-question-unpaid",
+    "kind": "question",
+    "not_before": "2026-11-24",
+    "text": "Reply with the task, not the names. We're listening.\n\n#AcademicSky #HigherEd",
+    "image": "social/images/rma-question-unpaid.png",
+    "alt": "Card: QUESTION FOR FACULTY AND STAFF. What unpaid task were you handed this semester? Committee work, events, trainings outside contract hours. Reply below. No names needed. Footer: ratemyadministrator.github.io, @ratemyadmin.bsky.social"
+  },
+  {
+    "id": "card-post-safely",
+    "kind": "site",
+    "not_before": "2026-11-26",
+    "text": "You don't need a work email, or any account, to post a review. A few habits still help protect you; here's how to post safely.\n\n#HigherEd #AcademicSky",
+    "links": [
+      {
+        "text": "how to post safely",
+        "url": "https://ratemyadministrator.github.io/guides/how-to-post-safely/"
+      }
+    ],
+    "image": "social/images/rma-post-safely.png",
+    "alt": "Card: HOW IT WORKS. Rate an administrator without using your work email. No account, no verification email landing in your work inbox. Faculty, staff, students and community members can all post. Footer: ratemyadministrator.github.io, @ratemyadmin.bsky.social"
+  },
+  {
+    "id": "card-directory-stat",
+    "kind": "site",
+    "not_before": "2026-11-27",
+    "text": "Find your college and see who's listed, including many of the directors and managers staff report to.\n\nhttps://ratemyadministrator.github.io/\n\n#HigherEd #ClassifiedStaff",
+    "image": "social/images/rma-directory-stat.png",
+    "alt": "Card: DIRECTORY UPDATE. 5,000+ college administrators and trustees listed. Deans, VPs, presidents, chancellors and board members. Rate how they treat people and how they run things. Footer: ratemyadministrator.github.io, @ratemyadmin.bsky.social"
   }
 ]
